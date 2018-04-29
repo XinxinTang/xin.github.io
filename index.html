@@ -274,6 +274,157 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/NumPy-Tutorial/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/29/NumPy-Tutorial/" itemprop="url">
+                  NumPy-Tutorial
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-04-29 12:12:54 / Modified: 12:16:16" itemprop="dateCreated datePublished" datetime="2018-04-29T12:12:54-04:00">2018-04-29</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>NumPy is one of most popular data analysis package in Python. I use it a lot and here is a NumPy review. Let’s get started!</p>
+<p>NumPy’s main object is the homogeneous multidimensional array. In NumPy dimensions are called axes.</p>
+<p>For example, [1,2,3] has one axis and length is 3. [[1,2,3],[4,5,6]] has two axes. The first axis length is 2 and the second axis has a length of 3.</p>
+<p>Python has a built-in class array.array which only handles one-dimension array and offers less functionality. NumPy’s array class is called ndarray and more powerful. It has many attributes like:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ndarray.ndim: the number of axes of the array; 3-D, 4D</span><br><span class="line">ndarray.shape: the dimensions of the array; 3-D: (2,3,4)</span><br><span class="line">ndarray.size: the total number of elements of the array. </span><br><span class="line">ndarray.dtype: the type of elements in the array</span><br><span class="line">ndarray.itemsize: the size in byte of each element of the array</span><br><span class="line">ndarray.data: the buffer containing the actual elements of the array</span><br></pre></td></tr></table></figure></p>
+<p>Examples:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">a = np.arange(15).reshape(3,5)  # array([[ 0, 1, 2, 3, 4], [ 5, 6, 7, 8, 9], [10, 11, 12, 13, 14]])</span><br><span class="line">a.shape()  # (3, 5)</span><br><span class="line">a.ndim  # 2</span><br><span class="line">a.dtype.name  # &apos;int64&apos;</span><br><span class="line">a.itemsize  # 8</span><br><span class="line">a.size  # 15</span><br><span class="line">type(a)  # &lt;type &apos;numpy.ndarray&apos;&gt;</span><br><span class="line">b = np.array([6,7,8])  # array([6,7,8])</span><br><span class="line">type(b)  # &lt;type &apos;numpy.ndarray&apos;&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Array-Creation"><a href="#Array-Creation" class="headerlink" title="Array Creation:"></a>Array Creation:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">a = np.array([2,3,4])</span><br><span class="line">b = np.array([(1,2,3,4), (5,6,7,8)])</span><br><span class="line"></span><br><span class="line">c = np.zeros((3,4))  # 2-D with length 3 and 4 for two axis</span><br><span class="line">d = np.zeros((3,4,5), dtype=np.int16)  # specify a data type</span><br><span class="line">e = np.empty((2,3))  # uninitialized, output may vary</span><br><span class="line"></span><br><span class="line">f = np.arrange(10, 30, 5)  # create a sequence of number. Start from 10, end with 30 (not included), each iteration adds 5.</span><br></pre></td></tr></table></figure>
+<p>Others:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zeros_like, ones, ones_like, numpy.random.rand, numpy.random.randn</span><br></pre></td></tr></table></figure></p>
+<h2 id="Basic-operations"><a href="#Basic-operations" class="headerlink" title="Basic operations:"></a>Basic operations:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = np.array([20, 30, 40, 60])</span><br><span class="line">b = np.arange(4)  # array([0,1,2,3])</span><br><span class="line">c = a-b  # array([20, 29, 38, 57])</span><br><span class="line">print(b**2)  # array([0, 1,4,9])</span><br><span class="line">print(10*np.sin(a)) </span><br><span class="line">print(a&lt;35)  array([True, True, False, False])</span><br></pre></td></tr></table></figure>
+<h2 id="Product-operator-usage-in-NumPy-arrays"><a href="#Product-operator-usage-in-NumPy-arrays" class="headerlink" title="Product operator * usage in NumPy arrays."></a>Product operator * usage in NumPy arrays.</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = np.array([[1,1],[0,1]])</span><br><span class="line">b = np.array([[2,0],[3,4]])</span><br><span class="line">print(a*b)  # array([[2,0], [0,4]])</span><br><span class="line">print(a.dot(b))  # array([[5,4],[3,4]])</span><br><span class="line">print(np.dot(a, b))  # array([[5,4],[3,4]])</span><br><span class="line">print(np.arange(12).reshape(3,4).sum(axis=0))  # sum of each column</span><br><span class="line">print(np.arange(12).reshape(3,4).min(axis=1))  # sum of each row</span><br></pre></td></tr></table></figure>
+<h2 id="Universal-Functions"><a href="#Universal-Functions" class="headerlink" title="Universal Functions:"></a>Universal Functions:</h2><p>Popular use:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">all, any, argmax, argmin, argsort, average, bincount, diff, dot, floor, inner, max, mean, mdeian, min, minimum, nonzero, outer, round, re, sort, std, sum, transpose, var, vectorize, where</span><br></pre></td></tr></table></figure></p>
+<p>To summary, these are basic NumPy usage. I’ll continue to write more blogs to introduce NumPy.</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p><a href="https://docs.scipy.org/doc/numpy/user/quickstart.html#further-reading" target="_blank" rel="noopener">https://docs.scipy.org/doc/numpy/user/quickstart.html#further-reading</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/Java-Lambda-Function/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -320,7 +471,7 @@
                 
               
 
-              <time title="Created: 2018-04-29 11:30:40 / Modified: 11:36:08" itemprop="dateCreated datePublished" datetime="2018-04-29T11:30:40-04:00">2018-04-29</time>
+              <time title="Created: 2018-04-29 11:30:40 / Modified: 11:48:11" itemprop="dateCreated datePublished" datetime="2018-04-29T11:30:40-04:00">2018-04-29</time>
             
 
             
@@ -361,40 +512,23 @@
         
           
             <p>Lambda function first appears in Java8. It can be easily used to traverse with forEach function. Moreover, the code will be concise if we use it instead of Runnable function.</p>
-<p>##1. Iteration:</p>
-<p>Here are three ways to print each element. First method is for loop, second and third is Lambda function. Last two functions look more concise.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line"></span><br><span class="line">for (int element : numbers) &#123;    </span><br><span class="line"></span><br><span class="line">    System.out.prinln(element);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line"></span><br><span class="line">numbers.forEach(x -&gt; System.out.println(x));</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line"></span><br><span class="line">numbers.forEach(System.out::println);</span><br></pre></td></tr></table></figure>
-<p>##2. Event listener:</p>
-<p> Using  Lambda function has less code line but it has more curly braces.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">button.addActionListener(new ActionListener()&#123;  </span><br><span class="line"></span><br><span class="line">     @Override    </span><br><span class="line"></span><br><span class="line">     public void actionPerformed(ActionEvent e) &#123;</span><br><span class="line"></span><br><span class="line">             //handle the event    </span><br><span class="line"></span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">button.addActionListener(e -&gt; &#123;    </span><br><span class="line"></span><br><span class="line">      //handle the event</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>##3. Predicate Interface:</p>
-<p>Predicate interface in java.util.function can be used to filter. If you need to process multiple objects and execute the same process logic, these logics can be encapsulated in function filter. Here also has three methods to make a comparison.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line"></span><br><span class="line">List&lt;String&gt; words = Arrays.asList(&quot;a&quot;, &quot;ab&quot;, &quot;abc&quot;);</span><br><span class="line"></span><br><span class="line">numbers.forEach( x -&gt; &#123;</span><br><span class="line"></span><br><span class="line">    if (x % 2 == 0) &#123;  </span><br><span class="line"></span><br><span class="line">        //process logic</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">words.forEach( x -&gt; &#123;</span><br><span class="line"></span><br><span class="line">    if (x.length() &gt; 1) &#123;</span><br><span class="line"></span><br><span class="line">         //process logic</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">   List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line">   List&lt;String&gt; words = Arrays.asList(&quot;a&quot;, &quot;ab&quot;, &quot;abc&quot;);</span><br><span class="line">   filter(numbers, x -&gt; (int)x % 2 == 0);</span><br><span class="line">   filter(words, x -&gt; ((String)x).length() &gt; 1);</span><br><span class="line">&#125;</span><br><span class="line">public static void filter(List list, Predicate condition) &#123;</span><br><span class="line">   list.forEach(x -&gt; &#123;</span><br><span class="line">       if (condition.test(x)) &#123;</span><br><span class="line">           //process logic</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>public static void filter(List list, Predicate condition) {<br>   list.stream().filter(x -&gt; condition.test(x)).forEach(x -&gt; {<br>       //process logic<br>   })<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 4. Map:</span><br><span class="line"></span><br><span class="line">Use function map convert data to another list, then reverse it to list type using Collect. </span><br><span class="line"></span><br><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line">List&lt;Integer&gt; mapped = numbers.stream().map(x -&gt; x * 2).collect(Collectors.toList());</span><br><span class="line">mapped.forEach(System.out::println);</span><br><span class="line"> </span><br><span class="line">##5. Reduce:</span><br><span class="line"></span><br><span class="line">Reduce action means obtaining an output based on two variables. For example, two variables execute add operation then return a sum.</span><br></pre></td></tr></table></figure></p>
-<p>List<integer> numbers = Arrays.asList(1, 2, 3, 4, 5);</integer></p>
-<p>int sum = numbers.stream().reduce((x, y) -&gt; x + y).get();</p>
-<p>System.out.println(sum);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">##6. Replace Runnable:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Makes code more compact.</span><br></pre></td></tr></table></figure></p>
-<p>Runnable r = new Runnable() {    </p>
-<pre><code>@Override    
-
-public void run() {        
-
-    //to do something    
-
-}
-</code></pre><p>};</p>
-<p>Thread t = new Thread(r);</p>
-<p>t.start();<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>Runnable r = () -&gt; {    </p>
-<pre><code>//to do something
-</code></pre><p>};</p>
-<p>Thread t = new Thread(r);</p>
-<p>t.start();<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>Thread t = new Thread(() -&gt; {    </p>
-<pre><code>//to do something
-</code></pre><p>});</p>
-<p>t.start;<br><code>`</code></p>
+<h2 id="1-Iteration"><a href="#1-Iteration" class="headerlink" title="1. Iteration:"></a>1. Iteration:</h2><p>Here are three ways to print each element. First method is for loop, second and third is Lambda function. Last two functions look more concise.</p>
+<p>Solution 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line"></span><br><span class="line">for (int element : numbers) &#123;    </span><br><span class="line"></span><br><span class="line">    System.out.prinln(element);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Solution 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line"></span><br><span class="line">numbers.forEach(x -&gt; System.out.println(x));</span><br></pre></td></tr></table></figure></p>
+<p>Solution 3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line"></span><br><span class="line">numbers.forEach(System.out::println);</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-Event-listener"><a href="#2-Event-listener" class="headerlink" title="2. Event listener:"></a>2. Event listener:</h2><p> Using  Lambda function has less code line but it has more curly braces.</p>
+<p>Solution 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">button.addActionListener(new ActionListener()&#123;  </span><br><span class="line"></span><br><span class="line">     @Override    </span><br><span class="line"></span><br><span class="line">     public void actionPerformed(ActionEvent e) &#123;</span><br><span class="line"></span><br><span class="line">             //handle the event    </span><br><span class="line"></span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>Solution 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">button.addActionListener(e -&gt; &#123;    </span><br><span class="line"></span><br><span class="line">      //handle the event</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-Predicate-Interface"><a href="#3-Predicate-Interface" class="headerlink" title="3. Predicate Interface:"></a>3. Predicate Interface:</h2><p>Predicate interface in java.util.function can be used to filter. If you need to process multiple objects and execute the same process logic, these logics can be encapsulated in function filter. Here also has three methods to make a comparison. </p>
+<p>Solution 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line"></span><br><span class="line">List&lt;String&gt; words = Arrays.asList(&quot;a&quot;, &quot;ab&quot;, &quot;abc&quot;);</span><br><span class="line"></span><br><span class="line">numbers.forEach( x -&gt; &#123;</span><br><span class="line"></span><br><span class="line">    if (x % 2 == 0) &#123;  </span><br><span class="line"></span><br><span class="line">        //process logic</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">words.forEach( x -&gt; &#123;</span><br><span class="line"></span><br><span class="line">    if (x.length() &gt; 1) &#123;</span><br><span class="line"></span><br><span class="line">         //process logic</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>Solution 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">   List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line">   List&lt;String&gt; words = Arrays.asList(&quot;a&quot;, &quot;ab&quot;, &quot;abc&quot;);</span><br><span class="line">   filter(numbers, x -&gt; (int)x % 2 == 0);</span><br><span class="line">   filter(words, x -&gt; ((String)x).length() &gt; 1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public static void filter(List list, Predicate condition) &#123;</span><br><span class="line">   list.forEach(x -&gt; &#123;</span><br><span class="line">       if (condition.test(x)) &#123;</span><br><span class="line">           //process logic</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Solution 3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public static void filter(List list, Predicate condition) &#123;</span><br><span class="line">   list.stream().filter(x -&gt; condition.test(x)).forEach(x -&gt; &#123;</span><br><span class="line">       //process logic</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="4-Map"><a href="#4-Map" class="headerlink" title="4. Map:"></a>4. Map:</h2><p>Use function map convert data to another list, then reverse it to list type using Collect.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line">List&lt;Integer&gt; mapped = numbers.stream().map(x -&gt; x * 2).collect(Collectors.toList());</span><br><span class="line">mapped.forEach(System.out::println);</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-Reduce"><a href="#5-Reduce" class="headerlink" title="5. Reduce:"></a>5. Reduce:</h2><p>Reduce action means obtaining an output based on two variables. For example, two variables execute add operation then return a sum.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line"></span><br><span class="line">int sum = numbers.stream().reduce((x, y) -&gt; x + y).get();</span><br><span class="line"></span><br><span class="line">System.out.println(sum);</span><br></pre></td></tr></table></figure></p>
+<h2 id="6-Replace-Runnable"><a href="#6-Replace-Runnable" class="headerlink" title="6. Replace Runnable:"></a>6. Replace Runnable:</h2><p>Makes code more compact. </p>
+<p>Solution 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Runnable r = new Runnable() &#123;    </span><br><span class="line"></span><br><span class="line">    @Override    </span><br><span class="line"></span><br><span class="line">    public void run() &#123;        </span><br><span class="line"></span><br><span class="line">        //to do something    </span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Thread t = new Thread(r);</span><br><span class="line"></span><br><span class="line">t.start();</span><br></pre></td></tr></table></figure></p>
+<p>Solution 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Runnable r = () -&gt; &#123;    </span><br><span class="line"></span><br><span class="line">    //to do something</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Thread t = new Thread(r);</span><br><span class="line"></span><br><span class="line">t.start();</span><br></pre></td></tr></table></figure></p>
+<p>Solution 3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Thread t = new Thread(() -&gt; &#123;    </span><br><span class="line"></span><br><span class="line">    //to do something</span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">t.start;</span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -620,7 +754,7 @@ public void run() {
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>

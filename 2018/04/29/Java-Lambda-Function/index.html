@@ -102,17 +102,17 @@
 
 
 
-  <meta name="description" content="Lambda function first appears in Java8. It can be easily used to traverse with forEach function. Moreover, the code will be concise if we use it instead of Runnable function. ##1. Iteration: Here are">
+  <meta name="description" content="Lambda function first appears in Java8. It can be easily used to traverse with forEach function. Moreover, the code will be concise if we use it instead of Runnable function. 1. Iteration:Here are thr">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java-Lambda-Function">
 <meta property="og:url" content="https://XinxinTang/xinxintang.github.io/2018/04/29/Java-Lambda-Function/index.html">
 <meta property="og:site_name" content="Xinxin Tang">
-<meta property="og:description" content="Lambda function first appears in Java8. It can be easily used to traverse with forEach function. Moreover, the code will be concise if we use it instead of Runnable function. ##1. Iteration: Here are">
+<meta property="og:description" content="Lambda function first appears in Java8. It can be easily used to traverse with forEach function. Moreover, the code will be concise if we use it instead of Runnable function. 1. Iteration:Here are thr">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-29T15:36:08.451Z">
+<meta property="og:updated_time" content="2018-04-29T15:48:11.326Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java-Lambda-Function">
-<meta name="twitter:description" content="Lambda function first appears in Java8. It can be easily used to traverse with forEach function. Moreover, the code will be concise if we use it instead of Runnable function. ##1. Iteration: Here are">
+<meta name="twitter:description" content="Lambda function first appears in Java8. It can be easily used to traverse with forEach function. Moreover, the code will be concise if we use it instead of Runnable function. 1. Iteration:Here are thr">
 
 
 
@@ -319,7 +319,7 @@
                 
               
 
-              <time title="Created: 2018-04-29 11:30:40 / Modified: 11:36:08" itemprop="dateCreated datePublished" datetime="2018-04-29T11:30:40-04:00">2018-04-29</time>
+              <time title="Created: 2018-04-29 11:30:40 / Modified: 11:48:11" itemprop="dateCreated datePublished" datetime="2018-04-29T11:30:40-04:00">2018-04-29</time>
             
 
             
@@ -358,40 +358,23 @@
 
       
         <p>Lambda function first appears in Java8. It can be easily used to traverse with forEach function. Moreover, the code will be concise if we use it instead of Runnable function.</p>
-<p>##1. Iteration:</p>
-<p>Here are three ways to print each element. First method is for loop, second and third is Lambda function. Last two functions look more concise.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line"></span><br><span class="line">for (int element : numbers) &#123;    </span><br><span class="line"></span><br><span class="line">    System.out.prinln(element);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line"></span><br><span class="line">numbers.forEach(x -&gt; System.out.println(x));</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line"></span><br><span class="line">numbers.forEach(System.out::println);</span><br></pre></td></tr></table></figure>
-<p>##2. Event listener:</p>
-<p> Using  Lambda function has less code line but it has more curly braces.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">button.addActionListener(new ActionListener()&#123;  </span><br><span class="line"></span><br><span class="line">     @Override    </span><br><span class="line"></span><br><span class="line">     public void actionPerformed(ActionEvent e) &#123;</span><br><span class="line"></span><br><span class="line">             //handle the event    </span><br><span class="line"></span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">button.addActionListener(e -&gt; &#123;    </span><br><span class="line"></span><br><span class="line">      //handle the event</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>##3. Predicate Interface:</p>
-<p>Predicate interface in java.util.function can be used to filter. If you need to process multiple objects and execute the same process logic, these logics can be encapsulated in function filter. Here also has three methods to make a comparison.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line"></span><br><span class="line">List&lt;String&gt; words = Arrays.asList(&quot;a&quot;, &quot;ab&quot;, &quot;abc&quot;);</span><br><span class="line"></span><br><span class="line">numbers.forEach( x -&gt; &#123;</span><br><span class="line"></span><br><span class="line">    if (x % 2 == 0) &#123;  </span><br><span class="line"></span><br><span class="line">        //process logic</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">words.forEach( x -&gt; &#123;</span><br><span class="line"></span><br><span class="line">    if (x.length() &gt; 1) &#123;</span><br><span class="line"></span><br><span class="line">         //process logic</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">   List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line">   List&lt;String&gt; words = Arrays.asList(&quot;a&quot;, &quot;ab&quot;, &quot;abc&quot;);</span><br><span class="line">   filter(numbers, x -&gt; (int)x % 2 == 0);</span><br><span class="line">   filter(words, x -&gt; ((String)x).length() &gt; 1);</span><br><span class="line">&#125;</span><br><span class="line">public static void filter(List list, Predicate condition) &#123;</span><br><span class="line">   list.forEach(x -&gt; &#123;</span><br><span class="line">       if (condition.test(x)) &#123;</span><br><span class="line">           //process logic</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>public static void filter(List list, Predicate condition) {<br>   list.stream().filter(x -&gt; condition.test(x)).forEach(x -&gt; {<br>       //process logic<br>   })<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 4. Map:</span><br><span class="line"></span><br><span class="line">Use function map convert data to another list, then reverse it to list type using Collect. </span><br><span class="line"></span><br><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line">List&lt;Integer&gt; mapped = numbers.stream().map(x -&gt; x * 2).collect(Collectors.toList());</span><br><span class="line">mapped.forEach(System.out::println);</span><br><span class="line"> </span><br><span class="line">##5. Reduce:</span><br><span class="line"></span><br><span class="line">Reduce action means obtaining an output based on two variables. For example, two variables execute add operation then return a sum.</span><br></pre></td></tr></table></figure></p>
-<p>List<integer> numbers = Arrays.asList(1, 2, 3, 4, 5);</integer></p>
-<p>int sum = numbers.stream().reduce((x, y) -&gt; x + y).get();</p>
-<p>System.out.println(sum);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">##6. Replace Runnable:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Makes code more compact.</span><br></pre></td></tr></table></figure></p>
-<p>Runnable r = new Runnable() {    </p>
-<pre><code>@Override    
-
-public void run() {        
-
-    //to do something    
-
-}
-</code></pre><p>};</p>
-<p>Thread t = new Thread(r);</p>
-<p>t.start();<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>Runnable r = () -&gt; {    </p>
-<pre><code>//to do something
-</code></pre><p>};</p>
-<p>Thread t = new Thread(r);</p>
-<p>t.start();<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>Thread t = new Thread(() -&gt; {    </p>
-<pre><code>//to do something
-</code></pre><p>});</p>
-<p>t.start;<br><code>`</code></p>
+<h2 id="1-Iteration"><a href="#1-Iteration" class="headerlink" title="1. Iteration:"></a>1. Iteration:</h2><p>Here are three ways to print each element. First method is for loop, second and third is Lambda function. Last two functions look more concise.</p>
+<p>Solution 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line"></span><br><span class="line">for (int element : numbers) &#123;    </span><br><span class="line"></span><br><span class="line">    System.out.prinln(element);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Solution 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line"></span><br><span class="line">numbers.forEach(x -&gt; System.out.println(x));</span><br></pre></td></tr></table></figure></p>
+<p>Solution 3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line"></span><br><span class="line">numbers.forEach(System.out::println);</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-Event-listener"><a href="#2-Event-listener" class="headerlink" title="2. Event listener:"></a>2. Event listener:</h2><p> Using  Lambda function has less code line but it has more curly braces.</p>
+<p>Solution 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">button.addActionListener(new ActionListener()&#123;  </span><br><span class="line"></span><br><span class="line">     @Override    </span><br><span class="line"></span><br><span class="line">     public void actionPerformed(ActionEvent e) &#123;</span><br><span class="line"></span><br><span class="line">             //handle the event    </span><br><span class="line"></span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>Solution 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">button.addActionListener(e -&gt; &#123;    </span><br><span class="line"></span><br><span class="line">      //handle the event</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-Predicate-Interface"><a href="#3-Predicate-Interface" class="headerlink" title="3. Predicate Interface:"></a>3. Predicate Interface:</h2><p>Predicate interface in java.util.function can be used to filter. If you need to process multiple objects and execute the same process logic, these logics can be encapsulated in function filter. Here also has three methods to make a comparison. </p>
+<p>Solution 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line"></span><br><span class="line">List&lt;String&gt; words = Arrays.asList(&quot;a&quot;, &quot;ab&quot;, &quot;abc&quot;);</span><br><span class="line"></span><br><span class="line">numbers.forEach( x -&gt; &#123;</span><br><span class="line"></span><br><span class="line">    if (x % 2 == 0) &#123;  </span><br><span class="line"></span><br><span class="line">        //process logic</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">words.forEach( x -&gt; &#123;</span><br><span class="line"></span><br><span class="line">    if (x.length() &gt; 1) &#123;</span><br><span class="line"></span><br><span class="line">         //process logic</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>Solution 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">   List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line">   List&lt;String&gt; words = Arrays.asList(&quot;a&quot;, &quot;ab&quot;, &quot;abc&quot;);</span><br><span class="line">   filter(numbers, x -&gt; (int)x % 2 == 0);</span><br><span class="line">   filter(words, x -&gt; ((String)x).length() &gt; 1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public static void filter(List list, Predicate condition) &#123;</span><br><span class="line">   list.forEach(x -&gt; &#123;</span><br><span class="line">       if (condition.test(x)) &#123;</span><br><span class="line">           //process logic</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Solution 3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public static void filter(List list, Predicate condition) &#123;</span><br><span class="line">   list.stream().filter(x -&gt; condition.test(x)).forEach(x -&gt; &#123;</span><br><span class="line">       //process logic</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="4-Map"><a href="#4-Map" class="headerlink" title="4. Map:"></a>4. Map:</h2><p>Use function map convert data to another list, then reverse it to list type using Collect.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line">List&lt;Integer&gt; mapped = numbers.stream().map(x -&gt; x * 2).collect(Collectors.toList());</span><br><span class="line">mapped.forEach(System.out::println);</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-Reduce"><a href="#5-Reduce" class="headerlink" title="5. Reduce:"></a>5. Reduce:</h2><p>Reduce action means obtaining an output based on two variables. For example, two variables execute add operation then return a sum.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line"></span><br><span class="line">int sum = numbers.stream().reduce((x, y) -&gt; x + y).get();</span><br><span class="line"></span><br><span class="line">System.out.println(sum);</span><br></pre></td></tr></table></figure></p>
+<h2 id="6-Replace-Runnable"><a href="#6-Replace-Runnable" class="headerlink" title="6. Replace Runnable:"></a>6. Replace Runnable:</h2><p>Makes code more compact. </p>
+<p>Solution 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Runnable r = new Runnable() &#123;    </span><br><span class="line"></span><br><span class="line">    @Override    </span><br><span class="line"></span><br><span class="line">    public void run() &#123;        </span><br><span class="line"></span><br><span class="line">        //to do something    </span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Thread t = new Thread(r);</span><br><span class="line"></span><br><span class="line">t.start();</span><br></pre></td></tr></table></figure></p>
+<p>Solution 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Runnable r = () -&gt; &#123;    </span><br><span class="line"></span><br><span class="line">    //to do something</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Thread t = new Thread(r);</span><br><span class="line"></span><br><span class="line">t.start();</span><br></pre></td></tr></table></figure></p>
+<p>Solution 3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Thread t = new Thread(() -&gt; &#123;    </span><br><span class="line"></span><br><span class="line">    //to do something</span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">t.start;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -428,6 +411,10 @@ public void run() {
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/29/NumPy-Tutorial/" rel="prev" title="NumPy-Tutorial">
+                NumPy-Tutorial <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -476,8 +463,17 @@ public void run() {
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -492,7 +488,7 @@ public void run() {
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -522,6 +518,22 @@ public void run() {
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Iteration"><span class="nav-number">1.</span> <span class="nav-text">1. Iteration:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Event-listener"><span class="nav-number">2.</span> <span class="nav-text">2. Event listener:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Predicate-Interface"><span class="nav-number">3.</span> <span class="nav-text">3. Predicate Interface:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Map"><span class="nav-number">4.</span> <span class="nav-text">4. Map:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Reduce"><span class="nav-number">5.</span> <span class="nav-text">5. Reduce:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Replace-Runnable"><span class="nav-number">6.</span> <span class="nav-text">6. Replace Runnable:</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
