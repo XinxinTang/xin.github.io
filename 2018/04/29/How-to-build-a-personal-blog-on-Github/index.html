@@ -102,29 +102,31 @@
 
 
 
-  <meta name="description" content="KNN is rarely to use in practice, but it allows us to understand classify problem.  Nearest Neighbor Classifier:Nearest Neighbor Algorithm has two ways to classify, L1 Distance and L2 Distance.  L1 Di">
-<meta name="keywords" content="Machine Learning,KNN">
+  <meta name="description" content="Steps:Install Node.jsInstall GitChoose the right version of operating system.Verify if it installed successfully.12$ node -v$ git version If there is no right to install it, add sudo at the top. Insta">
+<meta name="keywords" content="Blog">
 <meta property="og:type" content="article">
-<meta property="og:title" content="K-Nearest-Neighbor">
-<meta property="og:url" content="https://XinxinTang/xinxintang.github.io/2018/04/29/K-Nearest-Neighbor/index.html">
+<meta property="og:title" content="How to build a personal blog on Github with Hexo">
+<meta property="og:url" content="https://XinxinTang/xinxintang.github.io/2018/04/29/How-to-build-a-personal-blog-on-Github/index.html">
 <meta property="og:site_name" content="Xinxin Tang">
-<meta property="og:description" content="KNN is rarely to use in practice, but it allows us to understand classify problem.  Nearest Neighbor Classifier:Nearest Neighbor Algorithm has two ways to classify, L1 Distance and L2 Distance.  L1 Di">
+<meta property="og:description" content="Steps:Install Node.jsInstall GitChoose the right version of operating system.Verify if it installed successfully.12$ node -v$ git version If there is no right to install it, add sudo at the top. Insta">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://cs231n.github.io/assets/nneg.jpeg">
-<meta property="og:image" content="http://cs231n.github.io/assets/knn.jpeg">
-<meta property="og:image" content="http://cs231n.github.io/assets/samenorm.png">
-<meta property="og:updated_time" content="2018-04-29T21:41:01.913Z">
+<meta property="og:image" content="http://onq81n53u.bkt.clouddn.com/YY%E5%9B%BE%E7%89%8720180110175140.jpg">
+<meta property="og:image" content="http://7xrwkh.com1.z0.glb.clouddn.com/SSH-github-setting.png">
+<meta property="og:image" content="http://7xrwkh.com1.z0.glb.clouddn.com/SSH-github-setting-SSH.png">
+<meta property="og:image" content="http://onq81n53u.bkt.clouddn.com/YY%E5%9B%BE%E7%89%8720180110174955.jpg">
+<meta property="og:image" content="http://onq81n53u.bkt.clouddn.com/YY%E5%9B%BE%E7%89%872018011017514333.jpg">
+<meta property="og:updated_time" content="2018-04-29T22:23:15.821Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="K-Nearest-Neighbor">
-<meta name="twitter:description" content="KNN is rarely to use in practice, but it allows us to understand classify problem.  Nearest Neighbor Classifier:Nearest Neighbor Algorithm has two ways to classify, L1 Distance and L2 Distance.  L1 Di">
-<meta name="twitter:image" content="http://cs231n.github.io/assets/nneg.jpeg">
+<meta name="twitter:title" content="How to build a personal blog on Github with Hexo">
+<meta name="twitter:description" content="Steps:Install Node.jsInstall GitChoose the right version of operating system.Verify if it installed successfully.12$ node -v$ git version If there is no right to install it, add sudo at the top. Insta">
+<meta name="twitter:image" content="http://onq81n53u.bkt.clouddn.com/YY%E5%9B%BE%E7%89%8720180110175140.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="https://XinxinTang/xinxintang.github.io/2018/04/29/K-Nearest-Neighbor/"/>
+  <link rel="canonical" href="https://XinxinTang/xinxintang.github.io/2018/04/29/How-to-build-a-personal-blog-on-Github/"/>
 
 
 
@@ -134,7 +136,7 @@
   };
 </script>
 
-  <title>K-Nearest-Neighbor | Xinxin Tang</title>
+  <title>How to build a personal blog on Github with Hexo | Xinxin Tang</title>
   
 
 
@@ -282,7 +284,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/K-Nearest-Neighbor/">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/How-to-build-a-personal-blog-on-Github/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xinxin Tang">
@@ -299,7 +301,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">K-Nearest-Neighbor
+          <h1 class="post-title" itemprop="name headline">How to build a personal blog on Github with Hexo
               
             
           </h1>
@@ -324,7 +326,7 @@
                 
               
 
-              <time title="Created: 2018-04-29 14:04:28 / Modified: 17:41:01" itemprop="dateCreated datePublished" datetime="2018-04-29T14:04:28-04:00">2018-04-29</time>
+              <time title="Created: 2018-04-29 17:43:27 / Modified: 18:23:15" itemprop="dateCreated datePublished" datetime="2018-04-29T17:43:27-04:00">2018-04-29</time>
             
 
             
@@ -362,18 +364,27 @@
       
 
       
-        <p>KNN is rarely to use in practice, but it allows us to understand classify problem. </p>
-<h2 id="Nearest-Neighbor-Classifier"><a href="#Nearest-Neighbor-Classifier" class="headerlink" title="Nearest Neighbor Classifier:"></a>Nearest Neighbor Classifier:</h2><p>Nearest Neighbor Algorithm has two ways to classify, L1 Distance and L2 Distance. </p>
-<p>L1 Distance is <a href="https://en.wikipedia.org/wiki/Taxicab_geometry" target="_blank" rel="noopener">Manhattan Distance</a>.</p>
-<p>This formula represents distance between test image and training images. </p>
-<p>I1 is test image, I2 is training image. test set has p images. Thus, distance of test image to all image is the sum of right side. The computing process like below:<br><img src="http://cs231n.github.io/assets/nneg.jpeg" alt="L1-compute"></p>
-<p>L2 Distance uses square root to obtain distance between test image and training images. L2 Distance is <a href="https://en.wikipedia.org/wiki/Euclidean_distance" target="_blank" rel="noopener">Euclidean Distance</a></p>
-<p>Here is the code to build a Nearest Neighbor.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Nearest_Neighbor(object):</span><br><span class="line">    def __init__(self):</span><br><span class="line">        pass</span><br><span class="line"></span><br><span class="line">    def train(self, X, y):</span><br><span class="line">      self.Xtr = X</span><br><span class="line">      self.ytr = y</span><br><span class="line"></span><br><span class="line">    def predict(self, X):</span><br><span class="line">        &quot;&quot;&quot; X is N x D where each row is an example we wish to predict label for &quot;&quot;&quot;</span><br><span class="line">        num_test = X.shape[0]</span><br><span class="line">        # lets make sure that the output type matches the input type</span><br><span class="line">        Ypred = np.zeros(num_test, dtype=self.ytr.dtype)</span><br><span class="line"></span><br><span class="line">        # loop over all test rows</span><br><span class="line">        for i in range(num_test):</span><br><span class="line">            # find the nearest training image to the i&apos;th test image</span><br><span class="line">            # L1 distance</span><br><span class="line">            l1_distances = np.sum(np.abs(self.Xtr - X[i, :]), axis=1)  # acc: 38.6%</span><br><span class="line">            # L2 distance</span><br><span class="line">            l2_distances = np.sqrt(np.sum(np.square(self.Xtr - X[i, :]), axis=1))  # acc: 35.4%</span><br><span class="line">            min_index = np.argmin(l1_distances)  # get the index with smallest distance</span><br><span class="line">            print(&quot;min_index:&quot;, min_index)</span><br><span class="line">            Ypred[i] = self.ytr[min_index]  # predict the label of the nearest example</span><br><span class="line">            print(Ypred[i])</span><br><span class="line"></span><br><span class="line">        return Ypred</span><br></pre></td></tr></table></figure></p>
-<p>K-Nearest Neighbor Classifier:<br>KNN is easy to understand. When K=1 the classifier shows above. When K = 5, classifier gets the top 5 closest images. Intuitively, higher value of K has a smooth effect that makes classifier resistant the outliers.<br><img src="http://cs231n.github.io/assets/knn.jpeg" alt="KNN"></p>
-<h2 id="Pros-and-Cons-of-Nearest-Neighbor-Classifier"><a href="#Pros-and-Cons-of-Nearest-Neighbor-Classifier" class="headerlink" title="Pros and Cons of Nearest Neighbor Classifier:"></a>Pros and Cons of Nearest Neighbor Classifier:</h2><h3 id="KNN"><a href="#KNN" class="headerlink" title="KNN:"></a>KNN:</h3><p>Pros:<br>Simple to implement and understand.</p>
-<p>Cons:<br>Pay much computational cost at test time, but takes no time to train.<br>Images that only has difference in light intensity are very different from pixel-based  L2 computation.<br><img src="http://cs231n.github.io/assets/samenorm.png" alt="Light"> </p>
-<p>Deep neural networks are very expensive to train, but it is very cheap to classify a new test example one the training is finished. This mode of operation is much more desirable in practice. </p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p><a href="http://cs231n.github.io/classification/" target="_blank" rel="noopener">http://cs231n.github.io/classification/</a></p>
+        <h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps:"></a>Steps:</h2><h3 id="Install-Node-js"><a href="#Install-Node-js" class="headerlink" title="Install Node.js"></a>Install <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node.js</a></h3><h3 id="Install-Git"><a href="#Install-Git" class="headerlink" title="Install Git"></a>Install <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a></h3><p>Choose the right version of operating system.<br>Verify if it installed successfully.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">$ git version</span><br></pre></td></tr></table></figure></p>
+<p>If there is no right to install it, add <code>sudo</code> at the top.</p>
+<h3 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>First line for Hexo installation, second line for Git page deployer.</p>
+<p>Then,type <code>hexo init</code> command to initialize Hexo.</p>
+<p>Execute commands below and then access to localhost:4000 to view the effect.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://onq81n53u.bkt.clouddn.com/YY%E5%9B%BE%E7%89%8720180110175140.jpg" alt="Hexo"></p>
+<h3 id="Deploy-on-Github-Pages"><a href="#Deploy-on-Github-Pages" class="headerlink" title="Deploy on Github Pages"></a>Deploy on Github Pages</h3><p>Register Github account.<br>Build a new repository.<br>Create a SSH keypair. Type <code>$ cd~/. ssh</code>, if shows nothing, we need to create a new keypair.<br>Type<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ssh-keygen -t rsa -C &quot;type personal email here&quot;</span><br></pre></td></tr></table></figure></p>
+<p>Then, just press ‘enter’ button unless you need a password.<br>execute <code>clip &lt; ~/.ssh/id_rsa.pub</code> and paste it into Github account.<br><img src="http://7xrwkh.com1.z0.glb.clouddn.com/SSH-github-setting.png" alt="setting"><br><img src="http://7xrwkh.com1.z0.glb.clouddn.com/SSH-github-setting-SSH.png" alt="ssh"><br>Then, add new SSH key.</p>
+<p>Verify: <code>$ ssh -T git@guthub.com</code><br>if it shows below, you set up well.<br><img src="http://onq81n53u.bkt.clouddn.com/YY%E5%9B%BE%E7%89%8720180110174955.jpg" alt="set"></p>
+<p>Then set a personal info. It doesn’t require same with Github nickname.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$git config --global user.name &quot;type your name here&quot;</span><br><span class="line">$git config --global user.eamil &quot;type your email here&quot;</span><br></pre></td></tr></table></figure></p>
+<p>Copy repository SSH to root Hexo ‘_config.yml’ file<br><img src="http://onq81n53u.bkt.clouddn.com/YY%E5%9B%BE%E7%89%872018011017514333.jpg" alt="ssh"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repository: &apos;paste Github repository here&apos;</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure></p>
+<p>Default branch is master.</p>
+<p>Execute<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure></p>
+<p>After a while, you can browse the Github Page by typing “https://<repository name="">“. For new, your personal blog has been built.</repository></p>
+<p>Then next level is to change a beautiful theme and add more extension. These will be introduced later. </p>
+<h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ:"></a>FAQ:</h2><p>1.For Github repository, you need to set Github Pages as master branch not just set in Hexo. Click ‘setting’ in the repository, find ‘Github Pages’, Choose ‘master branch’ in ‘Source’. </p>
+<ol start="2">
+<li>If you cannot push file to Github, you should check if the rsa keypair has been copied into Github pages. </li>
+</ol>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p><a href="https://my.oschina.net/ryaneLee/blog/638440" target="_blank" rel="noopener">https://my.oschina.net/ryaneLee/blog/638440</a><br><a href="https://xuanwo.org/2014/08/14/hexo-usual-problem/#Deploy%E4%B9%8B%E5%90%8E%EF%BC%8C%E9%A1%B5%E9%9D%A2%E9%95%BF%E6%97%B6%E9%97%B4404" target="_blank" rel="noopener">https://xuanwo.org/2014/08/14/hexo-usual-problem/#Deploy%E4%B9%8B%E5%90%8E%EF%BC%8C%E9%A1%B5%E9%9D%A2%E9%95%BF%E6%97%B6%E9%97%B4404</a></p>
 
       
     </div>
@@ -394,9 +405,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
-          
-            <a href="/tags/KNN/" rel="tag"># KNN</a>
+            <a href="/tags/Blog/" rel="tag"># Blog</a>
           
         </div>
       
@@ -409,8 +418,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/29/How-to-Use-Dataset/" rel="next" title="How-to-Use-Dataset">
-                <i class="fa fa-chevron-left"></i> How-to-Use-Dataset
+              <a href="/2018/04/29/K-Nearest-Neighbor/" rel="next" title="K-Nearest-Neighbor">
+                <i class="fa fa-chevron-left"></i> K-Nearest-Neighbor
               </a>
             
           </div>
@@ -418,10 +427,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/29/How-to-build-a-personal-blog-on-Github/" rel="prev" title="How to build a personal blog on Github with Hexo">
-                How to build a personal blog on Github with Hexo <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -560,7 +565,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Nearest-Neighbor-Classifier"><span class="nav-number">1.</span> <span class="nav-text">Nearest Neighbor Classifier:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pros-and-Cons-of-Nearest-Neighbor-Classifier"><span class="nav-number">2.</span> <span class="nav-text">Pros and Cons of Nearest Neighbor Classifier:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#KNN"><span class="nav-number">2.1.</span> <span class="nav-text">KNN:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Steps"><span class="nav-number">1.</span> <span class="nav-text">Steps:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-Node-js"><span class="nav-number">1.1.</span> <span class="nav-text">Install Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-Git"><span class="nav-number">1.2.</span> <span class="nav-text">Install Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-Hexo"><span class="nav-number">1.3.</span> <span class="nav-text">Install Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-on-Github-Pages"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy on Github Pages</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FAQ"><span class="nav-number">2.</span> <span class="nav-text">FAQ:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference:</span></a></li></ol></div>
             
 
           </div>
