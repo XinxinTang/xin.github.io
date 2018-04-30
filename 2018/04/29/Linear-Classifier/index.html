@@ -102,18 +102,42 @@
 
 
 
-  <meta name="description" content="Image classification has two major components:   Score function: maps the raw data to class scores.  Loss function: quantifies the agreement between predicted scores and the ground truth labels.  Opti">
-<meta name="keywords" content="Linear Classifier">
+  <meta name="description" content="Keywords: Socre function, Loss function, Bias trick, SVM classifier, Softmax classifier Image classification of parametric approach has two major components:   Score function: maps the raw data to cla">
+<meta name="keywords" content="SVM classifier,Softmax classifier,Linear Classifier">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linear-Classifier">
 <meta property="og:url" content="https://XinxinTang/xinxintang.github.io/2018/04/29/Linear-Classifier/index.html">
 <meta property="og:site_name" content="Xinxin Tang">
-<meta property="og:description" content="Image classification has two major components:   Score function: maps the raw data to class scores.  Loss function: quantifies the agreement between predicted scores and the ground truth labels.  Opti">
+<meta property="og:description" content="Keywords: Socre function, Loss function, Bias trick, SVM classifier, Softmax classifier Image classification of parametric approach has two major components:   Score function: maps the raw data to cla">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-30T03:44:24.209Z">
+<meta property="og:image" content="https://i.imgur.com/qdBYurc.png">
+<meta property="og:image" content="http://cs231n.github.io/assets/imagemap.jpg">
+<meta property="og:image" content="http://cs231n.github.io/assets/pixelspace.jpeg">
+<meta property="og:image" content="http://cs231n.github.io/assets/templates.jpg">
+<meta property="og:image" content="https://i.imgur.com/qdBYurc.png">
+<meta property="og:image" content="https://i.imgur.com/oM5P3hW.png">
+<meta property="og:image" content="http://cs231n.github.io/assets/wb.jpeg">
+<meta property="og:image" content="https://i.imgur.com/Nu5ReRD.png">
+<meta property="og:image" content="https://i.imgur.com/l7TxYu8.png">
+<meta property="og:image" content="https://i.imgur.com/JXdJ7KU.png">
+<meta property="og:image" content="https://i.imgur.com/te4v03K.png">
+<meta property="og:image" content="https://i.imgur.com/fB2VH2R.png">
+<meta property="og:image" content="https://i.imgur.com/3zANMaz.png">
+<meta property="og:image" content="https://i.imgur.com/4SvhHjZ.png">
+<meta property="og:image" content="https://i.imgur.com/8TNNQQv.png">
+<meta property="og:image" content="https://i.imgur.com/NwQdoNU.png">
+<meta property="og:image" content="https://i.imgur.com/qrpH20g.png">
+<meta property="og:image" content="https://i.imgur.com/qgnYZOI.png">
+<meta property="og:image" content="https://i.imgur.com/qdBYurc.png">
+<meta property="og:image" content="https://i.imgur.com/fUhYZwP.png">
+<meta property="og:image" content="http://cs231n.github.io/assets/svmvssoftmax.png">
+<meta property="og:image" content="https://i.imgur.com/SOs8KdM.png">
+<meta property="og:image" content="https://i.imgur.com/qxre4cs.png">
+<meta property="og:updated_time" content="2018-04-30T15:33:30.913Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linear-Classifier">
-<meta name="twitter:description" content="Image classification has two major components:   Score function: maps the raw data to class scores.  Loss function: quantifies the agreement between predicted scores and the ground truth labels.  Opti">
+<meta name="twitter:description" content="Keywords: Socre function, Loss function, Bias trick, SVM classifier, Softmax classifier Image classification of parametric approach has two major components:   Score function: maps the raw data to cla">
+<meta name="twitter:image" content="https://i.imgur.com/qdBYurc.png">
 
 
 
@@ -320,12 +344,24 @@
                 
               
 
-              <time title="Created: 2018-04-29 21:32:56 / Modified: 23:44:24" itemprop="dateCreated datePublished" datetime="2018-04-29T21:32:56-04:00">2018-04-29</time>
+              <time title="Created: 2018-04-29 21:32:56" itemprop="dateCreated datePublished" datetime="2018-04-29T21:32:56-04:00">2018-04-29</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-04-30 11:33:30" itemprop="dateModified" datetime="2018-04-30T11:33:30-04:00">2018-04-30</time>
               
             
           </span>
@@ -358,13 +394,14 @@
       
 
       
-        <p>Image classification has two major components: </p>
+        <p>Keywords: Socre function, Loss function, Bias trick, SVM classifier, Softmax classifier</p>
+<p>Image classification of parametric approach has two major components: </p>
 <ol>
 <li><strong>Score function:</strong> maps the raw data to class scores. </li>
 <li><strong>Loss function:</strong> quantifies the agreement between predicted scores and the ground truth labels.</li>
 </ol>
 <p>Optimization: minimize the loss function with respect to the parameters of the score function.</p>
-<h2 id="Linear-Classifier-definition"><a href="#Linear-Classifier-definition" class="headerlink" title="Linear Classifier definition:"></a>Linear Classifier definition:</h2><p><strong>Score function:</strong><br><a href="https://i.imgur.com/qdBYurc.png" target="_blank" rel="noopener">Imgur</a><br>In the above equation, we assume that images Xi has shape [D<em>1], W has shape [K</em>D] and vector b (of size [K<em>1]). In CIFAR-10, Xi has shape [3071</em>1], W has shape [10<em>3072], and b is [10</em>1], so 3072 numbers input into the function and 10 numbers come out. </p>
+<h2 id="Linear-Classifier-definition"><a href="#Linear-Classifier-definition" class="headerlink" title="Linear Classifier definition:"></a>Linear Classifier definition:</h2><p><strong>Score function:</strong><br><img src="https://i.imgur.com/qdBYurc.png" alt="Imgur"><br>In the above equation, we assume that images Xi has shape [D<em>1], W has shape [K</em>D] and vector b (of size [K<em>1]). In CIFAR-10, Xi has shape [3071</em>1], W has shape [10<em>3072], and b is [10</em>1], so 3072 numbers input into the function and 10 numbers come out. </p>
 <p>Notes:</p>
 <ol>
 <li>computed scores match the ground truth labels acros the whole training set. Intuitively, we wish that the correct class has a score that is higher than the scores of incorrect classes.</li>
@@ -372,15 +409,40 @@
 <li>Classifying a test images involves a single matrix multiplication and addition, which is significantly faster than comparing a test image to all training images. </li>
 <li>Single matrix multiplication Wx is effectively evaluating 10 separate clsssifiers in parallel.</li>
 </ol>
-<h2 id="Interpreting-a-linear-classifier"><a href="#Interpreting-a-linear-classifier" class="headerlink" title="Interpreting a linear classifier"></a>Interpreting a linear classifier</h2><p>A linear classifier computes the score of a class as a weighted sum of all of its pixel values across all 3 of its color channels. Let’s imagine that the “ship” class might be more likely if there is a lot of blue on the sides of an image. So we expect the “ship” classifier would have a lot of positive weights across its blue channel weights, and negative weights in the red/green channels.<br><a href="http://cs231n.github.io/assets/imagemap.jpg" target="_blank" rel="noopener">Imgul</a><br>In this image, the scores for each class are not good at all. This set of weights seems vonvinced that it’s looking at a dog.</p>
+<h2 id="Interpreting-a-linear-classifier"><a href="#Interpreting-a-linear-classifier" class="headerlink" title="Interpreting a linear classifier"></a>Interpreting a linear classifier</h2><p>A linear classifier computes the score of a class as a weighted sum of all of its pixel values across all 3 of its color channels. Let’s imagine that the “ship” class might be more likely if there is a lot of blue on the sides of an image. So we expect the “ship” classifier would have a lot of positive weights across its blue channel weights, and negative weights in the red/green channels.<br><img src="http://cs231n.github.io/assets/imagemap.jpg" alt="Imgul"><br>In this image, the scores for each class are not good at all. This set of weights seems vonvinced that it’s looking at a dog.</p>
 <h2 id="Analogy-of-images-as-high-dimensional-points"><a href="#Analogy-of-images-as-high-dimensional-points" class="headerlink" title="Analogy of images as high-dimensional points:"></a>Analogy of images as high-dimensional points:</h2><p>In high-dimensional column vectors, we can interpret each image as a single point in this space. Analogously, the entire dataset is a (labeled)set of points.</p>
-<p>The geometric interpretation of these numbers is that as we change one of the rows of W, the corresponding line in the pixel space will rotate in different directions.<br><a href="http://cs231n.github.io/assets/pixelspace.jpeg" target="_blank" rel="noopener">Imgur</a></p>
-<h2 id="Interpretation-of-linear-classifiers-as-template-matching"><a href="#Interpretation-of-linear-classifiers-as-template-matching" class="headerlink" title="Interpretation of linear classifiers as template matching:"></a>Interpretation of linear classifiers as template matching:</h2><p>Another interpretation for the weights W is that each row of W corresponds to a template for one of the classes. The score of each class for an image is obtained by comparing each template with the image using an inner prodict(dot product) one by one to find the best fit.<br><a href="http://cs231n.github.io/assets/templates.jpg" target="_blank" rel="noopener">Imgur</a><br>Additionally, the horse template seems to contain a two-headed horse, which is due to both left and right facing horses in the dataset. The linear classifier merges two modes of horses into a single template. </p>
+<p>The geometric interpretation of these numbers is that as we change one of the rows of W, the corresponding line in the pixel space will rotate in different directions.<br><img src="http://cs231n.github.io/assets/pixelspace.jpeg" alt="Imgur"></p>
+<h2 id="Interpretation-of-linear-classifiers-as-template-matching"><a href="#Interpretation-of-linear-classifiers-as-template-matching" class="headerlink" title="Interpretation of linear classifiers as template matching:"></a>Interpretation of linear classifiers as template matching:</h2><p>Another interpretation for the weights W is that each row of W corresponds to a template for one of the classes. The score of each class for an image is obtained by comparing each template with the image using an inner prodict(dot product) one by one to find the best fit.<br><img src="http://cs231n.github.io/assets/templates.jpg" alt="Imgur"><br>Additionally, the horse template seems to contain a two-headed horse, which is due to both left and right facing horses in the dataset. The linear classifier merges two modes of horses into a single template. </p>
 <p>Similarly, the car classifier seems to have merged serveral modes into a single template. In particular, the template ended up with red, which hints that there are more red cars in CIFAR-10 dataset than of any other color. The linear classifier is too weak to properly account for different-colored cars,but neural networks will allow us to perform this task.</p>
-<h2 id="Bias-trick"><a href="#Bias-trick" class="headerlink" title="Bias trick:"></a>Bias trick:</h2><p>We defined the score function as:<br><a href="https://i.imgur.com/qdBYurc.png" target="_blank" rel="noopener">Imgur</a><br>but now we simplify it as<br><a href="https://i.imgur.com/oM5P3hW.png" target="_blank" rel="noopener">Imgur</a><br>With CIFAR-10 example, X as shape of [3073<em>1] instead of [3072</em>1], W has shape of [10*3073].The illustration shows:<br><a href="http://cs231n.github.io/assets/wb.jpeg" target="_blank" rel="noopener">Imgur</a><br>If we preprocess data by appending ones to all vectors, we only have to learn a single matrix of weights insteads of two matrices that hold weights and biases.</p>
+<h2 id="Bias-trick"><a href="#Bias-trick" class="headerlink" title="Bias trick:"></a>Bias trick:</h2><p>We defined the score function as:<br><img src="https://i.imgur.com/qdBYurc.png" alt="Imgur"><br>but now we simplify it as<br><img src="https://i.imgur.com/oM5P3hW.png" alt="Imgur"><br>With CIFAR-10 example, X as shape of [3073<em>1] instead of [3072</em>1], W has shape of [10*3073].The illustration shows:<br><img src="http://cs231n.github.io/assets/wb.jpeg" alt="Imgur"><br>If we preprocess data by appending ones to all vectors, we only have to learn a single matrix of weights insteads of two matrices that hold weights and biases.</p>
 <h2 id="Image-data-preprocessing"><a href="#Image-data-preprocessing" class="headerlink" title="Image data preprocessing:"></a>Image data preprocessing:</h2><p>Pixel values which range from [0:255] is very common to perform normalization of our input features. In particular, it’s important to center data by subtracting the mean from every feature. In the case of images, computing a mean image and subtracing it from every image to get images where the pixels range from approximately [-127, 127]. Further common preprocessing is to scale each input feature so that its values range from [-1,1]. The zero is arguably more important.</p>
 <h2 id="Loss-function"><a href="#Loss-function" class="headerlink" title="Loss function:"></a>Loss function:</h2><p>Loss function is going to measure our unhappiness with outcomes. Loss function also refered to as the cost function. </p>
-<h2 id="Multiclass-Support-Vector-Machine-Loss"><a href="#Multiclass-Support-Vector-Machine-Loss" class="headerlink" title="Multiclass Support Vector Machine Loss:"></a>Multiclass Support Vector Machine Loss:</h2><p>It is a commonly used loss.  </p>
+<h2 id="Multiclass-Support-Vector-Machine-Loss"><a href="#Multiclass-Support-Vector-Machine-Loss" class="headerlink" title="Multiclass Support Vector Machine Loss:"></a>Multiclass Support Vector Machine Loss:</h2><p>It is a commonly used loss. SVM wants to have a score higher than the incorrect classes by some fixed margin. </p>
+<p>We first come out the class score and abbreviate to <strong>s</strong>. The score as:<br><img src="https://i.imgur.com/Nu5ReRD.png" alt="Imgur"><br>The Multiclass SVM loss for i-th example is:<br><img src="https://i.imgur.com/l7TxYu8.png" alt="Imgur"><br>If the scores <strong>s = [13, -7, 11]</strong>, and the first class is the true class. Assume the hyperparameter delta is 10. The expression above sums over all incorrect classes:<br><img src="https://i.imgur.com/JXdJ7KU.png" alt="Imgur"><br>First gives 0 since [-7-13+10] gives a negative number. The loss outcome is 8. In summary, the SVM loss function wants the score of the correct class to be larger than the incorrect class scores by at least by delta. </p>
+<p>In particular, we are working with linear score functions, so we can rewrite loss function:<br><img src="https://i.imgur.com/te4v03K.png" alt="Imgur"><br><strong>Wj</strong> is the j-th row of <strong>W</strong> reshaped as a column. </p>
+<p><strong>Hinge loss:</strong> is <strong>max(0,-)</strong> function:<br><img src="https://i.imgur.com/fB2VH2R.png" alt="Imgur"><br>Sometimes people instead using squared hinge loss SVM(L2-SVM). </p>
+<h2 id="Regularization"><a href="#Regularization" class="headerlink" title="Regularization:"></a>Regularization:</h2><p>We can do by extending the loss function with a <strong>regularization penalty R(W)</strong>. The most common regularization penalty is the L2 norm:<br><img src="https://i.imgur.com/3zANMaz.png" alt="Imgur"></p>
+<p>The complete Multiclass SVM loss, which is made up of two components: <strong>data loss</strong> and <strong>regularization loss</strong>:<br><img src="https://i.imgur.com/4SvhHjZ.png" alt="Imgur"><br>or<br><img src="https://i.imgur.com/8TNNQQv.png" alt="Imgur"><br>N is the number of training examples. Lambda is a hyperparameter.</p>
+<p>The most appealing property is tht penalizing large weights tends to imporve generalization, because it means that no input dimension can have a very large influence on the scores all by itself. </p>
+<p>The regularization only works for weights but not for biases. </p>
+<h2 id="Softmax-classifier"><a href="#Softmax-classifier" class="headerlink" title="Softmax classifier:"></a>Softmax classifier:</h2><p>SVM is one of two commonly seen classifiers. The other one is <strong>Softmax classifier</strong>.<br><img src="https://i.imgur.com/NwQdoNU.png" alt="Imgur"><br>fi means vector of class scores. Function in parentness is <strong>softmax function</strong>: it takes a vector of arbirary real-valued scores and squashes it to a vector of values between 0 to 1 that sum to one. </p>
+<h2 id="Information-theory"><a href="#Information-theory" class="headerlink" title="Information theory:"></a>Information theory:</h2><p><img src="https://i.imgur.com/qrpH20g.png" alt="Imgur"><br>The cross-entropy between a “true” distribution p and an estimated distribution q is defined above.</p>
+<p>Softmax classifier is minimizing the cross-entropy between teh estimated class probabilities and the “true” distribution. Additionally, cross-entropy can be written in terms of entropy and Kullback-Leibler divergence as:<br><img src="https://i.imgur.com/qgnYZOI.png" alt="Imgur"></p>
+<h2 id="Probabilistic-interpretation"><a href="#Probabilistic-interpretation" class="headerlink" title="Probabilistic interpretation:"></a>Probabilistic interpretation:</h2><p>The expression as we see:<br><img src="https://i.imgur.com/qdBYurc.png" alt="Imgur"><br>can be interpreted as the probability assigned to the correct label yi given the image xi and <strong>W</strong>. In probabilistic interpretation, we are minimizing the negative log likehood of the correct class, which can be interpreted as performing MLE(Maximum Likehood Estimation). </p>
+<h2 id="Practical-issues"><a href="#Practical-issues" class="headerlink" title="Practical issues:"></a>Practical issues:</h2><p>exponentials might be very large, which can be numerically unstable. Normalization is a useful trick. The expression as we see that:<br><img src="https://i.imgur.com/fUhYZwP.png" alt="Imgur"><br>In common choice, <strong>C</strong> is to set LogC = -maxj(fj). In code:</p>
+<pre><code>import numpy as np
+
+f = np.array([123,456,789])
+p = np.exp(f)/np.sum(np.exp(f))  # overflow
+
+f -= np.max(f)
+p = np.exp(f)/np.sum(np.exp(f)) # safe to do
+</code></pre><p>To be precies, <strong>SVM classifier</strong> uses the hinge loss(max-margin loss). <strong>Softmax classifier</strong> uses cross-entropy loss, which is used to squash the raw class scores into normalized positive values that sum to one. In particular, note that it doesn’t make sense to talk about “softmax loss”, since softmax is a squashing function. </p>
+<h2 id="SVM-vs-Softmax"><a href="#SVM-vs-Softmax" class="headerlink" title="SVM vs. Softmax:"></a>SVM vs. Softmax:</h2><p>A picture might help clarify the distinction:<br><img src="http://cs231n.github.io/assets/svmvssoftmax.png" alt="SVM"></p>
+<h2 id="Softmax-classifier-provides-“probabilities”-for-each-class"><a href="#Softmax-classifier-provides-“probabilities”-for-each-class" class="headerlink" title="Softmax classifier provides “probabilities” for each class:"></a>Softmax classifier provides “probabilities” for each class:</h2><p>Unlike SVM which computes uncalibrated and not easy to interpret scores for all classes, Softmax classifier allows us to compute “probabilities” for all labels. For example:<br>Unnormalized log-probabilities for three classes come out to be [1,-2,0]. The softmax function would compute:<br><img src="https://i.imgur.com/SOs8KdM.png" alt="Imgur"><br>Now if the regularization strength lambda was higher, W would be penalized more and this would lead to smaller weights. Suppose that weights became [0.5,-1,0]. The softmax would compute:<br><img src="https://i.imgur.com/qxre4cs.png" alt="Imgur"></p>
+<h2 id="Practice"><a href="#Practice" class="headerlink" title="Practice:"></a>Practice:</h2><p>The performance difference between SVM and Softmax are usually very small. Compared to Softmax classifier, SVM is a more local objective. Consider an example that archieves the scores [10,-2,3] and the first class is correct. An SVM (delta=1) will see that the correct class has a score higher than the margin compared to other classes and compute loss of zero. If they were insted [10,-100,-100] or [10,9,9] the SVM would be indifferent since the margin of 1 is satisfied and the loss is zero. The SVM doesn’t care about the details of the individual scores. </p>
+<p>In other words, Softmax is nevery fully happy with the scores it produces: the correct class could always have a higher probability and incorrect classes always a lower probability and the loss would always get better. However, the SVM is happy once the margins are satified.  </p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p><a href="http://cs231n.github.io/linear-classify/" target="_blank" rel="noopener">http://cs231n.github.io/linear-classify/</a></p>
 
       
     </div>
@@ -400,6 +462,10 @@
     <footer class="post-footer">
       
         <div class="post-tags">
+          
+            <a href="/tags/SVM-classifier/" rel="tag"># SVM classifier</a>
+          
+            <a href="/tags/Softmax-classifier/" rel="tag"># Softmax classifier</a>
           
             <a href="/tags/Linear-Classifier/" rel="tag"># Linear Classifier</a>
           
@@ -527,7 +593,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
@@ -563,7 +633,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-Classifier-definition"><span class="nav-number">1.</span> <span class="nav-text">Linear Classifier definition:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interpreting-a-linear-classifier"><span class="nav-number">2.</span> <span class="nav-text">Interpreting a linear classifier</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Analogy-of-images-as-high-dimensional-points"><span class="nav-number">3.</span> <span class="nav-text">Analogy of images as high-dimensional points:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interpretation-of-linear-classifiers-as-template-matching"><span class="nav-number">4.</span> <span class="nav-text">Interpretation of linear classifiers as template matching:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bias-trick"><span class="nav-number">5.</span> <span class="nav-text">Bias trick:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Image-data-preprocessing"><span class="nav-number">6.</span> <span class="nav-text">Image data preprocessing:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loss-function"><span class="nav-number">7.</span> <span class="nav-text">Loss function:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multiclass-Support-Vector-Machine-Loss"><span class="nav-number">8.</span> <span class="nav-text">Multiclass Support Vector Machine Loss:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-Classifier-definition"><span class="nav-number">1.</span> <span class="nav-text">Linear Classifier definition:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interpreting-a-linear-classifier"><span class="nav-number">2.</span> <span class="nav-text">Interpreting a linear classifier</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Analogy-of-images-as-high-dimensional-points"><span class="nav-number">3.</span> <span class="nav-text">Analogy of images as high-dimensional points:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interpretation-of-linear-classifiers-as-template-matching"><span class="nav-number">4.</span> <span class="nav-text">Interpretation of linear classifiers as template matching:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bias-trick"><span class="nav-number">5.</span> <span class="nav-text">Bias trick:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Image-data-preprocessing"><span class="nav-number">6.</span> <span class="nav-text">Image data preprocessing:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loss-function"><span class="nav-number">7.</span> <span class="nav-text">Loss function:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multiclass-Support-Vector-Machine-Loss"><span class="nav-number">8.</span> <span class="nav-text">Multiclass Support Vector Machine Loss:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Regularization"><span class="nav-number">9.</span> <span class="nav-text">Regularization:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Softmax-classifier"><span class="nav-number">10.</span> <span class="nav-text">Softmax classifier:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Information-theory"><span class="nav-number">11.</span> <span class="nav-text">Information theory:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Probabilistic-interpretation"><span class="nav-number">12.</span> <span class="nav-text">Probabilistic interpretation:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Practical-issues"><span class="nav-number">13.</span> <span class="nav-text">Practical issues:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVM-vs-Softmax"><span class="nav-number">14.</span> <span class="nav-text">SVM vs. Softmax:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Softmax-classifier-provides-“probabilities”-for-each-class"><span class="nav-number">15.</span> <span class="nav-text">Softmax classifier provides “probabilities” for each class:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Practice"><span class="nav-number">16.</span> <span class="nav-text">Practice:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">17.</span> <span class="nav-text">Reference:</span></a></li></ol></div>
             
 
           </div>
