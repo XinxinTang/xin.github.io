@@ -113,7 +113,7 @@
 <meta property="og:image" content="http://cs231n.github.io/assets/nneg.jpeg">
 <meta property="og:image" content="http://cs231n.github.io/assets/knn.jpeg">
 <meta property="og:image" content="http://cs231n.github.io/assets/samenorm.png">
-<meta property="og:updated_time" content="2018-04-29T21:41:01.913Z">
+<meta property="og:updated_time" content="2018-04-29T23:16:03.202Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="K-Nearest-Neighbor">
 <meta name="twitter:description" content="KNN is rarely to use in practice, but it allows us to understand classify problem.  Nearest Neighbor Classifier:Nearest Neighbor Algorithm has two ways to classify, L1 Distance and L2 Distance.  L1 Di">
@@ -324,7 +324,7 @@
                 
               
 
-              <time title="Created: 2018-04-29 14:04:28 / Modified: 17:41:01" itemprop="dateCreated datePublished" datetime="2018-04-29T14:04:28-04:00">2018-04-29</time>
+              <time title="Created: 2018-04-29 14:04:28 / Modified: 19:16:03" itemprop="dateCreated datePublished" datetime="2018-04-29T14:04:28-04:00">2018-04-29</time>
             
 
             
@@ -371,7 +371,7 @@
 <p>Here is the code to build a Nearest Neighbor.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Nearest_Neighbor(object):</span><br><span class="line">    def __init__(self):</span><br><span class="line">        pass</span><br><span class="line"></span><br><span class="line">    def train(self, X, y):</span><br><span class="line">      self.Xtr = X</span><br><span class="line">      self.ytr = y</span><br><span class="line"></span><br><span class="line">    def predict(self, X):</span><br><span class="line">        &quot;&quot;&quot; X is N x D where each row is an example we wish to predict label for &quot;&quot;&quot;</span><br><span class="line">        num_test = X.shape[0]</span><br><span class="line">        # lets make sure that the output type matches the input type</span><br><span class="line">        Ypred = np.zeros(num_test, dtype=self.ytr.dtype)</span><br><span class="line"></span><br><span class="line">        # loop over all test rows</span><br><span class="line">        for i in range(num_test):</span><br><span class="line">            # find the nearest training image to the i&apos;th test image</span><br><span class="line">            # L1 distance</span><br><span class="line">            l1_distances = np.sum(np.abs(self.Xtr - X[i, :]), axis=1)  # acc: 38.6%</span><br><span class="line">            # L2 distance</span><br><span class="line">            l2_distances = np.sqrt(np.sum(np.square(self.Xtr - X[i, :]), axis=1))  # acc: 35.4%</span><br><span class="line">            min_index = np.argmin(l1_distances)  # get the index with smallest distance</span><br><span class="line">            print(&quot;min_index:&quot;, min_index)</span><br><span class="line">            Ypred[i] = self.ytr[min_index]  # predict the label of the nearest example</span><br><span class="line">            print(Ypred[i])</span><br><span class="line"></span><br><span class="line">        return Ypred</span><br></pre></td></tr></table></figure></p>
 <p>K-Nearest Neighbor Classifier:<br>KNN is easy to understand. When K=1 the classifier shows above. When K = 5, classifier gets the top 5 closest images. Intuitively, higher value of K has a smooth effect that makes classifier resistant the outliers.<br><img src="http://cs231n.github.io/assets/knn.jpeg" alt="KNN"></p>
 <h2 id="Pros-and-Cons-of-Nearest-Neighbor-Classifier"><a href="#Pros-and-Cons-of-Nearest-Neighbor-Classifier" class="headerlink" title="Pros and Cons of Nearest Neighbor Classifier:"></a>Pros and Cons of Nearest Neighbor Classifier:</h2><h3 id="KNN"><a href="#KNN" class="headerlink" title="KNN:"></a>KNN:</h3><p>Pros:<br>Simple to implement and understand.</p>
-<p>Cons:<br>Pay much computational cost at test time, but takes no time to train.<br>Images that only has difference in light intensity are very different from pixel-based  L2 computation.<br><img src="http://cs231n.github.io/assets/samenorm.png" alt="Light"> </p>
+<p>Cons:<br>1.Pay much computational cost at test time, but takes no time to train.<br>2.Remember all training set and store it for future use.<br>3.Images that only has difference in light intensity are very different from pixel-based  L2 computation.<br><img src="http://cs231n.github.io/assets/samenorm.png" alt="Light"> </p>
 <p>Deep neural networks are very expensive to train, but it is very cheap to classify a new test example one the training is finished. This mode of operation is much more desirable in practice. </p>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p><a href="http://cs231n.github.io/classification/" target="_blank" rel="noopener">http://cs231n.github.io/classification/</a></p>
 
@@ -495,7 +495,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -524,7 +524,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>

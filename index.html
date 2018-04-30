@@ -274,6 +274,168 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/Linear-Classifier/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/29/Linear-Classifier/" itemprop="url">
+                  Linear-Classifier
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-04-29 21:32:56 / Modified: 23:44:24" itemprop="dateCreated datePublished" datetime="2018-04-29T21:32:56-04:00">2018-04-29</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Image classification has two major components: </p>
+<ol>
+<li><strong>Score function:</strong> maps the raw data to class scores. </li>
+<li><strong>Loss function:</strong> quantifies the agreement between predicted scores and the ground truth labels.</li>
+</ol>
+<p>Optimization: minimize the loss function with respect to the parameters of the score function.</p>
+<h2 id="Linear-Classifier-definition"><a href="#Linear-Classifier-definition" class="headerlink" title="Linear Classifier definition:"></a>Linear Classifier definition:</h2><p><strong>Score function:</strong><br><a href="https://i.imgur.com/qdBYurc.png" target="_blank" rel="noopener">Imgur</a><br>In the above equation, we assume that images Xi has shape [D<em>1], W has shape [K</em>D] and vector b (of size [K<em>1]). In CIFAR-10, Xi has shape [3071</em>1], W has shape [10<em>3072], and b is [10</em>1], so 3072 numbers input into the function and 10 numbers come out. </p>
+<p>Notes:</p>
+<ol>
+<li>computed scores match the ground truth labels acros the whole training set. Intuitively, we wish that the correct class has a score that is higher than the scores of incorrect classes.</li>
+<li>this approach is that the training data is used to learn the parameters w and b, but once the learning is complete we can discard the entire training set and only keep the learned parameters. Because a new test image can be simply forward through the function and classified based on the computed scores. </li>
+<li>Classifying a test images involves a single matrix multiplication and addition, which is significantly faster than comparing a test image to all training images. </li>
+<li>Single matrix multiplication Wx is effectively evaluating 10 separate clsssifiers in parallel.</li>
+</ol>
+<h2 id="Interpreting-a-linear-classifier"><a href="#Interpreting-a-linear-classifier" class="headerlink" title="Interpreting a linear classifier"></a>Interpreting a linear classifier</h2><p>A linear classifier computes the score of a class as a weighted sum of all of its pixel values across all 3 of its color channels. Let’s imagine that the “ship” class might be more likely if there is a lot of blue on the sides of an image. So we expect the “ship” classifier would have a lot of positive weights across its blue channel weights, and negative weights in the red/green channels.<br><a href="http://cs231n.github.io/assets/imagemap.jpg" target="_blank" rel="noopener">Imgul</a><br>In this image, the scores for each class are not good at all. This set of weights seems vonvinced that it’s looking at a dog.</p>
+<h2 id="Analogy-of-images-as-high-dimensional-points"><a href="#Analogy-of-images-as-high-dimensional-points" class="headerlink" title="Analogy of images as high-dimensional points:"></a>Analogy of images as high-dimensional points:</h2><p>In high-dimensional column vectors, we can interpret each image as a single point in this space. Analogously, the entire dataset is a (labeled)set of points.</p>
+<p>The geometric interpretation of these numbers is that as we change one of the rows of W, the corresponding line in the pixel space will rotate in different directions.<br><a href="http://cs231n.github.io/assets/pixelspace.jpeg" target="_blank" rel="noopener">Imgur</a></p>
+<h2 id="Interpretation-of-linear-classifiers-as-template-matching"><a href="#Interpretation-of-linear-classifiers-as-template-matching" class="headerlink" title="Interpretation of linear classifiers as template matching:"></a>Interpretation of linear classifiers as template matching:</h2><p>Another interpretation for the weights W is that each row of W corresponds to a template for one of the classes. The score of each class for an image is obtained by comparing each template with the image using an inner prodict(dot product) one by one to find the best fit.<br><a href="http://cs231n.github.io/assets/templates.jpg" target="_blank" rel="noopener">Imgur</a><br>Additionally, the horse template seems to contain a two-headed horse, which is due to both left and right facing horses in the dataset. The linear classifier merges two modes of horses into a single template. </p>
+<p>Similarly, the car classifier seems to have merged serveral modes into a single template. In particular, the template ended up with red, which hints that there are more red cars in CIFAR-10 dataset than of any other color. The linear classifier is too weak to properly account for different-colored cars,but neural networks will allow us to perform this task.</p>
+<h2 id="Bias-trick"><a href="#Bias-trick" class="headerlink" title="Bias trick:"></a>Bias trick:</h2><p>We defined the score function as:<br><a href="https://i.imgur.com/qdBYurc.png" target="_blank" rel="noopener">Imgur</a><br>but now we simplify it as<br><a href="https://i.imgur.com/oM5P3hW.png" target="_blank" rel="noopener">Imgur</a><br>With CIFAR-10 example, X as shape of [3073<em>1] instead of [3072</em>1], W has shape of [10*3073].The illustration shows:<br><a href="http://cs231n.github.io/assets/wb.jpeg" target="_blank" rel="noopener">Imgur</a><br>If we preprocess data by appending ones to all vectors, we only have to learn a single matrix of weights insteads of two matrices that hold weights and biases.</p>
+<h2 id="Image-data-preprocessing"><a href="#Image-data-preprocessing" class="headerlink" title="Image data preprocessing:"></a>Image data preprocessing:</h2><p>Pixel values which range from [0:255] is very common to perform normalization of our input features. In particular, it’s important to center data by subtracting the mean from every feature. In the case of images, computing a mean image and subtracing it from every image to get images where the pixels range from approximately [-127, 127]. Further common preprocessing is to scale each input feature so that its values range from [-1,1]. The zero is arguably more important.</p>
+<h2 id="Loss-function"><a href="#Loss-function" class="headerlink" title="Loss function:"></a>Loss function:</h2><p>Loss function is going to measure our unhappiness with outcomes. Loss function also refered to as the cost function. </p>
+<h2 id="Multiclass-Support-Vector-Machine-Loss"><a href="#Multiclass-Support-Vector-Machine-Loss" class="headerlink" title="Multiclass Support Vector Machine Loss:"></a>Multiclass Support Vector Machine Loss:</h2><p>It is a commonly used loss.  </p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/How-to-build-a-personal-blog-on-Github/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -320,7 +482,7 @@
                 
               
 
-              <time title="Created: 2018-04-29 17:43:27 / Modified: 18:23:15" itemprop="dateCreated datePublished" datetime="2018-04-29T17:43:27-04:00">2018-04-29</time>
+              <time title="Created: 2018-04-29 17:43:27 / Modified: 18:25:15" itemprop="dateCreated datePublished" datetime="2018-04-29T17:43:27-04:00">2018-04-29</time>
             
 
             
@@ -372,7 +534,7 @@
 <p>Verify: <code>$ ssh -T git@guthub.com</code><br>if it shows below, you set up well.<br><img src="http://onq81n53u.bkt.clouddn.com/YY%E5%9B%BE%E7%89%8720180110174955.jpg" alt="set"></p>
 <p>Then set a personal info. It doesn’t require same with Github nickname.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$git config --global user.name &quot;type your name here&quot;</span><br><span class="line">$git config --global user.eamil &quot;type your email here&quot;</span><br></pre></td></tr></table></figure></p>
 <p>Copy repository SSH to root Hexo ‘_config.yml’ file<br><img src="http://onq81n53u.bkt.clouddn.com/YY%E5%9B%BE%E7%89%872018011017514333.jpg" alt="ssh"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repository: &apos;paste Github repository here&apos;</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure></p>
-<p>Default branch is master.</p>
+<p>Branch is default as master.</p>
 <p>Execute<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure></p>
 <p>After a while, you can browse the Github Page by typing “https://<repository name="">“. For new, your personal blog has been built.</repository></p>
 <p>Then next level is to change a beautiful theme and add more extension. These will be introduced later. </p>
@@ -480,7 +642,7 @@
                 
               
 
-              <time title="Created: 2018-04-29 14:04:28 / Modified: 17:41:01" itemprop="dateCreated datePublished" datetime="2018-04-29T14:04:28-04:00">2018-04-29</time>
+              <time title="Created: 2018-04-29 14:04:28 / Modified: 19:16:03" itemprop="dateCreated datePublished" datetime="2018-04-29T14:04:28-04:00">2018-04-29</time>
             
 
             
@@ -529,7 +691,7 @@
 <p>Here is the code to build a Nearest Neighbor.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Nearest_Neighbor(object):</span><br><span class="line">    def __init__(self):</span><br><span class="line">        pass</span><br><span class="line"></span><br><span class="line">    def train(self, X, y):</span><br><span class="line">      self.Xtr = X</span><br><span class="line">      self.ytr = y</span><br><span class="line"></span><br><span class="line">    def predict(self, X):</span><br><span class="line">        &quot;&quot;&quot; X is N x D where each row is an example we wish to predict label for &quot;&quot;&quot;</span><br><span class="line">        num_test = X.shape[0]</span><br><span class="line">        # lets make sure that the output type matches the input type</span><br><span class="line">        Ypred = np.zeros(num_test, dtype=self.ytr.dtype)</span><br><span class="line"></span><br><span class="line">        # loop over all test rows</span><br><span class="line">        for i in range(num_test):</span><br><span class="line">            # find the nearest training image to the i&apos;th test image</span><br><span class="line">            # L1 distance</span><br><span class="line">            l1_distances = np.sum(np.abs(self.Xtr - X[i, :]), axis=1)  # acc: 38.6%</span><br><span class="line">            # L2 distance</span><br><span class="line">            l2_distances = np.sqrt(np.sum(np.square(self.Xtr - X[i, :]), axis=1))  # acc: 35.4%</span><br><span class="line">            min_index = np.argmin(l1_distances)  # get the index with smallest distance</span><br><span class="line">            print(&quot;min_index:&quot;, min_index)</span><br><span class="line">            Ypred[i] = self.ytr[min_index]  # predict the label of the nearest example</span><br><span class="line">            print(Ypred[i])</span><br><span class="line"></span><br><span class="line">        return Ypred</span><br></pre></td></tr></table></figure></p>
 <p>K-Nearest Neighbor Classifier:<br>KNN is easy to understand. When K=1 the classifier shows above. When K = 5, classifier gets the top 5 closest images. Intuitively, higher value of K has a smooth effect that makes classifier resistant the outliers.<br><img src="http://cs231n.github.io/assets/knn.jpeg" alt="KNN"></p>
 <h2 id="Pros-and-Cons-of-Nearest-Neighbor-Classifier"><a href="#Pros-and-Cons-of-Nearest-Neighbor-Classifier" class="headerlink" title="Pros and Cons of Nearest Neighbor Classifier:"></a>Pros and Cons of Nearest Neighbor Classifier:</h2><h3 id="KNN"><a href="#KNN" class="headerlink" title="KNN:"></a>KNN:</h3><p>Pros:<br>Simple to implement and understand.</p>
-<p>Cons:<br>Pay much computational cost at test time, but takes no time to train.<br>Images that only has difference in light intensity are very different from pixel-based  L2 computation.<br><img src="http://cs231n.github.io/assets/samenorm.png" alt="Light"> </p>
+<p>Cons:<br>1.Pay much computational cost at test time, but takes no time to train.<br>2.Remember all training set and store it for future use.<br>3.Images that only has difference in light intensity are very different from pixel-based  L2 computation.<br><img src="http://cs231n.github.io/assets/samenorm.png" alt="Light"> </p>
 <p>Deep neural networks are very expensive to train, but it is very cheap to classify a new test example one the training is finished. This mode of operation is much more desirable in practice. </p>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p><a href="http://cs231n.github.io/classification/" target="_blank" rel="noopener">http://cs231n.github.io/classification/</a></p>
 
@@ -1209,7 +1371,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1238,7 +1400,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
