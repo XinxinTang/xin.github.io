@@ -274,6 +274,162 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/30/Optimization/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/30/Optimization/" itemprop="url">
+                  Optimization
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-04-30 11:37:44 / Modified: 20:51:08" itemprop="dateCreated datePublished" datetime="2018-04-30T11:37:44-04:00">2018-04-30</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Score function -&gt; Loss function -&gt; Optimization.</p>
+<p>Recall that SVM was formulated as:<br><img src="https://i.imgur.com/wJTf9XM.png" alt="Imgur"><br>This formula archieves a very low loss <strong>L</strong>. Optimization is the process of finding the set of parameters <strong>W</strong> that minimize the loss function.</p>
+<h2 id="Visualizing-the-loss-function"><a href="#Visualizing-the-loss-function" class="headerlink" title="Visualizing the loss function"></a>Visualizing the loss function</h2><p>For high-dimensional spaces, linear classifier weight matrix is difficult to visualize. However, we can gain some intuitions about one by slicing through the high-dimensinal space along rays(1-dimension) or along planes(2-dimensions).<br><img src="http://cs231n.github.io/assets/svm1d.png" alt="sisual"><br>Left: one-dimensional loss by only varying <strong>a</strong>. Middle and Right: two-dimensional loss slice, Blue = low loss, Red = high loss. The loss is piecewise-linear structure. </p>
+<p>For single example, we have:<br><img src="https://i.imgur.com/URZXKwo.png" alt="Imgur"></p>
+<p><img src="https://i.imgur.com/dZz3CPE.png" alt="Imgur"><br>We can visualize this as follows:<br><img src="http://cs231n.github.io/assets/svmbowl.png" alt="Visual"><br>x-axis is a single weight and y-asix is the loss. </p>
+<p>Th picture above has shown an example of a convex function. </p>
+<h2 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization"></a>Optimization</h2><p>The goal of optimization is to find <strong>W</strong> that minimizes the loss function. </p>
+<h3 id="Strategy-1-Random-search-very-bad"><a href="#Strategy-1-Random-search-very-bad" class="headerlink" title="Strategy 1: Random search(very bad)"></a>Strategy 1: Random search(very bad)</h3><p>Try out many different random weights and keep track of what works best.</p>
+<h3 id="Strategy-2-Random-local-search"><a href="#Strategy-2-Random-local-search" class="headerlink" title="Strategy 2: Random local search"></a>Strategy 2: Random local search</h3><p>Start out with a random <strong>W</strong>, generate random perturbations <strong>&amp;W</strong> to it and if the loss is lower.</p>
+<p>This strategy is better, but still wasteful and computationally expensive.</p>
+<h3 id="Strategy-3-Following-the-Gradient"><a href="#Strategy-3-Following-the-Gradient" class="headerlink" title="Strategy 3: Following the Gradient"></a>Strategy 3: Following the Gradient</h3><p>Find a direction in the weight-space that would improve our weight vector. I means we can compute teh best direction along which we should change our weight vector that is mathematically guaranteed to be the direction of the steepest descend. </p>
+<p>In one-dimensional functions, the mathematically expression is:<br><img src="https://i.imgur.com/JlASbf7.png" alt="Imgur">  </p>
+<p>Gradient check: unlike the numerical gradient it can be more error prone to implement, which is why in practice it is very common to compute the analytic gradient and compare it to the numerical gradient to check the correctness of your implementation.</p>
+<p>SVM loss function for a single datapoint:<br><img src="https://i.imgur.com/MwHvp74.png" alt="Imgur"></p>
+<p>We can differentiate the function with respect to the weights.<br><img src="https://i.imgur.com/rMC0JOh.png" alt="Imgur"></p>
+<h2 id="Gradient-descent"><a href="#Gradient-descent" class="headerlink" title="Gradient descent"></a>Gradient descent</h2><p><strong>Mini-batch gradient descent</strong>: batch training<br><strong>Stochastic gradient descent(or on-line gradient descent)</strong>: mini-batch contains only a single example.</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://cs231n.github.io/optimization-1/" target="_blank" rel="noopener">http://cs231n.github.io/optimization-1/</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/Linear-Classifier/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -337,7 +493,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-04-30 11:33:30" itemprop="dateModified" datetime="2018-04-30T11:33:30-04:00">2018-04-30</time>
+                <time title="Modified: 2018-04-30 20:51:43" itemprop="dateModified" datetime="2018-04-30T20:51:43-04:00">2018-04-30</time>
               
             
           </span>
@@ -1409,7 +1565,7 @@ p = np.exp(f)/np.sum(np.exp(f)) # safe to do
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1444,7 +1600,9 @@ p = np.exp(f)/np.sum(np.exp(f)) # safe to do
                     
                       
                     
-                    <span class="site-state-item-count">10</span>
+                      
+                    
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>

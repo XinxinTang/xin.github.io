@@ -102,31 +102,34 @@
 
 
 
-  <meta name="description" content="Steps:Install Node.jsInstall GitChoose the right version of operating system.Verify if it installed successfully.12$ node -v$ git version If there is no right to install it, add sudo at the top. Insta">
-<meta name="keywords" content="Blog">
+  <meta name="description" content="Score function -&amp;gt; Loss function -&amp;gt; Optimization. Recall that SVM was formulated as:This formula archieves a very low loss L. Optimization is the process of finding the set of parameters W that m">
+<meta name="keywords" content="Machine Learning,Optimization">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to build a personal blog on Github with Hexo">
-<meta property="og:url" content="https://XinxinTang/xinxintang.github.io/2018/04/29/How-to-build-a-personal-blog-on-Github/index.html">
+<meta property="og:title" content="Optimization">
+<meta property="og:url" content="https://XinxinTang/xinxintang.github.io/2018/04/30/Optimization/index.html">
 <meta property="og:site_name" content="Xinxin Tang">
-<meta property="og:description" content="Steps:Install Node.jsInstall GitChoose the right version of operating system.Verify if it installed successfully.12$ node -v$ git version If there is no right to install it, add sudo at the top. Insta">
+<meta property="og:description" content="Score function -&amp;gt; Loss function -&amp;gt; Optimization. Recall that SVM was formulated as:This formula archieves a very low loss L. Optimization is the process of finding the set of parameters W that m">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://onq81n53u.bkt.clouddn.com/YY%E5%9B%BE%E7%89%8720180110175140.jpg">
-<meta property="og:image" content="http://7xrwkh.com1.z0.glb.clouddn.com/SSH-github-setting.png">
-<meta property="og:image" content="http://7xrwkh.com1.z0.glb.clouddn.com/SSH-github-setting-SSH.png">
-<meta property="og:image" content="http://onq81n53u.bkt.clouddn.com/YY%E5%9B%BE%E7%89%8720180110174955.jpg">
-<meta property="og:image" content="http://onq81n53u.bkt.clouddn.com/YY%E5%9B%BE%E7%89%872018011017514333.jpg">
-<meta property="og:updated_time" content="2018-04-29T22:25:15.557Z">
+<meta property="og:image" content="https://i.imgur.com/wJTf9XM.png">
+<meta property="og:image" content="http://cs231n.github.io/assets/svm1d.png">
+<meta property="og:image" content="https://i.imgur.com/URZXKwo.png">
+<meta property="og:image" content="https://i.imgur.com/dZz3CPE.png">
+<meta property="og:image" content="http://cs231n.github.io/assets/svmbowl.png">
+<meta property="og:image" content="https://i.imgur.com/JlASbf7.png">
+<meta property="og:image" content="https://i.imgur.com/MwHvp74.png">
+<meta property="og:image" content="https://i.imgur.com/rMC0JOh.png">
+<meta property="og:updated_time" content="2018-05-01T00:51:08.241Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="How to build a personal blog on Github with Hexo">
-<meta name="twitter:description" content="Steps:Install Node.jsInstall GitChoose the right version of operating system.Verify if it installed successfully.12$ node -v$ git version If there is no right to install it, add sudo at the top. Insta">
-<meta name="twitter:image" content="http://onq81n53u.bkt.clouddn.com/YY%E5%9B%BE%E7%89%8720180110175140.jpg">
+<meta name="twitter:title" content="Optimization">
+<meta name="twitter:description" content="Score function -&amp;gt; Loss function -&amp;gt; Optimization. Recall that SVM was formulated as:This formula archieves a very low loss L. Optimization is the process of finding the set of parameters W that m">
+<meta name="twitter:image" content="https://i.imgur.com/wJTf9XM.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://XinxinTang/xinxintang.github.io/2018/04/29/How-to-build-a-personal-blog-on-Github/"/>
+  <link rel="canonical" href="https://XinxinTang/xinxintang.github.io/2018/04/30/Optimization/"/>
 
 
 
@@ -136,7 +139,7 @@
   };
 </script>
 
-  <title>How to build a personal blog on Github with Hexo | Xinxin Tang</title>
+  <title>Optimization | Xinxin Tang</title>
   
 
 
@@ -284,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/How-to-build-a-personal-blog-on-Github/">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/30/Optimization/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xinxin Tang">
@@ -301,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">How to build a personal blog on Github with Hexo
+          <h1 class="post-title" itemprop="name headline">Optimization
               
             
           </h1>
@@ -326,7 +329,7 @@
                 
               
 
-              <time title="Created: 2018-04-29 17:43:27 / Modified: 18:25:15" itemprop="dateCreated datePublished" datetime="2018-04-29T17:43:27-04:00">2018-04-29</time>
+              <time title="Created: 2018-04-30 11:37:44 / Modified: 20:51:08" itemprop="dateCreated datePublished" datetime="2018-04-30T11:37:44-04:00">2018-04-30</time>
             
 
             
@@ -364,27 +367,23 @@
       
 
       
-        <h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps:"></a>Steps:</h2><h3 id="Install-Node-js"><a href="#Install-Node-js" class="headerlink" title="Install Node.js"></a>Install <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node.js</a></h3><h3 id="Install-Git"><a href="#Install-Git" class="headerlink" title="Install Git"></a>Install <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a></h3><p>Choose the right version of operating system.<br>Verify if it installed successfully.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">$ git version</span><br></pre></td></tr></table></figure></p>
-<p>If there is no right to install it, add <code>sudo</code> at the top.</p>
-<h3 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>First line for Hexo installation, second line for Git page deployer.</p>
-<p>Then,type <code>hexo init</code> command to initialize Hexo.</p>
-<p>Execute commands below and then access to localhost:4000 to view the effect.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></p>
-<p><img src="http://onq81n53u.bkt.clouddn.com/YY%E5%9B%BE%E7%89%8720180110175140.jpg" alt="Hexo"></p>
-<h3 id="Deploy-on-Github-Pages"><a href="#Deploy-on-Github-Pages" class="headerlink" title="Deploy on Github Pages"></a>Deploy on Github Pages</h3><p>Register Github account.<br>Build a new repository.<br>Create a SSH keypair. Type <code>$ cd~/. ssh</code>, if shows nothing, we need to create a new keypair.<br>Type<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ssh-keygen -t rsa -C &quot;type personal email here&quot;</span><br></pre></td></tr></table></figure></p>
-<p>Then, just press ‘enter’ button unless you need a password.<br>execute <code>clip &lt; ~/.ssh/id_rsa.pub</code> and paste it into Github account.<br><img src="http://7xrwkh.com1.z0.glb.clouddn.com/SSH-github-setting.png" alt="setting"><br><img src="http://7xrwkh.com1.z0.glb.clouddn.com/SSH-github-setting-SSH.png" alt="ssh"><br>Then, add new SSH key.</p>
-<p>Verify: <code>$ ssh -T git@guthub.com</code><br>if it shows below, you set up well.<br><img src="http://onq81n53u.bkt.clouddn.com/YY%E5%9B%BE%E7%89%8720180110174955.jpg" alt="set"></p>
-<p>Then set a personal info. It doesn’t require same with Github nickname.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$git config --global user.name &quot;type your name here&quot;</span><br><span class="line">$git config --global user.eamil &quot;type your email here&quot;</span><br></pre></td></tr></table></figure></p>
-<p>Copy repository SSH to root Hexo ‘_config.yml’ file<br><img src="http://onq81n53u.bkt.clouddn.com/YY%E5%9B%BE%E7%89%872018011017514333.jpg" alt="ssh"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repository: &apos;paste Github repository here&apos;</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure></p>
-<p>Branch is default as master.</p>
-<p>Execute<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure></p>
-<p>After a while, you can browse the Github Page by typing “https://<repository name="">“. For new, your personal blog has been built.</repository></p>
-<p>Then next level is to change a beautiful theme and add more extension. These will be introduced later. </p>
-<h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ:"></a>FAQ:</h2><p>1.For Github repository, you need to set Github Pages as master branch not just set in Hexo. Click ‘setting’ in the repository, find ‘Github Pages’, Choose ‘master branch’ in ‘Source’. </p>
-<ol start="2">
-<li>If you cannot push file to Github, you should check if the rsa keypair has been copied into Github pages. </li>
-</ol>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p><a href="https://my.oschina.net/ryaneLee/blog/638440" target="_blank" rel="noopener">https://my.oschina.net/ryaneLee/blog/638440</a><br><a href="https://xuanwo.org/2014/08/14/hexo-usual-problem/#Deploy%E4%B9%8B%E5%90%8E%EF%BC%8C%E9%A1%B5%E9%9D%A2%E9%95%BF%E6%97%B6%E9%97%B4404" target="_blank" rel="noopener">https://xuanwo.org/2014/08/14/hexo-usual-problem/#Deploy%E4%B9%8B%E5%90%8E%EF%BC%8C%E9%A1%B5%E9%9D%A2%E9%95%BF%E6%97%B6%E9%97%B4404</a></p>
+        <p>Score function -&gt; Loss function -&gt; Optimization.</p>
+<p>Recall that SVM was formulated as:<br><img src="https://i.imgur.com/wJTf9XM.png" alt="Imgur"><br>This formula archieves a very low loss <strong>L</strong>. Optimization is the process of finding the set of parameters <strong>W</strong> that minimize the loss function.</p>
+<h2 id="Visualizing-the-loss-function"><a href="#Visualizing-the-loss-function" class="headerlink" title="Visualizing the loss function"></a>Visualizing the loss function</h2><p>For high-dimensional spaces, linear classifier weight matrix is difficult to visualize. However, we can gain some intuitions about one by slicing through the high-dimensinal space along rays(1-dimension) or along planes(2-dimensions).<br><img src="http://cs231n.github.io/assets/svm1d.png" alt="sisual"><br>Left: one-dimensional loss by only varying <strong>a</strong>. Middle and Right: two-dimensional loss slice, Blue = low loss, Red = high loss. The loss is piecewise-linear structure. </p>
+<p>For single example, we have:<br><img src="https://i.imgur.com/URZXKwo.png" alt="Imgur"></p>
+<p><img src="https://i.imgur.com/dZz3CPE.png" alt="Imgur"><br>We can visualize this as follows:<br><img src="http://cs231n.github.io/assets/svmbowl.png" alt="Visual"><br>x-axis is a single weight and y-asix is the loss. </p>
+<p>Th picture above has shown an example of a convex function. </p>
+<h2 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization"></a>Optimization</h2><p>The goal of optimization is to find <strong>W</strong> that minimizes the loss function. </p>
+<h3 id="Strategy-1-Random-search-very-bad"><a href="#Strategy-1-Random-search-very-bad" class="headerlink" title="Strategy 1: Random search(very bad)"></a>Strategy 1: Random search(very bad)</h3><p>Try out many different random weights and keep track of what works best.</p>
+<h3 id="Strategy-2-Random-local-search"><a href="#Strategy-2-Random-local-search" class="headerlink" title="Strategy 2: Random local search"></a>Strategy 2: Random local search</h3><p>Start out with a random <strong>W</strong>, generate random perturbations <strong>&amp;W</strong> to it and if the loss is lower.</p>
+<p>This strategy is better, but still wasteful and computationally expensive.</p>
+<h3 id="Strategy-3-Following-the-Gradient"><a href="#Strategy-3-Following-the-Gradient" class="headerlink" title="Strategy 3: Following the Gradient"></a>Strategy 3: Following the Gradient</h3><p>Find a direction in the weight-space that would improve our weight vector. I means we can compute teh best direction along which we should change our weight vector that is mathematically guaranteed to be the direction of the steepest descend. </p>
+<p>In one-dimensional functions, the mathematically expression is:<br><img src="https://i.imgur.com/JlASbf7.png" alt="Imgur">  </p>
+<p>Gradient check: unlike the numerical gradient it can be more error prone to implement, which is why in practice it is very common to compute the analytic gradient and compare it to the numerical gradient to check the correctness of your implementation.</p>
+<p>SVM loss function for a single datapoint:<br><img src="https://i.imgur.com/MwHvp74.png" alt="Imgur"></p>
+<p>We can differentiate the function with respect to the weights.<br><img src="https://i.imgur.com/rMC0JOh.png" alt="Imgur"></p>
+<h2 id="Gradient-descent"><a href="#Gradient-descent" class="headerlink" title="Gradient descent"></a>Gradient descent</h2><p><strong>Mini-batch gradient descent</strong>: batch training<br><strong>Stochastic gradient descent(or on-line gradient descent)</strong>: mini-batch contains only a single example.</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://cs231n.github.io/optimization-1/" target="_blank" rel="noopener">http://cs231n.github.io/optimization-1/</a></p>
 
       
     </div>
@@ -405,7 +404,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Blog/" rel="tag"># Blog</a>
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          
+            <a href="/tags/Optimization/" rel="tag"># Optimization</a>
           
         </div>
       
@@ -418,8 +419,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/29/K-Nearest-Neighbor/" rel="next" title="K-Nearest-Neighbor">
-                <i class="fa fa-chevron-left"></i> K-Nearest-Neighbor
+              <a href="/2018/04/29/Linear-Classifier/" rel="next" title="Linear-Classifier">
+                <i class="fa fa-chevron-left"></i> Linear-Classifier
               </a>
             
           </div>
@@ -427,10 +428,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/29/Linear-Classifier/" rel="prev" title="Linear-Classifier">
-                Linear-Classifier <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -577,7 +574,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Steps"><span class="nav-number">1.</span> <span class="nav-text">Steps:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-Node-js"><span class="nav-number">1.1.</span> <span class="nav-text">Install Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-Git"><span class="nav-number">1.2.</span> <span class="nav-text">Install Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-Hexo"><span class="nav-number">1.3.</span> <span class="nav-text">Install Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-on-Github-Pages"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy on Github Pages</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FAQ"><span class="nav-number">2.</span> <span class="nav-text">FAQ:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Visualizing-the-loss-function"><span class="nav-number">1.</span> <span class="nav-text">Visualizing the loss function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Optimization"><span class="nav-number">2.</span> <span class="nav-text">Optimization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Strategy-1-Random-search-very-bad"><span class="nav-number">2.1.</span> <span class="nav-text">Strategy 1: Random search(very bad)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Strategy-2-Random-local-search"><span class="nav-number">2.2.</span> <span class="nav-text">Strategy 2: Random local search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Strategy-3-Following-the-Gradient"><span class="nav-number">2.3.</span> <span class="nav-text">Strategy 3: Following the Gradient</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gradient-descent"><span class="nav-number">3.</span> <span class="nav-text">Gradient descent</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>
