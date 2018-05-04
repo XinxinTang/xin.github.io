@@ -102,20 +102,25 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Xinxin Tang">
-<meta property="og:url" content="https://XinxinTang/xinxintang.github.io/tags/NumPy/index.html">
+  <meta name="description" content="Column-orientedTraditional relational database is row-oriented. Each row has a row id and every field store in one table.  When searching in row-oriented database, each row will be traversed, no matte">
+<meta name="keywords" content="Big data,NoSQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NoSQL-categories">
+<meta property="og:url" content="https://XinxinTang/xinxintang.github.io/2018/05/04/NoSQL-categories/index.html">
 <meta property="og:site_name" content="Xinxin Tang">
+<meta property="og:description" content="Column-orientedTraditional relational database is row-oriented. Each row has a row id and every field store in one table.  When searching in row-oriented database, each row will be traversed, no matte">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-04T05:42:09.284Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xinxin Tang">
+<meta name="twitter:title" content="NoSQL-categories">
+<meta name="twitter:description" content="Column-orientedTraditional relational database is row-oriented. Each row has a row id and every field store in one table.  When searching in row-oriented database, each row will be traversed, no matte">
 
 
 
 
 
 
-  <link rel="canonical" href="https://XinxinTang/xinxintang.github.io/tags/NumPy/"/>
+  <link rel="canonical" href="https://XinxinTang/xinxintang.github.io/2018/05/04/NoSQL-categories/"/>
 
 
 
@@ -125,7 +130,7 @@
   };
 </script>
 
-  <title>Tag: NumPy | Xinxin Tang</title>
+  <title>NoSQL-categories | Xinxin Tang</title>
   
 
 
@@ -172,7 +177,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -253,75 +258,190 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>NumPy<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/04/NoSQL-categories/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/04/29/NumPy-Tutorial/" itemprop="url">
-              
-                <span itemprop="name">NumPy-Tutorial</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">NoSQL-categories
+              
+            
+          </h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-29T12:12:54-04:00"
-              content="2018-04-29" >
-          04-29
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-04 00:03:00 / Modified: 01:42:09" itemprop="dateCreated datePublished" datetime="2018-05-04T00:03:00-04:00">2018-05-04</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Column-oriented"><a href="#Column-oriented" class="headerlink" title="Column-oriented"></a>Column-oriented</h2><p>Traditional relational database is row-oriented. Each row has a row id and every field store in one table. </p>
+<p>When searching in row-oriented database, each row will be traversed, no matter a certain column data is needed or not. If you search a person whose birth month is September. Row-oriented database will search this table from left to right then from top to down.<br>!(<a href="https://www.onmpw.com/uploads/allimg/160307/1-16030G5050Q55.png" target="_blank" rel="noopener">https://www.onmpw.com/uploads/allimg/160307/1-16030G5050Q55.png</a>)</p>
+<p>Index the target column can promote search speed, but index each column cause extra overload and databse will traverse all columns to search data. </p>
+<p>Column-oriented database will stores each column seperately. It’s very fast to search when the data amount is small.<br>!(<a href="https://www.onmpw.com/uploads/allimg/160307/1-16030G50614146.png" target="_blank" rel="noopener">https://www.onmpw.com/uploads/allimg/160307/1-16030G50614146.png</a>)</p>
+<p>This design looks like adding index for each row. It sacrifices space and writing more index to speed up searching ability. Index maps row ID to data, but column-based database maps data to rowID. Like the picture above, it is easy to search who like archery. This is an inverted index. </p>
+<p>When to use row-oriented and when to use column-oriented? Column-based database is easy to add one new column, but is difficult to add one row.  Therefore, row-oriented database is bettern than column-based on transaction. Because it achieves real-time update. It is commonly used in marketing business.</p>
+<p>Column-oriented database has advantage of data analysis, like sum of values. Batch processing can adopt column-oriented database at night, and it supports quick search and MapReduce aggregation. </p>
+<p>Example: HBase, Cassandra</p>
+<h2 id="K-V-stores"><a href="#K-V-stores" class="headerlink" title="K/V stores"></a>K/V stores</h2><p>This is the easiest store in NoSQL databases.<br>!(<a href="https://www.onmpw.com/uploads/allimg/160307/1-16030G50Q4156.png" target="_blank" rel="noopener">https://www.onmpw.com/uploads/allimg/160307/1-16030G50Q4156.png</a>)</p>
+<p>the complex k/v paire is like:<br>!(<a href="https://www.onmpw.com/uploads/allimg/160307/1-16030G50T43T.jpg" target="_blank" rel="noopener">https://www.onmpw.com/uploads/allimg/160307/1-16030G50T43T.jpg</a>)</p>
+<p>Example: Redis, Amazon Dynamo</p>
+<h2 id="Document-oriented-stores"><a href="#Document-oriented-stores" class="headerlink" title="Document-oriented stores"></a>Document-oriented stores</h2><p>Store based on K/V pair, but structure more complex.<br>!(<a href="https://www.onmpw.com/uploads/allimg/160307/1-16030G50951434.png" target="_blank" rel="noopener">https://www.onmpw.com/uploads/allimg/160307/1-16030G50951434.png</a>)</p>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Big-data/" rel="tag"># Big data</a>
+          
+            <a href="/tags/NoSQL/" rel="tag"># NoSQL</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/03/NoSQL-database/" rel="next" title="NoSQL-MongoDB, Cassandra, Hbase">
+                <i class="fa fa-chevron-left"></i> NoSQL-MongoDB, Cassandra, Hbase
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -342,8 +462,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -435,6 +564,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Column-oriented"><span class="nav-number">1.</span> <span class="nav-text">Column-oriented</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#K-V-stores"><span class="nav-number">2.</span> <span class="nav-text">K/V stores</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Document-oriented-stores"><span class="nav-number">3.</span> <span class="nav-text">Document-oriented stores</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -569,6 +714,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
 
   
 
