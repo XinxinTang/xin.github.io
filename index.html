@@ -274,6 +274,200 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/07/Big-Data-Note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/07/Big-Data-Note/" itemprop="url">
+                  Big Data Course Note
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-07 11:12:40 / Modified: 17:34:57" itemprop="dateCreated datePublished" datetime="2018-05-07T11:12:40-04:00">2018-05-07</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="PPT-1"><a href="#PPT-1" class="headerlink" title="PPT 1"></a>PPT 1</h2><p>Big data: the amount of data just beyond technology’s capability to store, manage and process efficiently.</p>
+<p>Types of Data:<br><strong>structured:</strong><br>usually has defined length and format;<br>Ex: numbers, dates, strings</p>
+<p><strong>unstructured:</strong><br>doesn’t follow a specific format;<br>Ex: documents, images, video, audio, sets of data</p>
+<p><strong>semistructured:</strong><br>falls between the other two;<br>may not conform to a fixed schema, but may be self-defining;<br>Ex: RDF, XML, Linked data</p>
+<p>The situation where our most difficult problem is not how to store the data, but how to process it in meaningful ways.</p>
+<p>Top 5 advantages of successfully managing Big Data:</p>
+<ol>
+<li>Improving overall agency efficiency</li>
+<li>Improving speed/accuracy of decision making</li>
+<li>Ability ot forecast events</li>
+<li>Ease of identifying opportunities for savings</li>
+<li>Greater understanding of citizens needs</li>
+</ol>
+<h2 id="PPT-2"><a href="#PPT-2" class="headerlink" title="PPT 2"></a>PPT 2</h2><p><strong>Graph theory:</strong></p>
+<p>Maximum flow</p>
+<h2 id="PPT-3"><a href="#PPT-3" class="headerlink" title="PPT 3"></a>PPT 3</h2><p><strong>Analytics:</strong>analytics are a suite of tools for processing data to achieve actionable intelligence to support decision-making processes.</p>
+<p><strong>Big Data issues affecting analytics:</strong><br>–Volume<br>–Velocity<br>–Variety<br>–Veracity<br>–Value</p>
+<h2 id="PPT-4"><a href="#PPT-4" class="headerlink" title="PPT 4"></a>PPT 4</h2><p>Statistical Machine Learning</p>
+<p>Unsupervised:<br><strong>K-means Clustering</strong><br><strong>Principal Component Analysis (PCA)</strong>: Dimension reducation</p>
+<p><strong>Normalization:</strong>reshape value range from 0 to 1 </p>
+<h2 id="PPT-5"><a href="#PPT-5" class="headerlink" title="PPT 5"></a>PPT 5</h2><p>Classification:<br><strong>K-Nearest Neighbor</strong><br><strong>Linear Regression Model</strong><br><strong>Logistic Regression Model</strong><br><strong>Generalized Linear Model</strong>:<br>3 essential parts:<br>–Error distribution<br>–Link function<br>–Variance function</p>
+<p><strong>Support Vector Machines (SVM)</strong></p>
+<h2 id="PPT-6"><a href="#PPT-6" class="headerlink" title="PPT 6"></a>PPT 6</h2><p><strong>SQL:</strong>Select, Insert, Update, Delete statements<br><strong>Data Definition:</strong><br>–Schema defined at the start<br>–Triggers to respond to Insert, Update and Delete<br>–Alter and Drop<br>–Security and Access Control</p>
+<p><strong>Transactions:</strong> Properties<br>–Atomic<br>–Consistent<br>–Isolated<br>–Durable</p>
+<p><strong>NoSQL:</strong><br>CAP not ACID:<br>–Consistency:all nodes see the same data at the same time.<br>–Availability:a guarantee that every request receieves a response about whether it was successful or failed. All clients always read and write data<br>–Partitioning: system continues to operate despite arbitrary message loss or failure of part of the system.<br>–Multiple entry points<br><img src="https://i.imgur.com/WcmmwvQ.png" alt="Imgur"><br><img src="https://i.imgur.com/LSRLD3I.png" alt="Imgur"></p>
+<p><strong>K/V stores</strong></p>
+<p><strong>Column stores:</strong><br>–Data is stored across rows rather than in columns as in an RDBMS<br>–Read faster than write</p>
+<p>Ex: Cassandra, HBase(Based on Google’s Big Table)</p>
+<p><strong>Document stores:</strong><br>–Key document stores: document can be seen as value part, so we consider this model as a super set of Key-Value<br>–Document can be represented in many ways, but XML, JSON and BSON are typical representations.</p>
+<p>Ex:MongoDB, CouchDB </p>
+<h2 id="Graph-DBs"><a href="#Graph-DBs" class="headerlink" title="Graph DBs"></a>Graph DBs</h2><p>Graph databases are built with nodes, relationships between nodes and the properties of nodes.</p>
+<h2 id="Case-Cassandra"><a href="#Case-Cassandra" class="headerlink" title="Case: Cassandra"></a>Case: Cassandra</h2><p>-Both Key-Value and Column store;<br>-High availability;<br>-Eventual consistency;<br>-Incremental scalability</p>
+<p><strong>Architecture</strong><br>-Implements a peer-to-peer distribution system across nodes<br>-Each node is independent but interconnected with all other nodes<br>-Each node can accept read and write requests, regradless of where the data is located in the cluster<br>-When a node goes down, read/write requests can be served from other nodes</p>
+<h2 id="Case-MongoDB"><a href="#Case-MongoDB" class="headerlink" title="Case: MongoDB"></a>Case: MongoDB</h2><p><strong>Goals:</strong><br>-Scale horizontally over commodity hardware<br>-Resolve problems that don’t distribute well<br>-Use in-memory processing wherever possible<br>-Auto-sharding built-in<br>-Dynamically add/remove capacity with no downtime<br>-Query contents as well as structure</p>
+<p>JSON style documents with dynamic schemas;<br>No predefined schema;<br>Stores documents in BSON(binary format)<br><img src="https://i.imgur.com/IBuvKDD.png" alt="Imgur"></p>
+<p><img src="https://i.imgur.com/m4xyqol.png" alt="Imgur"></p>
+<p><img src="https://i.imgur.com/vtdJJzD.png" alt="Imgur"></p>
+<p>All indexes in MongoDB are B-Tree indexes.</p>
+<p>Queries:<br><img src="https://i.imgur.com/ZQxSFbg.png" alt="Imgur"></p>
+<p><strong>CRUE Operations:</strong><br>Create:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.collection.insert(&lt;document&gt;)</span><br><span class="line">db.collection.save(&lt;document&gt;)</span><br><span class="line">db.collection.update(&lt;document&gt;)</span><br></pre></td></tr></table></figure></p>
+<p>Read:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db.collection.find(&lt;query&gt;, &lt;projection&gt;)</span><br><span class="line">db.collection.findOne(&lt;query&gt;, &lt;projection&gt;)</span><br></pre></td></tr></table></figure></p>
+<p>Update:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.collection.update(&lt;query&gt;, &lt;update&gt;, &lt;options&gt;)</span><br></pre></td></tr></table></figure></p>
+<p>Delete:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.collection.remove(&lt;query&gt;, &lt;justOne&gt;)</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://i.imgur.com/E16M8kH.png" alt="Imgur"></p>
+<p>Blog in Relational DB<br><img src="https://i.imgur.com/bIk9fLt.png" alt="Imgur"></p>
+<p>Blog in Document DB<br><img src="https://i.imgur.com/779n0ci.png" alt="Imgur"></p>
+<p>Query:<br><img src="https://i.imgur.com/4t4MdwM.png" alt="Imgur"></p>
+<h2 id="PPT-7"><a href="#PPT-7" class="headerlink" title="PPT 7"></a>PPT 7</h2><p><strong>Hadoop</strong><br>Written in Java<br>3 core components: HDFS; Yarn(Scheduler); MPP(Massive Parallel Processing)/MR(MapReduce)(Processing modules)</p>
+<p>HDFS:<br><img src="https://i.imgur.com/80xVUSa.png" alt="Imgur"></p>
+<p>Communications:<br>HDFS Communication protocols are layered on the top of the TCP/IP protocol. </p>
+<p><strong>Pig</strong></p>
+<p><strong>Hive</strong></p>
+<h2 id="PPT-8"><a href="#PPT-8" class="headerlink" title="PPT 8"></a>PPT 8</h2><p><strong>Spark</strong><br>Computations in-memory</p>
+<h2 id="PPT-9"><a href="#PPT-9" class="headerlink" title="PPT 9"></a>PPT 9</h2><p><strong>Graph Databases</strong><br>Allow us to store entities and relationships between these entities.</p>
+<p>It is a DBMS that supports CRUD operations:<br>-Normally optimized for OLTP</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/04/NoSQL-categories/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -320,12 +514,24 @@
                 
               
 
-              <time title="Created: 2018-05-04 00:03:00 / Modified: 01:42:09" itemprop="dateCreated datePublished" datetime="2018-05-04T00:03:00-04:00">2018-05-04</time>
+              <time title="Created: 2018-05-04 00:03:00" itemprop="dateCreated datePublished" datetime="2018-05-04T00:03:00-04:00">2018-05-04</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-07 17:35:42" itemprop="dateModified" datetime="2018-05-07T17:35:42-04:00">2018-05-07</time>
               
             
           </span>
@@ -361,17 +567,17 @@
         
           
             <h2 id="Column-oriented"><a href="#Column-oriented" class="headerlink" title="Column-oriented"></a>Column-oriented</h2><p>Traditional relational database is row-oriented. Each row has a row id and every field store in one table. </p>
-<p>When searching in row-oriented database, each row will be traversed, no matter a certain column data is needed or not. If you search a person whose birth month is September. Row-oriented database will search this table from left to right then from top to down.<br>!(<a href="https://www.onmpw.com/uploads/allimg/160307/1-16030G5050Q55.png" target="_blank" rel="noopener">https://www.onmpw.com/uploads/allimg/160307/1-16030G5050Q55.png</a>)</p>
+<p>When searching in row-oriented database, each row will be traversed, no matter a certain column data is needed or not. If you search a person whose birth month is September. Row-oriented database will search this table from left to right then from top to down.<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G5050Q55.png" alt=""></p>
 <p>Index the target column can promote search speed, but index each column cause extra overload and databse will traverse all columns to search data. </p>
-<p>Column-oriented database will stores each column seperately. It’s very fast to search when the data amount is small.<br>!(<a href="https://www.onmpw.com/uploads/allimg/160307/1-16030G50614146.png" target="_blank" rel="noopener">https://www.onmpw.com/uploads/allimg/160307/1-16030G50614146.png</a>)</p>
+<p>Column-oriented database will stores each column seperately. It’s very fast to search when the data amount is small.<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G50614146.png" alt=""></p>
 <p>This design looks like adding index for each row. It sacrifices space and writing more index to speed up searching ability. Index maps row ID to data, but column-based database maps data to rowID. Like the picture above, it is easy to search who like archery. This is an inverted index. </p>
 <p>When to use row-oriented and when to use column-oriented? Column-based database is easy to add one new column, but is difficult to add one row.  Therefore, row-oriented database is bettern than column-based on transaction. Because it achieves real-time update. It is commonly used in marketing business.</p>
 <p>Column-oriented database has advantage of data analysis, like sum of values. Batch processing can adopt column-oriented database at night, and it supports quick search and MapReduce aggregation. </p>
 <p>Example: HBase, Cassandra</p>
-<h2 id="K-V-stores"><a href="#K-V-stores" class="headerlink" title="K/V stores"></a>K/V stores</h2><p>This is the easiest store in NoSQL databases.<br>!(<a href="https://www.onmpw.com/uploads/allimg/160307/1-16030G50Q4156.png" target="_blank" rel="noopener">https://www.onmpw.com/uploads/allimg/160307/1-16030G50Q4156.png</a>)</p>
-<p>the complex k/v paire is like:<br>!(<a href="https://www.onmpw.com/uploads/allimg/160307/1-16030G50T43T.jpg" target="_blank" rel="noopener">https://www.onmpw.com/uploads/allimg/160307/1-16030G50T43T.jpg</a>)</p>
+<h2 id="K-V-stores"><a href="#K-V-stores" class="headerlink" title="K/V stores"></a>K/V stores</h2><p>This is the easiest store in NoSQL databases.<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G50Q4156.png" alt=""></p>
+<p>the complex k/v paire is like:<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G50T43T.jpg" alt=""></p>
 <p>Example: Redis, Amazon Dynamo</p>
-<h2 id="Document-oriented-stores"><a href="#Document-oriented-stores" class="headerlink" title="Document-oriented stores"></a>Document-oriented stores</h2><p>Store based on K/V pair, but structure more complex.<br>!(<a href="https://www.onmpw.com/uploads/allimg/160307/1-16030G50951434.png" target="_blank" rel="noopener">https://www.onmpw.com/uploads/allimg/160307/1-16030G50951434.png</a>)</p>
+<h2 id="Document-oriented-stores"><a href="#Document-oriented-stores" class="headerlink" title="Document-oriented stores"></a>Document-oriented stores</h2><p>Store based on K/V pair, but structure more complex.<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G50951434.png" alt=""></p>
 
           
         
@@ -1691,166 +1897,6 @@ p = np.exp(f)/np.sum(np.exp(f)) # safe to do
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/How-to-build-a-personal-blog-on-Github/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/29/How-to-build-a-personal-blog-on-Github/" itemprop="url">
-                  How to build a personal blog on Github with Hexo
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-04-29 17:43:27 / Modified: 18:25:15" itemprop="dateCreated datePublished" datetime="2018-04-29T17:43:27-04:00">2018-04-29</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps:"></a>Steps:</h2><h3 id="Install-Node-js"><a href="#Install-Node-js" class="headerlink" title="Install Node.js"></a>Install <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node.js</a></h3><h3 id="Install-Git"><a href="#Install-Git" class="headerlink" title="Install Git"></a>Install <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a></h3><p>Choose the right version of operating system.<br>Verify if it installed successfully.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">$ git version</span><br></pre></td></tr></table></figure></p>
-<p>If there is no right to install it, add <code>sudo</code> at the top.</p>
-<h3 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>First line for Hexo installation, second line for Git page deployer.</p>
-<p>Then,type <code>hexo init</code> command to initialize Hexo.</p>
-<p>Execute commands below and then access to localhost:4000 to view the effect.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></p>
-<p><img src="http://onq81n53u.bkt.clouddn.com/YY%E5%9B%BE%E7%89%8720180110175140.jpg" alt="Hexo"></p>
-<h3 id="Deploy-on-Github-Pages"><a href="#Deploy-on-Github-Pages" class="headerlink" title="Deploy on Github Pages"></a>Deploy on Github Pages</h3><p>Register Github account.<br>Build a new repository.<br>Create a SSH keypair. Type <code>$ cd~/. ssh</code>, if shows nothing, we need to create a new keypair.<br>Type<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ssh-keygen -t rsa -C &quot;type personal email here&quot;</span><br></pre></td></tr></table></figure></p>
-<p>Then, just press ‘enter’ button unless you need a password.<br>execute <code>clip &lt; ~/.ssh/id_rsa.pub</code> and paste it into Github account.<br><img src="http://7xrwkh.com1.z0.glb.clouddn.com/SSH-github-setting.png" alt="setting"><br><img src="http://7xrwkh.com1.z0.glb.clouddn.com/SSH-github-setting-SSH.png" alt="ssh"><br>Then, add new SSH key.</p>
-<p>Verify: <code>$ ssh -T git@guthub.com</code><br>if it shows below, you set up well.<br><img src="http://onq81n53u.bkt.clouddn.com/YY%E5%9B%BE%E7%89%8720180110174955.jpg" alt="set"></p>
-<p>Then set a personal info. It doesn’t require same with Github nickname.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$git config --global user.name &quot;type your name here&quot;</span><br><span class="line">$git config --global user.eamil &quot;type your email here&quot;</span><br></pre></td></tr></table></figure></p>
-<p>Copy repository SSH to root Hexo ‘_config.yml’ file<br><img src="http://onq81n53u.bkt.clouddn.com/YY%E5%9B%BE%E7%89%872018011017514333.jpg" alt="ssh"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repository: &apos;paste Github repository here&apos;</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure></p>
-<p>Branch is default as master.</p>
-<p>Execute<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure></p>
-<p>After a while, you can browse the Github Page by typing “https://<repository name="">“. For new, your personal blog has been built.</repository></p>
-<p>Then next level is to change a beautiful theme and add more extension. These will be introduced later. </p>
-<h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ:"></a>FAQ:</h2><p>1.For Github repository, you need to set Github Pages as master branch not just set in Hexo. Click ‘setting’ in the repository, find ‘Github Pages’, Choose ‘master branch’ in ‘Source’. </p>
-<ol start="2">
-<li>If you cannot push file to Github, you should check if the rsa keypair has been copied into Github pages. </li>
-</ol>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p><a href="https://my.oschina.net/ryaneLee/blog/638440" target="_blank" rel="noopener">https://my.oschina.net/ryaneLee/blog/638440</a><br><a href="https://xuanwo.org/2014/08/14/hexo-usual-problem/#Deploy%E4%B9%8B%E5%90%8E%EF%BC%8C%E9%A1%B5%E9%9D%A2%E9%95%BF%E6%97%B6%E9%97%B4404" target="_blank" rel="noopener">https://xuanwo.org/2014/08/14/hexo-usual-problem/#Deploy%E4%B9%8B%E5%90%8E%EF%BC%8C%E9%A1%B5%E9%9D%A2%E9%95%BF%E6%97%B6%E9%97%B4404</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1898,7 +1944,7 @@ p = np.exp(f)/np.sum(np.exp(f)) # safe to do
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1949,7 +1995,9 @@ p = np.exp(f)/np.sum(np.exp(f)) # safe to do
                     
                       
                     
-                    <span class="site-state-item-count">18</span>
+                      
+                    
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
