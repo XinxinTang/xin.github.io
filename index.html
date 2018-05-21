@@ -274,6 +274,338 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/21/spark/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/21/spark/" itemprop="url">
+                  spark.md
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-21 14:01:20 / Modified: 17:46:56" itemprop="dateCreated datePublished" datetime="2018-05-21T14:01:20-04:00">2018-05-21</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Spark is a large-scale data computing engine, which is written by Scala. </p>
+<h1 id="Features-of-Apache-Spark"><a href="#Features-of-Apache-Spark" class="headerlink" title="Features of Apache Spark"></a>Features of Apache Spark</h1><ol>
+<li>Faster speed: In memory,theoretically, the speed of Spark is 100 times faster than Speed of Hadoop</li>
+<li>In-memory computing engine: provides Cache mechanism to support continuous iterations or retrieve shared data, reduce cost of I/O of data.</li>
+<li>DAG engine: reduce cost of HDFS Read/Write during computing </li>
+<li>Use multi-threaded pool to reduce cost of task startup.</li>
+<li>Easy to use:<br>over 80 high-level operators.<br>supports Java, Python, Scala, R<br>the amount of code is 2 to 5 times less than MapReduce’s</li>
+<li>Generalization: provides many libraries like Spark SQL, Spark MLlib, Spark GraphX, Spark Streaming.</li>
+<li>Supports multiple resource schedulers: Hadoop Yarn, Apache Mesos, and Standalone cluster scheduler.</li>
+</ol>
+<h1 id="Resilient-Distributed-Datasets-RDD"><a href="#Resilient-Distributed-Datasets-RDD" class="headerlink" title="Resilient Distributed Datasets(RDD)"></a>Resilient Distributed Datasets(RDD)</h1><ol>
+<li>Collections in cluster, which is read only and consists of Partitions.</li>
+<li>Stores in disk or memory.</li>
+<li>Operations is composed by <strong>transformation</strong> and <strong>action</strong> </li>
+<li>Automatically reorganization if it fails.</li>
+</ol>
+<h2 id="Features-of-Transformation-and-Action"><a href="#Features-of-Transformation-and-Action" class="headerlink" title="Features of Transformation and Action"></a>Features of Transformation and Action</h2><ol>
+<li>Different APIs: T: RDD[X]-&gt;RDD[Y]; A:RDD[X]-&gt;Z(Z is probably a basic data type like array)</li>
+<li>Lazy actions:<br>Transformation only record RDD transform relation<br>Action triggers executions of program</li>
+</ol>
+<h1 id="Spark-Streaming"><a href="#Spark-Streaming" class="headerlink" title="Spark Streaming"></a>Spark Streaming</h1><p>Splits streaming data into small pieces and processes batch data. It will reduce latency. </p>
+<h2 id="Difference-between-MR-and-Spark"><a href="#Difference-between-MR-and-Spark" class="headerlink" title="Difference between MR and Spark"></a>Difference between MR and Spark</h2><p><img src="http://www.uml.org.cn/bigdata/images/201803131.png" alt=""><br>MR:</p>
+<ol>
+<li>Only privides <strong>Map</strong> and <strong>Reduce</strong> operations</li>
+<li>Low efficiency of processing: bad at iterating computing, interface processing, and log analysis</li>
+<li>The middle result of <strong>Map</strong> needs to write into disk and <strong>Reduce</strong> needs to write into HDFS.</li>
+<li>High cost of Task Scheduling and Startups.</li>
+<li>Cannot fully use of memory</li>
+<li>Map and Reduce need to sort data. </li>
+</ol>
+<h1 id="Implements-of-Spark"><a href="#Implements-of-Spark" class="headerlink" title="Implements of Spark"></a>Implements of Spark</h1><ol>
+<li>Log collecting and searching</li>
+<li>User’s tap prediction</li>
+<li>Common friends</li>
+<li>ETL task of SparkSQL and DAG</li>
+</ol>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="http://www.uml.org.cn/bigdata/201803131.asp" target="_blank" rel="noopener">Spark: Computing Engine</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/21/C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/21/C/" itemprop="url">
+                  C++
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-21 13:28:04 / Modified: 13:54:56" itemprop="dateCreated datePublished" datetime="2018-05-21T13:28:04-04:00">2018-05-21</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>C++ is a general-purpose, middle-level programming language, with high and low-level programming capabilities, and this is one of the most popular commercial programming languages.</p>
+<p>C++ is a multi-paradigm programming language that supports object-oriented programming(OOP). </p>
+<h1 id="Uses-of-C"><a href="#Uses-of-C" class="headerlink" title="Uses of C++"></a>Uses of C++</h1><p>C++ is used by programmers to create computer software. It is used to create general systems software, drivers for various computer devices, software for servers and software for specific applications and also widely used in the creation of video games.</p>
+<p>C++ is mostly used to write device driver programs, system software, and applications that depend on direct hardware manipulation under real-time constraints. </p>
+<h1 id="OOP-and-C"><a href="#OOP-and-C" class="headerlink" title="OOP and C++"></a>OOP and C++</h1><p>C++ supports OOP with four major principles of OOD:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Abastraction</span><br><span class="line">Encapsulation</span><br><span class="line">Inheritance</span><br><span class="line">Polymorphism</span><br></pre></td></tr></table></figure></p>
+<h1 id="Features-of-OO-C"><a href="#Features-of-OO-C" class="headerlink" title="Features of OO C++"></a>Features of OO C++</h1><ol>
+<li>the main focus remains on data rather than procedures</li>
+<li>Object-oriented programs are segmented into parts called objects</li>
+<li>Data sturctures are designed to categorize the objects</li>
+<li>Data member and functions are tied together as a data structure</li>
+<li>Data can be hidden and cannot be accessed by external functions using access specifier</li>
+<li>Objects can communicate among themselves using functions</li>
+<li>New data and functions can be easily added anywhere within a program whenever retuired</li>
+<li>It follows a bottom-up approach. </li>
+</ol>
+<h1 id="Standard-Libraries-in-C"><a href="#Standard-Libraries-in-C" class="headerlink" title="Standard Libraries in C++"></a>Standard Libraries in C++</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C++ core language</span><br><span class="line">C++ standard library</span><br><span class="line">STL(Standard Template Library)</span><br></pre></td></tr></table></figure>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.w3schools.in/cplusplus-tutorial/" target="_blank" rel="noopener">C++</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/21/SQL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1048,7 +1380,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-05-21 00:36:47" itemprop="dateModified" datetime="2018-05-21T00:36:47-04:00">2018-05-21</time>
+                <time title="Modified: 2018-05-21 13:27:14" itemprop="dateModified" datetime="2018-05-21T13:27:14-04:00">2018-05-21</time>
               
             
           </span>
@@ -1084,9 +1416,11 @@
         
           
             <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This blog is to explain some important concepts about what, how, why.</span><br></pre></td></tr></table></figure>
-<h1 id="Programming-Languages"><a href="#Programming-Languages" class="headerlink" title="Programming Languages"></a>Programming Languages</h1><h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><p><a href="https://xinxintang.github.io/2018/05/20/Java/" target="_blank" rel="noopener">Java</a></p>
+<h1 id="Languages"><a href="#Languages" class="headerlink" title="Languages"></a>Languages</h1><h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><p><a href="https://xinxintang.github.io/2018/05/20/Java/" target="_blank" rel="noopener">Java</a></p>
 <h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><p><a href="https://xinxintang.github.io/2018/05/21/Python/" target="_blank" rel="noopener">Python</a></p>
-<h2 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h2><h1 id="Big-Data"><a href="#Big-Data" class="headerlink" title="Big Data"></a>Big Data</h1><h2 id="Data-Collection"><a href="#Data-Collection" class="headerlink" title="Data Collection"></a>Data Collection</h2><h3 id="Collectors"><a href="#Collectors" class="headerlink" title="Collectors"></a>Collectors</h3><h3 id="Message-Queues"><a href="#Message-Queues" class="headerlink" title="Message Queues"></a>Message Queues</h3><h4 id="Kafka"><a href="#Kafka" class="headerlink" title="Kafka"></a>Kafka</h4><h4 id="RabbitMQ"><a href="#RabbitMQ" class="headerlink" title="RabbitMQ"></a>RabbitMQ</h4><h2 id="Data-Processing"><a href="#Data-Processing" class="headerlink" title="Data Processing"></a>Data Processing</h2><h3 id="Spark"><a href="#Spark" class="headerlink" title="Spark"></a>Spark</h3><h3 id="MapReduce"><a href="#MapReduce" class="headerlink" title="MapReduce"></a>MapReduce</h3><h2 id="Data-Storage"><a href="#Data-Storage" class="headerlink" title="Data Storage"></a>Data Storage</h2><h3 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h3><h3 id="Cassandra"><a href="#Cassandra" class="headerlink" title="Cassandra"></a>Cassandra</h3><h3 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h3><h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><h2 id="Data-Visualization"><a href="#Data-Visualization" class="headerlink" title="Data Visualization"></a>Data Visualization</h2><h3 id="ELK"><a href="#ELK" class="headerlink" title="ELK"></a>ELK</h3><h2 id="Cloud-Computing"><a href="#Cloud-Computing" class="headerlink" title="Cloud Computing"></a>Cloud Computing</h2><h3 id="AWS"><a href="#AWS" class="headerlink" title="AWS"></a>AWS</h3><h2 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h2><h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h3><h1 id="Machine-Learning"><a href="#Machine-Learning" class="headerlink" title="Machine Learning"></a>Machine Learning</h1><h2 id="Machine-Learning-Algorithms"><a href="#Machine-Learning-Algorithms" class="headerlink" title="Machine Learning Algorithms"></a>Machine Learning Algorithms</h2>
+<h2 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h2><h2 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h2><p><a href="https://xinxintang.github.io/2018/05/21/SQL/" target="_blank" rel="noopener">SQL</a></p>
+<h1 id="Big-Data"><a href="#Big-Data" class="headerlink" title="Big Data"></a>Big Data</h1><h2 id="Data-Collection"><a href="#Data-Collection" class="headerlink" title="Data Collection"></a>Data Collection</h2><h3 id="Collectors"><a href="#Collectors" class="headerlink" title="Collectors"></a>Collectors</h3><h3 id="Message-Queues"><a href="#Message-Queues" class="headerlink" title="Message Queues"></a>Message Queues</h3><h4 id="Kafka"><a href="#Kafka" class="headerlink" title="Kafka"></a>Kafka</h4><h4 id="RabbitMQ"><a href="#RabbitMQ" class="headerlink" title="RabbitMQ"></a>RabbitMQ</h4><h2 id="Data-Processing"><a href="#Data-Processing" class="headerlink" title="Data Processing"></a>Data Processing</h2><h3 id="Spark"><a href="#Spark" class="headerlink" title="Spark"></a>Spark</h3><h3 id="MapReduce"><a href="#MapReduce" class="headerlink" title="MapReduce"></a>MapReduce</h3><h2 id="Data-Storage"><a href="#Data-Storage" class="headerlink" title="Data Storage"></a>Data Storage</h2><h3 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h3><h3 id="Cassandra"><a href="#Cassandra" class="headerlink" title="Cassandra"></a>Cassandra</h3><h3 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h3><h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><p><a href="https://xinxintang.github.io/2018/05/21/MySQL/" target="_blank" rel="noopener">MySQL</a></p>
+<h2 id="Data-Visualization"><a href="#Data-Visualization" class="headerlink" title="Data Visualization"></a>Data Visualization</h2><h3 id="ELK"><a href="#ELK" class="headerlink" title="ELK"></a>ELK</h3><h2 id="Cloud-Computing"><a href="#Cloud-Computing" class="headerlink" title="Cloud Computing"></a>Cloud Computing</h2><h3 id="AWS"><a href="#AWS" class="headerlink" title="AWS"></a>AWS</h3><h2 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h2><h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h3><h1 id="Machine-Learning"><a href="#Machine-Learning" class="headerlink" title="Machine Learning"></a>Machine Learning</h1><h2 id="Machine-Learning-Algorithms"><a href="#Machine-Learning-Algorithms" class="headerlink" title="Machine Learning Algorithms"></a>Machine Learning Algorithms</h2>
           
         
       
@@ -1553,309 +1887,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/13/Character/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/13/Character/" itemprop="url">
-                  Character
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-05-13 16:00:12 / Modified: 16:02:11" itemprop="dateCreated datePublished" datetime="2018-05-13T16:00:12-04:00">2018-05-13</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Common used functions:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">isLetter()</span><br><span class="line">isDigit()</span><br><span class="line">isWhitespace()</span><br><span class="line">isUpperCase()</span><br><span class="line">isLowerCase()</span><br><span class="line">toUpperCase()</span><br><span class="line">toLowerCase()</span><br><span class="line">toString()</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/13/NumberMathClass/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/13/NumberMathClass/" itemprop="url">
-                  Number & Math package--Java
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-05-13 15:54:12 / Modified: 16:00:02" itemprop="dateCreated datePublished" datetime="2018-05-13T15:54:12-04:00">2018-05-13</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Common used functions:</p>
-<pre><code>import Math
-
-compareTo()
-equals()
-valueOf()
-toString()
-parseInt()
-abs()
-ceil(): return minimum greater or equal to target number
-floor(): return maximum less or equal to target number
-min():
-max():
-exp()
-log()
-pow()
-sqrt()
-sin()
-cos()
-tan()
-asin()
-acos()
-atan()
-random()
-</code></pre>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1903,7 +1934,7 @@ random()
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-count">34</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1964,7 +1995,13 @@ random()
                     
                       
                     
-                    <span class="site-state-item-count">23</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">26</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>

@@ -102,37 +102,27 @@
 
 
 
-  <meta name="description" content="PPT 1Big data: the amount of data just beyond technology’s capability to store, manage and process efficiently. Types of Data:structured:usually has defined length and format;Ex: numbers, dates, strin">
-<meta name="keywords" content="Big Data">
+  <meta name="description" content="Spark is a large-scale data computing engine, which is written by Scala.  Features of Apache Spark Faster speed: In memory,theoretically, the speed of Spark is 100 times faster than Speed of Hadoop In">
+<meta name="keywords" content="Big Data,Spark">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Big Data Course Note">
-<meta property="og:url" content="https://XinxinTang/xinxintang.github.io/2018/05/07/Big-Data-Note/index.html">
+<meta property="og:title" content="spark.md">
+<meta property="og:url" content="https://XinxinTang/xinxintang.github.io/2018/05/21/spark/index.html">
 <meta property="og:site_name" content="Xinxin Tang">
-<meta property="og:description" content="PPT 1Big data: the amount of data just beyond technology’s capability to store, manage and process efficiently. Types of Data:structured:usually has defined length and format;Ex: numbers, dates, strin">
+<meta property="og:description" content="Spark is a large-scale data computing engine, which is written by Scala.  Features of Apache Spark Faster speed: In memory,theoretically, the speed of Spark is 100 times faster than Speed of Hadoop In">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://i.imgur.com/WcmmwvQ.png">
-<meta property="og:image" content="https://i.imgur.com/LSRLD3I.png">
-<meta property="og:image" content="https://i.imgur.com/IBuvKDD.png">
-<meta property="og:image" content="https://i.imgur.com/m4xyqol.png">
-<meta property="og:image" content="https://i.imgur.com/vtdJJzD.png">
-<meta property="og:image" content="https://i.imgur.com/ZQxSFbg.png">
-<meta property="og:image" content="https://i.imgur.com/E16M8kH.png">
-<meta property="og:image" content="https://i.imgur.com/bIk9fLt.png">
-<meta property="og:image" content="https://i.imgur.com/779n0ci.png">
-<meta property="og:image" content="https://i.imgur.com/4t4MdwM.png">
-<meta property="og:image" content="https://i.imgur.com/80xVUSa.png">
-<meta property="og:updated_time" content="2018-05-07T21:39:28.410Z">
+<meta property="og:image" content="http://www.uml.org.cn/bigdata/images/201803131.png">
+<meta property="og:updated_time" content="2018-05-21T21:46:56.277Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Big Data Course Note">
-<meta name="twitter:description" content="PPT 1Big data: the amount of data just beyond technology’s capability to store, manage and process efficiently. Types of Data:structured:usually has defined length and format;Ex: numbers, dates, strin">
-<meta name="twitter:image" content="https://i.imgur.com/WcmmwvQ.png">
+<meta name="twitter:title" content="spark.md">
+<meta name="twitter:description" content="Spark is a large-scale data computing engine, which is written by Scala.  Features of Apache Spark Faster speed: In memory,theoretically, the speed of Spark is 100 times faster than Speed of Hadoop In">
+<meta name="twitter:image" content="http://www.uml.org.cn/bigdata/images/201803131.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://XinxinTang/xinxintang.github.io/2018/05/07/Big-Data-Note/"/>
+  <link rel="canonical" href="https://XinxinTang/xinxintang.github.io/2018/05/21/spark/"/>
 
 
 
@@ -142,7 +132,7 @@
   };
 </script>
 
-  <title>Big Data Course Note | Xinxin Tang</title>
+  <title>spark.md | Xinxin Tang</title>
   
 
 
@@ -290,7 +280,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/07/Big-Data-Note/">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/21/spark/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xinxin Tang">
@@ -307,7 +297,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Big Data Course Note
+          <h1 class="post-title" itemprop="name headline">spark.md
               
             
           </h1>
@@ -332,7 +322,7 @@
                 
               
 
-              <time title="Created: 2018-05-07 11:12:40 / Modified: 17:39:28" itemprop="dateCreated datePublished" datetime="2018-05-07T11:12:40-04:00">2018-05-07</time>
+              <time title="Created: 2018-05-21 14:01:20 / Modified: 17:46:56" itemprop="dateCreated datePublished" datetime="2018-05-21T14:01:20-04:00">2018-05-21</time>
             
 
             
@@ -370,61 +360,43 @@
       
 
       
-        <h2 id="PPT-1"><a href="#PPT-1" class="headerlink" title="PPT 1"></a>PPT 1</h2><p>Big data: the amount of data just beyond technology’s capability to store, manage and process efficiently.</p>
-<p>Types of Data:<br><strong>structured:</strong><br>usually has defined length and format;<br>Ex: numbers, dates, strings</p>
-<p><strong>unstructured:</strong><br>doesn’t follow a specific format;<br>Ex: documents, images, video, audio, sets of data</p>
-<p><strong>semistructured:</strong><br>falls between the other two;<br>may not conform to a fixed schema, but may be self-defining;<br>Ex: RDF, XML, Linked data</p>
-<p>The situation where our most difficult problem is not how to store the data, but how to process it in meaningful ways.</p>
-<p>Top 5 advantages of successfully managing Big Data:</p>
-<ol>
-<li>Improving overall agency efficiency</li>
-<li>Improving speed/accuracy of decision making</li>
-<li>Ability ot forecast events</li>
-<li>Ease of identifying opportunities for savings</li>
-<li>Greater understanding of citizens needs</li>
+        <p>Spark is a large-scale data computing engine, which is written by Scala. </p>
+<h1 id="Features-of-Apache-Spark"><a href="#Features-of-Apache-Spark" class="headerlink" title="Features of Apache Spark"></a>Features of Apache Spark</h1><ol>
+<li>Faster speed: In memory,theoretically, the speed of Spark is 100 times faster than Speed of Hadoop</li>
+<li>In-memory computing engine: provides Cache mechanism to support continuous iterations or retrieve shared data, reduce cost of I/O of data.</li>
+<li>DAG engine: reduce cost of HDFS Read/Write during computing </li>
+<li>Use multi-threaded pool to reduce cost of task startup.</li>
+<li>Easy to use:<br>over 80 high-level operators.<br>supports Java, Python, Scala, R<br>the amount of code is 2 to 5 times less than MapReduce’s</li>
+<li>Generalization: provides many libraries like Spark SQL, Spark MLlib, Spark GraphX, Spark Streaming.</li>
+<li>Supports multiple resource schedulers: Hadoop Yarn, Apache Mesos, and Standalone cluster scheduler.</li>
 </ol>
-<h2 id="PPT-2"><a href="#PPT-2" class="headerlink" title="PPT 2"></a>PPT 2</h2><p><strong>Graph theory:</strong></p>
-<p>Maximum flow</p>
-<h2 id="PPT-3"><a href="#PPT-3" class="headerlink" title="PPT 3"></a>PPT 3</h2><p><strong>Analytics:</strong>analytics are a suite of tools for processing data to achieve actionable intelligence to support decision-making processes.</p>
-<p><strong>Big Data issues affecting analytics:</strong><br>–Volume<br>–Velocity<br>–Variety<br>–Veracity<br>–Value</p>
-<h2 id="PPT-4"><a href="#PPT-4" class="headerlink" title="PPT 4"></a>PPT 4</h2><p>Statistical Machine Learning</p>
-<p>Unsupervised:<br><strong>K-means Clustering</strong><br><strong>Principal Component Analysis (PCA)</strong>: Dimension reducation</p>
-<p><strong>Normalization:</strong>reshape value range from 0 to 1 </p>
-<h2 id="PPT-5"><a href="#PPT-5" class="headerlink" title="PPT 5"></a>PPT 5</h2><p>Classification:<br><strong>K-Nearest Neighbor</strong><br><strong>Linear Regression Model</strong><br><strong>Logistic Regression Model</strong><br><strong>Generalized Linear Model</strong>:<br>3 essential parts:<br>–Error distribution<br>–Link function<br>–Variance function</p>
-<p><strong>Support Vector Machines (SVM)</strong></p>
-<h2 id="PPT-6"><a href="#PPT-6" class="headerlink" title="PPT 6"></a>PPT 6</h2><p><strong>SQL:</strong>Select, Insert, Update, Delete statements<br><strong>Data Definition:</strong><br>–Schema defined at the start<br>–Triggers to respond to Insert, Update and Delete<br>–Alter and Drop<br>–Security and Access Control</p>
-<p><strong>Transactions:</strong> Properties<br>–Atomic<br>–Consistent<br>–Isolated<br>–Durable</p>
-<p><strong>NoSQL:</strong><br>CAP not ACID:<br>–Consistency:all nodes see the same data at the same time.<br>–Availability:a guarantee that every request receieves a response about whether it was successful or failed. All clients always read and write data<br>–Partitioning: system continues to operate despite arbitrary message loss or failure of part of the system.<br>–Multiple entry points<br><img src="https://i.imgur.com/WcmmwvQ.png" alt="Imgur"><br><img src="https://i.imgur.com/LSRLD3I.png" alt="Imgur"></p>
-<p><strong>K/V stores</strong></p>
-<p><strong>Column stores:</strong><br>–Data is stored across rows rather than in columns as in an RDBMS<br>–Read faster than write</p>
-<p>Ex: Cassandra, HBase(Based on Google’s Big Table)</p>
-<p><strong>Document stores:</strong><br>–Key document stores: document can be seen as value part, so we consider this model as a super set of Key-Value<br>–Document can be represented in many ways, but XML, JSON and BSON are typical representations.</p>
-<p>Ex:MongoDB, CouchDB </p>
-<p><strong>Graph DBs</strong><br>Graph databases are built with nodes, relationships between nodes and the properties of nodes.</p>
-<p><strong>Case: Cassandra</strong><br>-Both Key-Value and Column store;<br>-High availability;<br>-Eventual consistency;<br>-Incremental scalability</p>
-<p><strong>Architecture</strong><br>-Implements a peer-to-peer distribution system across nodes<br>-Each node is independent but interconnected with all other nodes<br>-Each node can accept read and write requests, regradless of where the data is located in the cluster<br>-When a node goes down, read/write requests can be served from other nodes</p>
-<p><strong>Case: MongoDB</strong><br><strong>Goals:</strong><br>-Scale horizontally over commodity hardware<br>-Resolve problems that don’t distribute well<br>-Use in-memory processing wherever possible<br>-Auto-sharding built-in<br>-Dynamically add/remove capacity with no downtime<br>-Query contents as well as structure</p>
-<p>JSON style documents with dynamic schemas;<br>No predefined schema;<br>Stores documents in BSON(binary format)<br><img src="https://i.imgur.com/IBuvKDD.png" alt="Imgur"></p>
-<p><img src="https://i.imgur.com/m4xyqol.png" alt="Imgur"></p>
-<p><img src="https://i.imgur.com/vtdJJzD.png" alt="Imgur"></p>
-<p>All indexes in MongoDB are B-Tree indexes.</p>
-<p>Queries:<br><img src="https://i.imgur.com/ZQxSFbg.png" alt="Imgur"></p>
-<p><strong>CRUE Operations:</strong><br>Create:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.collection.insert(&lt;document&gt;)</span><br><span class="line">db.collection.save(&lt;document&gt;)</span><br><span class="line">db.collection.update(&lt;document&gt;)</span><br></pre></td></tr></table></figure></p>
-<p>Read:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db.collection.find(&lt;query&gt;, &lt;projection&gt;)</span><br><span class="line">db.collection.findOne(&lt;query&gt;, &lt;projection&gt;)</span><br></pre></td></tr></table></figure></p>
-<p>Update:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.collection.update(&lt;query&gt;, &lt;update&gt;, &lt;options&gt;)</span><br></pre></td></tr></table></figure></p>
-<p>Delete:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.collection.remove(&lt;query&gt;, &lt;justOne&gt;)</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://i.imgur.com/E16M8kH.png" alt="Imgur"></p>
-<p>Blog in Relational DB<br><img src="https://i.imgur.com/bIk9fLt.png" alt="Imgur"></p>
-<p>Blog in Document DB<br><img src="https://i.imgur.com/779n0ci.png" alt="Imgur"></p>
-<p>Query:<br><img src="https://i.imgur.com/4t4MdwM.png" alt="Imgur"></p>
-<h2 id="PPT-7"><a href="#PPT-7" class="headerlink" title="PPT 7"></a>PPT 7</h2><p><strong>Hadoop</strong><br>Written in Java<br>3 core components: HDFS; Yarn(Scheduler); MPP(Massive Parallel Processing)/MR(MapReduce)(Processing modules)</p>
-<p>HDFS:<br><img src="https://i.imgur.com/80xVUSa.png" alt="Imgur"></p>
-<p>Communications:<br>HDFS Communication protocols are layered on the top of the TCP/IP protocol. </p>
-<p><strong>Pig</strong></p>
-<p><strong>Hive</strong></p>
-<h2 id="PPT-8"><a href="#PPT-8" class="headerlink" title="PPT 8"></a>PPT 8</h2><p><strong>Spark</strong><br>Computations in-memory</p>
-<h2 id="PPT-9"><a href="#PPT-9" class="headerlink" title="PPT 9"></a>PPT 9</h2><p><strong>Graph Databases</strong><br>Allow us to store entities and relationships between these entities.</p>
-<p>It is a DBMS that supports CRUD operations:<br>-Normally optimized for OLTP</p>
+<h1 id="Resilient-Distributed-Datasets-RDD"><a href="#Resilient-Distributed-Datasets-RDD" class="headerlink" title="Resilient Distributed Datasets(RDD)"></a>Resilient Distributed Datasets(RDD)</h1><ol>
+<li>Collections in cluster, which is read only and consists of Partitions.</li>
+<li>Stores in disk or memory.</li>
+<li>Operations is composed by <strong>transformation</strong> and <strong>action</strong> </li>
+<li>Automatically reorganization if it fails.</li>
+</ol>
+<h2 id="Features-of-Transformation-and-Action"><a href="#Features-of-Transformation-and-Action" class="headerlink" title="Features of Transformation and Action"></a>Features of Transformation and Action</h2><ol>
+<li>Different APIs: T: RDD[X]-&gt;RDD[Y]; A:RDD[X]-&gt;Z(Z is probably a basic data type like array)</li>
+<li>Lazy actions:<br>Transformation only record RDD transform relation<br>Action triggers executions of program</li>
+</ol>
+<h1 id="Spark-Streaming"><a href="#Spark-Streaming" class="headerlink" title="Spark Streaming"></a>Spark Streaming</h1><p>Splits streaming data into small pieces and processes batch data. It will reduce latency. </p>
+<h2 id="Difference-between-MR-and-Spark"><a href="#Difference-between-MR-and-Spark" class="headerlink" title="Difference between MR and Spark"></a>Difference between MR and Spark</h2><p><img src="http://www.uml.org.cn/bigdata/images/201803131.png" alt=""><br>MR:</p>
+<ol>
+<li>Only privides <strong>Map</strong> and <strong>Reduce</strong> operations</li>
+<li>Low efficiency of processing: bad at iterating computing, interface processing, and log analysis</li>
+<li>The middle result of <strong>Map</strong> needs to write into disk and <strong>Reduce</strong> needs to write into HDFS.</li>
+<li>High cost of Task Scheduling and Startups.</li>
+<li>Cannot fully use of memory</li>
+<li>Map and Reduce need to sort data. </li>
+</ol>
+<h1 id="Implements-of-Spark"><a href="#Implements-of-Spark" class="headerlink" title="Implements of Spark"></a>Implements of Spark</h1><ol>
+<li>Log collecting and searching</li>
+<li>User’s tap prediction</li>
+<li>Common friends</li>
+<li>ETL task of SparkSQL and DAG</li>
+</ol>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="http://www.uml.org.cn/bigdata/201803131.asp" target="_blank" rel="noopener">Spark: Computing Engine</a></p>
 
       
     </div>
@@ -447,6 +419,8 @@
           
             <a href="/tags/Big-Data/" rel="tag"># Big Data</a>
           
+            <a href="/tags/Spark/" rel="tag"># Spark</a>
+          
         </div>
       
 
@@ -458,8 +432,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/04/NoSQL-categories/" rel="next" title="NoSQL-categories">
-                <i class="fa fa-chevron-left"></i> NoSQL-categories
+              <a href="/2018/05/21/C/" rel="next" title="C++">
+                <i class="fa fa-chevron-left"></i> C++
               </a>
             
           </div>
@@ -467,10 +441,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/08/Design-Pattern/" rel="prev" title="JAVA Design Pattern">
-                JAVA Design Pattern <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -647,7 +617,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#PPT-1"><span class="nav-number">1.</span> <span class="nav-text">PPT 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PPT-2"><span class="nav-number">2.</span> <span class="nav-text">PPT 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PPT-3"><span class="nav-number">3.</span> <span class="nav-text">PPT 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PPT-4"><span class="nav-number">4.</span> <span class="nav-text">PPT 4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PPT-5"><span class="nav-number">5.</span> <span class="nav-text">PPT 5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PPT-6"><span class="nav-number">6.</span> <span class="nav-text">PPT 6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PPT-7"><span class="nav-number">7.</span> <span class="nav-text">PPT 7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PPT-8"><span class="nav-number">8.</span> <span class="nav-text">PPT 8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PPT-9"><span class="nav-number">9.</span> <span class="nav-text">PPT 9</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Features-of-Apache-Spark"><span class="nav-number">1.</span> <span class="nav-text">Features of Apache Spark</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Resilient-Distributed-Datasets-RDD"><span class="nav-number">2.</span> <span class="nav-text">Resilient Distributed Datasets(RDD)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Features-of-Transformation-and-Action"><span class="nav-number">2.1.</span> <span class="nav-text">Features of Transformation and Action</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spark-Streaming"><span class="nav-number">3.</span> <span class="nav-text">Spark Streaming</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Difference-between-MR-and-Spark"><span class="nav-number">3.1.</span> <span class="nav-text">Difference between MR and Spark</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Implements-of-Spark"><span class="nav-number">4.</span> <span class="nav-text">Implements of Spark</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>

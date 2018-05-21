@@ -102,18 +102,20 @@
 
 
 
-  <meta name="description" content="Kafka is a fast, scalable, persistent and highly fault-tolerant publish-subscribe messaging system. Kafka supports high volumn of data and high response in demand better than JMS, RabbitMQ and AMQP. C">
+  <meta name="description" content="Message QueueMessage Queue is a type of technique to exchange information in distributed system. MQ can stay in memory or disk until it is being read. In distributed computing system, to achieve effec">
 <meta name="keywords" content="Kafka,Big data">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Kafka">
 <meta property="og:url" content="https://XinxinTang/xinxintang.github.io/2018/05/03/Kafka/index.html">
 <meta property="og:site_name" content="Xinxin Tang">
-<meta property="og:description" content="Kafka is a fast, scalable, persistent and highly fault-tolerant publish-subscribe messaging system. Kafka supports high volumn of data and high response in demand better than JMS, RabbitMQ and AMQP. C">
+<meta property="og:description" content="Message QueueMessage Queue is a type of technique to exchange information in distributed system. MQ can stay in memory or disk until it is being read. In distributed computing system, to achieve effec">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-03T22:17:00.042Z">
+<meta property="og:image" content="https://images.cnblogs.com/cnblogs_com/BYRans/761498/o_KafkaTerm.png">
+<meta property="og:updated_time" content="2018-05-21T23:43:17.333Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kafka">
-<meta name="twitter:description" content="Kafka is a fast, scalable, persistent and highly fault-tolerant publish-subscribe messaging system. Kafka supports high volumn of data and high response in demand better than JMS, RabbitMQ and AMQP. C">
+<meta name="twitter:description" content="Message QueueMessage Queue is a type of technique to exchange information in distributed system. MQ can stay in memory or disk until it is being read. In distributed computing system, to achieve effec">
+<meta name="twitter:image" content="https://images.cnblogs.com/cnblogs_com/BYRans/761498/o_KafkaTerm.png">
 
 
 
@@ -320,12 +322,24 @@
                 
               
 
-              <time title="Created: 2018-05-03 17:31:59 / Modified: 18:17:00" itemprop="dateCreated datePublished" datetime="2018-05-03T17:31:59-04:00">2018-05-03</time>
+              <time title="Created: 2018-05-03 17:31:59" itemprop="dateCreated datePublished" datetime="2018-05-03T17:31:59-04:00">2018-05-03</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-21 19:43:17" itemprop="dateModified" datetime="2018-05-21T19:43:17-04:00">2018-05-21</time>
               
             
           </span>
@@ -358,9 +372,36 @@
       
 
       
-        <p>Kafka is a fast, scalable, persistent and highly fault-tolerant publish-subscribe messaging system. Kafka supports high volumn of data and high response in demand better than JMS, RabbitMQ and AMQP. Compared with them, Kafka has higher throughput, more stable and better replication. </p>
+        <h1 id="Message-Queue"><a href="#Message-Queue" class="headerlink" title="Message Queue"></a>Message Queue</h1><p>Message Queue is a type of technique to exchange information in distributed system. MQ can stay in memory or disk until it is being read. In distributed computing system, to achieve effective information exchange, developer needs to build a communication way for asychronous network.</p>
+<h2 id="Communication-approaches"><a href="#Communication-approaches" class="headerlink" title="Communication approaches"></a>Communication approaches</h2><ol>
+<li>Point to point: one2one, one2many, many2many<br>One message only can be used once, then remove from the queue. </li>
+<li>Multiple to multiple<br>One message can be used multiple times. </li>
+<li>Publish/Subscribe：</li>
+<li>Cluster</li>
+</ol>
+<h1 id="Kafka"><a href="#Kafka" class="headerlink" title="Kafka"></a>Kafka</h1><p>Kafka is a fast, scalable, persistent and highly fault-tolerant distributed publish-subscribe messaging system. Kafka supports high volumn of data and high response in demand better than JMS, RabbitMQ and AMQP. Compared with them, Kafka has higher throughput, more stable and better replication. </p>
 <p>It can be used to obtain, analyze and stream processing with Flume, Spark Streaming, Storm, HBase and Flink together. It provides streaming data for Hadoop Big Data Lake. Kafka has low latency in Hadoop and Spark. </p>
-<p>Kafka </p>
+<h1 id="Advantages-of-Kafka"><a href="#Advantages-of-Kafka" class="headerlink" title="Advantages of Kafka"></a>Advantages of Kafka</h1><ol>
+<li>Reliability</li>
+<li>Scalability</li>
+<li>High performance</li>
+</ol>
+<h1 id="Terms"><a href="#Terms" class="headerlink" title="Terms"></a>Terms</h1><p>Broker: Server. Kafka cluster contains one or more servers.<br>Topic: Each message that sends to Kafka cluster has a category, which is called <strong>Topic</strong>.<br>Partition: Physical conception; Each topic has one or more partition.<br>  Two strategies: 1. Key Hash algorithm; 2. Round Robin algorithm<br>Producer: Response to send message to Kafka broker<br>Consumer: Response to retrieve message from Kafka broker<br>Consumer Group<br>Zookeeper: Kafka relies on Zookeeper cluster save metadata for load balancing.<br>Offset: Index</p>
+<h1 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h1><p><img src="https://images.cnblogs.com/cnblogs_com/BYRans/761498/o_KafkaTerm.png" alt=""><br>Producers send messages to Brokers;<br>Leader Broker gets and writes message into target topic to achieve persistency, and sets expire time.<br>Leader Broker delivers Follow Broker as replication;<br>Consumers retrieve messages from Brokers</p>
+<h1 id="Compare-to-Flume"><a href="#Compare-to-Flume" class="headerlink" title="Compare to Flume"></a>Compare to Flume</h1><p>1.<br>Flume is designed to send message to HDFS and HBase.<br>Kafka is a general-purpose system.<br>2.<br>Flume has many sources and sinks, but Kafka doesn’t.<br>If data source has been determined, just use Flume; Otherwise, adopt Kafka.</p>
+<ol start="3">
+<li>Flume can process data in real-time by intercepter(Filter data)<br>Kafka needs an external system to help processing.</li>
+<li>If data node failed, Flume cannot visit this node until node has been fixed, but it doesn’t happen in Kafka. Because Flume doesn’t have replicalition.</li>
+</ol>
+<h1 id="Implements"><a href="#Implements" class="headerlink" title="Implements"></a>Implements</h1><ol>
+<li>Message Queue: enough to rival traditional message system like ActiveMR and RabbitMQ</li>
+<li>Behaviors tracking: Track users’ behaviors from browsing websites and searching. Saving into topic by Publish/Subscribe mode. </li>
+<li>Metadata monitoring: Data monitoring</li>
+<li>Log collecting: Other products like Scribe, Apache Flume. </li>
+<li>Streaming processing: Products like Storm, Samza</li>
+<li>Event source: </li>
+</ol>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-kafka/index.html" target="_blank" rel="noopener">Kafka principles</a><br><a href="http://www.cnblogs.com/BYRans/p/6054930.html" target="_blank" rel="noopener">Kafka Introduce</a><br><a href="https://www.jianshu.com/p/1b657ac52f89" target="_blank" rel="noopener">kafka详解</a><br><a href="https://www.jianshu.com/p/aee1688bb882" target="_blank" rel="noopener">Kafka概念</a></p>
 
       
     </div>
@@ -457,8 +498,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -473,7 +523,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-count">34</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -534,7 +584,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">23</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">26</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
@@ -560,6 +616,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Message-Queue"><span class="nav-number">1.</span> <span class="nav-text">Message Queue</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Communication-approaches"><span class="nav-number">1.1.</span> <span class="nav-text">Communication approaches</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kafka"><span class="nav-number">2.</span> <span class="nav-text">Kafka</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Advantages-of-Kafka"><span class="nav-number">3.</span> <span class="nav-text">Advantages of Kafka</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Terms"><span class="nav-number">4.</span> <span class="nav-text">Terms</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Architecture"><span class="nav-number">5.</span> <span class="nav-text">Architecture</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Compare-to-Flume"><span class="nav-number">6.</span> <span class="nav-text">Compare to Flume</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Implements"><span class="nav-number">7.</span> <span class="nav-text">Implements</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">8.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
