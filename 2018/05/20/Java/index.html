@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.2.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Java is an object-oriented programming language with its runtime environment. It is a combination of features of C and C++ with some essential additional concepts. Java is well suited for both standal">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java">
+<meta property="og:url" content="https://XinxinTang/xinxintang.github.io/2018/05/20/Java/index.html">
+<meta property="og:site_name" content="Xinxin Tang">
+<meta property="og:description" content="Java is an object-oriented programming language with its runtime environment. It is a combination of features of C and C++ with some essential additional concepts. Java is well suited for both standal">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-21T04:08:01.183Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java">
+<meta name="twitter:description" content="Java is an object-oriented programming language with its runtime environment. It is a combination of features of C and C++ with some essential additional concepts. Java is well suited for both standal">
+
+
+
+
+
+
+  <link rel="canonical" href="https://XinxinTang/xinxintang.github.io/2018/05/20/Java/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Java | Xinxin Tang</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Xinxin Tang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">A technical blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/20/Java/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-20 21:56:41" itemprop="dateCreated datePublished" datetime="2018-05-20T21:56:41-04:00">2018-05-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-21 00:08:01" itemprop="dateModified" datetime="2018-05-21T00:08:01-04:00">2018-05-21</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Java is an object-oriented programming language with its runtime environment. It is a combination of features of C and C++ with some essential additional concepts. Java is well suited for both <strong>standalone</strong> and <strong>web application development</strong> and is designed to provide solutions to most of the problems faced by users of the internet era.</p>
+<h1 id="What-is-Java"><a href="#What-is-Java" class="headerlink" title="What is Java?"></a>What is Java?</h1><ol>
+<li>An object-oriented programming language</li>
+<li>Java is a set of features of C &amp; C++. It has obtained its format from C, and OOP features from C++.</li>
+<li>Java code that runs on one platform does not need to be recomplied to run on another platform; it’s called <strong>write once, run anywhere</strong>.</li>
+<li>Java Virtual Machine(JVM) executes java code, but it has been written in platform-specific languages such as C/C++/ASM. JVM is not written in Java and hence cannot be platform independent, and Java interpreter is a part of JVM.</li>
+</ol>
+<h1 id="Where-is-Java-being-used"><a href="#Where-is-Java-being-used" class="headerlink" title="Where is Java being used?"></a>Where is Java being used?</h1><ol>
+<li>JSP: Java Server Pages is used to create dynamic web pages, such as in PHP and ASP.</li>
+<li>Applets: Applets are another type of Java programs that are implemented on Internet browsers and are always run as part of a web document.</li>
+<li>J2EE: It is a platform-independent environment that is a set of different protocols and APIs and is used by various organizations to transfer data between each other. 4. JavaBeans: This is a set of reusable software components that can be easily used to create new and advanced applications.</li>
+<li>Mobile: Many types of games and applications are being made in Java.</li>
+</ol>
+<h1 id="Types-of-Java-Applications"><a href="#Types-of-Java-Applications" class="headerlink" title="Types of Java Applications:"></a>Types of Java Applications:</h1><ol>
+<li>Web Application</li>
+<li>Standalone Application</li>
+<li>Enterprise Application</li>
+<li>Mobile Application</li>
+</ol>
+<h1 id="Features-of-Java"><a href="#Features-of-Java" class="headerlink" title="Features of Java:"></a>Features of Java:</h1><ol>
+<li>Object-oriented</li>
+<li>Platform independent: Write once, Runs anywhere</li>
+<li>Simple: Easy to understand</li>
+<li>Secure: It provides a wide range of protection from virues and malicious programs</li>
+<li>Portable</li>
+<li>Robust</li>
+<li>Multi-threaded</li>
+<li>Distributed</li>
+</ol>
+<h1 id="Structures-of-Java-programs"><a href="#Structures-of-Java-programs" class="headerlink" title="Structures of Java programs:"></a>Structures of Java programs:</h1><ol>
+<li>Documentation Section: Write a comment here. Comments are beneficial for developer because they help them understand the code.</li>
+<li><p>Package Statements: You can create a package with any name. A package is a group of classes that are defined by a name. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">package package_name</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Import Statements: If you want to use a class of another package, then you can do this by importing it directly into your program.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import calc.add;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Interface Statements: Interfaces are like a class that includes a group of method declarations. It’s an optional section and can be used when programmers want to implement multiple inheritances within a program.</p>
+</li>
+<li>Class Definition: A Java program may contain several class definitions. </li>
+<li>Main Method Class: Every Java stand-alone program requires the main method as the starting point of the program. </li>
+</ol>
+<h1 id="JVM-JDK-JRE"><a href="#JVM-JDK-JRE" class="headerlink" title="JVM, JDK, JRE"></a>JVM, JDK, JRE</h1><p>JVM: Java Virtual Machine<br>JDK: Java Development Kit(includes JRE plus tools for developing, debugging and monitoring Java applications)<br>JRE: Java Runtime Environment is used as a package that gives an environment to run the Java program on machines.</p>
+<h1 id="Access-Control-Modifier"><a href="#Access-Control-Modifier" class="headerlink" title="Access Control Modifier"></a>Access Control Modifier</h1><p><strong>default</strong>: Scope only inside the same package<br><strong>public</strong>: Scope is visible to world<br><strong>protected</strong>: Scope of the package and all subclasses<br><strong>private</strong>: Scope only within the classes only</p>
+<h1 id="Non-Access-Modifier"><a href="#Non-Access-Modifier" class="headerlink" title="Non-Access Modifier"></a>Non-Access Modifier</h1><p><strong>final</strong>: modifier to finalizing the implementations of classes, methods, and variables. It means not change for them.<br><strong>static</strong><br><strong>abstract</strong>: modifier for creating abstract classes and methods<br><strong>synchronized and volatile</strong>: modifiers for using in threads</p>
+<h1 id="Data-type"><a href="#Data-type" class="headerlink" title="Data type"></a>Data type</h1><p>Integer:<br>byte<br>short<br>int<br>long</p>
+<p>Rational numbers:<br>float<br>double</p>
+<p>Characters:<br>char</p>
+<p>Conditional:<br>boolean</p>
+<h1 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h1><p>integer<br>short<br>byte<br>float<br>long<br>double</p>
+<h1 id="Character"><a href="#Character" class="headerlink" title="Character"></a>Character</h1><p>char[]<br>Character</p>
+<h1 id="OOP"><a href="#OOP" class="headerlink" title="OOP"></a>OOP</h1><h2 id="Major-Objectives-of-OOP"><a href="#Major-Objectives-of-OOP" class="headerlink" title="Major Objectives of OOP"></a>Major Objectives of OOP</h2><ol>
+<li>Emphasis is on the data rather than the procedures</li>
+<li>Methods that operate on data are tied together in a data structure</li>
+<li>Programs are divided into small instance called Objects.</li>
+<li>Data remains hidden and cannot be accessed by external functions</li>
+<li>Objects may communicate with each other through methods</li>
+<li>The programs follow the bottom-up approach</li>
+</ol>
+<h2 id="Basic-terms-and-features"><a href="#Basic-terms-and-features" class="headerlink" title="Basic terms and features"></a>Basic terms and features</h2><ol>
+<li>Classes and Objects</li>
+<li>Data abstraction</li>
+<li>Data encapsulation</li>
+<li>Inheritance</li>
+<li>Polymorphism</li>
+<li>Dynamic binding</li>
+</ol>
+<h2 id="Advantages-of-OOP"><a href="#Advantages-of-OOP" class="headerlink" title="Advantages of OOP"></a>Advantages of OOP</h2><ol>
+<li>Code recycle and reuse</li>
+<li>Wrapping up of data into a single unit</li>
+<li>Easy to partition the work in a project based on objects</li>
+<li>Software complexity can be easily handled and managed</li>
+<li>Use fo inheritane can eliminate redundant codes in a program</li>
+</ol>
+<h2 id="Constructors"><a href="#Constructors" class="headerlink" title="Constructors"></a>Constructors</h2><h3 id="It-is-treated-as-a-special-member-function-because-its-name-is-the-same-as-the-class-name-Java-constructors-are-invoked-when-their-objects-are-created"><a href="#It-is-treated-as-a-special-member-function-because-its-name-is-the-same-as-the-class-name-Java-constructors-are-invoked-when-their-objects-are-created" class="headerlink" title="It is treated as a special member function because its name is the same as the class name. Java constructors are invoked when their objects are created."></a>It is treated as a special member function because its name is the same as the class name. Java constructors are invoked when their objects are created.</h3><h3 id="Characterstics"><a href="#Characterstics" class="headerlink" title="Characterstics"></a>Characterstics</h3><ol>
+<li>An interface cannot have the constructor</li>
+<li>Constructors cannot be private</li>
+<li>A constructor cannot be abstract, static, final, native, strictfp, or synchronized</li>
+<li>A constructor can be overloaded</li>
+<li>Constructors cannot return a value</li>
+<li>Constructors don’t hava a return type; not even void</li>
+<li>An abstract class can have the constructor</li>
+</ol>
+<h3 id="Two-types-of-Constructor"><a href="#Two-types-of-Constructor" class="headerlink" title="Two types of Constructor"></a>Two types of Constructor</h3><ol>
+<li><p>Default</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line">import java.lang.*;</span><br><span class="line">import java.io.*;</span><br><span class="line">class clerk&#123;</span><br><span class="line"> int roll=101;</span><br><span class="line">   String grade=&quot;Manager&quot;;</span><br><span class="line">   void display()&#123;System.out.println(roll+&quot; &quot;+grade);&#125;</span><br><span class="line">   public static void main(String args[])&#123;</span><br><span class="line">       clerk c1=new clerk();</span><br><span class="line">       clerk c2=new clerk();</span><br><span class="line">       c1.display();</span><br><span class="line">       c2.display();</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Parameterized </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line">import java.lang.*;</span><br><span class="line">import java.io.*;</span><br><span class="line">class paramC&#123;</span><br><span class="line">   paramC(int a, int b)&#123;</span><br><span class="line">      System.out.print(&quot;Parameterized Constructor&quot;);</span><br><span class="line">      System.out.println(&quot; having Two parameters&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">   paramC(int a, int b, int c)&#123;</span><br><span class="line">     System.out.print(&quot;Parameterized Constructor&quot;);</span><br><span class="line">     System.out.println(&quot; having Three parameters&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">   public static void main(String args[])&#123;</span><br><span class="line">     paramC pc1 = new paramC(12, 12);</span><br><span class="line">     paramC pc2 = new paramC(1, 2, 13);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.w3schools.in/java-tutorial/" target="_blank" rel="noopener">Java tutorials</a></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/20/Basic-Conceptions/" rel="next" title="Table of Contents">
+                <i class="fa fa-chevron-left"></i> Table of Contents
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Xinxin Tang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-Java"><span class="nav-number">1.</span> <span class="nav-text">What is Java?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Where-is-Java-being-used"><span class="nav-number">2.</span> <span class="nav-text">Where is Java being used?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Types-of-Java-Applications"><span class="nav-number">3.</span> <span class="nav-text">Types of Java Applications:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Features-of-Java"><span class="nav-number">4.</span> <span class="nav-text">Features of Java:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Structures-of-Java-programs"><span class="nav-number">5.</span> <span class="nav-text">Structures of Java programs:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JVM-JDK-JRE"><span class="nav-number">6.</span> <span class="nav-text">JVM, JDK, JRE</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Access-Control-Modifier"><span class="nav-number">7.</span> <span class="nav-text">Access Control Modifier</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Non-Access-Modifier"><span class="nav-number">8.</span> <span class="nav-text">Non-Access Modifier</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-type"><span class="nav-number">9.</span> <span class="nav-text">Data type</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Number"><span class="nav-number">10.</span> <span class="nav-text">Number</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Character"><span class="nav-number">11.</span> <span class="nav-text">Character</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OOP"><span class="nav-number">12.</span> <span class="nav-text">OOP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Major-Objectives-of-OOP"><span class="nav-number">12.1.</span> <span class="nav-text">Major Objectives of OOP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-terms-and-features"><span class="nav-number">12.2.</span> <span class="nav-text">Basic terms and features</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Advantages-of-OOP"><span class="nav-number">12.3.</span> <span class="nav-text">Advantages of OOP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Constructors"><span class="nav-number">12.4.</span> <span class="nav-text">Constructors</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#It-is-treated-as-a-special-member-function-because-its-name-is-the-same-as-the-class-name-Java-constructors-are-invoked-when-their-objects-are-created"><span class="nav-number">12.4.1.</span> <span class="nav-text">It is treated as a special member function because its name is the same as the class name. Java constructors are invoked when their objects are created.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Characterstics"><span class="nav-number">12.4.2.</span> <span class="nav-text">Characterstics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Two-types-of-Constructor"><span class="nav-number">12.4.3.</span> <span class="nav-text">Two types of Constructor</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">13.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xinxin Tang</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.2.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
