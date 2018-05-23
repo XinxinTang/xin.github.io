@@ -274,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/22/ELK/">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/08/Design-Pattern/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xinxin Tang">
@@ -293,8 +293,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/22/ELK/" itemprop="url">
-                  ELK
+                <a class="post-title-link" href="/2018/05/08/Design-Pattern/" itemprop="url">
+                  JAVA Design Pattern
                 </a>
               
             
@@ -320,12 +320,24 @@
                 
               
 
-              <time title="Created: 2018-05-22 00:04:14 / Modified: 00:44:32" itemprop="dateCreated datePublished" datetime="2018-05-22T00:04:14-04:00">2018-05-22</time>
+              <time title="Created: 2018-05-08 23:12:35" itemprop="dateCreated datePublished" datetime="2018-05-08T23:12:35-04:00">2018-05-08</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-09 00:48:31" itemprop="dateModified" datetime="2018-05-09T00:48:31-04:00">2018-05-09</time>
               
             
           </span>
@@ -360,183 +372,44 @@
       
         
           
-            <p>ELK is short of Elasticsearch, Logstash and Kibana.</p>
-<h1 id="Elasticsearch"><a href="#Elasticsearch" class="headerlink" title="Elasticsearch"></a>Elasticsearch</h1><p>a real-time distributed searching and analyzing engine, which can be used to full-text search, structured search and analysis. Full-text search is based on Apache Lucene which is written by Java.</p>
-<h2 id="Features-of-Elasticsearch"><a href="#Features-of-Elasticsearch" class="headerlink" title="Features of Elasticsearch"></a>Features of Elasticsearch</h2><ol>
-<li>Real-time analysis</li>
-<li>Distributed file storing in real-time, taking each field as index</li>
-<li>Document-oriented, all objects are documents</li>
-<li>High availability, easy to scale, support cluster, sharding and replicas</li>
-<li>Friendly APIs, Supports JSON</li>
-<li>Zero-setting, automatically sharding</li>
-<li>RESTful style</li>
-<li>Based on Lucene and provides storage function<br><img src="https://www.ibm.com/developerworks/cn/opensource/os-cn-elk/img002.png" alt=""><br>Clusters<br><img src="https://www.ibm.com/developerworks/cn/opensource/os-cn-elk/img003.png" alt=""><br>Sharding and replicas</li>
+            <h1 id="Singleton"><a href="#Singleton" class="headerlink" title="Singleton"></a>Singleton</h1><p>One of the simplest design patterns in Java. This pattern involves a single class which is responsible to create an object while making sure that only single object gets created. </p>
+<p>Step 1:<br>Create a Singleton Class:<br>SingleObject.java<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class SingleObject &#123;</span><br><span class="line"></span><br><span class="line">   //create an object of SingleObject</span><br><span class="line">   private static SingleObject instance = new SingleObject();</span><br><span class="line"></span><br><span class="line">   //make the constructor private so that this class cannot be</span><br><span class="line">   //instantiated</span><br><span class="line">   private SingleObject()&#123;&#125;</span><br><span class="line"></span><br><span class="line">   //Get the only object available</span><br><span class="line">   public static SingleObject getInstance()&#123;</span><br><span class="line">      return instance;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   public void showMessage()&#123;</span><br><span class="line">      System.out.println(&quot;Hello World!&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Step 2:<br>Get the only object from the singleton class:<br>SingletonPatternDemo.java<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class SingletonPatternDemo &#123;</span><br><span class="line">   public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">      //illegal construct</span><br><span class="line">      //Compile Time Error: The constructor SingleObject() is not visible</span><br><span class="line">      //SingleObject object = new SingleObject();</span><br><span class="line"></span><br><span class="line">      //Get the only object available</span><br><span class="line">      SingleObject object = SingleObject.getInstance();</span><br><span class="line"></span><br><span class="line">      //show the message</span><br><span class="line">      object.showMessage();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Step 3:<br>Output:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello World!</span><br></pre></td></tr></table></figure></p>
+<h1 id="Factory-pattern"><a href="#Factory-pattern" class="headerlink" title="Factory pattern"></a>Factory pattern</h1><p>1.<br>Create an interface: Shape.java<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public interface Shape &#123;</span><br><span class="line">   void draw();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>Create concrete classes implementing the same interface: Rectangle.java<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class Rectangle implements Shape &#123;</span><br><span class="line"></span><br><span class="line">   @Override</span><br><span class="line">   public void draw() &#123;</span><br><span class="line">      System.out.println(&quot;Inside Rectangle::draw() method.&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<h1 id="Logstash"><a href="#Logstash" class="headerlink" title="Logstash"></a>Logstash</h1><p>a data collecting, filter and modifying engine in real-time, which is written by JRuby. </p>
-<h2 id="Features-of-Logstash"><a href="#Features-of-Logstash" class="headerlink" title="Features of Logstash"></a>Features of Logstash</h2><ol>
-<li>Almost visit any data</li>
-<li>Binding with various external applications</li>
-<li>Supports resilient scale</li>
+<p>Square.java<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class Square implements Shape &#123;</span><br><span class="line"></span><br><span class="line">   @Override</span><br><span class="line">   public void draw() &#123;</span><br><span class="line">      System.out.println(&quot;Inside Square::draw() method.&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Circle.java<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class Circle implements Shape &#123;</span><br><span class="line"></span><br><span class="line">   @Override</span><br><span class="line">   public void draw() &#123;</span><br><span class="line">      System.out.println(&quot;Inside Circle::draw() method.&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ol start="3">
+<li><p>Create a Factory to generate object of concrete class based on given information: ShapeFactory.java</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class ShapeFactory &#123;</span><br><span class="line">	</span><br><span class="line">   //use getShape method to get object of type shape </span><br><span class="line">   public Shape getShape(String shapeType)&#123;</span><br><span class="line">      if(shapeType == null)&#123;</span><br><span class="line">         return null;</span><br><span class="line">      &#125;		</span><br><span class="line">      if(shapeType.equalsIgnoreCase(&quot;CIRCLE&quot;))&#123;</span><br><span class="line">         return new Circle();</span><br><span class="line">         </span><br><span class="line">      &#125; else if(shapeType.equalsIgnoreCase(&quot;RECTANGLE&quot;))&#123;</span><br><span class="line">         return new Rectangle();</span><br><span class="line">         </span><br><span class="line">      &#125; else if(shapeType.equalsIgnoreCase(&quot;SQUARE&quot;))&#123;</span><br><span class="line">         return new Square();</span><br><span class="line">      &#125;</span><br><span class="line">      </span><br><span class="line">      return null;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Use the Factory to get object of concrete class by passing an information such type: FactoryPatternDemo.java</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">public class FactoryPatternDemo &#123;</span><br><span class="line"></span><br><span class="line">   public static void main(String[] args) &#123;</span><br><span class="line">      ShapeFactory shapeFactory = new ShapeFactory();</span><br><span class="line"></span><br><span class="line">      //get an object of Circle and call its draw method.</span><br><span class="line">      Shape shape1 = shapeFactory.getShape(&quot;CIRCLE&quot;);</span><br><span class="line"></span><br><span class="line">      //call draw method of Circle</span><br><span class="line">      shape1.draw();</span><br><span class="line"></span><br><span class="line">      //get an object of Rectangle and call its draw method.</span><br><span class="line">      Shape shape2 = shapeFactory.getShape(&quot;RECTANGLE&quot;);</span><br><span class="line"></span><br><span class="line">      //call draw method of Rectangle</span><br><span class="line">      shape2.draw();</span><br><span class="line"></span><br><span class="line">      //get an object of Square and call its draw method.</span><br><span class="line">      Shape shape3 = shapeFactory.getShape(&quot;SQUARE&quot;);</span><br><span class="line"></span><br><span class="line">      //call draw method of circle</span><br><span class="line">      shape3.draw();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Output</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Inside Circle::draw() method.</span><br><span class="line">Inside Rectangle::draw() method.</span><br><span class="line">Inside Square::draw() method.</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<h2 id="Main-components"><a href="#Main-components" class="headerlink" title="Main components"></a>Main components</h2><ol>
-<li>Shipper: send log data</li>
-<li>Broker: collect data, built-in Redis</li>
-<li>Indexer: data writes<br><img src="https://www.ibm.com/developerworks/cn/opensource/os-cn-elk/img004.png" alt=""></li>
+<h1 id="Iterator-Pattern"><a href="#Iterator-Pattern" class="headerlink" title="Iterator Pattern"></a>Iterator Pattern</h1><ol>
+<li>Create interfaces: Iterator.java<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public interface Iterator &#123;</span><br><span class="line">   public boolean hasNext();</span><br><span class="line">   public Object next();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<h1 id="Kibana"><a href="#Kibana" class="headerlink" title="Kibana"></a>Kibana</h1><p>a open-source Apache protocol, which is written by JavaScript, to provide visualization function for Elasticsearch and Web platform.</p>
-<p>Present data of other two components by HTTP protocols to users.</p>
-<h1 id="When-to-use"><a href="#When-to-use" class="headerlink" title="When to use?"></a>When to use?</h1><p>use <strong>grep, awk</strong> as commands to analyze log directly, but it doesn’t convinent in large scale implement. Because we need to write a script for each machine and combine all results.(Low efficiency) Thus, we use ELK search info in one machine, and access by web application. </p>
-<h1 id="Advantages-of-ELK"><a href="#Advantages-of-ELK" class="headerlink" title="Advantages of ELK"></a>Advantages of ELK</h1><ol>
-<li>Developers can view log from web in detail</li>
-<li>help to collect log from each system, which distributes in a wide range</li>
+<p>Container.java<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public interface Container &#123;</span><br><span class="line">   public Iterator getIterator();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li><p>Create concrete class implementing the Container interface. This class has inner class NameIterator implementing the Iterator interface: NameRepository.java</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">public class NameRepository implements Container &#123;</span><br><span class="line">   public String names[] = &#123;&quot;Robert&quot; , &quot;John&quot; ,&quot;Julie&quot; , &quot;Lora&quot;&#125;;</span><br><span class="line"></span><br><span class="line">   @Override</span><br><span class="line">   public Iterator getIterator() &#123;</span><br><span class="line">      return new NameIterator();</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   private class NameIterator implements Iterator &#123;</span><br><span class="line"></span><br><span class="line">      int index;</span><br><span class="line"></span><br><span class="line">      @Override</span><br><span class="line">      public boolean hasNext() &#123;</span><br><span class="line">      </span><br><span class="line">         if(index &lt; names.length)&#123;</span><br><span class="line">            return true;</span><br><span class="line">         &#125;</span><br><span class="line">         return false;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      @Override</span><br><span class="line">      public Object next() &#123;</span><br><span class="line">      </span><br><span class="line">         if(this.hasNext())&#123;</span><br><span class="line">            return names[index++];</span><br><span class="line">         &#125;</span><br><span class="line">         return null;</span><br><span class="line">      &#125;		</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Use the NameRepository to get iterator and print names: IteratorPatternDemo.java</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class IteratorPatternDemo &#123;</span><br><span class="line">	</span><br><span class="line">   public static void main(String[] args) &#123;</span><br><span class="line">      NameRepository namesRepository = new NameRepository();</span><br><span class="line"></span><br><span class="line">      for(Iterator iter = namesRepository.getIterator(); iter.hasNext();)&#123;</span><br><span class="line">         String name = (String)iter.next();</span><br><span class="line">         System.out.println(&quot;Name : &quot; + name);</span><br><span class="line">      &#125; 	</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Output:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Name : Robert</span><br><span class="line">Name : John</span><br><span class="line">Name : Julie</span><br><span class="line">Name : Lora</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<h1 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h1><h2 id="L-E-K"><a href="#L-E-K" class="headerlink" title="L-E-K"></a>L-E-K</h2><p><img src="https://upload-images.jianshu.io/upload_images/7062626-1589c63966efc17c?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""></p>
-<h2 id="Add-Redis-between-L-E-which-reduce-pressure-of-server"><a href="#Add-Redis-between-L-E-which-reduce-pressure-of-server" class="headerlink" title="Add Redis between L-E, which reduce pressure of server."></a>Add Redis between L-E, which reduce pressure of server.</h2><p><img src="https://upload-images.jianshu.io/upload_images/7062626-88049eec60a24d99?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""></p>
-<h2 id="Replace-Redis-with-Kafka-as-transactions-is-continuously-increasing"><a href="#Replace-Redis-with-Kafka-as-transactions-is-continuously-increasing" class="headerlink" title="Replace Redis with Kafka as transactions is continuously increasing."></a>Replace Redis with Kafka as transactions is continuously increasing.</h2><h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-elk/index.html" target="_blank" rel="noopener">ELK</a><br><a href="https://www.jianshu.com/p/09beacb7dbf6" target="_blank" rel="noopener">ELK Log</a><br><a href="http://www.178linux.com/71014" target="_blank" rel="noopener">ELK</a><br><a href="http://blog.oldboyedu.com/elk/" target="_blank" rel="noopener">Best Log analysis tool</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/How-to-Use-Dataset/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/29/How-to-Use-Dataset/" itemprop="url">
-                  How-to-Use-Dataset
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-04-29 13:02:26 / Modified: 13:04:31" itemprop="dateCreated datePublished" datetime="2018-04-29T13:02:26-04:00">2018-04-29</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>To build a complete machine learning model, we need a dataset which can train and test the model. But the test set cannot be touched at all until one time at the very end. This is to train a good generalization of classifier. Therefore, we must split train set in two: training set and validation set. </p>
-<p>Validation set can help to tune hyperparameters so that classifier has a better generalization. </p>
-<p>Sometimes data is small. To make full use of it, we can use cross-validation. That is, Split training set into 5. 4 parts as training set and 1 part as validation set. So the data has 5 combinations. In practice, however, it doesn’t use often because it is very expensive. </p>
-<p>Data splits like below:<br><img src="http://cs231n.github.io/assets/crossval.jpeg" alt="image_logo"></p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p><a href="http://cs231n.github.io/classification/" target="_blank" rel="noopener">http://cs231n.github.io/classification/</a></p>
 
           
         
@@ -695,6 +568,150 @@
 </ol>
 <p>More details viewing in references</p>
 <h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html" target="_blank" rel="noopener">HDFS</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/How-to-Use-Dataset/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/29/How-to-Use-Dataset/" itemprop="url">
+                  How-to-Use-Dataset
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-04-29 13:02:26 / Modified: 13:04:31" itemprop="dateCreated datePublished" datetime="2018-04-29T13:02:26-04:00">2018-04-29</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>To build a complete machine learning model, we need a dataset which can train and test the model. But the test set cannot be touched at all until one time at the very end. This is to train a good generalization of classifier. Therefore, we must split train set in two: training set and validation set. </p>
+<p>Validation set can help to tune hyperparameters so that classifier has a better generalization. </p>
+<p>Sometimes data is small. To make full use of it, we can use cross-validation. That is, Split training set into 5. 4 parts as training set and 1 part as validation set. So the data has 5 combinations. In practice, however, it doesn’t use often because it is very expensive. </p>
+<p>Data splits like below:<br><img src="http://cs231n.github.io/assets/crossval.jpeg" alt="image_logo"></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p><a href="http://cs231n.github.io/classification/" target="_blank" rel="noopener">http://cs231n.github.io/classification/</a></p>
 
           
         
