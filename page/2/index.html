@@ -274,6 +274,178 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/22/ELK/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/22/ELK/" itemprop="url">
+                  ELK
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-22 00:04:14 / Modified: 00:44:32" itemprop="dateCreated datePublished" datetime="2018-05-22T00:04:14-04:00">2018-05-22</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>ELK is short of Elasticsearch, Logstash and Kibana.</p>
+<h1 id="Elasticsearch"><a href="#Elasticsearch" class="headerlink" title="Elasticsearch"></a>Elasticsearch</h1><p>a real-time distributed searching and analyzing engine, which can be used to full-text search, structured search and analysis. Full-text search is based on Apache Lucene which is written by Java.</p>
+<h2 id="Features-of-Elasticsearch"><a href="#Features-of-Elasticsearch" class="headerlink" title="Features of Elasticsearch"></a>Features of Elasticsearch</h2><ol>
+<li>Real-time analysis</li>
+<li>Distributed file storing in real-time, taking each field as index</li>
+<li>Document-oriented, all objects are documents</li>
+<li>High availability, easy to scale, support cluster, sharding and replicas</li>
+<li>Friendly APIs, Supports JSON</li>
+<li>Zero-setting, automatically sharding</li>
+<li>RESTful style</li>
+<li>Based on Lucene and provides storage function<br><img src="https://www.ibm.com/developerworks/cn/opensource/os-cn-elk/img002.png" alt=""><br>Clusters<br><img src="https://www.ibm.com/developerworks/cn/opensource/os-cn-elk/img003.png" alt=""><br>Sharding and replicas</li>
+</ol>
+<h1 id="Logstash"><a href="#Logstash" class="headerlink" title="Logstash"></a>Logstash</h1><p>a data collecting, filter and modifying engine in real-time, which is written by JRuby. </p>
+<h2 id="Features-of-Logstash"><a href="#Features-of-Logstash" class="headerlink" title="Features of Logstash"></a>Features of Logstash</h2><ol>
+<li>Almost visit any data</li>
+<li>Binding with various external applications</li>
+<li>Supports resilient scale</li>
+</ol>
+<h2 id="Main-components"><a href="#Main-components" class="headerlink" title="Main components"></a>Main components</h2><ol>
+<li>Shipper: send log data</li>
+<li>Broker: collect data, built-in Redis</li>
+<li>Indexer: data writes<br><img src="https://www.ibm.com/developerworks/cn/opensource/os-cn-elk/img004.png" alt=""></li>
+</ol>
+<h1 id="Kibana"><a href="#Kibana" class="headerlink" title="Kibana"></a>Kibana</h1><p>a open-source Apache protocol, which is written by JavaScript, to provide visualization function for Elasticsearch and Web platform.</p>
+<p>Present data of other two components by HTTP protocols to users.</p>
+<h1 id="When-to-use"><a href="#When-to-use" class="headerlink" title="When to use?"></a>When to use?</h1><p>use <strong>grep, awk</strong> as commands to analyze log directly, but it doesn’t convinent in large scale implement. Because we need to write a script for each machine and combine all results.(Low efficiency) Thus, we use ELK search info in one machine, and access by web application. </p>
+<h1 id="Advantages-of-ELK"><a href="#Advantages-of-ELK" class="headerlink" title="Advantages of ELK"></a>Advantages of ELK</h1><ol>
+<li>Developers can view log from web in detail</li>
+<li>help to collect log from each system, which distributes in a wide range</li>
+</ol>
+<h1 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h1><h2 id="L-E-K"><a href="#L-E-K" class="headerlink" title="L-E-K"></a>L-E-K</h2><p><img src="https://upload-images.jianshu.io/upload_images/7062626-1589c63966efc17c?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""></p>
+<h2 id="Add-Redis-between-L-E-which-reduce-pressure-of-server"><a href="#Add-Redis-between-L-E-which-reduce-pressure-of-server" class="headerlink" title="Add Redis between L-E, which reduce pressure of server."></a>Add Redis between L-E, which reduce pressure of server.</h2><p><img src="https://upload-images.jianshu.io/upload_images/7062626-88049eec60a24d99?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""></p>
+<h2 id="Replace-Redis-with-Kafka-as-transactions-is-continuously-increasing"><a href="#Replace-Redis-with-Kafka-as-transactions-is-continuously-increasing" class="headerlink" title="Replace Redis with Kafka as transactions is continuously increasing."></a>Replace Redis with Kafka as transactions is continuously increasing.</h2><h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-elk/index.html" target="_blank" rel="noopener">ELK</a><br><a href="https://www.jianshu.com/p/09beacb7dbf6" target="_blank" rel="noopener">ELK Log</a><br><a href="http://www.178linux.com/71014" target="_blank" rel="noopener">ELK</a><br><a href="http://blog.oldboyedu.com/elk/" target="_blank" rel="noopener">Best Log analysis tool</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/How-to-build-a-personal-blog-on-Github/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -381,200 +553,6 @@
 <li>If you cannot push file to Github, you should check if the rsa keypair has been copied into Github pages. </li>
 </ol>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p><a href="https://my.oschina.net/ryaneLee/blog/638440" target="_blank" rel="noopener">https://my.oschina.net/ryaneLee/blog/638440</a><br><a href="https://xuanwo.org/2014/08/14/hexo-usual-problem/#Deploy%E4%B9%8B%E5%90%8E%EF%BC%8C%E9%A1%B5%E9%9D%A2%E9%95%BF%E6%97%B6%E9%97%B4404" target="_blank" rel="noopener">https://xuanwo.org/2014/08/14/hexo-usual-problem/#Deploy%E4%B9%8B%E5%90%8E%EF%BC%8C%E9%A1%B5%E9%9D%A2%E9%95%BF%E6%97%B6%E9%97%B4404</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/07/Big-Data-Note/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/07/Big-Data-Note/" itemprop="url">
-                  Big Data Course Note
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-05-07 11:12:40 / Modified: 17:39:28" itemprop="dateCreated datePublished" datetime="2018-05-07T11:12:40-04:00">2018-05-07</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="PPT-1"><a href="#PPT-1" class="headerlink" title="PPT 1"></a>PPT 1</h2><p>Big data: the amount of data just beyond technology’s capability to store, manage and process efficiently.</p>
-<p>Types of Data:<br><strong>structured:</strong><br>usually has defined length and format;<br>Ex: numbers, dates, strings</p>
-<p><strong>unstructured:</strong><br>doesn’t follow a specific format;<br>Ex: documents, images, video, audio, sets of data</p>
-<p><strong>semistructured:</strong><br>falls between the other two;<br>may not conform to a fixed schema, but may be self-defining;<br>Ex: RDF, XML, Linked data</p>
-<p>The situation where our most difficult problem is not how to store the data, but how to process it in meaningful ways.</p>
-<p>Top 5 advantages of successfully managing Big Data:</p>
-<ol>
-<li>Improving overall agency efficiency</li>
-<li>Improving speed/accuracy of decision making</li>
-<li>Ability ot forecast events</li>
-<li>Ease of identifying opportunities for savings</li>
-<li>Greater understanding of citizens needs</li>
-</ol>
-<h2 id="PPT-2"><a href="#PPT-2" class="headerlink" title="PPT 2"></a>PPT 2</h2><p><strong>Graph theory:</strong></p>
-<p>Maximum flow</p>
-<h2 id="PPT-3"><a href="#PPT-3" class="headerlink" title="PPT 3"></a>PPT 3</h2><p><strong>Analytics:</strong>analytics are a suite of tools for processing data to achieve actionable intelligence to support decision-making processes.</p>
-<p><strong>Big Data issues affecting analytics:</strong><br>–Volume<br>–Velocity<br>–Variety<br>–Veracity<br>–Value</p>
-<h2 id="PPT-4"><a href="#PPT-4" class="headerlink" title="PPT 4"></a>PPT 4</h2><p>Statistical Machine Learning</p>
-<p>Unsupervised:<br><strong>K-means Clustering</strong><br><strong>Principal Component Analysis (PCA)</strong>: Dimension reducation</p>
-<p><strong>Normalization:</strong>reshape value range from 0 to 1 </p>
-<h2 id="PPT-5"><a href="#PPT-5" class="headerlink" title="PPT 5"></a>PPT 5</h2><p>Classification:<br><strong>K-Nearest Neighbor</strong><br><strong>Linear Regression Model</strong><br><strong>Logistic Regression Model</strong><br><strong>Generalized Linear Model</strong>:<br>3 essential parts:<br>–Error distribution<br>–Link function<br>–Variance function</p>
-<p><strong>Support Vector Machines (SVM)</strong></p>
-<h2 id="PPT-6"><a href="#PPT-6" class="headerlink" title="PPT 6"></a>PPT 6</h2><p><strong>SQL:</strong>Select, Insert, Update, Delete statements<br><strong>Data Definition:</strong><br>–Schema defined at the start<br>–Triggers to respond to Insert, Update and Delete<br>–Alter and Drop<br>–Security and Access Control</p>
-<p><strong>Transactions:</strong> Properties<br>–Atomic<br>–Consistent<br>–Isolated<br>–Durable</p>
-<p><strong>NoSQL:</strong><br>CAP not ACID:<br>–Consistency:all nodes see the same data at the same time.<br>–Availability:a guarantee that every request receieves a response about whether it was successful or failed. All clients always read and write data<br>–Partitioning: system continues to operate despite arbitrary message loss or failure of part of the system.<br>–Multiple entry points<br><img src="https://i.imgur.com/WcmmwvQ.png" alt="Imgur"><br><img src="https://i.imgur.com/LSRLD3I.png" alt="Imgur"></p>
-<p><strong>K/V stores</strong></p>
-<p><strong>Column stores:</strong><br>–Data is stored across rows rather than in columns as in an RDBMS<br>–Read faster than write</p>
-<p>Ex: Cassandra, HBase(Based on Google’s Big Table)</p>
-<p><strong>Document stores:</strong><br>–Key document stores: document can be seen as value part, so we consider this model as a super set of Key-Value<br>–Document can be represented in many ways, but XML, JSON and BSON are typical representations.</p>
-<p>Ex:MongoDB, CouchDB </p>
-<p><strong>Graph DBs</strong><br>Graph databases are built with nodes, relationships between nodes and the properties of nodes.</p>
-<p><strong>Case: Cassandra</strong><br>-Both Key-Value and Column store;<br>-High availability;<br>-Eventual consistency;<br>-Incremental scalability</p>
-<p><strong>Architecture</strong><br>-Implements a peer-to-peer distribution system across nodes<br>-Each node is independent but interconnected with all other nodes<br>-Each node can accept read and write requests, regradless of where the data is located in the cluster<br>-When a node goes down, read/write requests can be served from other nodes</p>
-<p><strong>Case: MongoDB</strong><br><strong>Goals:</strong><br>-Scale horizontally over commodity hardware<br>-Resolve problems that don’t distribute well<br>-Use in-memory processing wherever possible<br>-Auto-sharding built-in<br>-Dynamically add/remove capacity with no downtime<br>-Query contents as well as structure</p>
-<p>JSON style documents with dynamic schemas;<br>No predefined schema;<br>Stores documents in BSON(binary format)<br><img src="https://i.imgur.com/IBuvKDD.png" alt="Imgur"></p>
-<p><img src="https://i.imgur.com/m4xyqol.png" alt="Imgur"></p>
-<p><img src="https://i.imgur.com/vtdJJzD.png" alt="Imgur"></p>
-<p>All indexes in MongoDB are B-Tree indexes.</p>
-<p>Queries:<br><img src="https://i.imgur.com/ZQxSFbg.png" alt="Imgur"></p>
-<p><strong>CRUE Operations:</strong><br>Create:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.collection.insert(&lt;document&gt;)</span><br><span class="line">db.collection.save(&lt;document&gt;)</span><br><span class="line">db.collection.update(&lt;document&gt;)</span><br></pre></td></tr></table></figure></p>
-<p>Read:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db.collection.find(&lt;query&gt;, &lt;projection&gt;)</span><br><span class="line">db.collection.findOne(&lt;query&gt;, &lt;projection&gt;)</span><br></pre></td></tr></table></figure></p>
-<p>Update:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.collection.update(&lt;query&gt;, &lt;update&gt;, &lt;options&gt;)</span><br></pre></td></tr></table></figure></p>
-<p>Delete:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.collection.remove(&lt;query&gt;, &lt;justOne&gt;)</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://i.imgur.com/E16M8kH.png" alt="Imgur"></p>
-<p>Blog in Relational DB<br><img src="https://i.imgur.com/bIk9fLt.png" alt="Imgur"></p>
-<p>Blog in Document DB<br><img src="https://i.imgur.com/779n0ci.png" alt="Imgur"></p>
-<p>Query:<br><img src="https://i.imgur.com/4t4MdwM.png" alt="Imgur"></p>
-<h2 id="PPT-7"><a href="#PPT-7" class="headerlink" title="PPT 7"></a>PPT 7</h2><p><strong>Hadoop</strong><br>Written in Java<br>3 core components: HDFS; Yarn(Scheduler); MPP(Massive Parallel Processing)/MR(MapReduce)(Processing modules)</p>
-<p>HDFS:<br><img src="https://i.imgur.com/80xVUSa.png" alt="Imgur"></p>
-<p>Communications:<br>HDFS Communication protocols are layered on the top of the TCP/IP protocol. </p>
-<p><strong>Pig</strong></p>
-<p><strong>Hive</strong></p>
-<h2 id="PPT-8"><a href="#PPT-8" class="headerlink" title="PPT 8"></a>PPT 8</h2><p><strong>Spark</strong><br>Computations in-memory</p>
-<h2 id="PPT-9"><a href="#PPT-9" class="headerlink" title="PPT 9"></a>PPT 9</h2><p><strong>Graph Databases</strong><br>Allow us to store entities and relationships between these entities.</p>
-<p>It is a DBMS that supports CRUD operations:<br>-Normally optimized for OLTP</p>
 
           
         
