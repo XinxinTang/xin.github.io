@@ -274,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/22/MongoDB/">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/21/MySQL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xinxin Tang">
@@ -293,8 +293,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/22/MongoDB/" itemprop="url">
-                  MongoDB
+                <a class="post-title-link" href="/2018/05/21/MySQL/" itemprop="url">
+                  MySQL
                 </a>
               
             
@@ -320,7 +320,7 @@
                 
               
 
-              <time title="Created: 2018-05-22 15:38:40 / Modified: 16:02:54" itemprop="dateCreated datePublished" datetime="2018-05-22T15:38:40-04:00">2018-05-22</time>
+              <time title="Created: 2018-05-21 11:12:40 / Modified: 13:20:18" itemprop="dateCreated datePublished" datetime="2018-05-21T11:12:40-04:00">2018-05-21</time>
             
 
             
@@ -360,28 +360,31 @@
       
         
           
-            <p>A open-source distributed document database that provides high performance, high availability, and automatic scaling.</p>
-<h1 id="Document-Database"><a href="#Document-Database" class="headerlink" title="Document Database"></a>Document Database</h1><p>A record in MongoDB is a document, which is a data structure composed of field and value pairs. MongoDB documents are similar to JSON objects. The values of fields may include other documents, arrays, and arrays of documents.</p>
-<h2 id="Advantages-of-using-docuemnts-are"><a href="#Advantages-of-using-docuemnts-are" class="headerlink" title="Advantages of using docuemnts are:"></a>Advantages of using docuemnts are:</h2><ol>
-<li>Documents correspond to native data types in many programming languages.</li>
-<li>Embedded documents and arrays reduce need for expensive joins.</li>
-<li>Dynamic schema supports fluent polymorphism.</li>
+            <h1 id="What-is-MySQL"><a href="#What-is-MySQL" class="headerlink" title="What is MySQL?"></a>What is MySQL?</h1><ol>
+<li>MySQL is a databse system, used for developing web-based software applications</li>
+<li>MySQL used for both small and large applications</li>
+<li>It is a relational databse management system</li>
+<li>It is fast reliable and flexible and easy to use</li>
+<li>It supports standard SQL</li>
+<li>It is free to download and use</li>
+<li>It is presently developed, distributed, and supported by Oracle</li>
+<li>It is written by C, C++</li>
 </ol>
-<h1 id="Key-Festures-of-MongoDB"><a href="#Key-Festures-of-MongoDB" class="headerlink" title="Key Festures of MongoDB"></a>Key Festures of MongoDB</h1><h2 id="High-Performance"><a href="#High-Performance" class="headerlink" title="High Performance"></a>High Performance</h2><ol>
-<li>provides high performance data persistence. In particular,<br>Support for embedded data models reduces I/O activity on database system.<br>Indexes support faster queries and can include keys from embedded documents and arrays.<h2 id="Rich-Query-Language"><a href="#Rich-Query-Language" class="headerlink" title="Rich Query Language"></a>Rich Query Language</h2>Rich query language to support <strong>CRUD</strong> as well as: Data Aggregation; Text Search and Geospatial Queries.<h2 id="High-Availability"><a href="#High-Availability" class="headerlink" title="High Availability"></a>High Availability</h2>It provides:</li>
-<li>automatic failover</li>
-<li>data redundancy</li>
+<h1 id="Main-features-of-MySQL"><a href="#Main-features-of-MySQL" class="headerlink" title="Main features of MySQL"></a>Main features of MySQL</h1><ol>
+<li>MySQL server design is multi-layered with independent modules</li>
+<li>it is fully multithreaded by using kernel threads. It can use multiple CPUs if they are available</li>
+<li>it provides transactional and non-transactional storage engines</li>
+<li>it has very fast thread-based memory allocation system</li>
+<li>it supports in-memory heap table</li>
+<li>it handles large databases</li>
+<li>MySQL server works in client/server or embedded systems</li>
+<li>it works on many different platforms</li>
 </ol>
-<h2 id="Horizontal-Scalability"><a href="#Horizontal-Scalability" class="headerlink" title="Horizontal Scalability"></a>Horizontal Scalability</h2><ol>
-<li>sharding distributes data across a cluster of machines</li>
-<li>Starting in 3.4, MongoDB supports creating zones of data based on the shard key. In a balanced cluster, MongoDB directs reads and writes covered by a zone only to those shards inside the zone. See the Zones manual page for more information.</li>
-</ol>
-<h2 id="Support-for-multiple-storage-engines"><a href="#Support-for-multiple-storage-engines" class="headerlink" title="Support for multiple storage engines"></a>Support for multiple storage engines</h2><ol>
-<li>WiredTiger Storage Engine</li>
-<li>In-Momory Storage Engine</li>
-<li>MMAPv1 Storage Engine</li>
-</ol>
-<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://docs.mongodb.com/manual/introduction/" target="_blank" rel="noopener">MongoDB</a></p>
+<h1 id="SQL-Commands"><a href="#SQL-Commands" class="headerlink" title="SQL Commands"></a>SQL Commands</h1><h2 id="DDL"><a href="#DDL" class="headerlink" title="DDL"></a>DDL</h2><p>DDL is short name of <strong>Data Definition Language</strong>, which deals with database schemas and descriptions<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CREATE: create database and its objects like table, index, views, store procedure, function, and triggers</span><br><span class="line">ALTER: alters the sturcture of the existing database</span><br><span class="line">DROP: delete objects from the database</span><br><span class="line">TRUNCATE: remove all records from a table, including all spaces allocated for the records are removed</span><br><span class="line">COMMENT: add comments to the data dictionary</span><br><span class="line">RENAME: rename an object</span><br><span class="line">``` </span><br><span class="line">## DML</span><br><span class="line">DML is short name of **Data Manipulation Language**, which deals with data manipulation and includes most common SQL statements such as SELECT, INSERT, UPDATA, and DELETE.</span><br></pre></td></tr></table></figure></p>
+<p>SELECT: retrieve data from a database<br>INSERT: insert data into a table<br>UPDATE: updates existing data with a table<br>MERGE: UPSERT operation(insert or update)<br>CALL: call a PL/SQL or Java subprogram<br>DELETE: delete all records from a database table<br>EXPLAIN PLAN: interpretation of the data access path<br>LOCK TABLE: concurrency control<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## DCL</span><br><span class="line">DCL is short name of **Data Control Language**, which includes commands such as GRANT and mostly concerned with rights, permissions and other controls of the database system.</span><br></pre></td></tr></table></figure></p>
+<p>GRANT: allow users access privileges to database<br>REVOKE: withdraw users access privileges given by using the GRANT command<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## TCL</span><br><span class="line">TCL is short name of **Transaction Control Language**, which deals with a transaction within a database.</span><br></pre></td></tr></table></figure></p>
+<p>COMMIT: commits a transaction<br>ROLLBACK: rollback a transaction in case of any error occurs<br>SAVEPOINT: to rollback the transaction making points within groups<br>SET TRANSACTION: specify characteristics of the transaction<br><code>`</code></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.w3schools.in/mysql/" target="_blank" rel="noopener">MySQL</a></p>
 
           
         
@@ -542,169 +545,6 @@
 <h2 id="Regions"><a href="#Regions" class="headerlink" title="Regions"></a>Regions</h2><p>We can choose the geographical region where S3 will store the buckets we create. </p>
 <h1 id="Data-consistency-model-of-S3"><a href="#Data-consistency-model-of-S3" class="headerlink" title="Data consistency model of S3"></a>Data consistency model of S3</h1><p>S3 provides eventual consistency for read-after-write.</p>
 <h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/Introduction.html" target="_blank" rel="noopener">AWS S3</a> </p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/04/NoSQL-categories/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/04/NoSQL-categories/" itemprop="url">
-                  NoSQL-categories
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-05-04 00:03:00" itemprop="dateCreated datePublished" datetime="2018-05-04T00:03:00-04:00">2018-05-04</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-05-07 17:35:42" itemprop="dateModified" datetime="2018-05-07T17:35:42-04:00">2018-05-07</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Column-oriented"><a href="#Column-oriented" class="headerlink" title="Column-oriented"></a>Column-oriented</h2><p>Traditional relational database is row-oriented. Each row has a row id and every field store in one table. </p>
-<p>When searching in row-oriented database, each row will be traversed, no matter a certain column data is needed or not. If you search a person whose birth month is September. Row-oriented database will search this table from left to right then from top to down.<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G5050Q55.png" alt=""></p>
-<p>Index the target column can promote search speed, but index each column cause extra overload and databse will traverse all columns to search data. </p>
-<p>Column-oriented database will stores each column seperately. It’s very fast to search when the data amount is small.<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G50614146.png" alt=""></p>
-<p>This design looks like adding index for each row. It sacrifices space and writing more index to speed up searching ability. Index maps row ID to data, but column-based database maps data to rowID. Like the picture above, it is easy to search who like archery. This is an inverted index. </p>
-<p>When to use row-oriented and when to use column-oriented? Column-based database is easy to add one new column, but is difficult to add one row.  Therefore, row-oriented database is bettern than column-based on transaction. Because it achieves real-time update. It is commonly used in marketing business.</p>
-<p>Column-oriented database has advantage of data analysis, like sum of values. Batch processing can adopt column-oriented database at night, and it supports quick search and MapReduce aggregation. </p>
-<p>Example: HBase, Cassandra</p>
-<h2 id="K-V-stores"><a href="#K-V-stores" class="headerlink" title="K/V stores"></a>K/V stores</h2><p>This is the easiest store in NoSQL databases.<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G50Q4156.png" alt=""></p>
-<p>the complex k/v paire is like:<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G50T43T.jpg" alt=""></p>
-<p>Example: Redis, Amazon Dynamo</p>
-<h2 id="Document-oriented-stores"><a href="#Document-oriented-stores" class="headerlink" title="Document-oriented stores"></a>Document-oriented stores</h2><p>Store based on K/V pair, but structure more complex.<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G50951434.png" alt=""></p>
 
           
         
@@ -1860,6 +1700,160 @@ random()
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/23/Resources/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/23/Resources/" itemprop="url">
+                  Resources
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-23 13:20:35 / Modified: 13:26:47" itemprop="dateCreated datePublished" datetime="2018-05-23T13:20:35-04:00">2018-05-23</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-Languages"><a href="#1-Languages" class="headerlink" title="1.Languages"></a>1.Languages</h1><h2 id="1-1-Java"><a href="#1-1-Java" class="headerlink" title="1.1 Java"></a>1.1 Java</h2><p><a href="https://xinxintang.github.io/2018/05/20/Java/" target="_blank" rel="noopener">Java summary</a></p>
+<h2 id="1-2-Python"><a href="#1-2-Python" class="headerlink" title="1.2 Python"></a>1.2 Python</h2><p><a href="https://xinxintang.github.io/2018/05/21/Python/" target="_blank" rel="noopener">Python summary</a></p>
+<h2 id="1-3-C"><a href="#1-3-C" class="headerlink" title="1.3 C++"></a>1.3 C++</h2><p><a href="https://xinxintang.github.io/2018/05/21/C/" target="_blank" rel="noopener">C++ summary</a></p>
+<h2 id="1-4SQL"><a href="#1-4SQL" class="headerlink" title="1.4SQL"></a>1.4SQL</h2><p><a href="https://xinxintang.github.io/2018/05/21/SQL/" target="_blank" rel="noopener">SQL summary</a></p>
+<h1 id="2-Big-Data"><a href="#2-Big-Data" class="headerlink" title="2. Big Data"></a>2. Big Data</h1><h2 id="2-1-Data-Collection"><a href="#2-1-Data-Collection" class="headerlink" title="2.1 Data Collection"></a>2.1 Data Collection</h2><h3 id="2-1-1-Collectors"><a href="#2-1-1-Collectors" class="headerlink" title="2.1.1 Collectors"></a>2.1.1 Collectors</h3><h3 id="2-1-2-Message-Queues"><a href="#2-1-2-Message-Queues" class="headerlink" title="2.1.2 Message Queues"></a>2.1.2 Message Queues</h3><h4 id="2-1-2-1-Kafka"><a href="#2-1-2-1-Kafka" class="headerlink" title="2.1.2.1 Kafka"></a>2.1.2.1 Kafka</h4><p><a href="https://xinxintang.github.io/2018/05/03/Kafka/" target="_blank" rel="noopener">Kafka summary</a></p>
+<h4 id="2-1-2-2-RabbitMQ"><a href="#2-1-2-2-RabbitMQ" class="headerlink" title="2.1.2.2 RabbitMQ"></a>2.1.2.2 RabbitMQ</h4><p><a href="https://xinxintang.github.io/2018/05/21/RabbitMQ/" target="_blank" rel="noopener">RabbitMQ summary</a></p>
+<h2 id="2-2-Data-Processing"><a href="#2-2-Data-Processing" class="headerlink" title="2.2 Data Processing"></a>2.2 Data Processing</h2><h3 id="2-2-1-Spark"><a href="#2-2-1-Spark" class="headerlink" title="2.2.1 Spark"></a>2.2.1 Spark</h3><p><a href="https://xinxintang.github.io/2018/05/21/spark/" target="_blank" rel="noopener">Spark summary</a></p>
+<h3 id="2-2-2-HDFS"><a href="#2-2-2-HDFS" class="headerlink" title="2.2.2 HDFS"></a>2.2.2 HDFS</h3><p><a href="https://xinxintang.github.io/2018/05/23/HDFS/" target="_blank" rel="noopener">HDFS summary</a></p>
+<h2 id="2-3-Data-Storage"><a href="#2-3-Data-Storage" class="headerlink" title="2.3 Data Storage"></a>2.3 Data Storage</h2><h3 id="2-3-1-MongoDB"><a href="#2-3-1-MongoDB" class="headerlink" title="2.3.1 MongoDB"></a>2.3.1 MongoDB</h3><p><a href="https://xinxintang.github.io/2018/05/22/MongoDB/" target="_blank" rel="noopener">MongoDB summary</a></p>
+<h3 id="2-3-2-Cassandra"><a href="#2-3-2-Cassandra" class="headerlink" title="2.3.2 Cassandra"></a>2.3.2 Cassandra</h3><p><a href="https://xinxintang.github.io/2018/05/22/Cassandra/" target="_blank" rel="noopener">Cassandra summary</a></p>
+<h3 id="2-3-3-Redis"><a href="#2-3-3-Redis" class="headerlink" title="2.3.3 Redis"></a>2.3.3 Redis</h3><p><a href="https://xinxintang.github.io/2018/05/22/Redis/" target="_blank" rel="noopener">Redis summary</a></p>
+<h3 id="2-3-4-MySQL"><a href="#2-3-4-MySQL" class="headerlink" title="2.3.4 MySQL"></a>2.3.4 MySQL</h3><p><a href="https://xinxintang.github.io/2018/05/21/MySQL/" target="_blank" rel="noopener">MySQL summary</a></p>
+<h2 id="2-4-Data-Visualization"><a href="#2-4-Data-Visualization" class="headerlink" title="2.4 Data Visualization"></a>2.4 Data Visualization</h2><h3 id="2-4-1-ELK"><a href="#2-4-1-ELK" class="headerlink" title="2.4.1 ELK"></a>2.4.1 ELK</h3><p><a href="https://xinxintang.github.io/2018/05/22/ELK/" target="_blank" rel="noopener">ELK summary</a></p>
+<h2 id="2-5-Cloud-Computing"><a href="#2-5-Cloud-Computing" class="headerlink" title="2.5 Cloud Computing"></a>2.5 Cloud Computing</h2><h3 id="2-5-1-AWS"><a href="#2-5-1-AWS" class="headerlink" title="2.5.1 AWS"></a>2.5.1 AWS</h3><p><a href="https://xinxintang.github.io/2018/05/22/AWS-EC2/" target="_blank" rel="noopener">AWS EC2 summary</a><br><a href="https://xinxintang.github.io/2018/05/22/AWS-S3/" target="_blank" rel="noopener">AWS S3 summary</a></p>
+<h2 id="2-6-Others"><a href="#2-6-Others" class="headerlink" title="2.6 Others"></a>2.6 Others</h2><h3 id="2-6-1-Docker"><a href="#2-6-1-Docker" class="headerlink" title="2.6.1 Docker"></a>2.6.1 Docker</h3><p><a href="https://xinxintang.github.io/2018/05/13/docker/" target="_blank" rel="noopener">Docker summary</a></p>
+<h1 id="3-Machine-Learning"><a href="#3-Machine-Learning" class="headerlink" title="3. Machine Learning"></a>3. Machine Learning</h1><h2 id="3-1-Machine-Learning-Algorithms"><a href="#3-1-Machine-Learning-Algorithms" class="headerlink" title="3.1 Machine Learning Algorithms"></a>3.1 Machine Learning Algorithms</h2>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -1907,7 +1901,7 @@ random()
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">42</span>
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
