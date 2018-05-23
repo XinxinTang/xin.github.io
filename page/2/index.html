@@ -446,6 +446,308 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/How-to-Use-Dataset/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/29/How-to-Use-Dataset/" itemprop="url">
+                  How-to-Use-Dataset
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-04-29 13:02:26 / Modified: 13:04:31" itemprop="dateCreated datePublished" datetime="2018-04-29T13:02:26-04:00">2018-04-29</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>To build a complete machine learning model, we need a dataset which can train and test the model. But the test set cannot be touched at all until one time at the very end. This is to train a good generalization of classifier. Therefore, we must split train set in two: training set and validation set. </p>
+<p>Validation set can help to tune hyperparameters so that classifier has a better generalization. </p>
+<p>Sometimes data is small. To make full use of it, we can use cross-validation. That is, Split training set into 5. 4 parts as training set and 1 part as validation set. So the data has 5 combinations. In practice, however, it doesn’t use often because it is very expensive. </p>
+<p>Data splits like below:<br><img src="http://cs231n.github.io/assets/crossval.jpeg" alt="image_logo"></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p><a href="http://cs231n.github.io/classification/" target="_blank" rel="noopener">http://cs231n.github.io/classification/</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/23/HDFS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/23/HDFS/" itemprop="url">
+                  HDFS
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-23 00:15:04 / Modified: 00:28:10" itemprop="dateCreated datePublished" datetime="2018-05-23T00:15:04-04:00">2018-05-23</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>HDFS is short of Hadoop Distributed File System, which is a distributed file system to run on commodity hardware. HDFS is highly fault-tolerance and is designed to be deployed on low-cost hardware. HDFS provides high throughput access to application data and is suitable for applications that have large data sets. </p>
+<p>HDFS relaxes a few POSIX requirements to enable streaming access to file system data. </p>
+<p>HDFS is part of Apache Hadoop Core project.</p>
+<h1 id="Assumptions-and-goals"><a href="#Assumptions-and-goals" class="headerlink" title="Assumptions and goals"></a>Assumptions and goals</h1><ol>
+<li><p>Hardware failure<br>Hardware failure is the norm rather than the exception. Therefore, detection of faults and quick, automatic recovery from them is a core architectural goal of HDFS.</p>
+</li>
+<li><p>Streaming data access<br>Applications that run on HDFS need streaming access to their datasets. They are not general purpose applications that typically run on general purpose file systems. HDFS is designed for batch processing rather than interactive use by users. The emphasis is on high throughput of data access rather than low latency of data access. </p>
+</li>
+<li><p>Large data sets</p>
+</li>
+<li><p>Simple coherency model<br>HDFS applications need a write-once-write-many access model for files. A file once created, written, and closed need not be changed except for appends and truncates. Appending the content to the end of files is supported but cannot be updated at arbirary point. </p>
+</li>
+<li><p>Moving computation is cheaper than moving data</p>
+</li>
+<li><p>Portability across heterogeneous hardware and software platforms</p>
+</li>
+</ol>
+<p>More details viewing in references</p>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html" target="_blank" rel="noopener">HDFS</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/How-to-build-a-personal-blog-on-Github/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1674,336 +1976,11 @@ p = np.exp(f)/np.sum(np.exp(f)) # safe to do
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/22/MongoDB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/22/MongoDB/" itemprop="url">
-                  MongoDB
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-05-22 15:38:40 / Modified: 16:02:54" itemprop="dateCreated datePublished" datetime="2018-05-22T15:38:40-04:00">2018-05-22</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>A open-source distributed document database that provides high performance, high availability, and automatic scaling.</p>
-<h1 id="Document-Database"><a href="#Document-Database" class="headerlink" title="Document Database"></a>Document Database</h1><p>A record in MongoDB is a document, which is a data structure composed of field and value pairs. MongoDB documents are similar to JSON objects. The values of fields may include other documents, arrays, and arrays of documents.</p>
-<h2 id="Advantages-of-using-docuemnts-are"><a href="#Advantages-of-using-docuemnts-are" class="headerlink" title="Advantages of using docuemnts are:"></a>Advantages of using docuemnts are:</h2><ol>
-<li>Documents correspond to native data types in many programming languages.</li>
-<li>Embedded documents and arrays reduce need for expensive joins.</li>
-<li>Dynamic schema supports fluent polymorphism.</li>
-</ol>
-<h1 id="Key-Festures-of-MongoDB"><a href="#Key-Festures-of-MongoDB" class="headerlink" title="Key Festures of MongoDB"></a>Key Festures of MongoDB</h1><h2 id="High-Performance"><a href="#High-Performance" class="headerlink" title="High Performance"></a>High Performance</h2><ol>
-<li>provides high performance data persistence. In particular,<br>Support for embedded data models reduces I/O activity on database system.<br>Indexes support faster queries and can include keys from embedded documents and arrays.<h2 id="Rich-Query-Language"><a href="#Rich-Query-Language" class="headerlink" title="Rich Query Language"></a>Rich Query Language</h2>Rich query language to support <strong>CRUD</strong> as well as: Data Aggregation; Text Search and Geospatial Queries.<h2 id="High-Availability"><a href="#High-Availability" class="headerlink" title="High Availability"></a>High Availability</h2>It provides:</li>
-<li>automatic failover</li>
-<li>data redundancy</li>
-</ol>
-<h2 id="Horizontal-Scalability"><a href="#Horizontal-Scalability" class="headerlink" title="Horizontal Scalability"></a>Horizontal Scalability</h2><ol>
-<li>sharding distributes data across a cluster of machines</li>
-<li>Starting in 3.4, MongoDB supports creating zones of data based on the shard key. In a balanced cluster, MongoDB directs reads and writes covered by a zone only to those shards inside the zone. See the Zones manual page for more information.</li>
-</ol>
-<h2 id="Support-for-multiple-storage-engines"><a href="#Support-for-multiple-storage-engines" class="headerlink" title="Support for multiple storage engines"></a>Support for multiple storage engines</h2><ol>
-<li>WiredTiger Storage Engine</li>
-<li>In-Momory Storage Engine</li>
-<li>MMAPv1 Storage Engine</li>
-</ol>
-<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://docs.mongodb.com/manual/introduction/" target="_blank" rel="noopener">MongoDB</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/21/MySQL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/21/MySQL/" itemprop="url">
-                  MySQL
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-05-21 11:12:40 / Modified: 13:20:18" itemprop="dateCreated datePublished" datetime="2018-05-21T11:12:40-04:00">2018-05-21</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="What-is-MySQL"><a href="#What-is-MySQL" class="headerlink" title="What is MySQL?"></a>What is MySQL?</h1><ol>
-<li>MySQL is a databse system, used for developing web-based software applications</li>
-<li>MySQL used for both small and large applications</li>
-<li>It is a relational databse management system</li>
-<li>It is fast reliable and flexible and easy to use</li>
-<li>It supports standard SQL</li>
-<li>It is free to download and use</li>
-<li>It is presently developed, distributed, and supported by Oracle</li>
-<li>It is written by C, C++</li>
-</ol>
-<h1 id="Main-features-of-MySQL"><a href="#Main-features-of-MySQL" class="headerlink" title="Main features of MySQL"></a>Main features of MySQL</h1><ol>
-<li>MySQL server design is multi-layered with independent modules</li>
-<li>it is fully multithreaded by using kernel threads. It can use multiple CPUs if they are available</li>
-<li>it provides transactional and non-transactional storage engines</li>
-<li>it has very fast thread-based memory allocation system</li>
-<li>it supports in-memory heap table</li>
-<li>it handles large databases</li>
-<li>MySQL server works in client/server or embedded systems</li>
-<li>it works on many different platforms</li>
-</ol>
-<h1 id="SQL-Commands"><a href="#SQL-Commands" class="headerlink" title="SQL Commands"></a>SQL Commands</h1><h2 id="DDL"><a href="#DDL" class="headerlink" title="DDL"></a>DDL</h2><p>DDL is short name of <strong>Data Definition Language</strong>, which deals with database schemas and descriptions<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CREATE: create database and its objects like table, index, views, store procedure, function, and triggers</span><br><span class="line">ALTER: alters the sturcture of the existing database</span><br><span class="line">DROP: delete objects from the database</span><br><span class="line">TRUNCATE: remove all records from a table, including all spaces allocated for the records are removed</span><br><span class="line">COMMENT: add comments to the data dictionary</span><br><span class="line">RENAME: rename an object</span><br><span class="line">``` </span><br><span class="line">## DML</span><br><span class="line">DML is short name of **Data Manipulation Language**, which deals with data manipulation and includes most common SQL statements such as SELECT, INSERT, UPDATA, and DELETE.</span><br></pre></td></tr></table></figure></p>
-<p>SELECT: retrieve data from a database<br>INSERT: insert data into a table<br>UPDATE: updates existing data with a table<br>MERGE: UPSERT operation(insert or update)<br>CALL: call a PL/SQL or Java subprogram<br>DELETE: delete all records from a database table<br>EXPLAIN PLAN: interpretation of the data access path<br>LOCK TABLE: concurrency control<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## DCL</span><br><span class="line">DCL is short name of **Data Control Language**, which includes commands such as GRANT and mostly concerned with rights, permissions and other controls of the database system.</span><br></pre></td></tr></table></figure></p>
-<p>GRANT: allow users access privileges to database<br>REVOKE: withdraw users access privileges given by using the GRANT command<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## TCL</span><br><span class="line">TCL is short name of **Transaction Control Language**, which deals with a transaction within a database.</span><br></pre></td></tr></table></figure></p>
-<p>COMMIT: commits a transaction<br>ROLLBACK: rollback a transaction in case of any error occurs<br>SAVEPOINT: to rollback the transaction making points within groups<br>SET TRANSACTION: specify characteristics of the transaction<br><code>`</code></p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.w3schools.in/mysql/" target="_blank" rel="noopener">MySQL</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -2046,7 +2023,7 @@ p = np.exp(f)/np.sum(np.exp(f)) # safe to do
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">40</span>
+                    <span class="site-state-item-count">42</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2125,7 +2102,11 @@ p = np.exp(f)/np.sum(np.exp(f)) # safe to do
                     
                       
                     
-                    <span class="site-state-item-count">32</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">34</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>

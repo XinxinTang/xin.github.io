@@ -580,6 +580,200 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/07/Big-Data-Note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/07/Big-Data-Note/" itemprop="url">
+                  Big Data Course Note
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-07 11:12:40 / Modified: 17:39:28" itemprop="dateCreated datePublished" datetime="2018-05-07T11:12:40-04:00">2018-05-07</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="PPT-1"><a href="#PPT-1" class="headerlink" title="PPT 1"></a>PPT 1</h2><p>Big data: the amount of data just beyond technology’s capability to store, manage and process efficiently.</p>
+<p>Types of Data:<br><strong>structured:</strong><br>usually has defined length and format;<br>Ex: numbers, dates, strings</p>
+<p><strong>unstructured:</strong><br>doesn’t follow a specific format;<br>Ex: documents, images, video, audio, sets of data</p>
+<p><strong>semistructured:</strong><br>falls between the other two;<br>may not conform to a fixed schema, but may be self-defining;<br>Ex: RDF, XML, Linked data</p>
+<p>The situation where our most difficult problem is not how to store the data, but how to process it in meaningful ways.</p>
+<p>Top 5 advantages of successfully managing Big Data:</p>
+<ol>
+<li>Improving overall agency efficiency</li>
+<li>Improving speed/accuracy of decision making</li>
+<li>Ability ot forecast events</li>
+<li>Ease of identifying opportunities for savings</li>
+<li>Greater understanding of citizens needs</li>
+</ol>
+<h2 id="PPT-2"><a href="#PPT-2" class="headerlink" title="PPT 2"></a>PPT 2</h2><p><strong>Graph theory:</strong></p>
+<p>Maximum flow</p>
+<h2 id="PPT-3"><a href="#PPT-3" class="headerlink" title="PPT 3"></a>PPT 3</h2><p><strong>Analytics:</strong>analytics are a suite of tools for processing data to achieve actionable intelligence to support decision-making processes.</p>
+<p><strong>Big Data issues affecting analytics:</strong><br>–Volume<br>–Velocity<br>–Variety<br>–Veracity<br>–Value</p>
+<h2 id="PPT-4"><a href="#PPT-4" class="headerlink" title="PPT 4"></a>PPT 4</h2><p>Statistical Machine Learning</p>
+<p>Unsupervised:<br><strong>K-means Clustering</strong><br><strong>Principal Component Analysis (PCA)</strong>: Dimension reducation</p>
+<p><strong>Normalization:</strong>reshape value range from 0 to 1 </p>
+<h2 id="PPT-5"><a href="#PPT-5" class="headerlink" title="PPT 5"></a>PPT 5</h2><p>Classification:<br><strong>K-Nearest Neighbor</strong><br><strong>Linear Regression Model</strong><br><strong>Logistic Regression Model</strong><br><strong>Generalized Linear Model</strong>:<br>3 essential parts:<br>–Error distribution<br>–Link function<br>–Variance function</p>
+<p><strong>Support Vector Machines (SVM)</strong></p>
+<h2 id="PPT-6"><a href="#PPT-6" class="headerlink" title="PPT 6"></a>PPT 6</h2><p><strong>SQL:</strong>Select, Insert, Update, Delete statements<br><strong>Data Definition:</strong><br>–Schema defined at the start<br>–Triggers to respond to Insert, Update and Delete<br>–Alter and Drop<br>–Security and Access Control</p>
+<p><strong>Transactions:</strong> Properties<br>–Atomic<br>–Consistent<br>–Isolated<br>–Durable</p>
+<p><strong>NoSQL:</strong><br>CAP not ACID:<br>–Consistency:all nodes see the same data at the same time.<br>–Availability:a guarantee that every request receieves a response about whether it was successful or failed. All clients always read and write data<br>–Partitioning: system continues to operate despite arbitrary message loss or failure of part of the system.<br>–Multiple entry points<br><img src="https://i.imgur.com/WcmmwvQ.png" alt="Imgur"><br><img src="https://i.imgur.com/LSRLD3I.png" alt="Imgur"></p>
+<p><strong>K/V stores</strong></p>
+<p><strong>Column stores:</strong><br>–Data is stored across rows rather than in columns as in an RDBMS<br>–Read faster than write</p>
+<p>Ex: Cassandra, HBase(Based on Google’s Big Table)</p>
+<p><strong>Document stores:</strong><br>–Key document stores: document can be seen as value part, so we consider this model as a super set of Key-Value<br>–Document can be represented in many ways, but XML, JSON and BSON are typical representations.</p>
+<p>Ex:MongoDB, CouchDB </p>
+<p><strong>Graph DBs</strong><br>Graph databases are built with nodes, relationships between nodes and the properties of nodes.</p>
+<p><strong>Case: Cassandra</strong><br>-Both Key-Value and Column store;<br>-High availability;<br>-Eventual consistency;<br>-Incremental scalability</p>
+<p><strong>Architecture</strong><br>-Implements a peer-to-peer distribution system across nodes<br>-Each node is independent but interconnected with all other nodes<br>-Each node can accept read and write requests, regradless of where the data is located in the cluster<br>-When a node goes down, read/write requests can be served from other nodes</p>
+<p><strong>Case: MongoDB</strong><br><strong>Goals:</strong><br>-Scale horizontally over commodity hardware<br>-Resolve problems that don’t distribute well<br>-Use in-memory processing wherever possible<br>-Auto-sharding built-in<br>-Dynamically add/remove capacity with no downtime<br>-Query contents as well as structure</p>
+<p>JSON style documents with dynamic schemas;<br>No predefined schema;<br>Stores documents in BSON(binary format)<br><img src="https://i.imgur.com/IBuvKDD.png" alt="Imgur"></p>
+<p><img src="https://i.imgur.com/m4xyqol.png" alt="Imgur"></p>
+<p><img src="https://i.imgur.com/vtdJJzD.png" alt="Imgur"></p>
+<p>All indexes in MongoDB are B-Tree indexes.</p>
+<p>Queries:<br><img src="https://i.imgur.com/ZQxSFbg.png" alt="Imgur"></p>
+<p><strong>CRUE Operations:</strong><br>Create:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.collection.insert(&lt;document&gt;)</span><br><span class="line">db.collection.save(&lt;document&gt;)</span><br><span class="line">db.collection.update(&lt;document&gt;)</span><br></pre></td></tr></table></figure></p>
+<p>Read:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db.collection.find(&lt;query&gt;, &lt;projection&gt;)</span><br><span class="line">db.collection.findOne(&lt;query&gt;, &lt;projection&gt;)</span><br></pre></td></tr></table></figure></p>
+<p>Update:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.collection.update(&lt;query&gt;, &lt;update&gt;, &lt;options&gt;)</span><br></pre></td></tr></table></figure></p>
+<p>Delete:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.collection.remove(&lt;query&gt;, &lt;justOne&gt;)</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://i.imgur.com/E16M8kH.png" alt="Imgur"></p>
+<p>Blog in Relational DB<br><img src="https://i.imgur.com/bIk9fLt.png" alt="Imgur"></p>
+<p>Blog in Document DB<br><img src="https://i.imgur.com/779n0ci.png" alt="Imgur"></p>
+<p>Query:<br><img src="https://i.imgur.com/4t4MdwM.png" alt="Imgur"></p>
+<h2 id="PPT-7"><a href="#PPT-7" class="headerlink" title="PPT 7"></a>PPT 7</h2><p><strong>Hadoop</strong><br>Written in Java<br>3 core components: HDFS; Yarn(Scheduler); MPP(Massive Parallel Processing)/MR(MapReduce)(Processing modules)</p>
+<p>HDFS:<br><img src="https://i.imgur.com/80xVUSa.png" alt="Imgur"></p>
+<p>Communications:<br>HDFS Communication protocols are layered on the top of the TCP/IP protocol. </p>
+<p><strong>Pig</strong></p>
+<p><strong>Hive</strong></p>
+<h2 id="PPT-8"><a href="#PPT-8" class="headerlink" title="PPT 8"></a>PPT 8</h2><p><strong>Spark</strong><br>Computations in-memory</p>
+<h2 id="PPT-9"><a href="#PPT-9" class="headerlink" title="PPT 9"></a>PPT 9</h2><p><strong>Graph Databases</strong><br>Allow us to store entities and relationships between these entities.</p>
+<p>It is a DBMS that supports CRUD operations:<br>-Normally optimized for OLTP</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/20/Basic-Conceptions/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -643,7 +837,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-05-22 23:56:20" itemprop="dateModified" datetime="2018-05-22T23:56:20-04:00">2018-05-22</time>
+                <time title="Modified: 2018-05-23 00:13:13" itemprop="dateModified" datetime="2018-05-23T00:13:13-04:00">2018-05-23</time>
               
             
           </span>
@@ -686,7 +880,9 @@
 <h1 id="2-Big-Data"><a href="#2-Big-Data" class="headerlink" title="2. Big Data"></a>2. Big Data</h1><h2 id="2-1-Data-Collection"><a href="#2-1-Data-Collection" class="headerlink" title="2.1 Data Collection"></a>2.1 Data Collection</h2><h3 id="2-1-1-Collectors"><a href="#2-1-1-Collectors" class="headerlink" title="2.1.1 Collectors"></a>2.1.1 Collectors</h3><h3 id="2-1-2-Message-Queues"><a href="#2-1-2-Message-Queues" class="headerlink" title="2.1.2 Message Queues"></a>2.1.2 Message Queues</h3><h4 id="2-1-2-1-Kafka"><a href="#2-1-2-1-Kafka" class="headerlink" title="2.1.2.1 Kafka"></a>2.1.2.1 Kafka</h4><p><a href="https://xinxintang.github.io/2018/05/03/Kafka/" target="_blank" rel="noopener">Kafka</a></p>
 <h4 id="2-1-2-2-RabbitMQ"><a href="#2-1-2-2-RabbitMQ" class="headerlink" title="2.1.2.2 RabbitMQ"></a>2.1.2.2 RabbitMQ</h4><p><a href="https://xinxintang.github.io/2018/05/21/RabbitMQ/" target="_blank" rel="noopener">RabbitMQ</a></p>
 <h2 id="2-2-Data-Processing"><a href="#2-2-Data-Processing" class="headerlink" title="2.2 Data Processing"></a>2.2 Data Processing</h2><h3 id="2-2-1-Spark"><a href="#2-2-1-Spark" class="headerlink" title="2.2.1 Spark"></a>2.2.1 Spark</h3><p><a href="https://xinxintang.github.io/2018/05/21/spark/" target="_blank" rel="noopener">Spark</a></p>
-<h3 id="2-2-2-MapReduce"><a href="#2-2-2-MapReduce" class="headerlink" title="2.2.2 MapReduce"></a>2.2.2 MapReduce</h3><h2 id="2-3-Data-Storage"><a href="#2-3-Data-Storage" class="headerlink" title="2.3 Data Storage"></a>2.3 Data Storage</h2><h3 id="2-3-1-MongoDB"><a href="#2-3-1-MongoDB" class="headerlink" title="2.3.1 MongoDB"></a>2.3.1 MongoDB</h3><h3 id="2-3-2-Cassandra"><a href="#2-3-2-Cassandra" class="headerlink" title="2.3.2 Cassandra"></a>2.3.2 Cassandra</h3><h3 id="2-3-3-Redis"><a href="#2-3-3-Redis" class="headerlink" title="2.3.3 Redis"></a>2.3.3 Redis</h3><h3 id="2-3-4-MySQL"><a href="#2-3-4-MySQL" class="headerlink" title="2.3.4 MySQL"></a>2.3.4 MySQL</h3><p><a href="https://xinxintang.github.io/2018/05/21/MySQL/" target="_blank" rel="noopener">MySQL</a></p>
+<h3 id="2-2-2-MapReduce"><a href="#2-2-2-MapReduce" class="headerlink" title="2.2.2 MapReduce"></a>2.2.2 MapReduce</h3><h2 id="2-3-Data-Storage"><a href="#2-3-Data-Storage" class="headerlink" title="2.3 Data Storage"></a>2.3 Data Storage</h2><h3 id="2-3-1-MongoDB"><a href="#2-3-1-MongoDB" class="headerlink" title="2.3.1 MongoDB"></a>2.3.1 MongoDB</h3><p><a href="https://xinxintang.github.io/2018/05/22/MongoDB/" target="_blank" rel="noopener">MongoDB</a></p>
+<h3 id="2-3-2-Cassandra"><a href="#2-3-2-Cassandra" class="headerlink" title="2.3.2 Cassandra"></a>2.3.2 Cassandra</h3><h3 id="2-3-3-Redis"><a href="#2-3-3-Redis" class="headerlink" title="2.3.3 Redis"></a>2.3.3 Redis</h3><p><a href="https://xinxintang.github.io/2018/05/22/Redis/" target="_blank" rel="noopener">Redis</a></p>
+<h3 id="2-3-4-MySQL"><a href="#2-3-4-MySQL" class="headerlink" title="2.3.4 MySQL"></a>2.3.4 MySQL</h3><p><a href="https://xinxintang.github.io/2018/05/21/MySQL/" target="_blank" rel="noopener">MySQL</a></p>
 <h2 id="2-4-Data-Visualization"><a href="#2-4-Data-Visualization" class="headerlink" title="2.4 Data Visualization"></a>2.4 Data Visualization</h2><h3 id="2-4-1-ELK"><a href="#2-4-1-ELK" class="headerlink" title="2.4.1 ELK"></a>2.4.1 ELK</h3><p><a href="https://xinxintang.github.io/2018/05/22/ELK/" target="_blank" rel="noopener">ELK</a></p>
 <h2 id="2-5-Cloud-Computing"><a href="#2-5-Cloud-Computing" class="headerlink" title="2.5 Cloud Computing"></a>2.5 Cloud Computing</h2><h3 id="2-5-1-AWS"><a href="#2-5-1-AWS" class="headerlink" title="2.5.1 AWS"></a>2.5.1 AWS</h3><p><a href="https://xinxintang.github.io/2018/05/22/AWS-EC2/" target="_blank" rel="noopener">AWS EC2</a><br><a href="https://xinxintang.github.io/2018/05/22/AWS-S3/" target="_blank" rel="noopener">AWS S3</a></p>
 <h2 id="2-6-Others"><a href="#2-6-Others" class="headerlink" title="2.6 Others"></a>2.6 Others</h2><h3 id="2-6-1-Docker"><a href="#2-6-1-Docker" class="headerlink" title="2.6.1 Docker"></a>2.6.1 Docker</h3><p><a href="https://xinxintang.github.io/2018/05/13/docker/" target="_blank" rel="noopener">Docker</a></p>
@@ -899,200 +1095,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/07/Big-Data-Note/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/07/Big-Data-Note/" itemprop="url">
-                  Big Data Course Note
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-05-07 11:12:40 / Modified: 17:39:28" itemprop="dateCreated datePublished" datetime="2018-05-07T11:12:40-04:00">2018-05-07</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="PPT-1"><a href="#PPT-1" class="headerlink" title="PPT 1"></a>PPT 1</h2><p>Big data: the amount of data just beyond technology’s capability to store, manage and process efficiently.</p>
-<p>Types of Data:<br><strong>structured:</strong><br>usually has defined length and format;<br>Ex: numbers, dates, strings</p>
-<p><strong>unstructured:</strong><br>doesn’t follow a specific format;<br>Ex: documents, images, video, audio, sets of data</p>
-<p><strong>semistructured:</strong><br>falls between the other two;<br>may not conform to a fixed schema, but may be self-defining;<br>Ex: RDF, XML, Linked data</p>
-<p>The situation where our most difficult problem is not how to store the data, but how to process it in meaningful ways.</p>
-<p>Top 5 advantages of successfully managing Big Data:</p>
-<ol>
-<li>Improving overall agency efficiency</li>
-<li>Improving speed/accuracy of decision making</li>
-<li>Ability ot forecast events</li>
-<li>Ease of identifying opportunities for savings</li>
-<li>Greater understanding of citizens needs</li>
-</ol>
-<h2 id="PPT-2"><a href="#PPT-2" class="headerlink" title="PPT 2"></a>PPT 2</h2><p><strong>Graph theory:</strong></p>
-<p>Maximum flow</p>
-<h2 id="PPT-3"><a href="#PPT-3" class="headerlink" title="PPT 3"></a>PPT 3</h2><p><strong>Analytics:</strong>analytics are a suite of tools for processing data to achieve actionable intelligence to support decision-making processes.</p>
-<p><strong>Big Data issues affecting analytics:</strong><br>–Volume<br>–Velocity<br>–Variety<br>–Veracity<br>–Value</p>
-<h2 id="PPT-4"><a href="#PPT-4" class="headerlink" title="PPT 4"></a>PPT 4</h2><p>Statistical Machine Learning</p>
-<p>Unsupervised:<br><strong>K-means Clustering</strong><br><strong>Principal Component Analysis (PCA)</strong>: Dimension reducation</p>
-<p><strong>Normalization:</strong>reshape value range from 0 to 1 </p>
-<h2 id="PPT-5"><a href="#PPT-5" class="headerlink" title="PPT 5"></a>PPT 5</h2><p>Classification:<br><strong>K-Nearest Neighbor</strong><br><strong>Linear Regression Model</strong><br><strong>Logistic Regression Model</strong><br><strong>Generalized Linear Model</strong>:<br>3 essential parts:<br>–Error distribution<br>–Link function<br>–Variance function</p>
-<p><strong>Support Vector Machines (SVM)</strong></p>
-<h2 id="PPT-6"><a href="#PPT-6" class="headerlink" title="PPT 6"></a>PPT 6</h2><p><strong>SQL:</strong>Select, Insert, Update, Delete statements<br><strong>Data Definition:</strong><br>–Schema defined at the start<br>–Triggers to respond to Insert, Update and Delete<br>–Alter and Drop<br>–Security and Access Control</p>
-<p><strong>Transactions:</strong> Properties<br>–Atomic<br>–Consistent<br>–Isolated<br>–Durable</p>
-<p><strong>NoSQL:</strong><br>CAP not ACID:<br>–Consistency:all nodes see the same data at the same time.<br>–Availability:a guarantee that every request receieves a response about whether it was successful or failed. All clients always read and write data<br>–Partitioning: system continues to operate despite arbitrary message loss or failure of part of the system.<br>–Multiple entry points<br><img src="https://i.imgur.com/WcmmwvQ.png" alt="Imgur"><br><img src="https://i.imgur.com/LSRLD3I.png" alt="Imgur"></p>
-<p><strong>K/V stores</strong></p>
-<p><strong>Column stores:</strong><br>–Data is stored across rows rather than in columns as in an RDBMS<br>–Read faster than write</p>
-<p>Ex: Cassandra, HBase(Based on Google’s Big Table)</p>
-<p><strong>Document stores:</strong><br>–Key document stores: document can be seen as value part, so we consider this model as a super set of Key-Value<br>–Document can be represented in many ways, but XML, JSON and BSON are typical representations.</p>
-<p>Ex:MongoDB, CouchDB </p>
-<p><strong>Graph DBs</strong><br>Graph databases are built with nodes, relationships between nodes and the properties of nodes.</p>
-<p><strong>Case: Cassandra</strong><br>-Both Key-Value and Column store;<br>-High availability;<br>-Eventual consistency;<br>-Incremental scalability</p>
-<p><strong>Architecture</strong><br>-Implements a peer-to-peer distribution system across nodes<br>-Each node is independent but interconnected with all other nodes<br>-Each node can accept read and write requests, regradless of where the data is located in the cluster<br>-When a node goes down, read/write requests can be served from other nodes</p>
-<p><strong>Case: MongoDB</strong><br><strong>Goals:</strong><br>-Scale horizontally over commodity hardware<br>-Resolve problems that don’t distribute well<br>-Use in-memory processing wherever possible<br>-Auto-sharding built-in<br>-Dynamically add/remove capacity with no downtime<br>-Query contents as well as structure</p>
-<p>JSON style documents with dynamic schemas;<br>No predefined schema;<br>Stores documents in BSON(binary format)<br><img src="https://i.imgur.com/IBuvKDD.png" alt="Imgur"></p>
-<p><img src="https://i.imgur.com/m4xyqol.png" alt="Imgur"></p>
-<p><img src="https://i.imgur.com/vtdJJzD.png" alt="Imgur"></p>
-<p>All indexes in MongoDB are B-Tree indexes.</p>
-<p>Queries:<br><img src="https://i.imgur.com/ZQxSFbg.png" alt="Imgur"></p>
-<p><strong>CRUE Operations:</strong><br>Create:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.collection.insert(&lt;document&gt;)</span><br><span class="line">db.collection.save(&lt;document&gt;)</span><br><span class="line">db.collection.update(&lt;document&gt;)</span><br></pre></td></tr></table></figure></p>
-<p>Read:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db.collection.find(&lt;query&gt;, &lt;projection&gt;)</span><br><span class="line">db.collection.findOne(&lt;query&gt;, &lt;projection&gt;)</span><br></pre></td></tr></table></figure></p>
-<p>Update:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.collection.update(&lt;query&gt;, &lt;update&gt;, &lt;options&gt;)</span><br></pre></td></tr></table></figure></p>
-<p>Delete:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.collection.remove(&lt;query&gt;, &lt;justOne&gt;)</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://i.imgur.com/E16M8kH.png" alt="Imgur"></p>
-<p>Blog in Relational DB<br><img src="https://i.imgur.com/bIk9fLt.png" alt="Imgur"></p>
-<p>Blog in Document DB<br><img src="https://i.imgur.com/779n0ci.png" alt="Imgur"></p>
-<p>Query:<br><img src="https://i.imgur.com/4t4MdwM.png" alt="Imgur"></p>
-<h2 id="PPT-7"><a href="#PPT-7" class="headerlink" title="PPT 7"></a>PPT 7</h2><p><strong>Hadoop</strong><br>Written in Java<br>3 core components: HDFS; Yarn(Scheduler); MPP(Massive Parallel Processing)/MR(MapReduce)(Processing modules)</p>
-<p>HDFS:<br><img src="https://i.imgur.com/80xVUSa.png" alt="Imgur"></p>
-<p>Communications:<br>HDFS Communication protocols are layered on the top of the TCP/IP protocol. </p>
-<p><strong>Pig</strong></p>
-<p><strong>Hive</strong></p>
-<h2 id="PPT-8"><a href="#PPT-8" class="headerlink" title="PPT 8"></a>PPT 8</h2><p><strong>Spark</strong><br>Computations in-memory</p>
-<h2 id="PPT-9"><a href="#PPT-9" class="headerlink" title="PPT 9"></a>PPT 9</h2><p><strong>Graph Databases</strong><br>Allow us to store entities and relationships between these entities.</p>
-<p>It is a DBMS that supports CRUD operations:<br>-Normally optimized for OLTP</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/02/CNN-case-study/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1198,6 +1200,171 @@
 </ul>
 <h2 id="Forward-pass-time-and-power-consumption"><a href="#Forward-pass-time-and-power-consumption" class="headerlink" title="Forward pass time and power consumption"></a>Forward pass time and power consumption</h2><p><img src="https://i.imgur.com/Eb5QbXF.png" alt="Imgur"></p>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://cs231n.stanford.edu/slides/2018/cs231n_2018_lecture09.pdf" target="_blank" rel="noopener">http://cs231n.stanford.edu/slides/2018/cs231n_2018_lecture09.pdf</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/22/Cassandra/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/22/Cassandra/" itemprop="url">
+                  Cassandra
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-22 23:58:16" itemprop="dateCreated datePublished" datetime="2018-05-22T23:58:16-04:00">2018-05-22</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-23 00:11:24" itemprop="dateModified" datetime="2018-05-23T00:11:24-04:00">2018-05-23</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Apache Cassandra database is the right choice when you need scalability and high availability without compromising performance. Linear scalability and proven fault-tolerance on commodity hardware or cloud infrastructure make it the perfect platform for mision-critical data.</p>
+<p>Cassandra’s support for replicating across multiple datacenters is best-in-class, providing lower latency for your users and the peace of mind of knowing that you can survive regional outages.</p>
+<h1 id="Main-features"><a href="#Main-features" class="headerlink" title="Main features"></a>Main features</h1><ol>
+<li>Proven<br>Cassandra is in use at Constant Contact, CERN, Comcast, eBay and over 1500 more companies </li>
+<li>Fault tolerance<br>Data is automatically replicated to multiple nodes for fault-tolerance. Replication across multiple data centers is supported. Failed nodes can be replaced with no downtime.</li>
+<li>Performance<br>Cassandra <a href="http://vldb.org/pvldb/vol5/p1724_tilmannrabl_vldb2012.pdf" target="_blank" rel="noopener">consistently</a> <a href="https://www.datastax.com/apache-cassandra-leads-nosql-benchmark" target="_blank" rel="noopener">outperforms</a> popular NoSQL alternatives in benchmarks and real applications, primarily because of fundamental architectural choices. </li>
+<li>Decentralized<br>There are no single points of failure. There are no network bottlenecks. Every node in the cluster is identical.</li>
+<li>Scalable<br>Easy to scale out</li>
+<li>Durable<br>Cassandra is suitable for applications that can’t afford to lose data, even when an entire data center goes down.</li>
+<li>You’re in control<br>Choose between synchronous or asynchronous replication for each updata. Highly available asynchronous operations are optimized with features like Hinted Handoff and Read Repair.</li>
+<li>Elastic<br>Read and write throughput both increase linearly as new machines are added, with no downtime or interruption to applications</li>
+<li>Professionally supported</li>
+</ol>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="http://cassandra.apache.org/" target="_blank" rel="noopener">Cassandra</a></p>
 
           
         
@@ -1719,155 +1886,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/How-to-Use-Dataset/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/29/How-to-Use-Dataset/" itemprop="url">
-                  How-to-Use-Dataset
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-04-29 13:02:26 / Modified: 13:04:31" itemprop="dateCreated datePublished" datetime="2018-04-29T13:02:26-04:00">2018-04-29</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>To build a complete machine learning model, we need a dataset which can train and test the model. But the test set cannot be touched at all until one time at the very end. This is to train a good generalization of classifier. Therefore, we must split train set in two: training set and validation set. </p>
-<p>Validation set can help to tune hyperparameters so that classifier has a better generalization. </p>
-<p>Sometimes data is small. To make full use of it, we can use cross-validation. That is, Split training set into 5. 4 parts as training set and 1 part as validation set. So the data has 5 combinations. In practice, however, it doesn’t use often because it is very expensive. </p>
-<p>Data splits like below:<br><img src="http://cs231n.github.io/assets/crossval.jpeg" alt="image_logo"></p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p><a href="http://cs231n.github.io/classification/" target="_blank" rel="noopener">http://cs231n.github.io/classification/</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1910,7 +1933,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">40</span>
+                    <span class="site-state-item-count">42</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1989,7 +2012,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">32</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">34</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
