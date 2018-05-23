@@ -274,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/21/MySQL/">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/13/NumberMathClass/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xinxin Tang">
@@ -293,8 +293,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/21/MySQL/" itemprop="url">
-                  MySQL
+                <a class="post-title-link" href="/2018/05/13/NumberMathClass/" itemprop="url">
+                  Number & Math package--Java
                 </a>
               
             
@@ -320,7 +320,7 @@
                 
               
 
-              <time title="Created: 2018-05-21 11:12:40 / Modified: 13:20:18" itemprop="dateCreated datePublished" datetime="2018-05-21T11:12:40-04:00">2018-05-21</time>
+              <time title="Created: 2018-05-13 15:54:12 / Modified: 16:00:02" itemprop="dateCreated datePublished" datetime="2018-05-13T15:54:12-04:00">2018-05-13</time>
             
 
             
@@ -360,31 +360,192 @@
       
         
           
-            <h1 id="What-is-MySQL"><a href="#What-is-MySQL" class="headerlink" title="What is MySQL?"></a>What is MySQL?</h1><ol>
-<li>MySQL is a databse system, used for developing web-based software applications</li>
-<li>MySQL used for both small and large applications</li>
-<li>It is a relational databse management system</li>
-<li>It is fast reliable and flexible and easy to use</li>
-<li>It supports standard SQL</li>
-<li>It is free to download and use</li>
-<li>It is presently developed, distributed, and supported by Oracle</li>
-<li>It is written by C, C++</li>
+            <p>Common used functions:</p>
+<pre><code>import Math
+
+compareTo()
+equals()
+valueOf()
+toString()
+parseInt()
+abs()
+ceil(): return minimum greater or equal to target number
+floor(): return maximum less or equal to target number
+min():
+max():
+exp()
+log()
+pow()
+sqrt()
+sin()
+cos()
+tan()
+asin()
+acos()
+atan()
+random()
+</code></pre>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/13/docker/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/13/docker/" itemprop="url">
+                  Docker
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-13 15:10:08" itemprop="dateCreated datePublished" datetime="2018-05-13T15:10:08-04:00">2018-05-13</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-21 20:02:52" itemprop="dateModified" datetime="2018-05-21T20:02:52-04:00">2018-05-21</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Docker is an open source container engine, which is written by Golang.</p>
+<p>It allows developers to pack app into a lightweight, portable container and deploy on any Linux machine to achieve virtualization. It adopts sandbox mechanism, which has no interface between containers, so that container costs less. </p>
+<h2 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h2><p>Docker uses Cli-Server mode to manage and build container by remote APIs.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Docker        Object-oriented</span><br><span class="line">Container     Object</span><br><span class="line">Image         Class</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://www.runoob.com/wp-content/uploads/2016/04/576507-docker1.png" alt=""></p>
+<p>Docker Images: The template to build Docker Container.<br>Docker Container: One or more apps run in container independently.<br>Docker Client: keep in touch with daemon by command lines and Docker APIs.<br>Docker Host: a physical or virtual machine to execute Docker daemon and containers.<br>Docker Registry: a Docker warehouse to store images.<br>Docker Machine: a command line tool to install Docker in target platform, like VirtualBox, Digital Ocean.</p>
+<h2 id="Implements"><a href="#Implements" class="headerlink" title="Implements"></a>Implements</h2><p>Web app, Back-end app auto-pack and deployment</p>
+<h2 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h2><ol>
+<li>Install docker: <figure class="highlight plain"><figcaption><span>install docker```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2. Search commands: </span><br><span class="line">```docker</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<h1 id="Main-features-of-MySQL"><a href="#Main-features-of-MySQL" class="headerlink" title="Main features of MySQL"></a>Main features of MySQL</h1><ol>
-<li>MySQL server design is multi-layered with independent modules</li>
-<li>it is fully multithreaded by using kernel threads. It can use multiple CPUs if they are available</li>
-<li>it provides transactional and non-transactional storage engines</li>
-<li>it has very fast thread-based memory allocation system</li>
-<li>it supports in-memory heap table</li>
-<li>it handles large databases</li>
-<li>MySQL server works in client/server or embedded systems</li>
-<li>it works on many different platforms</li>
-</ol>
-<h1 id="SQL-Commands"><a href="#SQL-Commands" class="headerlink" title="SQL Commands"></a>SQL Commands</h1><h2 id="DDL"><a href="#DDL" class="headerlink" title="DDL"></a>DDL</h2><p>DDL is short name of <strong>Data Definition Language</strong>, which deals with database schemas and descriptions<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CREATE: create database and its objects like table, index, views, store procedure, function, and triggers</span><br><span class="line">ALTER: alters the sturcture of the existing database</span><br><span class="line">DROP: delete objects from the database</span><br><span class="line">TRUNCATE: remove all records from a table, including all spaces allocated for the records are removed</span><br><span class="line">COMMENT: add comments to the data dictionary</span><br><span class="line">RENAME: rename an object</span><br><span class="line">``` </span><br><span class="line">## DML</span><br><span class="line">DML is short name of **Data Manipulation Language**, which deals with data manipulation and includes most common SQL statements such as SELECT, INSERT, UPDATA, and DELETE.</span><br></pre></td></tr></table></figure></p>
-<p>SELECT: retrieve data from a database<br>INSERT: insert data into a table<br>UPDATE: updates existing data with a table<br>MERGE: UPSERT operation(insert or update)<br>CALL: call a PL/SQL or Java subprogram<br>DELETE: delete all records from a database table<br>EXPLAIN PLAN: interpretation of the data access path<br>LOCK TABLE: concurrency control<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## DCL</span><br><span class="line">DCL is short name of **Data Control Language**, which includes commands such as GRANT and mostly concerned with rights, permissions and other controls of the database system.</span><br></pre></td></tr></table></figure></p>
-<p>GRANT: allow users access privileges to database<br>REVOKE: withdraw users access privileges given by using the GRANT command<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## TCL</span><br><span class="line">TCL is short name of **Transaction Control Language**, which deals with a transaction within a database.</span><br></pre></td></tr></table></figure></p>
-<p>COMMIT: commits a transaction<br>ROLLBACK: rollback a transaction in case of any error occurs<br>SAVEPOINT: to rollback the transaction making points within groups<br>SET TRANSACTION: specify characteristics of the transaction<br><code>`</code></p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.w3schools.in/mysql/" target="_blank" rel="noopener">MySQL</a></p>
+<p>You will see all commands.</p>
 
           
         
@@ -438,7 +599,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/22/AWS-S3/">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/13/json/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xinxin Tang">
@@ -457,8 +618,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/22/AWS-S3/" itemprop="url">
-                  AWS-S3
+                <a class="post-title-link" href="/2018/05/13/json/" itemprop="url">
+                  json
                 </a>
               
             
@@ -484,7 +645,7 @@
                 
               
 
-              <time title="Created: 2018-05-22 14:31:14 / Modified: 15:09:09" itemprop="dateCreated datePublished" datetime="2018-05-22T14:31:14-04:00">2018-05-22</time>
+              <time title="Created: 2018-05-13 00:06:25 / Modified: 00:19:32" itemprop="dateCreated datePublished" datetime="2018-05-13T00:06:25-04:00">2018-05-13</time>
             
 
             
@@ -524,27 +685,1084 @@
       
         
           
-            <p>Amazon S3 has a simple web services interface that you can use to store and retrieve any amount of data, at any time, from anywhere on the web.</p>
-<p>We can send requests to create buckets, store and retrieve objects, and manage permissions on our recources. The guide also describe access control and the authentication process. Access control defines who can access objects and buckets within S3, and the type of access. </p>
-<h1 id="Advantages-to-Amazon-S3"><a href="#Advantages-to-Amazon-S3" class="headerlink" title="Advantages to Amazon S3"></a>Advantages to Amazon S3</h1><ol>
-<li>Create Buckets: create and name a bucket that stores data. Buckets are the fundational container in S3 for data storage.</li>
-<li>Store data in Buckets: store an infinite amount of data in a bucket. Upload as many objects as you like into an S3 bucket. Each object can contain up to 5 TB of data. Each object is stored and retrieved using a unique developer-assigned key.</li>
-<li>Download data</li>
-<li>Permissions</li>
-<li>Standard interfaces: Use standards-based REST and SOAP interfaces designed to work with any Internet-development toolkit.</li>
+            <p>JSON: JavaScript Object Notation</p>
+<p>Lightweight text data exchange format.</p>
+<p><strong>Why JSON?</strong><br>More concise;<br>No end tags;<br>Faster read/write ability than XML</p>
+<p><strong>Syntax</strong><br>Data stores in Key/Value pair;<br>Data is splitted by comma;<br>Brace stores object;<br>Bracket stores array;</p>
+<p><strong>Values</strong><br>Number:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; &quot;age&quot;:30 &#125;</span><br></pre></td></tr></table></figure></p>
+<p>String</p>
+<p>Boolean:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; &quot;flag&quot;:true &#125;</span><br></pre></td></tr></table></figure></p>
+<p>Array:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;sites&quot;: [</span><br><span class="line">    &#123; &quot;name&quot;:&quot;菜鸟教程&quot; , &quot;url&quot;:&quot;www.runoob.com&quot; &#125;, </span><br><span class="line">    &#123; &quot;name&quot;:&quot;google&quot; , &quot;url&quot;:&quot;www.google.com&quot; &#125;, </span><br><span class="line">    &#123; &quot;name&quot;:&quot;微博&quot; , &quot;url&quot;:&quot;www.weibo.com&quot; &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Object:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; &quot;name&quot;:&quot;Tutorials&quot; , &quot;url&quot;:&quot;www.google.com&quot; &#125;</span><br></pre></td></tr></table></figure></p>
+<p>null:</p>
+<pre><code>{ &quot;runoob&quot;:null }
+</code></pre>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/12/web-develop/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/12/web-develop/" itemprop="url">
+                  web_develop
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-12 23:33:54" itemprop="dateCreated datePublished" datetime="2018-05-12T23:33:54-04:00">2018-05-12</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-13 00:06:15" itemprop="dateModified" datetime="2018-05-13T00:06:15-04:00">2018-05-13</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>HTML is HyperText Markup Language.<br>CSS is a language that describes the style of an HTML document.<br>JavaScript is a programming language of HTML and the Web. </p>
+<h2 id="Why-study-them"><a href="#Why-study-them" class="headerlink" title="Why study them?"></a>Why study them?</h2><p>HTML to define the content of web pages;<br>CSS to specify the layout of web pages;<br>JavaScript to program the behavior of web pages.</p>
+<p><strong>JavaScript Libraries</strong><br>JQuery<br>Angular<br>React: a declarative, efficient, and flexible JavaScript library for building user interfaces.</p>
+<p><strong>Node.js</strong><br>it is an open source server environment, which allows us to run JavaScript on the server.</p>
+<p><strong>Django</strong><br>it is a high-level Python web framework that makes us easier to build better web apps quickly with less code. </p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/12/html5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/12/html5/" itemprop="url">
+                  html5
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-12 21:28:30 / Modified: 23:32:30" itemprop="dateCreated datePublished" datetime="2018-05-12T21:28:30-04:00">2018-05-12</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>HyperText Markup Language is short as HTML.</p>
+<p>The &lt;!DOCTYPE html&gt; declaration defines this document to be HTML5<br>The <html> element is the root element of an HTML page<br>The <head> element contains meta information about the document<br>The <title> element specifies a title for the document<br>The <body> element contains the visible page content<br>The <h1> element defines a large heading<br>The <p> element defines a paragraph</p>
+<h2 id="HTML-Page-Structure"><a href="#HTML-Page-Structure" class="headerlink" title="HTML Page Structure"></a>HTML Page Structure</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;title&gt;Page Title&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;h1&gt;My First Heading&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;My first paragraph.&lt;/p&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>Link:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;https://www.google.com&quot;&gt;This is a link&lt;/a&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Images:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;w3schools.jpg&quot; alt=&quot;W3Schools.com&quot; width=&quot;104&quot; height=&quot;142&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Button:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button&gt;Click me&lt;/button&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>List:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;h2&gt;An Unordered HTML List&lt;/h2&gt;</span><br><span class="line"></span><br><span class="line">&lt;ul&gt;</span><br><span class="line">  &lt;li&gt;Coffee&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;Tea&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;Milk&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;  </span><br><span class="line"></span><br><span class="line">&lt;h2&gt;An Ordered HTML List&lt;/h2&gt;</span><br><span class="line"></span><br><span class="line">&lt;ol&gt;</span><br><span class="line">  &lt;li&gt;Coffee&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;Tea&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;Milk&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Heading:</strong></p>
+<p></p><h1> Most important heading, <h6> the least important heading.</h6></h1></h1></body></title></head></html></p>
+<p>Bigger Headings using CSS property:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 style=&quot;font-size:60px;&quot;&gt;Heading 1&lt;/h1&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Horizontal Rules:</strong></p>
+<p><hr> defines a thematic break in a HTML page.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;This is heading 1&lt;/h1&gt;</span><br><span class="line">&lt;p&gt;This is some text.&lt;/p&gt;</span><br><span class="line">&lt;hr&gt;</span><br><span class="line">&lt;h2&gt;This is heading 2&lt;/h2&gt;</span><br><span class="line">&lt;p&gt;This is some other text.&lt;/p&gt;</span><br><span class="line">&lt;hr&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong><head> Element:</head></strong><br>it is a container for metadata. HTML metadata is data about the HTML document. Metadata is not displayed. </p>
+<h2 id="Paragraphs"><a href="#Paragraphs" class="headerlink" title="Paragraphs"></a>Paragraphs</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;This is a paragraph.&lt;/p&gt;</span><br><span class="line">&lt;p&gt;This is another paragraph.&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;</span><br><span class="line">This paragraph</span><br><span class="line">contains a lot of lines</span><br><span class="line">in the source code,</span><br><span class="line">but the browser </span><br><span class="line">ignores it.</span><br><span class="line">&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;</span><br><span class="line">This paragraph</span><br><span class="line">contains      a lot of spaces</span><br><span class="line">in the source     code,</span><br><span class="line">but the    browser </span><br><span class="line">ignores it.</span><br><span class="line">&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;</span><br><span class="line">The number of lines in a paragraph depends on the size of the browser window. If you resize the browser window, the number of lines in this paragraph will change.</span><br><span class="line">&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Line-Breaks"><a href="#Line-Breaks" class="headerlink" title="Line Breaks"></a>Line Breaks</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;This is&lt;br&gt;a paragraph&lt;br&gt;with line breaks.&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p><pre> element is displayed in a fixed-width font.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;pre&gt;</span><br><span class="line">  My Bonnie lies over the ocean.</span><br><span class="line"></span><br><span class="line">  My Bonnie lies over the sea.</span><br><span class="line"></span><br><span class="line">  My Bonnie lies over the ocean.</span><br><span class="line"></span><br><span class="line">  Oh, bring back my Bonnie to me.</span><br><span class="line">&lt;/pre&gt;</span><br></pre></td></tr></table></figure></pre></p>
+<h2 id="Styles"><a href="#Styles" class="headerlink" title="Styles"></a>Styles</h2><p>Setting the style using CSS.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;tagname style=&quot;property:value;&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>1.Background Color<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;body style=&quot;background-color:powderblue;&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;h1&gt;This is a heading&lt;/h1&gt;</span><br><span class="line">  &lt;p&gt;This is a paragraph.&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></p>
+<p>2.Text Color<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 style=&quot;color:blue;&quot;&gt;This is a heading&lt;/h1&gt;</span><br><span class="line">&lt;p style=&quot;color:red;&quot;&gt;This is a paragraph.&lt;/p&gt;</span><br></pre></td></tr></table></figure></p>
+<p>3.Fonts<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 style=&quot;font-family:verdana;&quot;&gt;This is a heading&lt;/h1&gt;</span><br><span class="line">&lt;p style=&quot;font-family:courier;&quot;&gt;This is a paragraph.&lt;/p&gt;</span><br></pre></td></tr></table></figure></p>
+<p>4.Text Size<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 style=&quot;font-size:300%;&quot;&gt;This is a heading&lt;/h1&gt;</span><br><span class="line">&lt;p style=&quot;font-size:160%;&quot;&gt;This is a paragraph.&lt;/p&gt;</span><br></pre></td></tr></table></figure></p>
+<p>5.Text Alignment<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 style=&quot;text-align:center;&quot;&gt;Centered Heading&lt;/h1&gt;</span><br><span class="line">&lt;p style=&quot;text-align:center;&quot;&gt;Centered paragraph.&lt;/p&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Formatting-elements"><a href="#Formatting-elements" class="headerlink" title="Formatting elements"></a>Formatting elements</h2><p><b> - Bold text<br><strong> - Important text<br><i> - Italic text<br><em> - Emphasized text<br><mark> - Marked text<br><small> - Small text<br><del> - Deleted text<br><ins> - Inserted text<br><sub> - Subscript text<br><sup> - Superscript text</sup></sub></ins></del></small></mark></em></i></strong></b></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;b&gt;This text is bold&lt;/b&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;strong&gt;This text is strong&lt;/strong&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Quotation-and-Citation-Elements"><a href="#Quotation-and-Citation-Elements" class="headerlink" title="Quotation and Citation Elements"></a>Quotation and Citation Elements</h2><p><abbr> Defines an abbreviation or acronym</abbr></p>
+<p><address> Defines contact information for the author/owner of a document<br><bdo> Defines the text direction</bdo></address></p>
+<p><blockquote> Defines a section that is quoted from another source<br><cite> Defines the title of a work<br><q> Defines a short inline quotation</q></cite></blockquote></p>
+<h2 id="Comment-tags"><a href="#Comment-tags" class="headerlink" title="Comment tags"></a>Comment tags</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- Write your comments here --&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Color"><a href="#Color" class="headerlink" title="Color"></a>Color</h2><ol>
+<li><p>Background color</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 style=&quot;background-color:DodgerBlue;&quot;&gt;Hello World&lt;/h1&gt;</span><br><span class="line">&lt;p style=&quot;background-color:Tomato;&quot;&gt;Lorem ipsum...&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Text color</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 style=&quot;color:Tomato;&quot;&gt;Hello World&lt;/h1&gt;</span><br><span class="line">&lt;p style=&quot;color:DodgerBlue;&quot;&gt;Lorem ipsum...&lt;/p&gt;</span><br><span class="line">&lt;p style=&quot;color:MediumSeaGreen;&quot;&gt;Ut wisi enim...&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<h1 id="Concepts-of-S3"><a href="#Concepts-of-S3" class="headerlink" title="Concepts of S3"></a>Concepts of S3</h1><h2 id="1-Buckets"><a href="#1-Buckets" class="headerlink" title="1. Buckets"></a>1. Buckets</h2><p>A bucket is a container for objects stored in S3. Every objects is contained in a bucket. For example, if a object named <em>photes/puppy.jpg</em> is stored in the <em>johnsmith</em> bucket, then it is addressable using the URL: <em><a href="http://johnsmith.s3.amazonaws.com/photos/puppy.jpg" target="_blank" rel="noopener">http://johnsmith.s3.amazonaws.com/photos/puppy.jpg</a></em></p>
-<h3 id="Buckets-serve-several-purposes"><a href="#Buckets-serve-several-purposes" class="headerlink" title="Buckets serve several purposes:"></a>Buckets serve several purposes:</h3><ol>
-<li>They organize the S3 namespace at highest level</li>
-<li>They identify the account reponsible for storage and data transfer charges</li>
-<li>They play a role in access control</li>
-<li>They serve as the unit aggregation for usage reporting</li>
+<p>3.Border color<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 style=&quot;border:2px solid Tomato;&quot;&gt;Hello World&lt;/h1&gt;</span><br><span class="line">&lt;h1 style=&quot;border:2px solid DodgerBlue;&quot;&gt;Hello World&lt;/h1&gt;</span><br><span class="line">&lt;h1 style=&quot;border:2px solid Violet;&quot;&gt;Hello World&lt;/h1&gt;</span><br></pre></td></tr></table></figure></p>
+<p>4.Color values<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 style=&quot;background-color:rgb(255, 99, 71);&quot;&gt;...&lt;/h1&gt;</span><br><span class="line">&lt;h1 style=&quot;background-color:#ff6347;&quot;&gt;...&lt;/h1&gt;</span><br><span class="line">&lt;h1 style=&quot;background-color:hsl(9, 100%, 64%);&quot;&gt;...&lt;/h1&gt;</span><br><span class="line">&lt;h1 style=&quot;background-color:rgba(255, 99, 71, 0.5);&quot;&gt;...&lt;/h1&gt;</span><br><span class="line">&lt;h1 style=&quot;background-color:hsla(9, 100%, 64%, 0.5);&quot;&gt;...&lt;/h1&gt;</span><br></pre></td></tr></table></figure></p>
+<p>RGB value format:<br><strong>rgb(red, green, blue)</strong>: range from 0 to 255<br><strong>#rrggbb</strong>: Hexadecimal value: 00-ff(0-255)<br><strong>hsl(hue, saturation, lightness)</strong>:hsl(0, 100%, 50%)<br><strong>rgba(red, green, blue, alpha)</strong>:rgba(255, 99, 71, 0)<br><strong>hsla(blue, saturation, lightness, alpha)</strong>:hsla(9, 100%, 64%, 0.4)</p>
+<h2 id="Styling-with-CSS"><a href="#Styling-with-CSS" class="headerlink" title="Styling with CSS"></a>Styling with CSS</h2><p>CSS can be added in 3 ways:</p>
+<ol>
+<li><p>inline CSS:<br>it is used to apply a unique style to a single HTML element.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 style=&quot;color:blue;&quot;&gt;This is a Blue Heading&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>internal CSS:<br>it is used to define a style for a single HTML page.<br>Internal CSS is defined in the <head> section of an HTML page, within a <style> element.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">  body &#123;background-color: powderblue;&#125;</span><br><span class="line">  h1   &#123;color: blue;&#125;</span><br><span class="line">  p    &#123;color: red;&#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line"></span><br><span class="line">  &lt;h1&gt;This is a heading&lt;/h1&gt;</span><br><span class="line">  &lt;p&gt;This is a paragraph.&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>external CSS:<br>it is used to define the style for many HTML pages.<br>With an external style sheet, you can change the look of an entire web site, by changing one file! To use an external style sheet, add a link to it in the <head> section of the HTML page.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;body&gt;</span><br><span class="line"></span><br><span class="line">  &lt;h1&gt;This is a heading&lt;/h1&gt;</span><br><span class="line">  &lt;p&gt;This is a paragraph.&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<h2 id="Objects"><a href="#Objects" class="headerlink" title="Objects"></a>Objects</h2><p>Objects are the fundamental entities stored in S3. Objects consist of <strong>object data</strong> and <strong>metadata</strong>. Metadata is a set of name-value pairs that describe the object. These include some default metadata, such as data last modified, and standard HTTP metadata, such as Content-Type. </p>
-<h2 id="Keys"><a href="#Keys" class="headerlink" title="Keys"></a>Keys</h2><p>A Key is the unique identifier for an object within a bucket. Each object in a bucket has exactly one key. Because the combination of a bucket, key, and version ID uniquely identify each object. S3 can be thought of as a basic data map between “bucket + key + version” and the object itself. Every object in Amazon S3 can be uniquely addressed through the combination of the web service endpoint, bucket name, key, and optionally, a version. For example, in the URL <a href="http://doc.s3.amazonaws.com/2006-03-01/AmazonS3.wsdl" target="_blank" rel="noopener">http://doc.s3.amazonaws.com/2006-03-01/AmazonS3.wsdl</a>, “doc” is the name of the bucket and “2006-03-01/AmazonS3.wsdl” is the key.</p>
-<h2 id="Regions"><a href="#Regions" class="headerlink" title="Regions"></a>Regions</h2><p>We can choose the geographical region where S3 will store the buckets we create. </p>
-<h1 id="Data-consistency-model-of-S3"><a href="#Data-consistency-model-of-S3" class="headerlink" title="Data consistency model of S3"></a>Data consistency model of S3</h1><p>S3 provides eventual consistency for read-after-write.</p>
-<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/Introduction.html" target="_blank" rel="noopener">AWS S3</a> </p>
+<p>An external style sheet can be written in any text editor. The file must not contain any HTML code, and must be saved with a .css extension.</p>
+<p>Here is how the “styles.css” looks:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">    background-color: powderblue;</span><br><span class="line">&#125;</span><br><span class="line">h1 &#123;</span><br><span class="line">    color: blue;</span><br><span class="line">&#125;</span><br><span class="line">p &#123;</span><br><span class="line">    color: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Fonts</strong><br>The CSS color property defines the text color to be used.</p>
+<p>The CSS font-family property defines the font to be used.</p>
+<p>The CSS font-size property defines the text size to be used.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">h1 &#123;</span><br><span class="line">    color: blue;</span><br><span class="line">    font-family: verdana;</span><br><span class="line">    font-size: 300%;</span><br><span class="line">&#125;</span><br><span class="line">p  &#123;</span><br><span class="line">    color: red;</span><br><span class="line">    font-family: courier;</span><br><span class="line">    font-size: 160%;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;h1&gt;This is a heading&lt;/h1&gt;</span><br><span class="line">&lt;p&gt;This is a paragraph.&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>Border: The CSS border property defines a border around an HTML element.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">    border: 1px solid powderblue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Padding: The CSS padding property defines a padding (space) between the text and the border.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">    border: 1px solid powderblue;</span><br><span class="line">    padding: 30px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Margin: The CSS margin property defines a margin (space) outside the border<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">    border: 1px solid powderblue;</span><br><span class="line">    margin: 50px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>id: To define a specific style for one special element, add an id attribute to the element.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#p01 &#123;</span><br><span class="line">    color: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;p01&quot;&gt;I am different&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p>class: To define a style for a special type of elements, add a class attribute to the element.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p.error &#123;</span><br><span class="line">    color: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p class=&quot;error&quot;&gt;I am different&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;https://www.w3schools.com/html/&quot;&gt;Visit our HTML tutorial&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Images"><a href="#Images" class="headerlink" title="Images"></a>Images</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;img_girl.jpg&quot; alt=&quot;Girl in a jacket&quot; width=&quot;500&quot; height=&quot;600&quot;&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Tables"><a href="#Tables" class="headerlink" title="Tables"></a>Tables</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;table style=&quot;width:100%&quot;&gt;</span><br><span class="line">  &lt;tr&gt;</span><br><span class="line">    &lt;th&gt;Firstname&lt;/th&gt;</span><br><span class="line">    &lt;th&gt;Lastname&lt;/th&gt; </span><br><span class="line">    &lt;th&gt;Age&lt;/th&gt;</span><br><span class="line">  &lt;/tr&gt;</span><br><span class="line">  &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;Jill&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;Smith&lt;/td&gt; </span><br><span class="line">    &lt;td&gt;50&lt;/td&gt;</span><br><span class="line">  &lt;/tr&gt;</span><br><span class="line">  &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;Eve&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;Jackson&lt;/td&gt; </span><br><span class="line">    &lt;td&gt;94&lt;/td&gt;</span><br><span class="line">  &lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Lists"><a href="#Lists" class="headerlink" title="Lists"></a>Lists</h2><p>Ordered list:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ol&gt;</span><br><span class="line">  &lt;li&gt;Coffee&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;Tea&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;Milk&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br></pre></td></tr></table></figure></p>
+<p>Unordered list:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul style=&quot;list-style-type:disc&quot;&gt;</span><br><span class="line">  &lt;li&gt;Coffee&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;Tea&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;Milk&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Blocks"><a href="#Blocks" class="headerlink" title="Blocks"></a>Blocks</h2><p>Starts on a new line.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;Hello&lt;/div&gt;</span><br><span class="line">&lt;div&gt;World&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Inline elements</strong>:doesn’t start on a new line and only takes up as much width as necessary<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;span&gt;Hello&lt;/span&gt;</span><br><span class="line">&lt;span&gt;World&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Classes"><a href="#Classes" class="headerlink" title="Classes"></a>Classes</h2><p>can be used by CSS and JavaScript </p>
+<h2 id="Iframes"><a href="#Iframes" class="headerlink" title="Iframes"></a>Iframes</h2><p>A web page within a web page</p>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><h2 id="Layout"><a href="#Layout" class="headerlink" title="Layout"></a>Layout</h2><h2 id="Responsive"><a href="#Responsive" class="headerlink" title="Responsive"></a>Responsive</h2><p>Showing perfect size in various browsers. </p>
+<h2 id="HTML-Forms"><a href="#HTML-Forms" class="headerlink" title="HTML Forms"></a>HTML Forms</h2><h2 id="Canvas"><a href="#Canvas" class="headerlink" title="Canvas"></a>Canvas</h2><h2 id="SVG"><a href="#SVG" class="headerlink" title="SVG"></a>SVG</h2><h2 id="Google-Maps"><a href="#Google-Maps" class="headerlink" title="Google Maps"></a>Google Maps</h2><h2 id="Media"><a href="#Media" class="headerlink" title="Media"></a>Media</h2><h2 id="Video"><a href="#Video" class="headerlink" title="Video"></a>Video</h2><h2 id="Audio"><a href="#Audio" class="headerlink" title="Audio"></a>Audio</h2><h2 id="Plug-ins"><a href="#Plug-ins" class="headerlink" title="Plug-ins"></a>Plug-ins</h2><h2 id="YouTube"><a href="#YouTube" class="headerlink" title="YouTube"></a>YouTube</h2><h2 id="Geolocation"><a href="#Geolocation" class="headerlink" title="Geolocation"></a>Geolocation</h2><h2 id="Drag-Drop"><a href="#Drag-Drop" class="headerlink" title="Drag/Drop"></a>Drag/Drop</h2><h2 id="Web-Storage"><a href="#Web-Storage" class="headerlink" title="Web Storage"></a>Web Storage</h2><h2 id="Web-Workers"><a href="#Web-Workers" class="headerlink" title="Web Workers"></a>Web Workers</h2><h2 id="SSE"><a href="#SSE" class="headerlink" title="SSE"></a>SSE</h2></style></head></p></li></ol>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/09/Machine-Learning-Algo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/09/Machine-Learning-Algo/" itemprop="url">
+                  Machine-Learning-Algo
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-09 00:59:08" itemprop="dateCreated datePublished" datetime="2018-05-09T00:59:08-04:00">2018-05-09</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-10 15:28:30" itemprop="dateModified" datetime="2018-05-10T15:28:30-04:00">2018-05-10</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/08/Design-Pattern/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/08/Design-Pattern/" itemprop="url">
+                  JAVA Design Pattern
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-08 23:12:35" itemprop="dateCreated datePublished" datetime="2018-05-08T23:12:35-04:00">2018-05-08</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-09 00:48:31" itemprop="dateModified" datetime="2018-05-09T00:48:31-04:00">2018-05-09</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Singleton"><a href="#Singleton" class="headerlink" title="Singleton"></a>Singleton</h1><p>One of the simplest design patterns in Java. This pattern involves a single class which is responsible to create an object while making sure that only single object gets created. </p>
+<p>Step 1:<br>Create a Singleton Class:<br>SingleObject.java<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class SingleObject &#123;</span><br><span class="line"></span><br><span class="line">   //create an object of SingleObject</span><br><span class="line">   private static SingleObject instance = new SingleObject();</span><br><span class="line"></span><br><span class="line">   //make the constructor private so that this class cannot be</span><br><span class="line">   //instantiated</span><br><span class="line">   private SingleObject()&#123;&#125;</span><br><span class="line"></span><br><span class="line">   //Get the only object available</span><br><span class="line">   public static SingleObject getInstance()&#123;</span><br><span class="line">      return instance;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   public void showMessage()&#123;</span><br><span class="line">      System.out.println(&quot;Hello World!&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Step 2:<br>Get the only object from the singleton class:<br>SingletonPatternDemo.java<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class SingletonPatternDemo &#123;</span><br><span class="line">   public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">      //illegal construct</span><br><span class="line">      //Compile Time Error: The constructor SingleObject() is not visible</span><br><span class="line">      //SingleObject object = new SingleObject();</span><br><span class="line"></span><br><span class="line">      //Get the only object available</span><br><span class="line">      SingleObject object = SingleObject.getInstance();</span><br><span class="line"></span><br><span class="line">      //show the message</span><br><span class="line">      object.showMessage();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Step 3:<br>Output:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello World!</span><br></pre></td></tr></table></figure></p>
+<h1 id="Factory-pattern"><a href="#Factory-pattern" class="headerlink" title="Factory pattern"></a>Factory pattern</h1><p>1.<br>Create an interface: Shape.java<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public interface Shape &#123;</span><br><span class="line">   void draw();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>Create concrete classes implementing the same interface: Rectangle.java<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class Rectangle implements Shape &#123;</span><br><span class="line"></span><br><span class="line">   @Override</span><br><span class="line">   public void draw() &#123;</span><br><span class="line">      System.out.println(&quot;Inside Rectangle::draw() method.&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>Square.java<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class Square implements Shape &#123;</span><br><span class="line"></span><br><span class="line">   @Override</span><br><span class="line">   public void draw() &#123;</span><br><span class="line">      System.out.println(&quot;Inside Square::draw() method.&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Circle.java<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class Circle implements Shape &#123;</span><br><span class="line"></span><br><span class="line">   @Override</span><br><span class="line">   public void draw() &#123;</span><br><span class="line">      System.out.println(&quot;Inside Circle::draw() method.&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ol start="3">
+<li><p>Create a Factory to generate object of concrete class based on given information: ShapeFactory.java</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class ShapeFactory &#123;</span><br><span class="line">	</span><br><span class="line">   //use getShape method to get object of type shape </span><br><span class="line">   public Shape getShape(String shapeType)&#123;</span><br><span class="line">      if(shapeType == null)&#123;</span><br><span class="line">         return null;</span><br><span class="line">      &#125;		</span><br><span class="line">      if(shapeType.equalsIgnoreCase(&quot;CIRCLE&quot;))&#123;</span><br><span class="line">         return new Circle();</span><br><span class="line">         </span><br><span class="line">      &#125; else if(shapeType.equalsIgnoreCase(&quot;RECTANGLE&quot;))&#123;</span><br><span class="line">         return new Rectangle();</span><br><span class="line">         </span><br><span class="line">      &#125; else if(shapeType.equalsIgnoreCase(&quot;SQUARE&quot;))&#123;</span><br><span class="line">         return new Square();</span><br><span class="line">      &#125;</span><br><span class="line">      </span><br><span class="line">      return null;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Use the Factory to get object of concrete class by passing an information such type: FactoryPatternDemo.java</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">public class FactoryPatternDemo &#123;</span><br><span class="line"></span><br><span class="line">   public static void main(String[] args) &#123;</span><br><span class="line">      ShapeFactory shapeFactory = new ShapeFactory();</span><br><span class="line"></span><br><span class="line">      //get an object of Circle and call its draw method.</span><br><span class="line">      Shape shape1 = shapeFactory.getShape(&quot;CIRCLE&quot;);</span><br><span class="line"></span><br><span class="line">      //call draw method of Circle</span><br><span class="line">      shape1.draw();</span><br><span class="line"></span><br><span class="line">      //get an object of Rectangle and call its draw method.</span><br><span class="line">      Shape shape2 = shapeFactory.getShape(&quot;RECTANGLE&quot;);</span><br><span class="line"></span><br><span class="line">      //call draw method of Rectangle</span><br><span class="line">      shape2.draw();</span><br><span class="line"></span><br><span class="line">      //get an object of Square and call its draw method.</span><br><span class="line">      Shape shape3 = shapeFactory.getShape(&quot;SQUARE&quot;);</span><br><span class="line"></span><br><span class="line">      //call draw method of circle</span><br><span class="line">      shape3.draw();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Output</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Inside Circle::draw() method.</span><br><span class="line">Inside Rectangle::draw() method.</span><br><span class="line">Inside Square::draw() method.</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="Iterator-Pattern"><a href="#Iterator-Pattern" class="headerlink" title="Iterator Pattern"></a>Iterator Pattern</h1><ol>
+<li>Create interfaces: Iterator.java<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public interface Iterator &#123;</span><br><span class="line">   public boolean hasNext();</span><br><span class="line">   public Object next();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>Container.java<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public interface Container &#123;</span><br><span class="line">   public Iterator getIterator();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li><p>Create concrete class implementing the Container interface. This class has inner class NameIterator implementing the Iterator interface: NameRepository.java</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">public class NameRepository implements Container &#123;</span><br><span class="line">   public String names[] = &#123;&quot;Robert&quot; , &quot;John&quot; ,&quot;Julie&quot; , &quot;Lora&quot;&#125;;</span><br><span class="line"></span><br><span class="line">   @Override</span><br><span class="line">   public Iterator getIterator() &#123;</span><br><span class="line">      return new NameIterator();</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   private class NameIterator implements Iterator &#123;</span><br><span class="line"></span><br><span class="line">      int index;</span><br><span class="line"></span><br><span class="line">      @Override</span><br><span class="line">      public boolean hasNext() &#123;</span><br><span class="line">      </span><br><span class="line">         if(index &lt; names.length)&#123;</span><br><span class="line">            return true;</span><br><span class="line">         &#125;</span><br><span class="line">         return false;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      @Override</span><br><span class="line">      public Object next() &#123;</span><br><span class="line">      </span><br><span class="line">         if(this.hasNext())&#123;</span><br><span class="line">            return names[index++];</span><br><span class="line">         &#125;</span><br><span class="line">         return null;</span><br><span class="line">      &#125;		</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Use the NameRepository to get iterator and print names: IteratorPatternDemo.java</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class IteratorPatternDemo &#123;</span><br><span class="line">	</span><br><span class="line">   public static void main(String[] args) &#123;</span><br><span class="line">      NameRepository namesRepository = new NameRepository();</span><br><span class="line"></span><br><span class="line">      for(Iterator iter = namesRepository.getIterator(); iter.hasNext();)&#123;</span><br><span class="line">         String name = (String)iter.next();</span><br><span class="line">         System.out.println(&quot;Name : &quot; + name);</span><br><span class="line">      &#125; 	</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Output:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Name : Robert</span><br><span class="line">Name : John</span><br><span class="line">Name : Julie</span><br><span class="line">Name : Lora</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/07/Big-Data-Note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/07/Big-Data-Note/" itemprop="url">
+                  Big Data Course Note
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-07 11:12:40 / Modified: 17:39:28" itemprop="dateCreated datePublished" datetime="2018-05-07T11:12:40-04:00">2018-05-07</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="PPT-1"><a href="#PPT-1" class="headerlink" title="PPT 1"></a>PPT 1</h2><p>Big data: the amount of data just beyond technology’s capability to store, manage and process efficiently.</p>
+<p>Types of Data:<br><strong>structured:</strong><br>usually has defined length and format;<br>Ex: numbers, dates, strings</p>
+<p><strong>unstructured:</strong><br>doesn’t follow a specific format;<br>Ex: documents, images, video, audio, sets of data</p>
+<p><strong>semistructured:</strong><br>falls between the other two;<br>may not conform to a fixed schema, but may be self-defining;<br>Ex: RDF, XML, Linked data</p>
+<p>The situation where our most difficult problem is not how to store the data, but how to process it in meaningful ways.</p>
+<p>Top 5 advantages of successfully managing Big Data:</p>
+<ol>
+<li>Improving overall agency efficiency</li>
+<li>Improving speed/accuracy of decision making</li>
+<li>Ability ot forecast events</li>
+<li>Ease of identifying opportunities for savings</li>
+<li>Greater understanding of citizens needs</li>
+</ol>
+<h2 id="PPT-2"><a href="#PPT-2" class="headerlink" title="PPT 2"></a>PPT 2</h2><p><strong>Graph theory:</strong></p>
+<p>Maximum flow</p>
+<h2 id="PPT-3"><a href="#PPT-3" class="headerlink" title="PPT 3"></a>PPT 3</h2><p><strong>Analytics:</strong>analytics are a suite of tools for processing data to achieve actionable intelligence to support decision-making processes.</p>
+<p><strong>Big Data issues affecting analytics:</strong><br>–Volume<br>–Velocity<br>–Variety<br>–Veracity<br>–Value</p>
+<h2 id="PPT-4"><a href="#PPT-4" class="headerlink" title="PPT 4"></a>PPT 4</h2><p>Statistical Machine Learning</p>
+<p>Unsupervised:<br><strong>K-means Clustering</strong><br><strong>Principal Component Analysis (PCA)</strong>: Dimension reducation</p>
+<p><strong>Normalization:</strong>reshape value range from 0 to 1 </p>
+<h2 id="PPT-5"><a href="#PPT-5" class="headerlink" title="PPT 5"></a>PPT 5</h2><p>Classification:<br><strong>K-Nearest Neighbor</strong><br><strong>Linear Regression Model</strong><br><strong>Logistic Regression Model</strong><br><strong>Generalized Linear Model</strong>:<br>3 essential parts:<br>–Error distribution<br>–Link function<br>–Variance function</p>
+<p><strong>Support Vector Machines (SVM)</strong></p>
+<h2 id="PPT-6"><a href="#PPT-6" class="headerlink" title="PPT 6"></a>PPT 6</h2><p><strong>SQL:</strong>Select, Insert, Update, Delete statements<br><strong>Data Definition:</strong><br>–Schema defined at the start<br>–Triggers to respond to Insert, Update and Delete<br>–Alter and Drop<br>–Security and Access Control</p>
+<p><strong>Transactions:</strong> Properties<br>–Atomic<br>–Consistent<br>–Isolated<br>–Durable</p>
+<p><strong>NoSQL:</strong><br>CAP not ACID:<br>–Consistency:all nodes see the same data at the same time.<br>–Availability:a guarantee that every request receieves a response about whether it was successful or failed. All clients always read and write data<br>–Partitioning: system continues to operate despite arbitrary message loss or failure of part of the system.<br>–Multiple entry points<br><img src="https://i.imgur.com/WcmmwvQ.png" alt="Imgur"><br><img src="https://i.imgur.com/LSRLD3I.png" alt="Imgur"></p>
+<p><strong>K/V stores</strong></p>
+<p><strong>Column stores:</strong><br>–Data is stored across rows rather than in columns as in an RDBMS<br>–Read faster than write</p>
+<p>Ex: Cassandra, HBase(Based on Google’s Big Table)</p>
+<p><strong>Document stores:</strong><br>–Key document stores: document can be seen as value part, so we consider this model as a super set of Key-Value<br>–Document can be represented in many ways, but XML, JSON and BSON are typical representations.</p>
+<p>Ex:MongoDB, CouchDB </p>
+<p><strong>Graph DBs</strong><br>Graph databases are built with nodes, relationships between nodes and the properties of nodes.</p>
+<p><strong>Case: Cassandra</strong><br>-Both Key-Value and Column store;<br>-High availability;<br>-Eventual consistency;<br>-Incremental scalability</p>
+<p><strong>Architecture</strong><br>-Implements a peer-to-peer distribution system across nodes<br>-Each node is independent but interconnected with all other nodes<br>-Each node can accept read and write requests, regradless of where the data is located in the cluster<br>-When a node goes down, read/write requests can be served from other nodes</p>
+<p><strong>Case: MongoDB</strong><br><strong>Goals:</strong><br>-Scale horizontally over commodity hardware<br>-Resolve problems that don’t distribute well<br>-Use in-memory processing wherever possible<br>-Auto-sharding built-in<br>-Dynamically add/remove capacity with no downtime<br>-Query contents as well as structure</p>
+<p>JSON style documents with dynamic schemas;<br>No predefined schema;<br>Stores documents in BSON(binary format)<br><img src="https://i.imgur.com/IBuvKDD.png" alt="Imgur"></p>
+<p><img src="https://i.imgur.com/m4xyqol.png" alt="Imgur"></p>
+<p><img src="https://i.imgur.com/vtdJJzD.png" alt="Imgur"></p>
+<p>All indexes in MongoDB are B-Tree indexes.</p>
+<p>Queries:<br><img src="https://i.imgur.com/ZQxSFbg.png" alt="Imgur"></p>
+<p><strong>CRUE Operations:</strong><br>Create:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.collection.insert(&lt;document&gt;)</span><br><span class="line">db.collection.save(&lt;document&gt;)</span><br><span class="line">db.collection.update(&lt;document&gt;)</span><br></pre></td></tr></table></figure></p>
+<p>Read:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db.collection.find(&lt;query&gt;, &lt;projection&gt;)</span><br><span class="line">db.collection.findOne(&lt;query&gt;, &lt;projection&gt;)</span><br></pre></td></tr></table></figure></p>
+<p>Update:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.collection.update(&lt;query&gt;, &lt;update&gt;, &lt;options&gt;)</span><br></pre></td></tr></table></figure></p>
+<p>Delete:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.collection.remove(&lt;query&gt;, &lt;justOne&gt;)</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://i.imgur.com/E16M8kH.png" alt="Imgur"></p>
+<p>Blog in Relational DB<br><img src="https://i.imgur.com/bIk9fLt.png" alt="Imgur"></p>
+<p>Blog in Document DB<br><img src="https://i.imgur.com/779n0ci.png" alt="Imgur"></p>
+<p>Query:<br><img src="https://i.imgur.com/4t4MdwM.png" alt="Imgur"></p>
+<h2 id="PPT-7"><a href="#PPT-7" class="headerlink" title="PPT 7"></a>PPT 7</h2><p><strong>Hadoop</strong><br>Written in Java<br>3 core components: HDFS; Yarn(Scheduler); MPP(Massive Parallel Processing)/MR(MapReduce)(Processing modules)</p>
+<p>HDFS:<br><img src="https://i.imgur.com/80xVUSa.png" alt="Imgur"></p>
+<p>Communications:<br>HDFS Communication protocols are layered on the top of the TCP/IP protocol. </p>
+<p><strong>Pig</strong></p>
+<p><strong>Hive</strong></p>
+<h2 id="PPT-8"><a href="#PPT-8" class="headerlink" title="PPT 8"></a>PPT 8</h2><p><strong>Spark</strong><br>Computations in-memory</p>
+<h2 id="PPT-9"><a href="#PPT-9" class="headerlink" title="PPT 9"></a>PPT 9</h2><p><strong>Graph Databases</strong><br>Allow us to store entities and relationships between these entities.</p>
+<p>It is a DBMS that supports CRUD operations:<br>-Normally optimized for OLTP</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/04/NoSQL-categories/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/04/NoSQL-categories/" itemprop="url">
+                  NoSQL-categories
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-04 00:03:00" itemprop="dateCreated datePublished" datetime="2018-05-04T00:03:00-04:00">2018-05-04</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-07 17:35:42" itemprop="dateModified" datetime="2018-05-07T17:35:42-04:00">2018-05-07</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Column-oriented"><a href="#Column-oriented" class="headerlink" title="Column-oriented"></a>Column-oriented</h2><p>Traditional relational database is row-oriented. Each row has a row id and every field store in one table. </p>
+<p>When searching in row-oriented database, each row will be traversed, no matter a certain column data is needed or not. If you search a person whose birth month is September. Row-oriented database will search this table from left to right then from top to down.<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G5050Q55.png" alt=""></p>
+<p>Index the target column can promote search speed, but index each column cause extra overload and databse will traverse all columns to search data. </p>
+<p>Column-oriented database will stores each column seperately. It’s very fast to search when the data amount is small.<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G50614146.png" alt=""></p>
+<p>This design looks like adding index for each row. It sacrifices space and writing more index to speed up searching ability. Index maps row ID to data, but column-based database maps data to rowID. Like the picture above, it is easy to search who like archery. This is an inverted index. </p>
+<p>When to use row-oriented and when to use column-oriented? Column-based database is easy to add one new column, but is difficult to add one row.  Therefore, row-oriented database is bettern than column-based on transaction. Because it achieves real-time update. It is commonly used in marketing business.</p>
+<p>Column-oriented database has advantage of data analysis, like sum of values. Batch processing can adopt column-oriented database at night, and it supports quick search and MapReduce aggregation. </p>
+<p>Example: HBase, Cassandra</p>
+<h2 id="K-V-stores"><a href="#K-V-stores" class="headerlink" title="K/V stores"></a>K/V stores</h2><p>This is the easiest store in NoSQL databases.<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G50Q4156.png" alt=""></p>
+<p>the complex k/v paire is like:<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G50T43T.jpg" alt=""></p>
+<p>Example: Redis, Amazon Dynamo</p>
+<h2 id="Document-oriented-stores"><a href="#Document-oriented-stores" class="headerlink" title="Document-oriented stores"></a>Document-oriented stores</h2><p>Store based on K/V pair, but structure more complex.<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G50951434.png" alt=""></p>
 
           
         
@@ -728,1095 +1946,6 @@
 <p><strong>Use:</strong> if data is not huge and changes frequently, store in Redis. Fast read/write data</p>
 <p><strong>Example:</strong> Stock price analysis, Real-time data processing</p>
 
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/NumPy-Tutorial/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/29/NumPy-Tutorial/" itemprop="url">
-                  NumPy-Tutorial
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-04-29 12:12:54 / Modified: 12:58:24" itemprop="dateCreated datePublished" datetime="2018-04-29T12:12:54-04:00">2018-04-29</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>NumPy is one of most popular data analysis package in Python. I use it a lot and here is a NumPy review. Let’s get started!</p>
-<p>NumPy’s main object is the homogeneous multidimensional array. In NumPy dimensions are called axes.</p>
-<p>For example, [1,2,3] has one axis and length is 3. [[1,2,3],[4,5,6]] has two axes. The first axis length is 2 and the second axis has a length of 3.</p>
-<p>Python has a built-in class array.array which only handles one-dimension array and offers less functionality. NumPy’s array class is called ndarray and more powerful. It has many attributes like:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ndarray.ndim: the number of axes of the array; 3-D, 4D</span><br><span class="line">ndarray.shape: the dimensions of the array; 3-D: (2,3,4)</span><br><span class="line">ndarray.size: the total number of elements of the array. </span><br><span class="line">ndarray.dtype: the type of elements in the array</span><br><span class="line">ndarray.itemsize: the size in byte of each element of the array</span><br><span class="line">ndarray.data: the buffer containing the actual elements of the array</span><br></pre></td></tr></table></figure></p>
-<p>Examples:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">a = np.arange(15).reshape(3,5)  # array([[ 0, 1, 2, 3, 4], [ 5, 6, 7, 8, 9], [10, 11, 12, 13, 14]])</span><br><span class="line">a.shape()  # (3, 5)</span><br><span class="line">a.ndim  # 2</span><br><span class="line">a.dtype.name  # &apos;int64&apos;</span><br><span class="line">a.itemsize  # 8</span><br><span class="line">a.size  # 15</span><br><span class="line">type(a)  # &lt;type &apos;numpy.ndarray&apos;&gt;</span><br><span class="line">b = np.array([6,7,8])  # array([6,7,8])</span><br><span class="line">type(b)  # &lt;type &apos;numpy.ndarray&apos;&gt;</span><br></pre></td></tr></table></figure></p>
-<h2 id="Array-Creation"><a href="#Array-Creation" class="headerlink" title="Array Creation:"></a>Array Creation:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">a = np.array([2,3,4])</span><br><span class="line">b = np.array([(1,2,3,4), (5,6,7,8)])</span><br><span class="line"></span><br><span class="line">c = np.zeros((3,4))  # 2-D with length 3 and 4 for two axis</span><br><span class="line">d = np.zeros((3,4,5), dtype=np.int16)  # specify a data type</span><br><span class="line">e = np.empty((2,3))  # uninitialized, output may vary</span><br><span class="line"></span><br><span class="line">f = np.arrange(10, 30, 5)  # create a sequence of number. Start from 10, end with 30 (not included), each iteration adds 5.</span><br></pre></td></tr></table></figure>
-<p>Others:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zeros_like, ones, ones_like, numpy.random.rand, numpy.random.randn</span><br></pre></td></tr></table></figure></p>
-<h2 id="Basic-operations"><a href="#Basic-operations" class="headerlink" title="Basic operations:"></a>Basic operations:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = np.array([20, 30, 40, 60])</span><br><span class="line">b = np.arange(4)  # array([0,1,2,3])</span><br><span class="line">c = a-b  # array([20, 29, 38, 57])</span><br><span class="line">print(b**2)  # array([0, 1,4,9])</span><br><span class="line">print(10*np.sin(a)) </span><br><span class="line">print(a&lt;35)  array([True, True, False, False])</span><br></pre></td></tr></table></figure>
-<h2 id="Product-operator-usage-in-NumPy-arrays"><a href="#Product-operator-usage-in-NumPy-arrays" class="headerlink" title="Product operator * usage in NumPy arrays."></a>Product operator * usage in NumPy arrays.</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = np.array([[1,1],[0,1]])</span><br><span class="line">b = np.array([[2,0],[3,4]])</span><br><span class="line">print(a*b)  # array([[2,0], [0,4]])</span><br><span class="line">print(a.dot(b))  # array([[5,4],[3,4]])</span><br><span class="line">print(np.dot(a, b))  # array([[5,4],[3,4]])</span><br><span class="line">print(np.arange(12).reshape(3,4).sum(axis=0))  # sum of each column</span><br><span class="line">print(np.arange(12).reshape(3,4).min(axis=1))  # sum of each row</span><br></pre></td></tr></table></figure>
-<h2 id="Universal-Functions"><a href="#Universal-Functions" class="headerlink" title="Universal Functions:"></a>Universal Functions:</h2><p>Popular use:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">all, any, argmax, argmin, argsort, average, bincount, diff, dot, floor, inner, max, mean, mdeian, min, minimum, nonzero, outer, round, re, sort, std, sum, transpose, var, vectorize, where</span><br></pre></td></tr></table></figure></p>
-<p>To summary, these are basic NumPy usage. I’ll continue to write more blogs to introduce NumPy.</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p><a href="https://docs.scipy.org/doc/numpy/user/quickstart.html#further-reading" target="_blank" rel="noopener">https://docs.scipy.org/doc/numpy/user/quickstart.html#further-reading</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/13/NumberMathClass/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/13/NumberMathClass/" itemprop="url">
-                  Number & Math package--Java
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-05-13 15:54:12 / Modified: 16:00:02" itemprop="dateCreated datePublished" datetime="2018-05-13T15:54:12-04:00">2018-05-13</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Common used functions:</p>
-<pre><code>import Math
-
-compareTo()
-equals()
-valueOf()
-toString()
-parseInt()
-abs()
-ceil(): return minimum greater or equal to target number
-floor(): return maximum less or equal to target number
-min():
-max():
-exp()
-log()
-pow()
-sqrt()
-sin()
-cos()
-tan()
-asin()
-acos()
-atan()
-random()
-</code></pre>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/30/Optimization/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/30/Optimization/" itemprop="url">
-                  Optimization
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-04-30 11:37:44 / Modified: 20:51:08" itemprop="dateCreated datePublished" datetime="2018-04-30T11:37:44-04:00">2018-04-30</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Score function -&gt; Loss function -&gt; Optimization.</p>
-<p>Recall that SVM was formulated as:<br><img src="https://i.imgur.com/wJTf9XM.png" alt="Imgur"><br>This formula archieves a very low loss <strong>L</strong>. Optimization is the process of finding the set of parameters <strong>W</strong> that minimize the loss function.</p>
-<h2 id="Visualizing-the-loss-function"><a href="#Visualizing-the-loss-function" class="headerlink" title="Visualizing the loss function"></a>Visualizing the loss function</h2><p>For high-dimensional spaces, linear classifier weight matrix is difficult to visualize. However, we can gain some intuitions about one by slicing through the high-dimensinal space along rays(1-dimension) or along planes(2-dimensions).<br><img src="http://cs231n.github.io/assets/svm1d.png" alt="sisual"><br>Left: one-dimensional loss by only varying <strong>a</strong>. Middle and Right: two-dimensional loss slice, Blue = low loss, Red = high loss. The loss is piecewise-linear structure. </p>
-<p>For single example, we have:<br><img src="https://i.imgur.com/URZXKwo.png" alt="Imgur"></p>
-<p><img src="https://i.imgur.com/dZz3CPE.png" alt="Imgur"><br>We can visualize this as follows:<br><img src="http://cs231n.github.io/assets/svmbowl.png" alt="Visual"><br>x-axis is a single weight and y-asix is the loss. </p>
-<p>Th picture above has shown an example of a convex function. </p>
-<h2 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization"></a>Optimization</h2><p>The goal of optimization is to find <strong>W</strong> that minimizes the loss function. </p>
-<h3 id="Strategy-1-Random-search-very-bad"><a href="#Strategy-1-Random-search-very-bad" class="headerlink" title="Strategy 1: Random search(very bad)"></a>Strategy 1: Random search(very bad)</h3><p>Try out many different random weights and keep track of what works best.</p>
-<h3 id="Strategy-2-Random-local-search"><a href="#Strategy-2-Random-local-search" class="headerlink" title="Strategy 2: Random local search"></a>Strategy 2: Random local search</h3><p>Start out with a random <strong>W</strong>, generate random perturbations <strong>&amp;W</strong> to it and if the loss is lower.</p>
-<p>This strategy is better, but still wasteful and computationally expensive.</p>
-<h3 id="Strategy-3-Following-the-Gradient"><a href="#Strategy-3-Following-the-Gradient" class="headerlink" title="Strategy 3: Following the Gradient"></a>Strategy 3: Following the Gradient</h3><p>Find a direction in the weight-space that would improve our weight vector. I means we can compute teh best direction along which we should change our weight vector that is mathematically guaranteed to be the direction of the steepest descend. </p>
-<p>In one-dimensional functions, the mathematically expression is:<br><img src="https://i.imgur.com/JlASbf7.png" alt="Imgur">  </p>
-<p>Gradient check: unlike the numerical gradient it can be more error prone to implement, which is why in practice it is very common to compute the analytic gradient and compare it to the numerical gradient to check the correctness of your implementation.</p>
-<p>SVM loss function for a single datapoint:<br><img src="https://i.imgur.com/MwHvp74.png" alt="Imgur"></p>
-<p>We can differentiate the function with respect to the weights.<br><img src="https://i.imgur.com/rMC0JOh.png" alt="Imgur"></p>
-<h2 id="Gradient-descent"><a href="#Gradient-descent" class="headerlink" title="Gradient descent"></a>Gradient descent</h2><p><strong>Mini-batch gradient descent</strong>: batch training<br><strong>Stochastic gradient descent(or on-line gradient descent)</strong>: mini-batch contains only a single example.</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://cs231n.github.io/optimization-1/" target="_blank" rel="noopener">http://cs231n.github.io/optimization-1/</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/21/Python/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/21/Python/" itemprop="url">
-                  Python
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-05-21 00:25:15 / Modified: 00:35:21" itemprop="dateCreated datePublished" datetime="2018-05-21T00:25:15-04:00">2018-05-21</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Python is a general-purpose object-oriented programming language with high-level programming capabilities, which includes features of C and Java. </p>
-<h1 id="Why-Python"><a href="#Why-Python" class="headerlink" title="Why Python?"></a>Why Python?</h1><ol>
-<li>Interpreted language: Python is processed at runtime by Python Interpreter.</li>
-<li>Object-oriented language: It supports object-oriented features and techniques of programming</li>
-<li>Interactive programming language: Users can interact with the python interpreter directly for writing programs</li>
-<li>Easy language</li>
-<li>Straightforward syntax</li>
-<li>Easy to read</li>
-<li>Portable</li>
-<li>Extendable</li>
-<li>Scalable</li>
-</ol>
-<h1 id="What-we-can-do-with-Python"><a href="#What-we-can-do-with-Python" class="headerlink" title="What we can do with Python?"></a>What we can do with Python?</h1><p>Create web and desktop applications </p>
-<h1 id="Data-types"><a href="#Data-types" class="headerlink" title="Data types"></a>Data types</h1><h2 id="Numbers"><a href="#Numbers" class="headerlink" title="Numbers"></a>Numbers</h2><p>int<br>float<br>long<br>complex</p>
-<h2 id="Sequences"><a href="#Sequences" class="headerlink" title="Sequences"></a>Sequences</h2><p>Strings<br>Bytes/Byte array<br>Lists<br>Tuples</p>
-<h2 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h2><h2 id="Sets"><a href="#Sets" class="headerlink" title="Sets"></a>Sets</h2><h2 id="Dictionaries"><a href="#Dictionaries" class="headerlink" title="Dictionaries"></a>Dictionaries</h2>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/21/RabbitMQ/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/21/RabbitMQ/" itemprop="url">
-                  RabbitMQ
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-05-21 20:11:19" itemprop="dateCreated datePublished" datetime="2018-05-21T20:11:19-04:00">2018-05-21</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-05-22 15:31:15" itemprop="dateModified" datetime="2018-05-22T15:31:15-04:00">2018-05-22</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>RabbitMQ is one of middlewares. Middlewares are mostly used to decoupling, which makes producers don’t need to know who is the consumers.  </p>
-<p>When producers generate huge amount of data, consumers cannot consume with a proper rate. We need a middleware to store these data for future use, which achieves bidirectional decoupling. </p>
-<h1 id="Features-of-RabbitMQ"><a href="#Features-of-RabbitMQ" class="headerlink" title="Features of RabbitMQ"></a>Features of RabbitMQ</h1><h2 id="Exchange"><a href="#Exchange" class="headerlink" title="Exchange"></a>Exchange</h2><ol>
-<li>Retrieve and transmit messages to target queue<br>direct: transmit messages to target queue of routingKey<br>topic: transmit messages by rules<br>headers:<br>fanout: transmit messages to all binded queue</li>
-</ol>
-<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://geewu.gitbooks.io/rabbitmq-quick/content/RabbitMQ%E4%BB%8B%E7%BB%8D.html" target="_blank" rel="noopener">RabbitMQ</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/22/Redis/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/22/Redis/" itemprop="url">
-                  Redis
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-05-22 16:03:38 / Modified: 23:49:06" itemprop="dateCreated datePublished" datetime="2018-05-22T16:03:38-04:00">2018-05-22</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Redis is an open-source, in-memory data structure store, used as a database, cache and message broker. </p>
-<p>It supports data structures such as <strong>strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs and geospatial indexes with radius queries</strong>.</p>
-<p>Redis has built-in replication, Lua Scripting, LRU eviction, transactions and different levels of on-disk persistence, and provides high availability via Resia Sentinel and automatic partitioning with Redis Cluster.</p>
-<p>We can run atomic operations on these types, like appending to a string; incrementing the value in a hash; pushing an element to a list; computing set intersection, union and difference; or getting the member with highest ranking in a sorted set.</p>
-<p>In order to achieve its outstanding performance, Redis works with an in-memory dataset. Depending on your use case, you can persist it either by dumping the dataset to disk every once in a while, or by appending each command to a log.</p>
-<p>Redis also supports trivial-to-setup master-slave asychronous replication, with very fast non-blocking first synchronization, auto-reconnection with partial resynchronization on net split.</p>
-<h1 id="Other-features"><a href="#Other-features" class="headerlink" title="Other features"></a>Other features</h1><ol>
-<li>Transactions</li>
-<li>Pub/Sub</li>
-<li>Lua Scripting</li>
-<li>Keys with a limited time-to-live</li>
-<li>LRU eviction of keys</li>
-<li>Automatic failover</li>
-</ol>
-<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://redis.io/topics/introduction" target="_blank" rel="noopener">Redis</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/23/Resources/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/23/Resources/" itemprop="url">
-                  Resources
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-05-23 13:20:35 / Modified: 13:26:47" itemprop="dateCreated datePublished" datetime="2018-05-23T13:20:35-04:00">2018-05-23</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="1-Languages"><a href="#1-Languages" class="headerlink" title="1.Languages"></a>1.Languages</h1><h2 id="1-1-Java"><a href="#1-1-Java" class="headerlink" title="1.1 Java"></a>1.1 Java</h2><p><a href="https://xinxintang.github.io/2018/05/20/Java/" target="_blank" rel="noopener">Java summary</a></p>
-<h2 id="1-2-Python"><a href="#1-2-Python" class="headerlink" title="1.2 Python"></a>1.2 Python</h2><p><a href="https://xinxintang.github.io/2018/05/21/Python/" target="_blank" rel="noopener">Python summary</a></p>
-<h2 id="1-3-C"><a href="#1-3-C" class="headerlink" title="1.3 C++"></a>1.3 C++</h2><p><a href="https://xinxintang.github.io/2018/05/21/C/" target="_blank" rel="noopener">C++ summary</a></p>
-<h2 id="1-4SQL"><a href="#1-4SQL" class="headerlink" title="1.4SQL"></a>1.4SQL</h2><p><a href="https://xinxintang.github.io/2018/05/21/SQL/" target="_blank" rel="noopener">SQL summary</a></p>
-<h1 id="2-Big-Data"><a href="#2-Big-Data" class="headerlink" title="2. Big Data"></a>2. Big Data</h1><h2 id="2-1-Data-Collection"><a href="#2-1-Data-Collection" class="headerlink" title="2.1 Data Collection"></a>2.1 Data Collection</h2><h3 id="2-1-1-Collectors"><a href="#2-1-1-Collectors" class="headerlink" title="2.1.1 Collectors"></a>2.1.1 Collectors</h3><h3 id="2-1-2-Message-Queues"><a href="#2-1-2-Message-Queues" class="headerlink" title="2.1.2 Message Queues"></a>2.1.2 Message Queues</h3><h4 id="2-1-2-1-Kafka"><a href="#2-1-2-1-Kafka" class="headerlink" title="2.1.2.1 Kafka"></a>2.1.2.1 Kafka</h4><p><a href="https://xinxintang.github.io/2018/05/03/Kafka/" target="_blank" rel="noopener">Kafka summary</a></p>
-<h4 id="2-1-2-2-RabbitMQ"><a href="#2-1-2-2-RabbitMQ" class="headerlink" title="2.1.2.2 RabbitMQ"></a>2.1.2.2 RabbitMQ</h4><p><a href="https://xinxintang.github.io/2018/05/21/RabbitMQ/" target="_blank" rel="noopener">RabbitMQ summary</a></p>
-<h2 id="2-2-Data-Processing"><a href="#2-2-Data-Processing" class="headerlink" title="2.2 Data Processing"></a>2.2 Data Processing</h2><h3 id="2-2-1-Spark"><a href="#2-2-1-Spark" class="headerlink" title="2.2.1 Spark"></a>2.2.1 Spark</h3><p><a href="https://xinxintang.github.io/2018/05/21/spark/" target="_blank" rel="noopener">Spark summary</a></p>
-<h3 id="2-2-2-HDFS"><a href="#2-2-2-HDFS" class="headerlink" title="2.2.2 HDFS"></a>2.2.2 HDFS</h3><p><a href="https://xinxintang.github.io/2018/05/23/HDFS/" target="_blank" rel="noopener">HDFS summary</a></p>
-<h2 id="2-3-Data-Storage"><a href="#2-3-Data-Storage" class="headerlink" title="2.3 Data Storage"></a>2.3 Data Storage</h2><h3 id="2-3-1-MongoDB"><a href="#2-3-1-MongoDB" class="headerlink" title="2.3.1 MongoDB"></a>2.3.1 MongoDB</h3><p><a href="https://xinxintang.github.io/2018/05/22/MongoDB/" target="_blank" rel="noopener">MongoDB summary</a></p>
-<h3 id="2-3-2-Cassandra"><a href="#2-3-2-Cassandra" class="headerlink" title="2.3.2 Cassandra"></a>2.3.2 Cassandra</h3><p><a href="https://xinxintang.github.io/2018/05/22/Cassandra/" target="_blank" rel="noopener">Cassandra summary</a></p>
-<h3 id="2-3-3-Redis"><a href="#2-3-3-Redis" class="headerlink" title="2.3.3 Redis"></a>2.3.3 Redis</h3><p><a href="https://xinxintang.github.io/2018/05/22/Redis/" target="_blank" rel="noopener">Redis summary</a></p>
-<h3 id="2-3-4-MySQL"><a href="#2-3-4-MySQL" class="headerlink" title="2.3.4 MySQL"></a>2.3.4 MySQL</h3><p><a href="https://xinxintang.github.io/2018/05/21/MySQL/" target="_blank" rel="noopener">MySQL summary</a></p>
-<h2 id="2-4-Data-Visualization"><a href="#2-4-Data-Visualization" class="headerlink" title="2.4 Data Visualization"></a>2.4 Data Visualization</h2><h3 id="2-4-1-ELK"><a href="#2-4-1-ELK" class="headerlink" title="2.4.1 ELK"></a>2.4.1 ELK</h3><p><a href="https://xinxintang.github.io/2018/05/22/ELK/" target="_blank" rel="noopener">ELK summary</a></p>
-<h2 id="2-5-Cloud-Computing"><a href="#2-5-Cloud-Computing" class="headerlink" title="2.5 Cloud Computing"></a>2.5 Cloud Computing</h2><h3 id="2-5-1-AWS"><a href="#2-5-1-AWS" class="headerlink" title="2.5.1 AWS"></a>2.5.1 AWS</h3><p><a href="https://xinxintang.github.io/2018/05/22/AWS-EC2/" target="_blank" rel="noopener">AWS EC2 summary</a><br><a href="https://xinxintang.github.io/2018/05/22/AWS-S3/" target="_blank" rel="noopener">AWS S3 summary</a></p>
-<h2 id="2-6-Others"><a href="#2-6-Others" class="headerlink" title="2.6 Others"></a>2.6 Others</h2><h3 id="2-6-1-Docker"><a href="#2-6-1-Docker" class="headerlink" title="2.6.1 Docker"></a>2.6.1 Docker</h3><p><a href="https://xinxintang.github.io/2018/05/13/docker/" target="_blank" rel="noopener">Docker summary</a></p>
-<h1 id="3-Machine-Learning"><a href="#3-Machine-Learning" class="headerlink" title="3. Machine Learning"></a>3. Machine Learning</h1><h2 id="3-1-Machine-Learning-Algorithms"><a href="#3-1-Machine-Learning-Algorithms" class="headerlink" title="3.1 Machine Learning Algorithms"></a>3.1 Machine Learning Algorithms</h2>
           
         
       
