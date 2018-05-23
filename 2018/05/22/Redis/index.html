@@ -102,24 +102,25 @@
 
 
 
-  <meta name="description" content="l1 distance is Manhattan Distance.l2 distance is Euclidean Distance. l1 norm(is also called Lasso Regression) isl2 norm(is also called Ridge Regression) is  Activation function: squashes number to a r">
+  <meta name="description" content="Redis is an open-source, in-memory data structure store, used as a database, cache and message broker.  It supports data structures such as strings, hashes, lists, sets, sorted sets with range queries">
+<meta name="keywords" content="Big Data,Redis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Terminology explaination">
-<meta property="og:url" content="https://XinxinTang/xinxintang.github.io/2018/05/01/l1-vs-l2/index.html">
+<meta property="og:title" content="Redis">
+<meta property="og:url" content="https://XinxinTang/xinxintang.github.io/2018/05/22/Redis/index.html">
 <meta property="og:site_name" content="Xinxin Tang">
-<meta property="og:description" content="l1 distance is Manhattan Distance.l2 distance is Euclidean Distance. l1 norm(is also called Lasso Regression) isl2 norm(is also called Ridge Regression) is  Activation function: squashes number to a r">
+<meta property="og:description" content="Redis is an open-source, in-memory data structure store, used as a database, cache and message broker.  It supports data structures such as strings, hashes, lists, sets, sorted sets with range queries">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-02T15:44:18.558Z">
+<meta property="og:updated_time" content="2018-05-23T03:49:06.813Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Terminology explaination">
-<meta name="twitter:description" content="l1 distance is Manhattan Distance.l2 distance is Euclidean Distance. l1 norm(is also called Lasso Regression) isl2 norm(is also called Ridge Regression) is  Activation function: squashes number to a r">
+<meta name="twitter:title" content="Redis">
+<meta name="twitter:description" content="Redis is an open-source, in-memory data structure store, used as a database, cache and message broker.  It supports data structures such as strings, hashes, lists, sets, sorted sets with range queries">
 
 
 
 
 
 
-  <link rel="canonical" href="https://XinxinTang/xinxintang.github.io/2018/05/01/l1-vs-l2/"/>
+  <link rel="canonical" href="https://XinxinTang/xinxintang.github.io/2018/05/22/Redis/"/>
 
 
 
@@ -129,7 +130,7 @@
   };
 </script>
 
-  <title>Terminology explaination | Xinxin Tang</title>
+  <title>Redis | Xinxin Tang</title>
   
 
 
@@ -277,7 +278,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/01/l1-vs-l2/">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/22/Redis/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xinxin Tang">
@@ -294,7 +295,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Terminology explaination
+          <h1 class="post-title" itemprop="name headline">Redis
               
             
           </h1>
@@ -319,24 +320,12 @@
                 
               
 
-              <time title="Created: 2018-05-01 23:50:39" itemprop="dateCreated datePublished" datetime="2018-05-01T23:50:39-04:00">2018-05-01</time>
+              <time title="Created: 2018-05-22 16:03:38 / Modified: 23:49:06" itemprop="dateCreated datePublished" datetime="2018-05-22T16:03:38-04:00">2018-05-22</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-05-02 11:44:18" itemprop="dateModified" datetime="2018-05-02T11:44:18-04:00">2018-05-02</time>
               
             
           </span>
@@ -369,18 +358,21 @@
       
 
       
-        <p>l1 distance is Manhattan Distance.<br>l2 distance is Euclidean Distance.</p>
-<p>l1 norm(is also called Lasso Regression) is<br>l2 norm(is also called Ridge Regression) is </p>
-<p><strong>Activation function</strong>: squashes number to a range. Smooth to find best gradient direction.</p>
-<p><strong>Batch normalization</strong>: do it before activation function. zero-centered and range from [0.1] commonly.</p>
-<p>to prevent gradient vanish;<br>to promote learning rate<br>to reduce dependency from initialization. </p>
-<p><strong>Regularization</strong>: </p>
-<ol>
-<li><p>Add term to loss<br>L1 Regularization;<br>L2 Regularization;<br>Elastic net(L1+L2)</p>
-</li>
-<li><p>Dropout</p>
-</li>
+        <p>Redis is an open-source, in-memory data structure store, used as a database, cache and message broker. </p>
+<p>It supports data structures such as <strong>strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs and geospatial indexes with radius queries</strong>.</p>
+<p>Redis has built-in replication, Lua Scripting, LRU eviction, transactions and different levels of on-disk persistence, and provides high availability via Resia Sentinel and automatic partitioning with Redis Cluster.</p>
+<p>We can run atomic operations on these types, like appending to a string; incrementing the value in a hash; pushing an element to a list; computing set intersection, union and difference; or getting the member with highest ranking in a sorted set.</p>
+<p>In order to achieve its outstanding performance, Redis works with an in-memory dataset. Depending on your use case, you can persist it either by dumping the dataset to disk every once in a while, or by appending each command to a log.</p>
+<p>Redis also supports trivial-to-setup master-slave asychronous replication, with very fast non-blocking first synchronization, auto-reconnection with partial resynchronization on net split.</p>
+<h1 id="Other-features"><a href="#Other-features" class="headerlink" title="Other features"></a>Other features</h1><ol>
+<li>Transactions</li>
+<li>Pub/Sub</li>
+<li>Lua Scripting</li>
+<li>Keys with a limited time-to-live</li>
+<li>LRU eviction of keys</li>
+<li>Automatic failover</li>
 </ol>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://redis.io/topics/introduction" target="_blank" rel="noopener">Redis</a></p>
 
       
     </div>
@@ -399,6 +391,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Big-Data/" rel="tag"># Big Data</a>
+          
+            <a href="/tags/Redis/" rel="tag"># Redis</a>
+          
+        </div>
+      
 
       
       
@@ -408,8 +408,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/30/Optimization/" rel="next" title="Optimization">
-                <i class="fa fa-chevron-left"></i> Optimization
+              <a href="/2018/05/22/MongoDB/" rel="next" title="MongoDB">
+                <i class="fa fa-chevron-left"></i> MongoDB
               </a>
             
           </div>
@@ -417,10 +417,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/02/Debug-NN/" rel="prev" title="Debug-NN">
-                Debug-NN <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -469,8 +465,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -590,6 +595,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Other-features"><span class="nav-number">1.</span> <span class="nav-text">Other features</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">2.</span> <span class="nav-text">References</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

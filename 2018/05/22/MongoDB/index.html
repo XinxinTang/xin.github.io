@@ -102,24 +102,25 @@
 
 
 
-  <meta name="description" content="l1 distance is Manhattan Distance.l2 distance is Euclidean Distance. l1 norm(is also called Lasso Regression) isl2 norm(is also called Ridge Regression) is  Activation function: squashes number to a r">
+  <meta name="description" content="A open-source distributed document database that provides high performance, high availability, and automatic scaling. Document DatabaseA record in MongoDB is a document, which is a data structure comp">
+<meta name="keywords" content="Big Data,MongoDB">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Terminology explaination">
-<meta property="og:url" content="https://XinxinTang/xinxintang.github.io/2018/05/01/l1-vs-l2/index.html">
+<meta property="og:title" content="MongoDB">
+<meta property="og:url" content="https://XinxinTang/xinxintang.github.io/2018/05/22/MongoDB/index.html">
 <meta property="og:site_name" content="Xinxin Tang">
-<meta property="og:description" content="l1 distance is Manhattan Distance.l2 distance is Euclidean Distance. l1 norm(is also called Lasso Regression) isl2 norm(is also called Ridge Regression) is  Activation function: squashes number to a r">
+<meta property="og:description" content="A open-source distributed document database that provides high performance, high availability, and automatic scaling. Document DatabaseA record in MongoDB is a document, which is a data structure comp">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-02T15:44:18.558Z">
+<meta property="og:updated_time" content="2018-05-22T20:02:54.542Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Terminology explaination">
-<meta name="twitter:description" content="l1 distance is Manhattan Distance.l2 distance is Euclidean Distance. l1 norm(is also called Lasso Regression) isl2 norm(is also called Ridge Regression) is  Activation function: squashes number to a r">
+<meta name="twitter:title" content="MongoDB">
+<meta name="twitter:description" content="A open-source distributed document database that provides high performance, high availability, and automatic scaling. Document DatabaseA record in MongoDB is a document, which is a data structure comp">
 
 
 
 
 
 
-  <link rel="canonical" href="https://XinxinTang/xinxintang.github.io/2018/05/01/l1-vs-l2/"/>
+  <link rel="canonical" href="https://XinxinTang/xinxintang.github.io/2018/05/22/MongoDB/"/>
 
 
 
@@ -129,7 +130,7 @@
   };
 </script>
 
-  <title>Terminology explaination | Xinxin Tang</title>
+  <title>MongoDB | Xinxin Tang</title>
   
 
 
@@ -277,7 +278,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/01/l1-vs-l2/">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/22/MongoDB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xinxin Tang">
@@ -294,7 +295,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Terminology explaination
+          <h1 class="post-title" itemprop="name headline">MongoDB
               
             
           </h1>
@@ -319,24 +320,12 @@
                 
               
 
-              <time title="Created: 2018-05-01 23:50:39" itemprop="dateCreated datePublished" datetime="2018-05-01T23:50:39-04:00">2018-05-01</time>
+              <time title="Created: 2018-05-22 15:38:40 / Modified: 16:02:54" itemprop="dateCreated datePublished" datetime="2018-05-22T15:38:40-04:00">2018-05-22</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-05-02 11:44:18" itemprop="dateModified" datetime="2018-05-02T11:44:18-04:00">2018-05-02</time>
               
             
           </span>
@@ -369,18 +358,28 @@
       
 
       
-        <p>l1 distance is Manhattan Distance.<br>l2 distance is Euclidean Distance.</p>
-<p>l1 norm(is also called Lasso Regression) is<br>l2 norm(is also called Ridge Regression) is </p>
-<p><strong>Activation function</strong>: squashes number to a range. Smooth to find best gradient direction.</p>
-<p><strong>Batch normalization</strong>: do it before activation function. zero-centered and range from [0.1] commonly.</p>
-<p>to prevent gradient vanish;<br>to promote learning rate<br>to reduce dependency from initialization. </p>
-<p><strong>Regularization</strong>: </p>
-<ol>
-<li><p>Add term to loss<br>L1 Regularization;<br>L2 Regularization;<br>Elastic net(L1+L2)</p>
-</li>
-<li><p>Dropout</p>
-</li>
+        <p>A open-source distributed document database that provides high performance, high availability, and automatic scaling.</p>
+<h1 id="Document-Database"><a href="#Document-Database" class="headerlink" title="Document Database"></a>Document Database</h1><p>A record in MongoDB is a document, which is a data structure composed of field and value pairs. MongoDB documents are similar to JSON objects. The values of fields may include other documents, arrays, and arrays of documents.</p>
+<h2 id="Advantages-of-using-docuemnts-are"><a href="#Advantages-of-using-docuemnts-are" class="headerlink" title="Advantages of using docuemnts are:"></a>Advantages of using docuemnts are:</h2><ol>
+<li>Documents correspond to native data types in many programming languages.</li>
+<li>Embedded documents and arrays reduce need for expensive joins.</li>
+<li>Dynamic schema supports fluent polymorphism.</li>
 </ol>
+<h1 id="Key-Festures-of-MongoDB"><a href="#Key-Festures-of-MongoDB" class="headerlink" title="Key Festures of MongoDB"></a>Key Festures of MongoDB</h1><h2 id="High-Performance"><a href="#High-Performance" class="headerlink" title="High Performance"></a>High Performance</h2><ol>
+<li>provides high performance data persistence. In particular,<br>Support for embedded data models reduces I/O activity on database system.<br>Indexes support faster queries and can include keys from embedded documents and arrays.<h2 id="Rich-Query-Language"><a href="#Rich-Query-Language" class="headerlink" title="Rich Query Language"></a>Rich Query Language</h2>Rich query language to support <strong>CRUD</strong> as well as: Data Aggregation; Text Search and Geospatial Queries.<h2 id="High-Availability"><a href="#High-Availability" class="headerlink" title="High Availability"></a>High Availability</h2>It provides:</li>
+<li>automatic failover</li>
+<li>data redundancy</li>
+</ol>
+<h2 id="Horizontal-Scalability"><a href="#Horizontal-Scalability" class="headerlink" title="Horizontal Scalability"></a>Horizontal Scalability</h2><ol>
+<li>sharding distributes data across a cluster of machines</li>
+<li>Starting in 3.4, MongoDB supports creating zones of data based on the shard key. In a balanced cluster, MongoDB directs reads and writes covered by a zone only to those shards inside the zone. See the Zones manual page for more information.</li>
+</ol>
+<h2 id="Support-for-multiple-storage-engines"><a href="#Support-for-multiple-storage-engines" class="headerlink" title="Support for multiple storage engines"></a>Support for multiple storage engines</h2><ol>
+<li>WiredTiger Storage Engine</li>
+<li>In-Momory Storage Engine</li>
+<li>MMAPv1 Storage Engine</li>
+</ol>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://docs.mongodb.com/manual/introduction/" target="_blank" rel="noopener">MongoDB</a></p>
 
       
     </div>
@@ -399,6 +398,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Big-Data/" rel="tag"># Big Data</a>
+          
+            <a href="/tags/MongoDB/" rel="tag"># MongoDB</a>
+          
+        </div>
+      
 
       
       
@@ -408,8 +415,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/30/Optimization/" rel="next" title="Optimization">
-                <i class="fa fa-chevron-left"></i> Optimization
+              <a href="/2018/05/22/AWS-EC2/" rel="next" title="AWS-EC2">
+                <i class="fa fa-chevron-left"></i> AWS-EC2
               </a>
             
           </div>
@@ -418,8 +425,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/02/Debug-NN/" rel="prev" title="Debug-NN">
-                Debug-NN <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/22/Redis/" rel="prev" title="Redis">
+                Redis <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -469,8 +476,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -590,6 +606,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Document-Database"><span class="nav-number">1.</span> <span class="nav-text">Document Database</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Advantages-of-using-docuemnts-are"><span class="nav-number">1.1.</span> <span class="nav-text">Advantages of using docuemnts are:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Key-Festures-of-MongoDB"><span class="nav-number">2.</span> <span class="nav-text">Key Festures of MongoDB</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#High-Performance"><span class="nav-number">2.1.</span> <span class="nav-text">High Performance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rich-Query-Language"><span class="nav-number">2.2.</span> <span class="nav-text">Rich Query Language</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#High-Availability"><span class="nav-number">2.3.</span> <span class="nav-text">High Availability</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Horizontal-Scalability"><span class="nav-number">2.4.</span> <span class="nav-text">Horizontal Scalability</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Support-for-multiple-storage-engines"><span class="nav-number">2.5.</span> <span class="nav-text">Support for multiple storage engines</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">3.</span> <span class="nav-text">References</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
