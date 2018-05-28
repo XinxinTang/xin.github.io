@@ -274,6 +274,351 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/04/NoSQL-categories/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/04/NoSQL-categories/" itemprop="url">
+                  NoSQL-categories
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-04 00:03:00" itemprop="dateCreated datePublished" datetime="2018-05-04T00:03:00-04:00">2018-05-04</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-07 17:35:42" itemprop="dateModified" datetime="2018-05-07T17:35:42-04:00">2018-05-07</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Column-oriented"><a href="#Column-oriented" class="headerlink" title="Column-oriented"></a>Column-oriented</h2><p>Traditional relational database is row-oriented. Each row has a row id and every field store in one table. </p>
+<p>When searching in row-oriented database, each row will be traversed, no matter a certain column data is needed or not. If you search a person whose birth month is September. Row-oriented database will search this table from left to right then from top to down.<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G5050Q55.png" alt=""></p>
+<p>Index the target column can promote search speed, but index each column cause extra overload and databse will traverse all columns to search data. </p>
+<p>Column-oriented database will stores each column seperately. It’s very fast to search when the data amount is small.<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G50614146.png" alt=""></p>
+<p>This design looks like adding index for each row. It sacrifices space and writing more index to speed up searching ability. Index maps row ID to data, but column-based database maps data to rowID. Like the picture above, it is easy to search who like archery. This is an inverted index. </p>
+<p>When to use row-oriented and when to use column-oriented? Column-based database is easy to add one new column, but is difficult to add one row.  Therefore, row-oriented database is bettern than column-based on transaction. Because it achieves real-time update. It is commonly used in marketing business.</p>
+<p>Column-oriented database has advantage of data analysis, like sum of values. Batch processing can adopt column-oriented database at night, and it supports quick search and MapReduce aggregation. </p>
+<p>Example: HBase, Cassandra</p>
+<h2 id="K-V-stores"><a href="#K-V-stores" class="headerlink" title="K/V stores"></a>K/V stores</h2><p>This is the easiest store in NoSQL databases.<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G50Q4156.png" alt=""></p>
+<p>the complex k/v paire is like:<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G50T43T.jpg" alt=""></p>
+<p>Example: Redis, Amazon Dynamo</p>
+<h2 id="Document-oriented-stores"><a href="#Document-oriented-stores" class="headerlink" title="Document-oriented stores"></a>Document-oriented stores</h2><p>Store based on K/V pair, but structure more complex.<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G50951434.png" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/03/NoSQL-database/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/NoSQL-database/" itemprop="url">
+                  Categories of NoSQL
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-03 18:17:22" itemprop="dateCreated datePublished" datetime="2018-05-03T18:17:22-04:00">2018-05-03</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-08 11:08:09" itemprop="dateModified" datetime="2018-05-08T11:08:09-04:00">2018-05-08</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="NoSQL-database"><a href="#NoSQL-database" class="headerlink" title="NoSQL database"></a>NoSQL database</h2><p>RDBMS features: ACID<br>A: Atomicity<br>C: Consistency<br>I: Isolation<br>D: Durability</p>
+<p>NoSQL is used to store super large scale data. These data doesn’t need a fix pattern, just scale out.</p>
+<p>Distributed system CAP theorem: it cann’t be satisfied three of them at the same time.<br>Consistency: all nodes has same data at the same time<br>Availability: guarantee response no matter success or fail<br>Partition tolerance: system keep operating even part information lost.<br><img src="https://i.imgur.com/6r099ar.png" alt="Imgur"></p>
+<p><strong>Categories</strong><br>Column-based:<br>-HBase, Cassandra;<br>-Easy to compress data; fast-search for a certain column.</p>
+<p>Document-based:<br>-MongoDB, CouchDB<br>-Storage Format is similar to JSON(K/V Pair), Content is document format.</p>
+<p>Key-Value:<br>-Redis, Memcache<br>-Search value through key no matter the type of value</p>
+<h2 id="Column-oriented"><a href="#Column-oriented" class="headerlink" title="Column-oriented"></a>Column-oriented</h2><p><strong>Traditional relational database</strong> is row-oriented. Each row has a row id and every field store in one table. </p>
+<p>When searching in row-oriented database, each row will be traversed, no matter a certain column data is needed or not. If you search a person whose birth month is September. Search row by row to target data.<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G5050Q55.png" alt=""></p>
+<p>Index the target column can promote search speed, but index each column cause extra overload and databse will traverse all columns to search data. </p>
+<p><strong>Column-oriented database</strong> will stores each column seperately. It’s very fast to search when the data amount is small. Search column by column to targetdata.<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G50614146.png" alt=""></p>
+<p>This design looks like adding index for each row. It sacrifices space and writing more index to speed up searching ability. Index maps row ID to data, but column-based database maps data to rowID. Like the picture above, it is easy to search who like archery. This is an inverted index. </p>
+<p>When to use row-oriented and when to use column-oriented? Column-based database is easy to add one new column, but is difficult to add one row.  Therefore, row-oriented database is bettern than column-based on transaction. Because it achieves real-time update. It is commonly used in marketing business.</p>
+<p>Column-oriented database has advantage of data analysis, like sum of values. Batch processing can adopt column-oriented database at night, and it supports quick search and MapReduce aggregation. </p>
+<p><strong>Compared to RDBMS</strong><br>If you want to get all infomation of one user, column-based database costs more;<br>If you want to get one piece of information of one user, row-based database costs more.</p>
+<p>Row-based is faster than Column-based on Updating a target row;<br>Column-based is faster than Row-based on Searching part of information of users;</p>
+<p>Row-based database: OLTP<br>Column-based database: OLAP</p>
+<h2 id="K-V-stores"><a href="#K-V-stores" class="headerlink" title="K/V stores"></a>K/V stores</h2><p>This is the easiest store in NoSQL databases.<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G50Q4156.png" alt=""></p>
+<p>the complex k/v paire is like:<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G50T43T.jpg" alt=""></p>
+<h2 id="Document-oriented-stores"><a href="#Document-oriented-stores" class="headerlink" title="Document-oriented stores"></a>Document-oriented stores</h2><p>Store based on K/V pair, but structure more complex.<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G50951434.png" alt=""></p>
+<h2 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h2><p>Written in C++<br>Remains some friendly properties of SQL.(Query, index)<br>Support secondary index<br>Master-slave replication<br>Queries support javascript expressions<br>Better update-in-place than CouchDB<br>Sharding built-in<br>Uses memory mapped files for data storage<br>After crash, it needs to repair tables<br>Reads faster than wirtes</p>
+<p><strong>Use:</strong> need dynamic search. Dedine indexes first, no need map/reduce. </p>
+<p><strong>Example:</strong> Adapts all situations of MySQL and PostgreSQL</p>
+<h2 id="Cassandra"><a href="#Cassandra" class="headerlink" title="Cassandra"></a>Cassandra</h2><p>Written in Java<br>Querying by column<br>Writes are much faster than reads<br>Column-based databse.<br>Weak consistency; High availability; High scalability</p>
+<p><strong>Use:</strong> adapts to implement in write action more than read action</p>
+<p><strong>Example:</strong> Logging system, Banking system, Finance system.</p>
+<h2 id="HBase"><a href="#HBase" class="headerlink" title="HBase"></a>HBase</h2><p>Written in Java<br>Billion row level and Million column level<br>Map/Reduce with Hadoop<br>Store in HDFS<br>No single point of failure<br>Strong consistency; Low availability; High scalability</p>
+<p><strong>Use:</strong> Big table, random and real-time read/write action</p>
+<p><strong>Example:</strong> Facebook message database</p>
+<h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><p>Written in c/c++<br>Blazing fast<br>Disk-backed in-memory database<br>Master-slave replication<br>Store as key/value format<br>Support set, list, hash<br>Has transactions<br>Value can be set to expire<br>Publish/Subscribe and Watch </p>
+<p><strong>Use:</strong> if data is not huge and changes frequently, store in Redis. Fast read/write data</p>
+<p><strong>Example:</strong> Stock price analysis, Real-time data processing</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/03/Kafka/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1576,301 +1921,6 @@ p = np.exp(f)/np.sum(np.exp(f)) # safe to do
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/K-Nearest-Neighbor/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/29/K-Nearest-Neighbor/" itemprop="url">
-                  K-Nearest-Neighbor
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-04-29 14:04:28 / Modified: 19:16:03" itemprop="dateCreated datePublished" datetime="2018-04-29T14:04:28-04:00">2018-04-29</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>KNN is rarely to use in practice, but it allows us to understand classify problem. </p>
-<h2 id="Nearest-Neighbor-Classifier"><a href="#Nearest-Neighbor-Classifier" class="headerlink" title="Nearest Neighbor Classifier:"></a>Nearest Neighbor Classifier:</h2><p>Nearest Neighbor Algorithm has two ways to classify, L1 Distance and L2 Distance. </p>
-<p>L1 Distance is <a href="https://en.wikipedia.org/wiki/Taxicab_geometry" target="_blank" rel="noopener">Manhattan Distance</a>.</p>
-<p>This formula represents distance between test image and training images. </p>
-<p>I1 is test image, I2 is training image. test set has p images. Thus, distance of test image to all image is the sum of right side. The computing process like below:<br><img src="http://cs231n.github.io/assets/nneg.jpeg" alt="L1-compute"></p>
-<p>L2 Distance uses square root to obtain distance between test image and training images. L2 Distance is <a href="https://en.wikipedia.org/wiki/Euclidean_distance" target="_blank" rel="noopener">Euclidean Distance</a></p>
-<p>Here is the code to build a Nearest Neighbor.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Nearest_Neighbor(object):</span><br><span class="line">    def __init__(self):</span><br><span class="line">        pass</span><br><span class="line"></span><br><span class="line">    def train(self, X, y):</span><br><span class="line">      self.Xtr = X</span><br><span class="line">      self.ytr = y</span><br><span class="line"></span><br><span class="line">    def predict(self, X):</span><br><span class="line">        &quot;&quot;&quot; X is N x D where each row is an example we wish to predict label for &quot;&quot;&quot;</span><br><span class="line">        num_test = X.shape[0]</span><br><span class="line">        # lets make sure that the output type matches the input type</span><br><span class="line">        Ypred = np.zeros(num_test, dtype=self.ytr.dtype)</span><br><span class="line"></span><br><span class="line">        # loop over all test rows</span><br><span class="line">        for i in range(num_test):</span><br><span class="line">            # find the nearest training image to the i&apos;th test image</span><br><span class="line">            # L1 distance</span><br><span class="line">            l1_distances = np.sum(np.abs(self.Xtr - X[i, :]), axis=1)  # acc: 38.6%</span><br><span class="line">            # L2 distance</span><br><span class="line">            l2_distances = np.sqrt(np.sum(np.square(self.Xtr - X[i, :]), axis=1))  # acc: 35.4%</span><br><span class="line">            min_index = np.argmin(l1_distances)  # get the index with smallest distance</span><br><span class="line">            print(&quot;min_index:&quot;, min_index)</span><br><span class="line">            Ypred[i] = self.ytr[min_index]  # predict the label of the nearest example</span><br><span class="line">            print(Ypred[i])</span><br><span class="line"></span><br><span class="line">        return Ypred</span><br></pre></td></tr></table></figure></p>
-<p>K-Nearest Neighbor Classifier:<br>KNN is easy to understand. When K=1 the classifier shows above. When K = 5, classifier gets the top 5 closest images. Intuitively, higher value of K has a smooth effect that makes classifier resistant the outliers.<br><img src="http://cs231n.github.io/assets/knn.jpeg" alt="KNN"></p>
-<h2 id="Pros-and-Cons-of-Nearest-Neighbor-Classifier"><a href="#Pros-and-Cons-of-Nearest-Neighbor-Classifier" class="headerlink" title="Pros and Cons of Nearest Neighbor Classifier:"></a>Pros and Cons of Nearest Neighbor Classifier:</h2><h3 id="KNN"><a href="#KNN" class="headerlink" title="KNN:"></a>KNN:</h3><p>Pros:<br>Simple to implement and understand.</p>
-<p>Cons:<br>1.Pay much computational cost at test time, but takes no time to train.<br>2.Remember all training set and store it for future use.<br>3.Images that only has difference in light intensity are very different from pixel-based  L2 computation.<br><img src="http://cs231n.github.io/assets/samenorm.png" alt="Light"> </p>
-<p>Deep neural networks are very expensive to train, but it is very cheap to classify a new test example one the training is finished. This mode of operation is much more desirable in practice. </p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p><a href="http://cs231n.github.io/classification/" target="_blank" rel="noopener">http://cs231n.github.io/classification/</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/How-to-Use-Dataset/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/29/How-to-Use-Dataset/" itemprop="url">
-                  How-to-Use-Dataset
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-04-29 13:02:26 / Modified: 13:04:31" itemprop="dateCreated datePublished" datetime="2018-04-29T13:02:26-04:00">2018-04-29</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>To build a complete machine learning model, we need a dataset which can train and test the model. But the test set cannot be touched at all until one time at the very end. This is to train a good generalization of classifier. Therefore, we must split train set in two: training set and validation set. </p>
-<p>Validation set can help to tune hyperparameters so that classifier has a better generalization. </p>
-<p>Sometimes data is small. To make full use of it, we can use cross-validation. That is, Split training set into 5. 4 parts as training set and 1 part as validation set. So the data has 5 combinations. In practice, however, it doesn’t use often because it is very expensive. </p>
-<p>Data splits like below:<br><img src="http://cs231n.github.io/assets/crossval.jpeg" alt="image_logo"></p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p><a href="http://cs231n.github.io/classification/" target="_blank" rel="noopener">http://cs231n.github.io/classification/</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1918,7 +1968,7 @@ p = np.exp(f)/np.sum(np.exp(f)) # safe to do
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">43</span>
+                    <span class="site-state-item-count">45</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>

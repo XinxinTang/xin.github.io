@@ -102,25 +102,24 @@
 
 
 
-  <meta name="description" content="Redis is an open-source, in-memory data structure store, used as a database, cache and message broker.  It supports data structures such as strings, hashes, lists, sets, sorted sets with range queries">
-<meta name="keywords" content="Big Data,Redis">
+  <meta name="description" content="Java初/高级面试回答要点宗旨：每题答案都有得分点，答案涵盖即可。不需要太多细节。 架构方向初级：  熟悉SSM架构： 用一个业务说明Spring MVC如何发挥作用。  熟悉Spring MVC细节，比如@Autowired用法，如何将URL映射到Controller, ModelAndView对象返回到方式等  结合项目说如何使用AOP。   数据库 如何建索引，怎么用？比如建好索引后，wh">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Redis">
-<meta property="og:url" content="https://XinxinTang/xinxintang.github.io/2018/05/22/Redis/index.html">
+<meta property="og:title" content="面试">
+<meta property="og:url" content="https://XinxinTang/xinxintang.github.io/2018/05/23/面试/index.html">
 <meta property="og:site_name" content="Xinxin Tang">
-<meta property="og:description" content="Redis is an open-source, in-memory data structure store, used as a database, cache and message broker.  It supports data structures such as strings, hashes, lists, sets, sorted sets with range queries">
+<meta property="og:description" content="Java初/高级面试回答要点宗旨：每题答案都有得分点，答案涵盖即可。不需要太多细节。 架构方向初级：  熟悉SSM架构： 用一个业务说明Spring MVC如何发挥作用。  熟悉Spring MVC细节，比如@Autowired用法，如何将URL映射到Controller, ModelAndView对象返回到方式等  结合项目说如何使用AOP。   数据库 如何建索引，怎么用？比如建好索引后，wh">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-23T03:49:06.813Z">
+<meta property="og:updated_time" content="2018-05-24T18:22:02.189Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Redis">
-<meta name="twitter:description" content="Redis is an open-source, in-memory data structure store, used as a database, cache and message broker.  It supports data structures such as strings, hashes, lists, sets, sorted sets with range queries">
+<meta name="twitter:title" content="面试">
+<meta name="twitter:description" content="Java初/高级面试回答要点宗旨：每题答案都有得分点，答案涵盖即可。不需要太多细节。 架构方向初级：  熟悉SSM架构： 用一个业务说明Spring MVC如何发挥作用。  熟悉Spring MVC细节，比如@Autowired用法，如何将URL映射到Controller, ModelAndView对象返回到方式等  结合项目说如何使用AOP。   数据库 如何建索引，怎么用？比如建好索引后，wh">
 
 
 
 
 
 
-  <link rel="canonical" href="https://XinxinTang/xinxintang.github.io/2018/05/22/Redis/"/>
+  <link rel="canonical" href="https://XinxinTang/xinxintang.github.io/2018/05/23/面试/"/>
 
 
 
@@ -130,7 +129,7 @@
   };
 </script>
 
-  <title>Redis | Xinxin Tang</title>
+  <title>面试 | Xinxin Tang</title>
   
 
 
@@ -278,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/22/Redis/">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/23/面试/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xinxin Tang">
@@ -295,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Redis
+          <h1 class="post-title" itemprop="name headline">面试
               
             
           </h1>
@@ -320,12 +319,24 @@
                 
               
 
-              <time title="Created: 2018-05-22 16:03:38 / Modified: 23:49:06" itemprop="dateCreated datePublished" datetime="2018-05-22T16:03:38-04:00">2018-05-22</time>
+              <time title="Created: 2018-05-23 22:37:52" itemprop="dateCreated datePublished" datetime="2018-05-23T22:37:52-04:00">2018-05-23</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-24 14:22:02" itemprop="dateModified" datetime="2018-05-24T14:22:02-04:00">2018-05-24</time>
               
             
           </span>
@@ -358,21 +369,86 @@
       
 
       
-        <p>Redis is an open-source, in-memory data structure store, used as a database, cache and message broker. </p>
-<p>It supports data structures such as <strong>strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs and geospatial indexes with radius queries</strong>.</p>
-<p>Redis has built-in replication, Lua Scripting, LRU eviction, transactions and different levels of on-disk persistence, and provides high availability via Resia Sentinel and automatic partitioning with Redis Cluster.</p>
-<p>We can run atomic operations on these types, like appending to a string; incrementing the value in a hash; pushing an element to a list; computing set intersection, union and difference; or getting the member with highest ranking in a sorted set.</p>
-<p>In order to achieve its outstanding performance, Redis works with an in-memory dataset. Depending on your use case, you can persist it either by dumping the dataset to disk every once in a while, or by appending each command to a log.</p>
-<p>Redis also supports trivial-to-setup master-slave asychronous replication, with very fast non-blocking first synchronization, auto-reconnection with partial resynchronization on net split.</p>
-<h1 id="Other-features"><a href="#Other-features" class="headerlink" title="Other features"></a>Other features</h1><ol>
-<li>Transactions</li>
-<li>Pub/Sub</li>
-<li>Lua Scripting</li>
-<li>Keys with a limited time-to-live</li>
-<li>LRU eviction of keys</li>
-<li>Automatic failover</li>
+        <h1 id="Java初-高级面试回答要点"><a href="#Java初-高级面试回答要点" class="headerlink" title="Java初/高级面试回答要点"></a>Java初/高级面试回答要点</h1><p>宗旨：每题答案都有得分点，答案涵盖即可。不需要太多细节。</p>
+<h2 id="架构方向"><a href="#架构方向" class="headerlink" title="架构方向"></a>架构方向</h2><p>初级：</p>
+<ol>
+<li><p>熟悉SSM架构： 用一个业务说明Spring MVC如何发挥作用。</p>
+</li>
+<li><p>熟悉Spring MVC细节，比如@Autowired用法，如何将URL映射到Controller, ModelAndView对象返回到方式等</p>
+</li>
+<li><p>结合项目说如何使用AOP。</p>
+</li>
 </ol>
-<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://redis.io/topics/introduction" target="_blank" rel="noopener">Redis</a></p>
+<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><ol>
+<li><p>如何建索引，怎么用？比如建好索引后，where语句中写name like ‘123%’会不会用到索引，什么情况下不改建索引，哪些语句不用索引？</p>
+</li>
+<li><p>除了索引，还可以怎样优化SQL，比如分库分表，或通过执行计划查看SQL的优化点。结合项目讲。</p>
+</li>
+<li><p>会优化很有利于通过面试。（高级开发更要了解优化）</p>
+</li>
+</ol>
+<h2 id="Java-Core方面"><a href="#Java-Core方面" class="headerlink" title="Java Core方面"></a>Java Core方面</h2><p>主要有集合，多线程，异常处理，JVM虚拟机等。</p>
+<h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><ol>
+<li><p>hashcode有没有重写过？什么场景下重写？结合hash table，实现hashmap。<br>高级开发最好能通过ConcurrentHashMap说明并发方面的底层代码实现。</p>
+</li>
+<li><p>ArrayList, LinkedList的差别？ArrayList如何扩容？<br>高级开发最好研究底层代码。</p>
+</li>
+<li><p>Set如何实现防冲的，比如TreeSet和HashSet？</p>
+</li>
+<li><p>Collection方法，比如方法比较，包装成线程安全的方法？</p>
+</li>
+<li><p>如何通过ArrayList实现队列或堆栈？</p>
+</li>
+</ol>
+<h3 id="多线程，项目里用的少，但问题如下："><a href="#多线程，项目里用的少，但问题如下：" class="headerlink" title="多线程，项目里用的少，但问题如下："></a>多线程，项目里用的少，但问题如下：</h3><ol>
+<li><p>synchronized和可重入锁的区别，问一下信息量防止并发机制</p>
+</li>
+<li><p>线程如何返回值？其实就是callable， runnable区别</p>
+</li>
+<li><p>ThreadLocal, volatile关键字来说明线程的内存模型</p>
+</li>
+<li><p>线程池的使用与常用参数<br>线程问的多的说并发机制。</p>
+</li>
+</ol>
+<h3 id="virtual-machine"><a href="#virtual-machine" class="headerlink" title="virtual machine"></a>virtual machine</h3><p>1.结构图，工作流程</p>
+<ol start="2">
+<li><p>针对队的垃圾回收机制， 画个图，描述一下新生代，老生代等</p>
+</li>
+<li><p>回收机制流程，如何在代码中优化内存性能</p>
+</li>
+<li><p>如果出现OOM异常，如何排查，如何看Dump文件？</p>
+</li>
+<li><p>GC概念，强弱软引用， finalize方法等</p>
+</li>
+</ol>
+<h2 id="算法，设计模式"><a href="#算法，设计模式" class="headerlink" title="算法，设计模式"></a>算法，设计模式</h2><h2 id="正确回答问题"><a href="#正确回答问题" class="headerlink" title="正确回答问题"></a>正确回答问题</h2><h3 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h3><ol>
+<li><p>证明自己能干活。同时结合底层代码说出Spring MVC, AOP,ICO架构流程。或者拦截器，controller等高级用法</p>
+</li>
+<li><p>证明自己有Spring Boot, Spring Cloud经验。说出Spring cloud组件用法</p>
+</li>
+<li><p>证明自己有分布式开发经验。说出分布式服务等运行机制，如何部署，如何通过nginx等做到负载均衡</p>
+</li>
+</ol>
+<h3 id="数据库-1"><a href="#数据库-1" class="headerlink" title="数据库"></a>数据库</h3><p>如何SQL调优，比如索引，执行计划，或其他优化点。</p>
+<h3 id="java-core"><a href="#java-core" class="headerlink" title="java core"></a>java core</h3><p>结合concurrentHashMap源码，说出final，volatile，transient用法，以及如何用lock防止写并发。</p>
+<ol start="2">
+<li><p>结合项目说设计模式</p>
+</li>
+<li><p>多线程，说出lock或volatile等高级知识点</p>
+</li>
+<li><p>GC流程，如何通过日志和dump文件排查OOM异常；在高级一些，如何在代码中优化内存代码</p>
+</li>
+</ol>
+<p>诀窍：<strong>结合源代码，实际项目说出资深问题</strong></p>
+<h1 id="Redis面试"><a href="#Redis面试" class="headerlink" title="Redis面试"></a>Redis面试</h1><ol>
+<li><p>Advantages of Redis<br>(1) blazing fast. Because data stores in memory.<br>(2) rich data types, like String, List, Set, Sorted set, Hash<br>(3) support transactions, atomic operation.<br>(4) it is used to Cache, Message transportation, and set expired time</p>
+</li>
+<li><p>Advantages of Redis compared to Memcached<br>(1) MemCached: only support simple string<br>(2) Redis has faster speed than MemCached<br>(3) Redis can persist data</p>
+</li>
+<li><p>Common performance problems and solutions<br>(1) It is better not to persistency for Master node, like RDB snapshot, AOF log file<br>(2) Turn on AOF replication in a Slave node if data is important; Synchronize once per second.<br>(3) For stability of speed and connectivity, master-slave node in one local area net.<br>(4) Singly linkedlist data structure is better than graph structure in Master-Slave replication, like Master &lt;- Slave1 &lt;- Slave2 &lt;- Slave3…</p>
+</li>
+</ol>
+<h1 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h1><p><a href="https://mp.weixin.qq.com/s/qYzWy_xHY1_Yx-rqw2ZnYA" target="_blank" rel="noopener">Java初高级面试</a><br><a href="https://mp.weixin.qq.com/s/FrWd7i4OVf0lMJNSKwO9_w" target="_blank" rel="noopener">Redis面试</a></p>
 
       
     </div>
@@ -391,14 +467,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Big-Data/" rel="tag"># Big Data</a>
-          
-            <a href="/tags/Redis/" rel="tag"># Redis</a>
-          
-        </div>
-      
 
       
       
@@ -408,8 +476,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/22/MongoDB/" rel="next" title="MongoDB">
-                <i class="fa fa-chevron-left"></i> MongoDB
+              <a href="/2018/05/23/Resources/" rel="next" title="Resources Library for Programmers">
+                <i class="fa fa-chevron-left"></i> Resources Library for Programmers
               </a>
             
           </div>
@@ -418,8 +486,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/22/Cassandra/" rel="prev" title="Cassandra">
-                Cassandra <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/24/Big-data/" rel="prev" title="Big-data">
+                Big-data <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -613,7 +681,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Other-features"><span class="nav-number">1.</span> <span class="nav-text">Other features</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">2.</span> <span class="nav-text">References</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java初-高级面试回答要点"><span class="nav-number">1.</span> <span class="nav-text">Java初/高级面试回答要点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#架构方向"><span class="nav-number">1.1.</span> <span class="nav-text">架构方向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库"><span class="nav-number">1.2.</span> <span class="nav-text">数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-Core方面"><span class="nav-number">1.3.</span> <span class="nav-text">Java Core方面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#集合"><span class="nav-number">1.3.1.</span> <span class="nav-text">集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多线程，项目里用的少，但问题如下："><span class="nav-number">1.3.2.</span> <span class="nav-text">多线程，项目里用的少，但问题如下：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#virtual-machine"><span class="nav-number">1.3.3.</span> <span class="nav-text">virtual machine</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法，设计模式"><span class="nav-number">1.4.</span> <span class="nav-text">算法，设计模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正确回答问题"><span class="nav-number">1.5.</span> <span class="nav-text">正确回答问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#架构"><span class="nav-number">1.5.1.</span> <span class="nav-text">架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库-1"><span class="nav-number">1.5.2.</span> <span class="nav-text">数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java-core"><span class="nav-number">1.5.3.</span> <span class="nav-text">java core</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis面试"><span class="nav-number">2.</span> <span class="nav-text">Redis面试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-number">3.</span> <span class="nav-text">reference</span></a></li></ol></div>
             
 
           </div>
