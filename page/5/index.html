@@ -274,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/K-Nearest-Neighbor/">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/03/big_data_Kafka/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xinxin Tang">
@@ -293,8 +293,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/29/K-Nearest-Neighbor/" itemprop="url">
-                  K-Nearest-Neighbor
+                <a class="post-title-link" href="/2018/05/03/big_data_Kafka/" itemprop="url">
+                  Kafka
                 </a>
               
             
@@ -320,12 +320,1370 @@
                 
               
 
-              <time title="Created: 2018-04-29 14:04:28 / Modified: 19:16:03" itemprop="dateCreated datePublished" datetime="2018-04-29T14:04:28-04:00">2018-04-29</time>
+              <time title="Created: 2018-05-03 17:31:59" itemprop="dateCreated datePublished" datetime="2018-05-03T17:31:59-04:00">2018-05-03</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-21 19:43:17" itemprop="dateModified" datetime="2018-05-21T19:43:17-04:00">2018-05-21</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Message-Queue"><a href="#Message-Queue" class="headerlink" title="Message Queue"></a>Message Queue</h1><p>Message Queue is a type of technique to exchange information in distributed system. MQ can stay in memory or disk until it is being read. In distributed computing system, to achieve effective information exchange, developer needs to build a communication way for asychronous network.</p>
+<h2 id="Communication-approaches"><a href="#Communication-approaches" class="headerlink" title="Communication approaches"></a>Communication approaches</h2><ol>
+<li>Point to point: one2one, one2many, many2many<br>One message only can be used once, then remove from the queue. </li>
+<li>Multiple to multiple<br>One message can be used multiple times. </li>
+<li>Publish/Subscribe：</li>
+<li>Cluster</li>
+</ol>
+<h1 id="Kafka"><a href="#Kafka" class="headerlink" title="Kafka"></a>Kafka</h1><p>Kafka is a fast, scalable, persistent and highly fault-tolerant distributed publish-subscribe messaging system. Kafka supports high volumn of data and high response in demand better than JMS, RabbitMQ and AMQP. Compared with them, Kafka has higher throughput, more stable and better replication. </p>
+<p>It can be used to obtain, analyze and stream processing with Flume, Spark Streaming, Storm, HBase and Flink together. It provides streaming data for Hadoop Big Data Lake. Kafka has low latency in Hadoop and Spark. </p>
+<h1 id="Advantages-of-Kafka"><a href="#Advantages-of-Kafka" class="headerlink" title="Advantages of Kafka"></a>Advantages of Kafka</h1><ol>
+<li>Reliability</li>
+<li>Scalability</li>
+<li>High performance</li>
+</ol>
+<h1 id="Terms"><a href="#Terms" class="headerlink" title="Terms"></a>Terms</h1><p>Broker: Server. Kafka cluster contains one or more servers.<br>Topic: Each message that sends to Kafka cluster has a category, which is called <strong>Topic</strong>.<br>Partition: Physical conception; Each topic has one or more partition.<br>  Two strategies: 1. Key Hash algorithm; 2. Round Robin algorithm<br>Producer: Response to send message to Kafka broker<br>Consumer: Response to retrieve message from Kafka broker<br>Consumer Group<br>Zookeeper: Kafka relies on Zookeeper cluster save metadata for load balancing.<br>Offset: Index</p>
+<h1 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h1><p><img src="https://images.cnblogs.com/cnblogs_com/BYRans/761498/o_KafkaTerm.png" alt=""><br>Producers send messages to Brokers;<br>Leader Broker gets and writes message into target topic to achieve persistency, and sets expire time.<br>Leader Broker delivers Follow Broker as replication;<br>Consumers retrieve messages from Brokers</p>
+<h1 id="Compare-to-Flume"><a href="#Compare-to-Flume" class="headerlink" title="Compare to Flume"></a>Compare to Flume</h1><p>1.<br>Flume is designed to send message to HDFS and HBase.<br>Kafka is a general-purpose system.<br>2.<br>Flume has many sources and sinks, but Kafka doesn’t.<br>If data source has been determined, just use Flume; Otherwise, adopt Kafka.</p>
+<ol start="3">
+<li>Flume can process data in real-time by intercepter(Filter data)<br>Kafka needs an external system to help processing.</li>
+<li>If data node failed, Flume cannot visit this node until node has been fixed, but it doesn’t happen in Kafka. Because Flume doesn’t have replicalition.</li>
+</ol>
+<h1 id="Implements"><a href="#Implements" class="headerlink" title="Implements"></a>Implements</h1><ol>
+<li>Message Queue: enough to rival traditional message system like ActiveMR and RabbitMQ</li>
+<li>Behaviors tracking: Track users’ behaviors from browsing websites and searching. Saving into topic by Publish/Subscribe mode. </li>
+<li>Metadata monitoring: Data monitoring</li>
+<li>Log collecting: Other products like Scribe, Apache Flume. </li>
+<li>Streaming processing: Products like Storm, Samza</li>
+<li>Event source: </li>
+</ol>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-kafka/index.html" target="_blank" rel="noopener">Kafka principles</a><br><a href="http://www.cnblogs.com/BYRans/p/6054930.html" target="_blank" rel="noopener">Kafka Introduce</a><br><a href="https://www.jianshu.com/p/1b657ac52f89" target="_blank" rel="noopener">kafka详解</a><br><a href="https://www.jianshu.com/p/aee1688bb882" target="_blank" rel="noopener">Kafka概念</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/02/big_data_SQL-Optimization/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/02/big_data_SQL-Optimization/" itemprop="url">
+                  Big data-SQL join
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-02 16:29:09" itemprop="dateCreated datePublished" datetime="2018-05-02T16:29:09-04:00">2018-05-02</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-30 11:24:19" itemprop="dateModified" datetime="2018-05-30T11:24:19-04:00">2018-05-30</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="SQL-JOIN"><a href="#SQL-JOIN" class="headerlink" title="SQL JOIN"></a>SQL JOIN</h2><p><strong>Join</strong> clause is used to combine records from two or more tables in database.<br><img src="https://www.codeproject.com/KB/database/Visual_SQL_Joins/Visual_SQL_JOINS_V2.png" alt=""></p>
+<h2 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization:"></a>Optimization:</h2><p><strong>on</strong> is better than <strong>where</strong>. <strong>on</strong> clause (A left join B on …) determines how to retrieve rows from table B. <strong>where</strong> will be used after this period. So try to use <strong>where</strong> less and satisfy condition <strong>on</strong>.<br>Pass:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT * FROM product LEFT JOIN product_details</span><br><span class="line">       ON (product.id = product_details.id)</span><br><span class="line">       AND product_details.id=2;</span><br><span class="line">+----+--------+------+--------+-------+</span><br><span class="line">| id | amount | id   | weight | exist |</span><br><span class="line">+----+--------+------+--------+-------+</span><br><span class="line">|  1 |    100 | NULL |   NULL |  NULL |</span><br><span class="line">|  2 |    200 |    2 |     22 |     0 |</span><br><span class="line">|  3 |    300 | NULL |   NULL |  NULL |</span><br><span class="line">|  4 |    400 | NULL |   NULL |  NULL |</span><br><span class="line">+----+--------+------+--------+-------+</span><br><span class="line">4 rows in set (0.00 sec)</span><br></pre></td></tr></table></figure></p>
+<p>Great:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT * FROM product LEFT JOIN product_details</span><br><span class="line">       ON (product.id = product_details.id)</span><br><span class="line">       WHERE product_details.id=2;</span><br><span class="line">+----+--------+----+--------+-------+</span><br><span class="line">| id | amount | id | weight | exist |</span><br><span class="line">+----+--------+----+--------+-------+</span><br><span class="line">|  2 |    200 |  2 |     22 |     0 |</span><br><span class="line">+----+--------+----+--------+-------+</span><br><span class="line">1 row in set (0.01 sec)</span><br></pre></td></tr></table></figure></p>
+<p>Pass:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into t1(a1) select b1 from t2 where not exists(select 1 from t1 where t1.id = t2.r_id);</span><br></pre></td></tr></table></figure></p>
+<p>Great:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">insert into t1(a1)  </span><br><span class="line">select b1 from t2  </span><br><span class="line">left join (select distinct t1.id from t1 ) t1 on t1.id = t2.r_id   </span><br><span class="line">where t1.id is null;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p><a href="https://blog.csdn.net/u012861978/article/details/52203818" target="_blank" rel="noopener">https://blog.csdn.net/u012861978/article/details/52203818</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/02/CS231N_CNN-case-study/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/02/CS231N_CNN-case-study/" itemprop="url">
+                  CS231N-CNN Architectures
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-02 10:42:57" itemprop="dateCreated datePublished" datetime="2018-05-02T10:42:57-04:00">2018-05-02</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-30 00:29:43" itemprop="dateModified" datetime="2018-05-30T00:29:43-04:00">2018-05-30</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Common-used-architectures"><a href="#Common-used-architectures" class="headerlink" title="Common used architectures"></a>Common used architectures</h2><p>AlexNet:<br><img src="https://i.imgur.com/BEHBsBl.png" alt="Imgur"></p>
+<p>VGG16:<br><img src="https://i.imgur.com/I0tMlNI.png" alt="Imgur"></p>
+<p>VGG19:<br><img src="https://i.imgur.com/DGiqaWW.png" alt="Imgur"></p>
+<p>GoogleNet:<br><img src="https://i.imgur.com/SHUBNST.png" alt="Imgur"></p>
+<p>Inception:<br><img src="https://i.imgur.com/sQ6fyHy.png" alt="Imgur"></p>
+<p>Performance of CNN models:<br><img src="https://i.imgur.com/nurB3H6.png" alt="Imgur"><br>The deeper model performs worse, but it’s not caused by overfitting.</p>
+<p>Hypothsis: the problem is an optimization problem, deeper models are harder to optimize.</p>
+<p>Solution: ResNet.</p>
+<p>ResNet:<br><img src="https://i.imgur.com/GBh6q2L.png?1" alt="Imgur"></p>
+<p>Residual block:<br><img src="https://i.imgur.com/HpNBjPj.png" alt="Imgur"></p>
+<h2 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a>Complexity</h2><p><img src="https://i.imgur.com/k5cHOhu.png" alt="Imgur"><br>The best in the left: Inception-v4: ResNet+Inception<br>For the right:</p>
+<ul>
+<li>VGG:Highest memory, most operations</li>
+<li>GoogleNet: Most efficient</li>
+<li>AlexNet: Smaller compute, still momory heavy, lower accuracy</li>
+<li>ResNet: Moderate efficiency depending on model, highest accuracy</li>
+</ul>
+<h2 id="Forward-pass-time-and-power-consumption"><a href="#Forward-pass-time-and-power-consumption" class="headerlink" title="Forward pass time and power consumption"></a>Forward pass time and power consumption</h2><p><img src="https://i.imgur.com/Eb5QbXF.png" alt="Imgur"></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://cs231n.stanford.edu/slides/2018/cs231n_2018_lecture09.pdf" target="_blank" rel="noopener">http://cs231n.stanford.edu/slides/2018/cs231n_2018_lecture09.pdf</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/02/ML_Debug-NN/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/02/ML_Debug-NN/" itemprop="url">
+                  Debug-NN
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-02 10:15:26 / Modified: 10:42:18" itemprop="dateCreated datePublished" datetime="2018-05-02T10:15:26-04:00">2018-05-02</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>When NNs don’t work, we have many choices:</p>
+<ol>
+<li>Fetch more data</li>
+<li>Add more layers to NN</li>
+<li>Try some new approaches in NN</li>
+<li>Train longer(increase the number of iterations)</li>
+<li>Change batch size</li>
+<li>Try regularization</li>
+<li>Chcek Bias Variance trade-off to avoid under and overfitting</li>
+<li>Use more GPUs for faster computation</li>
+</ol>
+<p>Architecture:<br>classification: VGG, ResNet, DenseNet…<br>segmentation: FCN, Dilated Convolution, Mask RCNN<br>detection: Faster-RCNN, YOLO, SSD…<br>image generation: UNet, Dilated Convolution, DCGAN, WGAN</p>
+<p>Loss curve:<br><img src="https://i.imgur.com/YWVKR1T.png" alt="Imgur"><br><img src="https://i.imgur.com/EtN47Wd.png" alt="Imgur"><br><img src="https://i.imgur.com/seUwPPL.png" alt="Imgur"></p>
+<p>Regularization:<br>Dropout, weight decay<br><img src="https://i.imgur.com/POYu0mH.png" alt="Imgur"></p>
+<p><img src="https://i.imgur.com/3rvUmO5.png" alt="Imgur"></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/01/ML_l1-vs-l2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/01/ML_l1-vs-l2/" itemprop="url">
+                  Terminology explaination
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-01 23:50:39" itemprop="dateCreated datePublished" datetime="2018-05-01T23:50:39-04:00">2018-05-01</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-02 11:44:18" itemprop="dateModified" datetime="2018-05-02T11:44:18-04:00">2018-05-02</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>l1 distance is Manhattan Distance.<br>l2 distance is Euclidean Distance.</p>
+<p>l1 norm(is also called Lasso Regression) is<br>l2 norm(is also called Ridge Regression) is </p>
+<p><strong>Activation function</strong>: squashes number to a range. Smooth to find best gradient direction.</p>
+<p><strong>Batch normalization</strong>: do it before activation function. zero-centered and range from [0.1] commonly.</p>
+<p>to prevent gradient vanish;<br>to promote learning rate<br>to reduce dependency from initialization. </p>
+<p><strong>Regularization</strong>: </p>
+<ol>
+<li><p>Add term to loss<br>L1 Regularization;<br>L2 Regularization;<br>Elastic net(L1+L2)</p>
+</li>
+<li><p>Dropout</p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/30/CS231N_Optimization/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/30/CS231N_Optimization/" itemprop="url">
+                  CS231N-Optimization
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-04-30 11:37:44" itemprop="dateCreated datePublished" datetime="2018-04-30T11:37:44-04:00">2018-04-30</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-30 00:27:41" itemprop="dateModified" datetime="2018-05-30T00:27:41-04:00">2018-05-30</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Score function -&gt; Loss function -&gt; Optimization.</p>
+<p>Recall that SVM was formulated as:<br><img src="https://i.imgur.com/wJTf9XM.png" alt="Imgur"><br>This formula archieves a very low loss <strong>L</strong>. Optimization is the process of finding the set of parameters <strong>W</strong> that minimize the loss function.</p>
+<h2 id="Visualizing-the-loss-function"><a href="#Visualizing-the-loss-function" class="headerlink" title="Visualizing the loss function"></a>Visualizing the loss function</h2><p>For high-dimensional spaces, linear classifier weight matrix is difficult to visualize. However, we can gain some intuitions about one by slicing through the high-dimensinal space along rays(1-dimension) or along planes(2-dimensions).<br><img src="http://cs231n.github.io/assets/svm1d.png" alt="sisual"><br>Left: one-dimensional loss by only varying <strong>a</strong>. Middle and Right: two-dimensional loss slice, Blue = low loss, Red = high loss. The loss is piecewise-linear structure.</p>
+<p>For single example, we have:<br><img src="https://i.imgur.com/URZXKwo.png" alt="Imgur"></p>
+<p><img src="https://i.imgur.com/dZz3CPE.png" alt="Imgur"><br>We can visualize this as follows:<br><img src="http://cs231n.github.io/assets/svmbowl.png" alt="Visual"><br>x-axis is a single weight and y-asix is the loss.</p>
+<p>Th picture above has shown an example of a convex function.</p>
+<h2 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization"></a>Optimization</h2><p>The goal of optimization is to find <strong>W</strong> that minimizes the loss function.</p>
+<h3 id="Strategy-1-Random-search-very-bad"><a href="#Strategy-1-Random-search-very-bad" class="headerlink" title="Strategy 1: Random search(very bad)"></a>Strategy 1: Random search(very bad)</h3><p>Try out many different random weights and keep track of what works best.</p>
+<h3 id="Strategy-2-Random-local-search"><a href="#Strategy-2-Random-local-search" class="headerlink" title="Strategy 2: Random local search"></a>Strategy 2: Random local search</h3><p>Start out with a random <strong>W</strong>, generate random perturbations <strong>&amp;W</strong> to it and if the loss is lower.</p>
+<p>This strategy is better, but still wasteful and computationally expensive.</p>
+<h3 id="Strategy-3-Following-the-Gradient"><a href="#Strategy-3-Following-the-Gradient" class="headerlink" title="Strategy 3: Following the Gradient"></a>Strategy 3: Following the Gradient</h3><p>Find a direction in the weight-space that would improve our weight vector. I means we can compute teh best direction along which we should change our weight vector that is mathematically guaranteed to be the direction of the steepest descend.</p>
+<p>In one-dimensional functions, the mathematically expression is:<br><img src="https://i.imgur.com/JlASbf7.png" alt="Imgur">  </p>
+<p>Gradient check: unlike the numerical gradient it can be more error prone to implement, which is why in practice it is very common to compute the analytic gradient and compare it to the numerical gradient to check the correctness of your implementation.</p>
+<p>SVM loss function for a single datapoint:<br><img src="https://i.imgur.com/MwHvp74.png" alt="Imgur"></p>
+<p>We can differentiate the function with respect to the weights.<br><img src="https://i.imgur.com/rMC0JOh.png" alt="Imgur"></p>
+<h2 id="Gradient-descent"><a href="#Gradient-descent" class="headerlink" title="Gradient descent"></a>Gradient descent</h2><p><strong>Mini-batch gradient descent</strong>: batch training<br><strong>Stochastic gradient descent(or on-line gradient descent)</strong>: mini-batch contains only a single example.</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://cs231n.github.io/optimization-1/" target="_blank" rel="noopener">http://cs231n.github.io/optimization-1/</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/CS231N_Linear-Classifier/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/29/CS231N_Linear-Classifier/" itemprop="url">
+                  CS231N-Linear Classifier
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-04-29 21:32:56" itemprop="dateCreated datePublished" datetime="2018-04-29T21:32:56-04:00">2018-04-29</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-30 00:27:04" itemprop="dateModified" datetime="2018-05-30T00:27:04-04:00">2018-05-30</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Keywords: Socre function, Loss function, Bias trick, SVM classifier, Softmax classifier</p>
+<p>Image classification of parametric approach has two major components:</p>
+<ol>
+<li><strong>Score function:</strong> maps the raw data to class scores.</li>
+<li><strong>Loss function:</strong> quantifies the agreement between predicted scores and the ground truth labels.</li>
+</ol>
+<p>Optimization: minimize the loss function with respect to the parameters of the score function.</p>
+<h2 id="Linear-Classifier-definition"><a href="#Linear-Classifier-definition" class="headerlink" title="Linear Classifier definition:"></a>Linear Classifier definition:</h2><p><strong>Score function:</strong><br><img src="https://i.imgur.com/qdBYurc.png" alt="Imgur"><br>In the above equation, we assume that images Xi has shape [D<em>1], W has shape [K</em>D] and vector b (of size [K<em>1]). In CIFAR-10, Xi has shape [3071</em>1], W has shape [10<em>3072], and b is [10</em>1], so 3072 numbers input into the function and 10 numbers come out.</p>
+<p>Notes:</p>
+<ol>
+<li>computed scores match the ground truth labels acros the whole training set. Intuitively, we wish that the correct class has a score that is higher than the scores of incorrect classes.</li>
+<li>this approach is that the training data is used to learn the parameters w and b, but once the learning is complete we can discard the entire training set and only keep the learned parameters. Because a new test image can be simply forward through the function and classified based on the computed scores.</li>
+<li>Classifying a test images involves a single matrix multiplication and addition, which is significantly faster than comparing a test image to all training images.</li>
+<li>Single matrix multiplication Wx is effectively evaluating 10 separate clsssifiers in parallel.</li>
+</ol>
+<h2 id="Interpreting-a-linear-classifier"><a href="#Interpreting-a-linear-classifier" class="headerlink" title="Interpreting a linear classifier"></a>Interpreting a linear classifier</h2><p>A linear classifier computes the score of a class as a weighted sum of all of its pixel values across all 3 of its color channels. Let’s imagine that the “ship” class might be more likely if there is a lot of blue on the sides of an image. So we expect the “ship” classifier would have a lot of positive weights across its blue channel weights, and negative weights in the red/green channels.<br><img src="http://cs231n.github.io/assets/imagemap.jpg" alt="Imgul"><br>In this image, the scores for each class are not good at all. This set of weights seems vonvinced that it’s looking at a dog.</p>
+<h2 id="Analogy-of-images-as-high-dimensional-points"><a href="#Analogy-of-images-as-high-dimensional-points" class="headerlink" title="Analogy of images as high-dimensional points:"></a>Analogy of images as high-dimensional points:</h2><p>In high-dimensional column vectors, we can interpret each image as a single point in this space. Analogously, the entire dataset is a (labeled)set of points.</p>
+<p>The geometric interpretation of these numbers is that as we change one of the rows of W, the corresponding line in the pixel space will rotate in different directions.<br><img src="http://cs231n.github.io/assets/pixelspace.jpeg" alt="Imgur"></p>
+<h2 id="Interpretation-of-linear-classifiers-as-template-matching"><a href="#Interpretation-of-linear-classifiers-as-template-matching" class="headerlink" title="Interpretation of linear classifiers as template matching:"></a>Interpretation of linear classifiers as template matching:</h2><p>Another interpretation for the weights W is that each row of W corresponds to a template for one of the classes. The score of each class for an image is obtained by comparing each template with the image using an inner prodict(dot product) one by one to find the best fit.<br><img src="http://cs231n.github.io/assets/templates.jpg" alt="Imgur"><br>Additionally, the horse template seems to contain a two-headed horse, which is due to both left and right facing horses in the dataset. The linear classifier merges two modes of horses into a single template.</p>
+<p>Similarly, the car classifier seems to have merged serveral modes into a single template. In particular, the template ended up with red, which hints that there are more red cars in CIFAR-10 dataset than of any other color. The linear classifier is too weak to properly account for different-colored cars,but neural networks will allow us to perform this task.</p>
+<h2 id="Bias-trick"><a href="#Bias-trick" class="headerlink" title="Bias trick:"></a>Bias trick:</h2><p>We defined the score function as:<br><img src="https://i.imgur.com/qdBYurc.png" alt="Imgur"><br>but now we simplify it as<br><img src="https://i.imgur.com/oM5P3hW.png" alt="Imgur"><br>With CIFAR-10 example, X as shape of [3073<em>1] instead of [3072</em>1], W has shape of [10*3073].The illustration shows:<br><img src="http://cs231n.github.io/assets/wb.jpeg" alt="Imgur"><br>If we preprocess data by appending ones to all vectors, we only have to learn a single matrix of weights insteads of two matrices that hold weights and biases.</p>
+<h2 id="Image-data-preprocessing"><a href="#Image-data-preprocessing" class="headerlink" title="Image data preprocessing:"></a>Image data preprocessing:</h2><p>Pixel values which range from [0:255] is very common to perform normalization of our input features. In particular, it’s important to center data by subtracting the mean from every feature. In the case of images, computing a mean image and subtracing it from every image to get images where the pixels range from approximately [-127, 127]. Further common preprocessing is to scale each input feature so that its values range from [-1,1]. The zero is arguably more important.</p>
+<h2 id="Loss-function"><a href="#Loss-function" class="headerlink" title="Loss function:"></a>Loss function:</h2><p>Loss function is going to measure our unhappiness with outcomes. Loss function also refered to as the cost function.</p>
+<h2 id="Multiclass-Support-Vector-Machine-Loss"><a href="#Multiclass-Support-Vector-Machine-Loss" class="headerlink" title="Multiclass Support Vector Machine Loss:"></a>Multiclass Support Vector Machine Loss:</h2><p>It is a commonly used loss. SVM wants to have a score higher than the incorrect classes by some fixed margin.</p>
+<p>We first come out the class score and abbreviate to <strong>s</strong>. The score as:<br><img src="https://i.imgur.com/Nu5ReRD.png" alt="Imgur"><br>The Multiclass SVM loss for i-th example is:<br><img src="https://i.imgur.com/l7TxYu8.png" alt="Imgur"><br>If the scores <strong>s = [13, -7, 11]</strong>, and the first class is the true class. Assume the hyperparameter delta is 10. The expression above sums over all incorrect classes:<br><img src="https://i.imgur.com/JXdJ7KU.png" alt="Imgur"><br>First gives 0 since [-7-13+10] gives a negative number. The loss outcome is 8. In summary, the SVM loss function wants the score of the correct class to be larger than the incorrect class scores by at least by delta.</p>
+<p>In particular, we are working with linear score functions, so we can rewrite loss function:<br><img src="https://i.imgur.com/te4v03K.png" alt="Imgur"><br><strong>Wj</strong> is the j-th row of <strong>W</strong> reshaped as a column.</p>
+<p><strong>Hinge loss:</strong> is <strong>max(0,-)</strong> function:<br><img src="https://i.imgur.com/fB2VH2R.png" alt="Imgur"><br>Sometimes people instead using squared hinge loss SVM(L2-SVM).</p>
+<h2 id="Regularization"><a href="#Regularization" class="headerlink" title="Regularization:"></a>Regularization:</h2><p>We can do by extending the loss function with a <strong>regularization penalty R(W)</strong>. The most common regularization penalty is the L2 norm:<br><img src="https://i.imgur.com/3zANMaz.png" alt="Imgur"></p>
+<p>The complete Multiclass SVM loss, which is made up of two components: <strong>data loss</strong> and <strong>regularization loss</strong>:<br><img src="https://i.imgur.com/4SvhHjZ.png" alt="Imgur"><br>or<br><img src="https://i.imgur.com/8TNNQQv.png" alt="Imgur"><br>N is the number of training examples. Lambda is a hyperparameter.</p>
+<p>The most appealing property is tht penalizing large weights tends to imporve generalization, because it means that no input dimension can have a very large influence on the scores all by itself.</p>
+<p>The regularization only works for weights but not for biases.</p>
+<h2 id="Softmax-classifier"><a href="#Softmax-classifier" class="headerlink" title="Softmax classifier:"></a>Softmax classifier:</h2><p>SVM is one of two commonly seen classifiers. The other one is <strong>Softmax classifier</strong>.<br><img src="https://i.imgur.com/NwQdoNU.png" alt="Imgur"><br>fi means vector of class scores. Function in parentness is <strong>softmax function</strong>: it takes a vector of arbirary real-valued scores and squashes it to a vector of values between 0 to 1 that sum to one.</p>
+<h2 id="Information-theory"><a href="#Information-theory" class="headerlink" title="Information theory:"></a>Information theory:</h2><p><img src="https://i.imgur.com/qrpH20g.png" alt="Imgur"><br>The cross-entropy between a “true” distribution p and an estimated distribution q is defined above.</p>
+<p>Softmax classifier is minimizing the cross-entropy between teh estimated class probabilities and the “true” distribution. Additionally, cross-entropy can be written in terms of entropy and Kullback-Leibler divergence as:<br><img src="https://i.imgur.com/qgnYZOI.png" alt="Imgur"></p>
+<h2 id="Probabilistic-interpretation"><a href="#Probabilistic-interpretation" class="headerlink" title="Probabilistic interpretation:"></a>Probabilistic interpretation:</h2><p>The expression as we see:<br><img src="https://i.imgur.com/qdBYurc.png" alt="Imgur"><br>can be interpreted as the probability assigned to the correct label yi given the image xi and <strong>W</strong>. In probabilistic interpretation, we are minimizing the negative log likehood of the correct class, which can be interpreted as performing MLE(Maximum Likehood Estimation).</p>
+<h2 id="Practical-issues"><a href="#Practical-issues" class="headerlink" title="Practical issues:"></a>Practical issues:</h2><p>exponentials might be very large, which can be numerically unstable. Normalization is a useful trick. The expression as we see that:<br><img src="https://i.imgur.com/fUhYZwP.png" alt="Imgur"><br>In common choice, <strong>C</strong> is to set LogC = -maxj(fj). In code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">f = np.array([123,456,789])</span><br><span class="line">p = np.exp(f)/np.sum(np.exp(f))  # overflow</span><br><span class="line"></span><br><span class="line">f -= np.max(f)</span><br><span class="line">p = np.exp(f)/np.sum(np.exp(f)) # safe to do</span><br></pre></td></tr></table></figure></p>
+<p>To be precies, <strong>SVM classifier</strong> uses the hinge loss(max-margin loss). <strong>Softmax classifier</strong> uses cross-entropy loss, which is used to squash the raw class scores into normalized positive values that sum to one. In particular, note that it doesn’t make sense to talk about “softmax loss”, since softmax is a squashing function.</p>
+<h2 id="SVM-vs-Softmax"><a href="#SVM-vs-Softmax" class="headerlink" title="SVM vs. Softmax:"></a>SVM vs. Softmax:</h2><p>A picture might help clarify the distinction:<br><img src="http://cs231n.github.io/assets/svmvssoftmax.png" alt="SVM"></p>
+<h2 id="Softmax-classifier-provides-“probabilities”-for-each-class"><a href="#Softmax-classifier-provides-“probabilities”-for-each-class" class="headerlink" title="Softmax classifier provides “probabilities” for each class:"></a>Softmax classifier provides “probabilities” for each class:</h2><p>Unlike SVM which computes uncalibrated and not easy to interpret scores for all classes, Softmax classifier allows us to compute “probabilities” for all labels. For example:<br>Unnormalized log-probabilities for three classes come out to be [1,-2,0]. The softmax function would compute:<br><img src="https://i.imgur.com/SOs8KdM.png" alt="Imgur"><br>Now if the regularization strength lambda was higher, W would be penalized more and this would lead to smaller weights. Suppose that weights became [0.5,-1,0]. The softmax would compute:<br><img src="https://i.imgur.com/qxre4cs.png" alt="Imgur"></p>
+<h2 id="Practice"><a href="#Practice" class="headerlink" title="Practice:"></a>Practice:</h2><p>The performance difference between SVM and Softmax are usually very small. Compared to Softmax classifier, SVM is a more local objective. Consider an example that archieves the scores [10,-2,3] and the first class is correct. An SVM (delta=1) will see that the correct class has a score higher than the margin compared to other classes and compute loss of zero. If they were insted [10,-100,-100] or [10,9,9] the SVM would be indifferent since the margin of 1 is satisfied and the loss is zero. The SVM doesn’t care about the details of the individual scores.</p>
+<p>In other words, Softmax is nevery fully happy with the scores it produces: the correct class could always have a higher probability and incorrect classes always a lower probability and the loss would always get better. However, the SVM is happy once the margins are satified.  </p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p><a href="http://cs231n.github.io/linear-classify/" target="_blank" rel="noopener">http://cs231n.github.io/linear-classify/</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/How-to-build-a-personal-blog-on-Github/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/29/How-to-build-a-personal-blog-on-Github/" itemprop="url">
+                  How to build a personal blog on Github with Hexo
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-04-29 17:43:27 / Modified: 18:25:15" itemprop="dateCreated datePublished" datetime="2018-04-29T17:43:27-04:00">2018-04-29</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps:"></a>Steps:</h2><h3 id="Install-Node-js"><a href="#Install-Node-js" class="headerlink" title="Install Node.js"></a>Install <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node.js</a></h3><h3 id="Install-Git"><a href="#Install-Git" class="headerlink" title="Install Git"></a>Install <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a></h3><p>Choose the right version of operating system.<br>Verify if it installed successfully.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">$ git version</span><br></pre></td></tr></table></figure></p>
+<p>If there is no right to install it, add <code>sudo</code> at the top.</p>
+<h3 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>First line for Hexo installation, second line for Git page deployer.</p>
+<p>Then,type <code>hexo init</code> command to initialize Hexo.</p>
+<p>Execute commands below and then access to localhost:4000 to view the effect.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://onq81n53u.bkt.clouddn.com/YY%E5%9B%BE%E7%89%8720180110175140.jpg" alt="Hexo"></p>
+<h3 id="Deploy-on-Github-Pages"><a href="#Deploy-on-Github-Pages" class="headerlink" title="Deploy on Github Pages"></a>Deploy on Github Pages</h3><p>Register Github account.<br>Build a new repository.<br>Create a SSH keypair. Type <code>$ cd~/. ssh</code>, if shows nothing, we need to create a new keypair.<br>Type<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ssh-keygen -t rsa -C &quot;type personal email here&quot;</span><br></pre></td></tr></table></figure></p>
+<p>Then, just press ‘enter’ button unless you need a password.<br>execute <code>clip &lt; ~/.ssh/id_rsa.pub</code> and paste it into Github account.<br><img src="http://7xrwkh.com1.z0.glb.clouddn.com/SSH-github-setting.png" alt="setting"><br><img src="http://7xrwkh.com1.z0.glb.clouddn.com/SSH-github-setting-SSH.png" alt="ssh"><br>Then, add new SSH key.</p>
+<p>Verify: <code>$ ssh -T git@guthub.com</code><br>if it shows below, you set up well.<br><img src="http://onq81n53u.bkt.clouddn.com/YY%E5%9B%BE%E7%89%8720180110174955.jpg" alt="set"></p>
+<p>Then set a personal info. It doesn’t require same with Github nickname.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$git config --global user.name &quot;type your name here&quot;</span><br><span class="line">$git config --global user.eamil &quot;type your email here&quot;</span><br></pre></td></tr></table></figure></p>
+<p>Copy repository SSH to root Hexo ‘_config.yml’ file<br><img src="http://onq81n53u.bkt.clouddn.com/YY%E5%9B%BE%E7%89%872018011017514333.jpg" alt="ssh"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repository: &apos;paste Github repository here&apos;</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure></p>
+<p>Branch is default as master.</p>
+<p>Execute<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure></p>
+<p>After a while, you can browse the Github Page by typing “https://<repository name="">“. For new, your personal blog has been built.</repository></p>
+<p>Then next level is to change a beautiful theme and add more extension. These will be introduced later. </p>
+<h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ:"></a>FAQ:</h2><p>1.For Github repository, you need to set Github Pages as master branch not just set in Hexo. Click ‘setting’ in the repository, find ‘Github Pages’, Choose ‘master branch’ in ‘Source’. </p>
+<ol start="2">
+<li>If you cannot push file to Github, you should check if the rsa keypair has been copied into Github pages. </li>
+</ol>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p><a href="https://my.oschina.net/ryaneLee/blog/638440" target="_blank" rel="noopener">https://my.oschina.net/ryaneLee/blog/638440</a><br><a href="https://xuanwo.org/2014/08/14/hexo-usual-problem/#Deploy%E4%B9%8B%E5%90%8E%EF%BC%8C%E9%A1%B5%E9%9D%A2%E9%95%BF%E6%97%B6%E9%97%B4404" target="_blank" rel="noopener">https://xuanwo.org/2014/08/14/hexo-usual-problem/#Deploy%E4%B9%8B%E5%90%8E%EF%BC%8C%E9%A1%B5%E9%9D%A2%E9%95%BF%E6%97%B6%E9%97%B4404</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/CS231N_K-Nearest-Neighbor/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/29/CS231N_K-Nearest-Neighbor/" itemprop="url">
+                  CS231N-K Nearest Neighbor
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-04-29 14:04:28" itemprop="dateCreated datePublished" datetime="2018-04-29T14:04:28-04:00">2018-04-29</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-30 00:26:36" itemprop="dateModified" datetime="2018-05-30T00:26:36-04:00">2018-05-30</time>
               
             
           </span>
@@ -369,8 +1727,8 @@
 <p>Here is the code to build a Nearest Neighbor.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Nearest_Neighbor(object):</span><br><span class="line">    def __init__(self):</span><br><span class="line">        pass</span><br><span class="line"></span><br><span class="line">    def train(self, X, y):</span><br><span class="line">      self.Xtr = X</span><br><span class="line">      self.ytr = y</span><br><span class="line"></span><br><span class="line">    def predict(self, X):</span><br><span class="line">        &quot;&quot;&quot; X is N x D where each row is an example we wish to predict label for &quot;&quot;&quot;</span><br><span class="line">        num_test = X.shape[0]</span><br><span class="line">        # lets make sure that the output type matches the input type</span><br><span class="line">        Ypred = np.zeros(num_test, dtype=self.ytr.dtype)</span><br><span class="line"></span><br><span class="line">        # loop over all test rows</span><br><span class="line">        for i in range(num_test):</span><br><span class="line">            # find the nearest training image to the i&apos;th test image</span><br><span class="line">            # L1 distance</span><br><span class="line">            l1_distances = np.sum(np.abs(self.Xtr - X[i, :]), axis=1)  # acc: 38.6%</span><br><span class="line">            # L2 distance</span><br><span class="line">            l2_distances = np.sqrt(np.sum(np.square(self.Xtr - X[i, :]), axis=1))  # acc: 35.4%</span><br><span class="line">            min_index = np.argmin(l1_distances)  # get the index with smallest distance</span><br><span class="line">            print(&quot;min_index:&quot;, min_index)</span><br><span class="line">            Ypred[i] = self.ytr[min_index]  # predict the label of the nearest example</span><br><span class="line">            print(Ypred[i])</span><br><span class="line"></span><br><span class="line">        return Ypred</span><br></pre></td></tr></table></figure></p>
 <p>K-Nearest Neighbor Classifier:<br>KNN is easy to understand. When K=1 the classifier shows above. When K = 5, classifier gets the top 5 closest images. Intuitively, higher value of K has a smooth effect that makes classifier resistant the outliers.<br><img src="http://cs231n.github.io/assets/knn.jpeg" alt="KNN"></p>
 <h2 id="Pros-and-Cons-of-Nearest-Neighbor-Classifier"><a href="#Pros-and-Cons-of-Nearest-Neighbor-Classifier" class="headerlink" title="Pros and Cons of Nearest Neighbor Classifier:"></a>Pros and Cons of Nearest Neighbor Classifier:</h2><h3 id="KNN"><a href="#KNN" class="headerlink" title="KNN:"></a>KNN:</h3><p>Pros:<br>Simple to implement and understand.</p>
-<p>Cons:<br>1.Pay much computational cost at test time, but takes no time to train.<br>2.Remember all training set and store it for future use.<br>3.Images that only has difference in light intensity are very different from pixel-based  L2 computation.<br><img src="http://cs231n.github.io/assets/samenorm.png" alt="Light"> </p>
-<p>Deep neural networks are very expensive to train, but it is very cheap to classify a new test example one the training is finished. This mode of operation is much more desirable in practice. </p>
+<p>Cons:<br>1.Pay much computational cost at test time, but takes no time to train.<br>2.Remember all training set and store it for future use.<br>3.Images that only has difference in light intensity are very different from pixel-based  L2 computation.<br><img src="http://cs231n.github.io/assets/samenorm.png" alt="Light"></p>
+<p>Deep neural networks are very expensive to train, but it is very cheap to classify a new test example one the training is finished. This mode of operation is much more desirable in practice.</p>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p><a href="http://cs231n.github.io/classification/" target="_blank" rel="noopener">http://cs231n.github.io/classification/</a></p>
 
           
@@ -425,7 +1783,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/How-to-Use-Dataset/">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/CS231N_How-to-Use-Dataset/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xinxin Tang">
@@ -444,8 +1802,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/29/How-to-Use-Dataset/" itemprop="url">
-                  How-to-Use-Dataset
+                <a class="post-title-link" href="/2018/04/29/CS231N_How-to-Use-Dataset/" itemprop="url">
+                  CS231N-How to Use Dataset
                 </a>
               
             
@@ -471,12 +1829,24 @@
                 
               
 
-              <time title="Created: 2018-04-29 13:02:26 / Modified: 13:04:31" itemprop="dateCreated datePublished" datetime="2018-04-29T13:02:26-04:00">2018-04-29</time>
+              <time title="Created: 2018-04-29 13:02:26" itemprop="dateCreated datePublished" datetime="2018-04-29T13:02:26-04:00">2018-04-29</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-30 00:25:38" itemprop="dateModified" datetime="2018-05-30T00:25:38-04:00">2018-05-30</time>
               
             
           </span>
@@ -554,463 +1924,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/NumPy-Tutorial/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/29/NumPy-Tutorial/" itemprop="url">
-                  NumPy-Tutorial
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-04-29 12:12:54 / Modified: 12:58:24" itemprop="dateCreated datePublished" datetime="2018-04-29T12:12:54-04:00">2018-04-29</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>NumPy is one of most popular data analysis package in Python. I use it a lot and here is a NumPy review. Let’s get started!</p>
-<p>NumPy’s main object is the homogeneous multidimensional array. In NumPy dimensions are called axes.</p>
-<p>For example, [1,2,3] has one axis and length is 3. [[1,2,3],[4,5,6]] has two axes. The first axis length is 2 and the second axis has a length of 3.</p>
-<p>Python has a built-in class array.array which only handles one-dimension array and offers less functionality. NumPy’s array class is called ndarray and more powerful. It has many attributes like:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ndarray.ndim: the number of axes of the array; 3-D, 4D</span><br><span class="line">ndarray.shape: the dimensions of the array; 3-D: (2,3,4)</span><br><span class="line">ndarray.size: the total number of elements of the array. </span><br><span class="line">ndarray.dtype: the type of elements in the array</span><br><span class="line">ndarray.itemsize: the size in byte of each element of the array</span><br><span class="line">ndarray.data: the buffer containing the actual elements of the array</span><br></pre></td></tr></table></figure></p>
-<p>Examples:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">a = np.arange(15).reshape(3,5)  # array([[ 0, 1, 2, 3, 4], [ 5, 6, 7, 8, 9], [10, 11, 12, 13, 14]])</span><br><span class="line">a.shape()  # (3, 5)</span><br><span class="line">a.ndim  # 2</span><br><span class="line">a.dtype.name  # &apos;int64&apos;</span><br><span class="line">a.itemsize  # 8</span><br><span class="line">a.size  # 15</span><br><span class="line">type(a)  # &lt;type &apos;numpy.ndarray&apos;&gt;</span><br><span class="line">b = np.array([6,7,8])  # array([6,7,8])</span><br><span class="line">type(b)  # &lt;type &apos;numpy.ndarray&apos;&gt;</span><br></pre></td></tr></table></figure></p>
-<h2 id="Array-Creation"><a href="#Array-Creation" class="headerlink" title="Array Creation:"></a>Array Creation:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">a = np.array([2,3,4])</span><br><span class="line">b = np.array([(1,2,3,4), (5,6,7,8)])</span><br><span class="line"></span><br><span class="line">c = np.zeros((3,4))  # 2-D with length 3 and 4 for two axis</span><br><span class="line">d = np.zeros((3,4,5), dtype=np.int16)  # specify a data type</span><br><span class="line">e = np.empty((2,3))  # uninitialized, output may vary</span><br><span class="line"></span><br><span class="line">f = np.arrange(10, 30, 5)  # create a sequence of number. Start from 10, end with 30 (not included), each iteration adds 5.</span><br></pre></td></tr></table></figure>
-<p>Others:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zeros_like, ones, ones_like, numpy.random.rand, numpy.random.randn</span><br></pre></td></tr></table></figure></p>
-<h2 id="Basic-operations"><a href="#Basic-operations" class="headerlink" title="Basic operations:"></a>Basic operations:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = np.array([20, 30, 40, 60])</span><br><span class="line">b = np.arange(4)  # array([0,1,2,3])</span><br><span class="line">c = a-b  # array([20, 29, 38, 57])</span><br><span class="line">print(b**2)  # array([0, 1,4,9])</span><br><span class="line">print(10*np.sin(a)) </span><br><span class="line">print(a&lt;35)  array([True, True, False, False])</span><br></pre></td></tr></table></figure>
-<h2 id="Product-operator-usage-in-NumPy-arrays"><a href="#Product-operator-usage-in-NumPy-arrays" class="headerlink" title="Product operator * usage in NumPy arrays."></a>Product operator * usage in NumPy arrays.</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = np.array([[1,1],[0,1]])</span><br><span class="line">b = np.array([[2,0],[3,4]])</span><br><span class="line">print(a*b)  # array([[2,0], [0,4]])</span><br><span class="line">print(a.dot(b))  # array([[5,4],[3,4]])</span><br><span class="line">print(np.dot(a, b))  # array([[5,4],[3,4]])</span><br><span class="line">print(np.arange(12).reshape(3,4).sum(axis=0))  # sum of each column</span><br><span class="line">print(np.arange(12).reshape(3,4).min(axis=1))  # sum of each row</span><br></pre></td></tr></table></figure>
-<h2 id="Universal-Functions"><a href="#Universal-Functions" class="headerlink" title="Universal Functions:"></a>Universal Functions:</h2><p>Popular use:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">all, any, argmax, argmin, argsort, average, bincount, diff, dot, floor, inner, max, mean, mdeian, min, minimum, nonzero, outer, round, re, sort, std, sum, transpose, var, vectorize, where</span><br></pre></td></tr></table></figure></p>
-<p>To summary, these are basic NumPy usage. I’ll continue to write more blogs to introduce NumPy.</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p><a href="https://docs.scipy.org/doc/numpy/user/quickstart.html#further-reading" target="_blank" rel="noopener">https://docs.scipy.org/doc/numpy/user/quickstart.html#further-reading</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/Java-Lambda-Function/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/29/Java-Lambda-Function/" itemprop="url">
-                  Java-Lambda-Function
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-04-29 11:30:40 / Modified: 12:58:45" itemprop="dateCreated datePublished" datetime="2018-04-29T11:30:40-04:00">2018-04-29</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Lambda function first appears in Java8. It can be easily used to traverse with forEach function. Moreover, the code will be concise if we use it instead of Runnable function.</p>
-<h2 id="1-Iteration"><a href="#1-Iteration" class="headerlink" title="1. Iteration:"></a>1. Iteration:</h2><p>Here are three ways to print each element. First method is for loop, second and third is Lambda function. Last two functions look more concise.</p>
-<p>Solution 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line"></span><br><span class="line">for (int element : numbers) &#123;    </span><br><span class="line"></span><br><span class="line">    System.out.prinln(element);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Solution 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line"></span><br><span class="line">numbers.forEach(x -&gt; System.out.println(x));</span><br></pre></td></tr></table></figure></p>
-<p>Solution 3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line"></span><br><span class="line">numbers.forEach(System.out::println);</span><br></pre></td></tr></table></figure></p>
-<h2 id="2-Event-listener"><a href="#2-Event-listener" class="headerlink" title="2. Event listener:"></a>2. Event listener:</h2><p> Using  Lambda function has less code line but it has more curly braces.</p>
-<p>Solution 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">button.addActionListener(new ActionListener()&#123;  </span><br><span class="line"></span><br><span class="line">     @Override    </span><br><span class="line"></span><br><span class="line">     public void actionPerformed(ActionEvent e) &#123;</span><br><span class="line"></span><br><span class="line">             //handle the event    </span><br><span class="line"></span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>Solution 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">button.addActionListener(e -&gt; &#123;    </span><br><span class="line"></span><br><span class="line">      //handle the event</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<h2 id="3-Predicate-Interface"><a href="#3-Predicate-Interface" class="headerlink" title="3. Predicate Interface:"></a>3. Predicate Interface:</h2><p>Predicate interface in java.util.function can be used to filter. If you need to process multiple objects and execute the same process logic, these logics can be encapsulated in function filter. Here also has three methods to make a comparison. </p>
-<p>Solution 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line"></span><br><span class="line">List&lt;String&gt; words = Arrays.asList(&quot;a&quot;, &quot;ab&quot;, &quot;abc&quot;);</span><br><span class="line"></span><br><span class="line">numbers.forEach( x -&gt; &#123;</span><br><span class="line"></span><br><span class="line">    if (x % 2 == 0) &#123;  </span><br><span class="line"></span><br><span class="line">        //process logic</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">words.forEach( x -&gt; &#123;</span><br><span class="line"></span><br><span class="line">    if (x.length() &gt; 1) &#123;</span><br><span class="line"></span><br><span class="line">         //process logic</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>Solution 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">   List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line">   List&lt;String&gt; words = Arrays.asList(&quot;a&quot;, &quot;ab&quot;, &quot;abc&quot;);</span><br><span class="line">   filter(numbers, x -&gt; (int)x % 2 == 0);</span><br><span class="line">   filter(words, x -&gt; ((String)x).length() &gt; 1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public static void filter(List list, Predicate condition) &#123;</span><br><span class="line">   list.forEach(x -&gt; &#123;</span><br><span class="line">       if (condition.test(x)) &#123;</span><br><span class="line">           //process logic</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Solution 3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public static void filter(List list, Predicate condition) &#123;</span><br><span class="line">   list.stream().filter(x -&gt; condition.test(x)).forEach(x -&gt; &#123;</span><br><span class="line">       //process logic</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="4-Map"><a href="#4-Map" class="headerlink" title="4. Map:"></a>4. Map:</h2><p>Use function map convert data to another list, then reverse it to list type using Collect.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line">List&lt;Integer&gt; mapped = numbers.stream().map(x -&gt; x * 2).collect(Collectors.toList());</span><br><span class="line">mapped.forEach(System.out::println);</span><br></pre></td></tr></table></figure></p>
-<h2 id="5-Reduce"><a href="#5-Reduce" class="headerlink" title="5. Reduce:"></a>5. Reduce:</h2><p>Reduce action means obtaining an output based on two variables. For example, two variables execute add operation then return a sum.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line"></span><br><span class="line">int sum = numbers.stream().reduce((x, y) -&gt; x + y).get();</span><br><span class="line"></span><br><span class="line">System.out.println(sum);</span><br></pre></td></tr></table></figure></p>
-<h2 id="6-Replace-Runnable"><a href="#6-Replace-Runnable" class="headerlink" title="6. Replace Runnable:"></a>6. Replace Runnable:</h2><p>Makes code more compact. </p>
-<p>Solution 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Runnable r = new Runnable() &#123;    </span><br><span class="line"></span><br><span class="line">    @Override    </span><br><span class="line"></span><br><span class="line">    public void run() &#123;        </span><br><span class="line"></span><br><span class="line">        //to do something    </span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Thread t = new Thread(r);</span><br><span class="line"></span><br><span class="line">t.start();</span><br></pre></td></tr></table></figure></p>
-<p>Solution 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Runnable r = () -&gt; &#123;    </span><br><span class="line"></span><br><span class="line">    //to do something</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Thread t = new Thread(r);</span><br><span class="line"></span><br><span class="line">t.start();</span><br></pre></td></tr></table></figure></p>
-<p>Solution 3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Thread t = new Thread(() -&gt; &#123;    </span><br><span class="line"></span><br><span class="line">    //to do something</span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">t.start;</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/28/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/28/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-04-28 22:48:20" itemprop="dateCreated datePublished" datetime="2018-04-28T22:48:20-04:00">2018-04-28</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1053,7 +1971,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">45</span>
+                    <span class="site-state-item-count">52</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1136,7 +2054,21 @@
                     
                       
                     
-                    <span class="site-state-item-count">34</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">41</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>

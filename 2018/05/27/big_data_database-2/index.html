@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.2.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="NoSQL databasesCategoriesK/V Store: Dynamo, RedisDocument-based Store: Mongodb (Save as document type)Column-based Store: Big Table, HBase, Cassandra (有助于查询与分布式存储) CAP theoremConsistencyAvailabilityPa">
+<meta name="keywords" content="Big Data,Database">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Big Data-Databases No-SQL">
+<meta property="og:url" content="https://XinxinTang/xinxintang.github.io/2018/05/27/big_data_database-2/index.html">
+<meta property="og:site_name" content="Xinxin Tang">
+<meta property="og:description" content="NoSQL databasesCategoriesK/V Store: Dynamo, RedisDocument-based Store: Mongodb (Save as document type)Column-based Store: Big Table, HBase, Cassandra (有助于查询与分布式存储) CAP theoremConsistencyAvailabilityPa">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-28T19:23:21.899Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Big Data-Databases No-SQL">
+<meta name="twitter:description" content="NoSQL databasesCategoriesK/V Store: Dynamo, RedisDocument-based Store: Mongodb (Save as document type)Column-based Store: Big Table, HBase, Cassandra (有助于查询与分布式存储) CAP theoremConsistencyAvailabilityPa">
+
+
+
+
+
+
+  <link rel="canonical" href="https://XinxinTang/xinxintang.github.io/2018/05/27/big_data_database-2/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Big Data-Databases No-SQL | Xinxin Tang</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Xinxin Tang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">A technical blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/27/big_data_database-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Big Data-Databases No-SQL
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-27 15:20:35" itemprop="dateCreated datePublished" datetime="2018-05-27T15:20:35-04:00">2018-05-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-28 15:23:21" itemprop="dateModified" datetime="2018-05-28T15:23:21-04:00">2018-05-28</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="NoSQL-databases"><a href="#NoSQL-databases" class="headerlink" title="NoSQL databases"></a>NoSQL databases</h1><h2 id="Categories"><a href="#Categories" class="headerlink" title="Categories"></a>Categories</h2><p>K/V Store: Dynamo, Redis<br>Document-based Store: Mongodb (Save as document type)<br>Column-based Store: Big Table, HBase, Cassandra (有助于查询与分布式存储)</p>
+<h2 id="CAP-theorem"><a href="#CAP-theorem" class="headerlink" title="CAP theorem"></a>CAP theorem</h2><p>Consistency<br>Availability<br>Partition</p>
+<p>Distributed database is doing a trade-off between Consistency and Availability.<br>Most distributed database is “eventually consistency” in order to get high availability.</p>
+<h2 id="DB-1-MongoDB"><a href="#DB-1-MongoDB" class="headerlink" title="DB-1 MongoDB"></a>DB-1 MongoDB</h2><h3 id="1-Document-oriented"><a href="#1-Document-oriented" class="headerlink" title="1 Document oriented"></a>1 Document oriented</h3><p><strong>Documents map nicely programming language data types</strong>:直接将PHP array, JAVA Bean, Python Dictionary, JavaScript Object数据导入Document中。<br><strong>Embedded documents reduce the need for joins</strong><br><strong>Dynamic schema makes change easier</strong><br><strong>JSON-style, stored as BSON</strong></p>
+<h3 id="2-JSON"><a href="#2-JSON" class="headerlink" title="2 JSON"></a>2 JSON</h3><p>JSON-JavaScript Object Notation<br>a syntax for storing and exchanging data<br>an easier-to-use alternative to XML<br>more human friendly<br>less data size<br>easier to read</p>
+<p><strong>BSON</strong><br>Binary JSON used in MongoDB<br>Compared to JSON, BSON is designed to be efficient both in storage space and scan-speed.</p>
+<p>存储时转为BSON,读取数据转化为JSON</p>
+<h3 id="3-High-Performance"><a href="#3-High-Performance" class="headerlink" title="3 High Performance"></a>3 High Performance</h3><p>Written in C++;<br>Use of memory mapped files;<br>Serialization in BSON for fast parsing;<br>Indexes can include keys from embedded documents</p>
+<h3 id="High-Scalable"><a href="#High-Scalable" class="headerlink" title="High Scalable"></a>High Scalable</h3><p>Vertical scaling v.s. Horizontal scaling<br>MongoDB supports horizontal scaling through sharding</p>
+<h3 id="Structures"><a href="#Structures" class="headerlink" title="Structures"></a>Structures</h3><p>A MongoDB instance may have zero or more databases<br>A database may have zero or more collections<br>  can be though of as the relation(table) in SQL database<br>A collection may have zero or more Documents<br>  Docs in the same collection don’t even need to have the same fields<br>  Docs are the records in RDBMS<br>  A document may have one or more fields<br>MongoDB indexes is much like their RDBMS counterparts</p>
+<h3 id="Pros"><a href="#Pros" class="headerlink" title="Pros"></a>Pros</h3><p>Simple queries;<br>Much faster than SQL database<br>Easier and faster integration of data</p>
+<h2 id="Cons"><a href="#Cons" class="headerlink" title="Cons"></a>Cons</h2><p>not well suited for heavy and complex transactions systems</p>
+<h3 id="PyMongo"><a href="#PyMongo" class="headerlink" title="PyMongo"></a>PyMongo</h3><p>Super easy to use;<br>Thread safe;<br>Built-in connection pool when using MongoClient;<br>  No need to explicitly close to a connection</p>
+<p><strong>Steps</strong><br>1 Create a client connecting to MongoDB instance on 27017<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from pymongo import MongoClient</span><br><span class="line"></span><br><span class="line">client = MongoClient(&apos;localhost:27017&apos;)</span><br><span class="line">db = client.real_estate_smart_view</span><br></pre></td></tr></table></figure></p>
+<p>read_estate_smart_view: database name</p>
+<p>2 Insert a new document<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.users.insert(&#123;&quot;Last name&quot;: &quot;Wang&quot;, &quot;First name&quot;: &quot;Wei&quot;&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>3 Query a document<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.users.find(&#123;&quot;Last name&quot;:&quot;Mao&quot;&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>4 Update an existing document<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">db.users.update(</span><br><span class="line">  &#123;&quot;Last name&quot;: &quot;Mao&quot;,</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;$set&quot;:&#123;</span><br><span class="line">      &quot;First name&quot;: &quot;Qian&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  )</span><br></pre></td></tr></table></figure></p>
+<p>$set is a update operator which is to set the field of using the provided value</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Big-Data/" rel="tag"># Big Data</a>
+          
+            <a href="/tags/Database/" rel="tag"># Database</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/27/big_data_message_queue/" rel="next" title="big data-Message Queue">
+                <i class="fa fa-chevron-left"></i> big data-Message Queue
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/27/big_data_SOA/" rel="prev" title="big data-Service Oriented Architecture">
+                big data-Service Oriented Architecture <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Xinxin Tang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">52</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#NoSQL-databases"><span class="nav-number">1.</span> <span class="nav-text">NoSQL databases</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Categories"><span class="nav-number">1.1.</span> <span class="nav-text">Categories</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CAP-theorem"><span class="nav-number">1.2.</span> <span class="nav-text">CAP theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DB-1-MongoDB"><span class="nav-number">1.3.</span> <span class="nav-text">DB-1 MongoDB</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Document-oriented"><span class="nav-number">1.3.1.</span> <span class="nav-text">1 Document oriented</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-JSON"><span class="nav-number">1.3.2.</span> <span class="nav-text">2 JSON</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-High-Performance"><span class="nav-number">1.3.3.</span> <span class="nav-text">3 High Performance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#High-Scalable"><span class="nav-number">1.3.4.</span> <span class="nav-text">High Scalable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Structures"><span class="nav-number">1.3.5.</span> <span class="nav-text">Structures</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pros"><span class="nav-number">1.3.6.</span> <span class="nav-text">Pros</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cons"><span class="nav-number">1.4.</span> <span class="nav-text">Cons</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PyMongo"><span class="nav-number">1.4.1.</span> <span class="nav-text">PyMongo</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xinxin Tang</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.2.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.2.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Service-Oriented Architecture:Benefits Isolation:   language, technology, tools   decoupling, independency   deployment and maintenance Ownership: minimal gray area and gap Scalability: easy to scale">
+<meta name="keywords" content="Big Data">
+<meta property="og:type" content="article">
+<meta property="og:title" content="big data-Service Oriented Architecture">
+<meta property="og:url" content="https://XinxinTang/xinxintang.github.io/2018/05/27/big_data_SOA/index.html">
+<meta property="og:site_name" content="Xinxin Tang">
+<meta property="og:description" content="Service-Oriented Architecture:Benefits Isolation:   language, technology, tools   decoupling, independency   deployment and maintenance Ownership: minimal gray area and gap Scalability: easy to scale">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-29T04:36:41.536Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="big data-Service Oriented Architecture">
+<meta name="twitter:description" content="Service-Oriented Architecture:Benefits Isolation:   language, technology, tools   decoupling, independency   deployment and maintenance Ownership: minimal gray area and gap Scalability: easy to scale">
+
+
+
+
+
+
+  <link rel="canonical" href="https://XinxinTang/xinxintang.github.io/2018/05/27/big_data_SOA/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>big data-Service Oriented Architecture | Xinxin Tang</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Xinxin Tang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">A technical blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/27/big_data_SOA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">big data-Service Oriented Architecture
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-27 23:20:35" itemprop="dateCreated datePublished" datetime="2018-05-27T23:20:35-04:00">2018-05-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-29 00:36:41" itemprop="dateModified" datetime="2018-05-29T00:36:41-04:00">2018-05-29</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Service-Oriented-Architecture"><a href="#Service-Oriented-Architecture" class="headerlink" title="Service-Oriented Architecture:"></a>Service-Oriented Architecture:</h1><p><strong>Benefits</strong><br> Isolation:<br>   language, technology, tools<br>   decoupling, independency<br>   deployment and maintenance<br> Ownership: minimal gray area and gap<br> Scalability: easy to scale up and modify<br><strong>Cons</strong><br>Complexity: sometimes unnecessary<br>Latency: Network communication eats time<br>Test effort: all services require E2E tests<br>DevOp, On-call</p>
+<h1 id="APIs"><a href="#APIs" class="headerlink" title="APIs"></a>APIs</h1><p>An Application Programming Interface(API) is best though of as a contract provided by one piece of computer software to another.</p>
+<h2 id="Classification-of-APIs"><a href="#Classification-of-APIs" class="headerlink" title="Classification of APIs"></a>Classification of APIs</h2><p>Web Service APIs: SOAP, XML-RPC, JSON-RPC, REST<br>Library-based APIs: JavaScript(Google Map APIs)<br>Class-based APIs: Java API, Android API<br>OS functions and Routines: File system, user interface<br>Hardware APIs: Cameras</p>
+<h2 id="RPC-v-s-REST"><a href="#RPC-v-s-REST" class="headerlink" title="RPC v.s. REST"></a>RPC v.s. REST</h2><p><strong>RPC</strong><br>Remote Procedure Call is a protocol that one program can use to request a service from a program located in another computer on a network on a network without having to understand the network’s details</p>
+<p>RPC call is more like a local function call<br>E.g.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://&lt;host&gt;:&lt;port&gt;/service?request=GetOrders?orderId=123</span><br></pre></td></tr></table></figure></p>
+<p><strong>Representational State Transfer</strong><br>is an architecture style for designing networked applications. The idea is that, rather than using complex mechanisms such as CORBA, RPC or SOAP to connect between machines, simple HTTP is used to make calls between machines.</p>
+<p>REST is like a HTTP request.</p>
+<p>E.g.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://&lt;host&gt;:&lt;port&gt;/service/orders?orderId=123</span><br></pre></td></tr></table></figure></p>
+<h3 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h3><p><strong>RPC</strong><br>Pros:<br>Action Oriented;<br>RPC is transparent: it is like a local procedure call;<br>RPC is strictly defined: client must know method name, arguments and types to make a call;<br>RPC is heavily used in big tech companies<br>适合SOA架构，API定义清晰</p>
+<p>Cons:<br>RPC is difficult to modify: both server and client need to change.</p>
+<p><strong>REST</strong><br>Pros:<br>Resource oriented;<br>Easy to modify: client doesn’t need to dependent on method name, arguments or types. It depends on message format;<br>Easy to cache.<br>适合前端架构</p>
+<p>Cons:<br>Format can be changed;<br>Hard to do authentication.</p>
+<h2 id="JSON-RPC-vs-XML-RPC"><a href="#JSON-RPC-vs-XML-RPC" class="headerlink" title="JSON RPC vs XML-RPC"></a>JSON RPC vs XML-RPC</h2><p>JSON: less space; easy to read</p>
+<p>Package: <strong>pyjsonrpc</strong></p>
+<h1 id="API-design"><a href="#API-design" class="headerlink" title="API design"></a>API design</h1><h2 id="why-API-design-important"><a href="#why-API-design-important" class="headerlink" title="why API design important?"></a>why API design important?</h2><p>APIs can be one of greatest assets of companies<br>API can also be one of greatest liabilities of companies<br>Public APIs are forever</p>
+<h2 id="Why-API-design-important-to-YOU"><a href="#Why-API-design-important-to-YOU" class="headerlink" title="Why API design important to YOU?"></a>Why API design important to YOU?</h2><p>We are natural API designers;<br>Useful modules tend to get reused;<br>Good API means great code quality.</p>
+<h2 id="Characteristics-of-Good-APIs"><a href="#Characteristics-of-Good-APIs" class="headerlink" title="Characteristics of Good APIs"></a>Characteristics of Good APIs</h2><p>Easy to learn and use with good documentation;<br>Hard to misuse;<br>Easy to read and maintain the code that uses it;<br>Sufficient powerful to satisfy requirements;<br>Easy to extend.</p>
+<h1 id="API-design-principles"><a href="#API-design-principles" class="headerlink" title="API design principles"></a>API design principles</h1><p>Functionality should be easy to explain;<br>If it’s hard to name, that’s generally a bad sign;<br>Good names drive development.</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Big-Data/" rel="tag"># Big Data</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/27/big_data_database-2/" rel="next" title="Big Data-Databases No-SQL">
+                <i class="fa fa-chevron-left"></i> Big Data-Databases No-SQL
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/29/Front_end-information/" rel="prev" title="Front end-Security">
+                Front end-Security <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Xinxin Tang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">52</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Service-Oriented-Architecture"><span class="nav-number">1.</span> <span class="nav-text">Service-Oriented Architecture:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#APIs"><span class="nav-number">2.</span> <span class="nav-text">APIs</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Classification-of-APIs"><span class="nav-number">2.1.</span> <span class="nav-text">Classification of APIs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RPC-v-s-REST"><span class="nav-number">2.2.</span> <span class="nav-text">RPC v.s. REST</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Comparison"><span class="nav-number">2.2.1.</span> <span class="nav-text">Comparison</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSON-RPC-vs-XML-RPC"><span class="nav-number">2.3.</span> <span class="nav-text">JSON RPC vs XML-RPC</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#API-design"><span class="nav-number">3.</span> <span class="nav-text">API design</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#why-API-design-important"><span class="nav-number">3.1.</span> <span class="nav-text">why API design important?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Why-API-design-important-to-YOU"><span class="nav-number">3.2.</span> <span class="nav-text">Why API design important to YOU?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Characteristics-of-Good-APIs"><span class="nav-number">3.3.</span> <span class="nav-text">Characteristics of Good APIs</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#API-design-principles"><span class="nav-number">4.</span> <span class="nav-text">API design principles</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xinxin Tang</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.2.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
