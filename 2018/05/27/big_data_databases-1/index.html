@@ -102,18 +102,18 @@
 
 
 
-  <meta name="description" content="Relational databases:MySQL, PostgreSQL, SQLite List all users following bob:12345678SELECT    User.usernameFROMUserWHERE User.username IN    SELECT from_user FROM User LEFT JOIN Following    ON User.u">
+  <meta name="description" content="Relational databases:Aggregate Data Models: A collection of data that we interact with as a unit. It makes distribution of data easier, since the distribution mechanism has to move the aggregate and n">
 <meta name="keywords" content="Big Data,Database">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Big Data-Databases SQL">
 <meta property="og:url" content="https://XinxinTang/xinxintang.github.io/2018/05/27/big_data_databases-1/index.html">
 <meta property="og:site_name" content="Xinxin Tang">
-<meta property="og:description" content="Relational databases:MySQL, PostgreSQL, SQLite List all users following bob:12345678SELECT    User.usernameFROMUserWHERE User.username IN    SELECT from_user FROM User LEFT JOIN Following    ON User.u">
+<meta property="og:description" content="Relational databases:Aggregate Data Models: A collection of data that we interact with as a unit. It makes distribution of data easier, since the distribution mechanism has to move the aggregate and n">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-28T19:23:18.938Z">
+<meta property="og:updated_time" content="2018-06-01T03:21:35.047Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Big Data-Databases SQL">
-<meta name="twitter:description" content="Relational databases:MySQL, PostgreSQL, SQLite List all users following bob:12345678SELECT    User.usernameFROMUserWHERE User.username IN    SELECT from_user FROM User LEFT JOIN Following    ON User.u">
+<meta name="twitter:description" content="Relational databases:Aggregate Data Models: A collection of data that we interact with as a unit. It makes distribution of data easier, since the distribution mechanism has to move the aggregate and n">
 
 
 
@@ -337,7 +337,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-05-28 15:23:18" itemprop="dateModified" datetime="2018-05-28T15:23:18-04:00">2018-05-28</time>
+                <time title="Modified: 2018-05-31 23:21:35" itemprop="dateModified" datetime="2018-05-31T23:21:35-04:00">2018-05-31</time>
               
             
           </span>
@@ -370,7 +370,8 @@
       
 
       
-        <h1 id="Relational-databases"><a href="#Relational-databases" class="headerlink" title="Relational databases:"></a>Relational databases:</h1><p>MySQL, PostgreSQL, SQLite</p>
+        <h1 id="Relational-databases"><a href="#Relational-databases" class="headerlink" title="Relational databases:"></a>Relational databases:</h1><p>Aggregate Data Models: A collection of data that we interact with as a unit. It makes distribution of data easier, since the distribution mechanism has to move the aggregate and not have to worry about related data, as all the related data is contained in the aggregate. </p>
+<p>MySQL, PostgreSQL, SQLite</p>
 <p>List all users following bob:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">    User.username</span><br><span class="line">FROM</span><br><span class="line">User</span><br><span class="line">WHERE User.username IN</span><br><span class="line">    SELECT from_user FROM User LEFT JOIN Following</span><br><span class="line">    ON User.user_id = Following.to_user</span><br><span class="line">    WHERE User.username = ‘bob’</span><br></pre></td></tr></table></figure></p>
 
       
@@ -417,8 +418,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/27/big_data_message_queue/" rel="prev" title="big data-Message Queue">
-                big data-Message Queue <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/27/big_data_message_queue/" rel="prev" title="Big data-Message Queue">
+                Big data-Message Queue <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -493,7 +494,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">52</span>
+                    <span class="site-state-item-count">57</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -590,7 +591,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">41</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>

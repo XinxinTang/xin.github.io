@@ -274,6 +274,665 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/27/big_data_databases-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/27/big_data_databases-2/" itemprop="url">
+                  Big Data-Databases No-SQL
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-27 15:20:35" itemprop="dateCreated datePublished" datetime="2018-05-27T15:20:35-04:00">2018-05-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-06-01 09:32:11" itemprop="dateModified" datetime="2018-06-01T09:32:11-04:00">2018-06-01</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="NoSQL-databases"><a href="#NoSQL-databases" class="headerlink" title="NoSQL databases"></a>NoSQL databases</h1><h2 id="Two-styles-of-distributing-data"><a href="#Two-styles-of-distributing-data" class="headerlink" title="Two styles of distributing data:"></a>Two styles of distributing data:</h2><p>1 Sharding: it distributes different data across multiple servers, so each server acts as the <strong>single source</strong> for a subset of data.<br>2 Replication: it copies data across multiple servers, so each bit of data can be found in multiple places.<br>  Two forms:<br>    <strong>Master-Slave replication</strong>: it makes one node the authoritative copy that handles writes while slaves synchronize with the master and may handle reads.<br>    <strong>Peer-to-Peer replication</strong>: it allows writes to any node; the nodes coordinate to synchronize their copies of the data.<br><strong>Master-slave replication</strong> reduces the chance of update conflicts but <strong>peer-to-peer replication</strong> avoids loading all writes onto a single server creating a single point of failure.</p>
+<h2 id="CAP-theorem"><a href="#CAP-theorem" class="headerlink" title="CAP theorem"></a>CAP theorem</h2><p>Consistency<br>Availability<br>Partition-toleration</p>
+<p>Distributed database is doing a trade-off between Consistency and Availability.<br>Most distributed database is “eventually consistency” in order to get high availability.</p>
+<h2 id="Why-choose-NoSQL-Databases"><a href="#Why-choose-NoSQL-Databases" class="headerlink" title="Why choose NoSQL Databases"></a>Why choose NoSQL Databases</h2><p>Broad reasons:<br>  1 To improve programmer productivity by using a database that better matches an application’s needs<br>  2 To improve data access performance via some combination of handling larger data volumes, reducing latency, and improving throughput</p>
+<p>General guidelines:<br>  1 <strong>K/V databases</strong> are generally useful for storing session information, user profiles, preferences, shopping cart data. We would <strong>avoid</strong> using Key-value databases when we need to query by data, have relationships between the data being stored or we need to operate on multiple keys at the same time.<br>  2 <strong>Document databases</strong> are generally useful for content management systems, blogging platforms, web analytics, real-time analytics, E-commerce applications. We would <strong>avoid</strong> using document databases for systems that need complex transactions spanning multiple operations or queries against varying aggregate structures.<br>  3 <strong>Column family databases</strong> are generally useful for content management systems, blogging platforms, maintaining counters, expiring usage, heavy write volume such as log aggregation. We would <strong>avoid</strong> using column family databases for systems that are in early development, changing query patterns.<br>  4 <strong>Graph databases</strong> are very well suited to problem spaces where we have connected data, such as social networks, spatial data, routing information for goods and money, recommendation engines</p>
+<h2 id="DB-1-MongoDB"><a href="#DB-1-MongoDB" class="headerlink" title="DB-1 MongoDB"></a>DB-1 MongoDB</h2><h3 id="1-Document-oriented"><a href="#1-Document-oriented" class="headerlink" title="1 Document oriented"></a>1 Document oriented</h3><p><strong>The document is the unit of storing data in a MongoDB database</strong><br><strong>Documents map nicely programming language data types</strong>:直接将PHP array, JAVA Bean, Python Dictionary, JavaScript Object数据导入Document中。<br><strong>Embedded documents reduce the need for joins</strong><br><strong>Dynamic schema makes change easier</strong><br><strong>JSON-style, stored as BSON</strong></p>
+<p>RDBMS          MongoDB<br>Table         Collection<br>Column        Key<br>Value         Value<br>Records/Rows  Document/Object</p>
+<h3 id="2-JSON"><a href="#2-JSON" class="headerlink" title="2 JSON"></a>2 JSON</h3><p>JSON-JavaScript Object Notation<br>a syntax for storing and exchanging data<br>an easier-to-use alternative to XML<br>more human friendly<br>less data size<br>easier to read</p>
+<p><strong>BSON</strong><br>Binary JSON used in MongoDB<br>Compared to JSON, BSON is designed to be efficient both in storage space and scan-speed.</p>
+<p>存储时转为BSON,读取数据转化为JSON</p>
+<h3 id="3-High-Performance"><a href="#3-High-Performance" class="headerlink" title="3 High Performance"></a>3 High Performance</h3><p>Written in C++;<br>Use of memory mapped files;<br>Serialization in BSON for fast parsing;<br>Indexes can include keys from embedded documents</p>
+<h3 id="High-Scalable"><a href="#High-Scalable" class="headerlink" title="High Scalable"></a>High Scalable</h3><p>Vertical scaling v.s. Horizontal scaling<br>MongoDB supports horizontal scaling through sharding</p>
+<h3 id="Structures"><a href="#Structures" class="headerlink" title="Structures"></a>Structures</h3><p>A MongoDB instance may have zero or more databases<br>A database may have zero or more collections<br>  can be though of as the relation(table) in SQL database<br>A collection may have zero or more Documents<br>  Docs in the same collection don’t even need to have the same fields<br>  Docs are the records in RDBMS<br>  A document may have one or more fields<br>MongoDB indexes is much like their RDBMS counterparts</p>
+<h3 id="Pros"><a href="#Pros" class="headerlink" title="Pros"></a>Pros</h3><p>Simple queries;<br>Much faster than SQL database<br>Easier and faster integration of data</p>
+<h2 id="Cons"><a href="#Cons" class="headerlink" title="Cons"></a>Cons</h2><p>not well suited for heavy and complex transactions systems</p>
+<h3 id="PyMongo"><a href="#PyMongo" class="headerlink" title="PyMongo"></a>PyMongo</h3><p>Super easy to use;<br>Thread safe;<br>Built-in connection pool when using MongoClient;<br>  No need to explicitly close to a connection</p>
+<p><strong>Steps</strong><br>1 Create a client connecting to MongoDB instance on 27017<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from pymongo import MongoClient</span><br><span class="line"></span><br><span class="line">client = MongoClient(&apos;localhost:27017&apos;)</span><br><span class="line">db = client.real_estate_smart_view</span><br></pre></td></tr></table></figure></p>
+<p>read_estate_smart_view: database name</p>
+<p>2 Insert a new document<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.users.insert(&#123;&quot;Last name&quot;: &quot;Wang&quot;, &quot;First name&quot;: &quot;Wei&quot;&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>3 Query a document<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.users.find(&#123;&quot;Last name&quot;:&quot;Mao&quot;&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>4 Update an existing document<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">db.users.update(</span><br><span class="line">  &#123;&quot;Last name&quot;: &quot;Mao&quot;,</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;$set&quot;:&#123;</span><br><span class="line">      &quot;First name&quot;: &quot;Qian&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  )</span><br></pre></td></tr></table></figure></p>
+<p>$set is a update operator which is to set the field of using the provided value</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/27/big_data_message_queue/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/27/big_data_message_queue/" itemprop="url">
+                  Big data-Message Queue
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-27 15:20:35" itemprop="dateCreated datePublished" datetime="2018-05-27T15:20:35-04:00">2018-05-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-30 13:39:37" itemprop="dateModified" datetime="2018-05-30T13:39:37-04:00">2018-05-30</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Message queue is a queue of messages sent between applications.</p>
+<p>Message queues provide an asynchronous communications protocol, meaning that the sender and receiver of the message do not need to interact with the message queue at the same time.</p>
+<h1 id="What-is-Message-Queues"><a href="#What-is-Message-Queues" class="headerlink" title="What is Message Queues?"></a>What is Message Queues?</h1><p>An application framework for sending and receiving messages;<br>A way to communicate between applications/systems;<br>A way to decouple components;<br>A way to offload work(handle to another worker)</p>
+<h1 id="Common-use-cases"><a href="#Common-use-cases" class="headerlink" title="Common use cases"></a>Common use cases</h1><p>1 Allow web servers to respond to request quickly instead of being forced to perform resource-heavy procedures;<br>2 Able to distribute a message to multiple recipients for consumption or for balancing loads between workers.</p>
+<h1 id="Message-Queue-in-real-life"><a href="#Message-Queue-in-real-life" class="headerlink" title="Message Queue in real life"></a>Message Queue in real life</h1><p>Image resizing<br>Video processing<br>Sending out Emails (Ad Campaigns)<br>Log Analysis</p>
+<h1 id="Message-Queue-Protocol"><a href="#Message-Queue-Protocol" class="headerlink" title="Message Queue Protocol"></a>Message Queue Protocol</h1><p>AMQP: Advanced Message Queue Protocol (RabbitMQ)<br>STOMP: Streaming Text Oriented Messaging Protocol (ActiveMQ)<br>XMPP: Extensible Messaging and Presence Protocol</p>
+<h1 id="AMQP"><a href="#AMQP" class="headerlink" title="AMQP"></a>AMQP</h1><p><strong>Network wire-level Protocol</strong><br>  Defines how clients and brokers talk<br>  Data serialization, heartbeat<br><strong>AMQP Model</strong><br>  Defines routing and storing of messages<br>  Defines rules how these are wired together<br>  Exported API<br>  Exchange</p>
+<h2 id="Queues"><a href="#Queues" class="headerlink" title="Queues"></a>Queues</h2><p>consumer gets a message from a queues;<br>Store message;(short time, has expire time)<br>FIFO;<br>Queues can be dynamic;<br>One message from a queue goes only to one consumer</p>
+<h2 id="Exchanges"><a href="#Exchanges" class="headerlink" title="Exchanges"></a>Exchanges</h2><p>Route messages<br>Publisher sends a message to exchange<br>Can switch between different routing algorithm</p>
+<h3 id="Exchange-type"><a href="#Exchange-type" class="headerlink" title="Exchange type"></a>Exchange type</h3><p>Direct(w/o binding)<br>  point to point communication</p>
+<p>Direct (w/binding)<br>  binding provides a selector for routing messages from exchange to Queues<br>  Each queue has a binding queues<br>  Each messages has a binding key used fo routing</p>
+<p>Fanout<br>  broadcast messages<br>  routing key is ignored<br>  many queues / many consumers<br>  Duplicate and send same message to all queues</p>
+<p>Topic<br>  routing key must be in from of <strong>xxx.xx.xxx</strong><br>  queues can use wild cast to match topics<br>  exchange copies and sends messages to all matching queues</p>
+<h1 id="RabbitMQ"><a href="#RabbitMQ" class="headerlink" title="RabbitMQ"></a>RabbitMQ</h1><p>Implements AMQP<br>Easy to use<br>Runs on all major operating systems<br>Supports a huge number of developer platforms<br>Open source and commercially supported<br>Cloud-based solution: reduce dependency from localhost<br>Lower throughput than Apache Kafka</p>
+<p>import pika in python</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/27/big_data_databases-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/27/big_data_databases-1/" itemprop="url">
+                  Big Data-Databases SQL
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-27 14:20:35" itemprop="dateCreated datePublished" datetime="2018-05-27T14:20:35-04:00">2018-05-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-31 23:21:35" itemprop="dateModified" datetime="2018-05-31T23:21:35-04:00">2018-05-31</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Relational-databases"><a href="#Relational-databases" class="headerlink" title="Relational databases:"></a>Relational databases:</h1><p>Aggregate Data Models: A collection of data that we interact with as a unit. It makes distribution of data easier, since the distribution mechanism has to move the aggregate and not have to worry about related data, as all the related data is contained in the aggregate. </p>
+<p>MySQL, PostgreSQL, SQLite</p>
+<p>List all users following bob:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">    User.username</span><br><span class="line">FROM</span><br><span class="line">User</span><br><span class="line">WHERE User.username IN</span><br><span class="line">    SELECT from_user FROM User LEFT JOIN Following</span><br><span class="line">    ON User.user_id = Following.to_user</span><br><span class="line">    WHERE User.username = ‘bob’</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/27/big_data_GFS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/27/big_data_GFS/" itemprop="url">
+                  Google File System
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-27 13:20:35" itemprop="dateCreated datePublished" datetime="2018-05-27T13:20:35-04:00">2018-05-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-28 14:37:08" itemprop="dateModified" datetime="2018-05-28T14:37:08-04:00">2018-05-28</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>HDFS is similar to GFS<br>To solve how to save data</p>
+<p>Metadata:<br>1 File Info: file name, file size, create time<br>2 Index: block 1,2,3…n</p>
+<p>Index finds the position of data.</p>
+<h2 id="How-to-save-big-file"><a href="#How-to-save-big-file" class="headerlink" title="How to save big file?"></a>How to save big file?</h2><p>save as a chunk instead block<br>1 Chunk = 64 MB; 1 Block = 1024 Bytes<br><strong>Pros</strong><br>less metadata;<br>less network traffic<br><strong>Cons</strong><br>waste space if file is not big enough</p>
+<h2 id="How-to-save-huge-file"><a href="#How-to-save-huge-file" class="headerlink" title="How to save huge file?"></a>How to save huge file?</h2><p>Master server + Many chunk servers<br>Master server: save metadata and Index<br>Chunk server: save metadata and chunks</p>
+<p>Master server manages all chunk servers</p>
+<h2 id="How-to-detect-data-error"><a href="#How-to-detect-data-error" class="headerlink" title="How to detect data error?"></a>How to detect data error?</h2><p>Verify checksum when reading data</p>
+<h2 id="How-to-handle-data-error"><a href="#How-to-handle-data-error" class="headerlink" title="How to handle data error?"></a>How to handle data error?</h2><p>Replicas: 3</p>
+<h2 id="How-to-restore-chunk"><a href="#How-to-restore-chunk" class="headerlink" title="How to restore chunk?"></a>How to restore chunk?</h2><p>ask master for help to restore</p>
+<h2 id="How-to-detect-Chunk-Server-down"><a href="#How-to-detect-Chunk-Server-down" class="headerlink" title="How to detect Chunk Server down?"></a>How to detect Chunk Server down?</h2><p>Heartbeat</p>
+<h2 id="How-to-restore-chunk-after-CS-down"><a href="#How-to-restore-chunk-after-CS-down" class="headerlink" title="How to restore chunk after CS down?"></a>How to restore chunk after CS down?</h2><p>if CS down, delete the index and add into repair procedure to restore data based on replicas.<br>Repair priority is based on the number of replicas.</p>
+<p>If all replicas loss, the data loss forever.</p>
+<h2 id="How-to-avoid-hot-spot-热点数据"><a href="#How-to-avoid-hot-spot-热点数据" class="headerlink" title="How to avoid hot spot? 热点数据"></a>How to avoid hot spot? 热点数据</h2><p>Replicate a chunk into more replicas;<br>Fill the Chunk Server with more space and bandwidth.</p>
+<h2 id="How-to-read-data"><a href="#How-to-read-data" class="headerlink" title="How to read data?"></a>How to read data?</h2><p><img src="http://senarukana.github.io/image/gfs-read.png" alt="read"></p>
+<h2 id="How-to-write-data"><a href="#How-to-write-data" class="headerlink" title="How to write data?"></a>How to write data?</h2><p><img src="http://senarukana.github.io/image/gfs-read.png" alt="write"></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/24/Big-data/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -651,7 +1310,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/23/Study-plan-2018-fall/">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/23/Resources/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xinxin Tang">
@@ -670,8 +1329,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/23/Study-plan-2018-fall/" itemprop="url">
-                  Study plan 2018 summer
+                <a class="post-title-link" href="/2018/05/23/Resources/" itemprop="url">
+                  Resources Library for Programmers
                 </a>
               
             
@@ -697,12 +1356,195 @@
                 
               
 
-              <time title="Created: 2018-05-23 12:06:18 / Modified: 13:20:06" itemprop="dateCreated datePublished" datetime="2018-05-23T12:06:18-04:00">2018-05-23</time>
+              <time title="Created: 2018-05-23 13:20:35" itemprop="dateCreated datePublished" datetime="2018-05-23T13:20:35-04:00">2018-05-23</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-06-01 08:43:10" itemprop="dateModified" datetime="2018-06-01T08:43:10-04:00">2018-06-01</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Data-Structures-amp-Algorithms-Design"><a href="#Data-Structures-amp-Algorithms-Design" class="headerlink" title="Data Structures &amp; Algorithms Design"></a>Data Structures &amp; Algorithms Design</h1><p><a href="http://interactivepython.org/runestone/static/pythonds/index.html" target="_blank" rel="noopener">Data structures in Python</a><br><a href="https://www.geeksforgeeks.org/software-design-patterns/" target="_blank" rel="noopener">Design Pattern</a><br><a href="https://docs.google.com/document/d/1N_GTcMk4D4WxgMsH_HTiCPGCnpUvpJu1dzfhI1syrTM/edit" target="_blank" rel="noopener">Microsoft Onsite Summary</a><br><a href="https://docs.google.com/document/d/1Gik6KN3WqzrHmvyG6ufjixKliOZw2v2wG73dGptxras/edit" target="_blank" rel="noopener">Google Onsite Summary</a><br><a href="https://github.com/tongzhang1994/Facebook-Interview-Coding?files=1" target="_blank" rel="noopener">Facebook interview coding</a></p>
+<h1 id="Languages"><a href="#Languages" class="headerlink" title="Languages"></a>Languages</h1><p><a href="https://xinxintang.github.io/2018/05/20/Java/" target="_blank" rel="noopener">Java summary</a><br><a href="https://mp.weixin.qq.com/s/dHf5QN4DMg8a41uoG1rPFQ" target="_blank" rel="noopener">超全面Java面试</a><br><a href="https://mp.weixin.qq.com/s/9Ts4quZlupFgc4t0QrWQkQ" target="_blank" rel="noopener">java面试通关要点</a><br><a href="https://mp.weixin.qq.com/s/E7WzdEGZdA2aKw-4qVLFmw" target="_blank" rel="noopener">java工程师成神之路</a><br><a href="https://spring.io/projects" target="_blank" rel="noopener">Java Spring框架组件</a></p>
+<p><a href="https://xinxintang.github.io/2018/05/21/Python/" target="_blank" rel="noopener">Python summary</a></p>
+<p><a href="https://xinxintang.github.io/2018/05/21/C/" target="_blank" rel="noopener">C++ summary</a></p>
+<p><a href="https://xinxintang.github.io/2018/05/21/SQL/" target="_blank" rel="noopener">SQL summary</a></p>
+<h1 id="Big-Data"><a href="#Big-Data" class="headerlink" title="Big Data"></a>Big Data</h1><h2 id="大数据技术"><a href="#大数据技术" class="headerlink" title="大数据技术"></a>大数据技术</h2><p><a href="https://www.cnblogs.com/java1024/p/8576302.html" target="_blank" rel="noopener">多线程详解</a><br><a href="https://mp.weixin.qq.com/s/xhVZc3HRohO0qA1IeqPBgg" target="_blank" rel="noopener">32大数据核心算法</a></p>
+<h2 id="Message-Queue"><a href="#Message-Queue" class="headerlink" title="Message Queue"></a>Message Queue</h2><p><a href="https://xinxintang.github.io/2018/05/03/Kafka/" target="_blank" rel="noopener">Kafka summary</a><br><a href="https://mp.weixin.qq.com/s/s1jamZh_rrsrtogcG0kGkQ" target="_blank" rel="noopener">Kafka面试</a></p>
+<p><a href="https://xinxintang.github.io/2018/05/21/RabbitMQ/" target="_blank" rel="noopener">RabbitMQ summary</a><br><a href="https://www.rabbitmq.com/getstarted.html" target="_blank" rel="noopener">RabbitMQ practice</a></p>
+<h2 id="Computing-framework"><a href="#Computing-framework" class="headerlink" title="Computing framework"></a>Computing framework</h2><p><a href="https://xinxintang.github.io/2018/05/21/spark/" target="_blank" rel="noopener">Spark summary</a></p>
+<h2 id="Storage-framework"><a href="#Storage-framework" class="headerlink" title="Storage framework"></a>Storage framework</h2><p><a href="https://www.thoughtworks.com/insights/blog/nosql-databases-overview" target="_blank" rel="noopener">NoSQL overview</a><br><a href="https://www.zybuluo.com/nullcc/note/433043" target="_blank" rel="noopener">NoSQL概述</a></p>
+<p><a href="https://xinxintang.github.io/2018/05/23/HDFS/" target="_blank" rel="noopener">HDFS summary</a><br><a href="">Google File System</a><br><a href="http://senarukana.github.io/2015/03/06/google-file-system/" target="_blank" rel="noopener">Google File System-R</a></p>
+<p><a href="https://xinxintang.github.io/2018/05/22/MongoDB/" target="_blank" rel="noopener">MongoDB summary</a><br><a href="https://docs.mongodb.com/manual/reference/command/" target="_blank" rel="noopener">MongoDB commands</a><br><a href="https://www.w3resource.com/mongodb/databases-documents-collections.php" target="_blank" rel="noopener">MongoDB overview</a></p>
+<p><a href="https://xinxintang.github.io/2018/05/22/Cassandra/" target="_blank" rel="noopener">Cassandra summary</a><br><a href="https://www.slideshare.net/takemaru/kai-an-open-source-implementation-of-amazons-dynamo-472179" target="_blank" rel="noopener">Dynamo</a></p>
+<p><a href="https://xinxintang.github.io/2018/05/22/Redis/" target="_blank" rel="noopener">Redis summary</a><br><a href="https://mp.weixin.qq.com/s/FrWd7i4OVf0lMJNSKwO9_w" target="_blank" rel="noopener">Redis面试</a><br><a href="https://www.slideshare.net/RedisLabs/troubleshooting-redis-daemyung-kang-kakao-62474729" target="_blank" rel="noopener">Redis Official PPT</a></p>
+<p><a href="https://xinxintang.github.io/2018/05/21/MySQL/" target="_blank" rel="noopener">MySQL summary</a><br><a href="https://mp.weixin.qq.com/s/KLqTDrNIoqihxhf7rkIReg" target="_blank" rel="noopener">MySQL开发问题及优化</a><br><a href="https://mp.weixin.qq.com/s/ZPS2mMA0Wv_gCr1QesYYeQ" target="_blank" rel="noopener">MySQL锁，事务及并发</a></p>
+<h2 id="Search-Engine"><a href="#Search-Engine" class="headerlink" title="Search Engine"></a>Search Engine</h2><p><a href="https://xinxintang.github.io/2018/05/22/ELK/" target="_blank" rel="noopener">ELK summary</a></p>
+<h2 id="Cloud-Computing"><a href="#Cloud-Computing" class="headerlink" title="Cloud Computing"></a>Cloud Computing</h2><p><a href="https://xinxintang.github.io/2018/05/22/AWS-EC2/" target="_blank" rel="noopener">AWS EC2 summary</a></p>
+<p><a href="https://xinxintang.github.io/2018/05/22/AWS-S3/" target="_blank" rel="noopener">AWS S3 summary</a></p>
+<p><a href="https://xinxintang.github.io/2018/05/13/docker/" target="_blank" rel="noopener">Docker summary</a><br><a href="https://docs.docker.com/get-started/" target="_blank" rel="noopener">Docker Started</a><br><a href="https://www.rightscale.com/blog/cloud-management-best-practices/docker-vs-vms-combining-both-cloud-portability-nirvana" target="_blank" rel="noopener">Docker vs. VM</a></p>
+<h2 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization"></a>Optimization</h2><p><a href="https://mp.weixin.qq.com/s/ykL2yj00ZaxhloOd2In9eA" target="_blank" rel="noopener">负载均衡</a><br><a href="https://www.nginx.com/" target="_blank" rel="noopener">Nginx</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/23/Study-plan-2018-fall/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/23/Study-plan-2018-fall/" itemprop="url">
+                  Tech Stack
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-23 12:06:18" itemprop="dateCreated datePublished" datetime="2018-05-23T12:06:18-04:00">2018-05-23</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-30 19:09:24" itemprop="dateModified" datetime="2018-05-30T19:09:24-04:00">2018-05-30</time>
               
             
           </span>
@@ -1118,815 +1960,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/22/big_data_Redis/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/22/big_data_Redis/" itemprop="url">
-                  Redis
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-05-22 16:03:38 / Modified: 23:49:06" itemprop="dateCreated datePublished" datetime="2018-05-22T16:03:38-04:00">2018-05-22</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Redis is an open-source, in-memory data structure store, used as a database, cache and message broker. </p>
-<p>It supports data structures such as <strong>strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs and geospatial indexes with radius queries</strong>.</p>
-<p>Redis has built-in replication, Lua Scripting, LRU eviction, transactions and different levels of on-disk persistence, and provides high availability via Resia Sentinel and automatic partitioning with Redis Cluster.</p>
-<p>We can run atomic operations on these types, like appending to a string; incrementing the value in a hash; pushing an element to a list; computing set intersection, union and difference; or getting the member with highest ranking in a sorted set.</p>
-<p>In order to achieve its outstanding performance, Redis works with an in-memory dataset. Depending on your use case, you can persist it either by dumping the dataset to disk every once in a while, or by appending each command to a log.</p>
-<p>Redis also supports trivial-to-setup master-slave asychronous replication, with very fast non-blocking first synchronization, auto-reconnection with partial resynchronization on net split.</p>
-<h1 id="Other-features"><a href="#Other-features" class="headerlink" title="Other features"></a>Other features</h1><ol>
-<li>Transactions</li>
-<li>Pub/Sub</li>
-<li>Lua Scripting</li>
-<li>Keys with a limited time-to-live</li>
-<li>LRU eviction of keys</li>
-<li>Automatic failover</li>
-</ol>
-<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://redis.io/topics/introduction" target="_blank" rel="noopener">Redis</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/22/big_data_MongoDB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/22/big_data_MongoDB/" itemprop="url">
-                  MongoDB
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-05-22 15:38:40" itemprop="dateCreated datePublished" datetime="2018-05-22T15:38:40-04:00">2018-05-22</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-05-23 00:38:41" itemprop="dateModified" datetime="2018-05-23T00:38:41-04:00">2018-05-23</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>A open-source distributed document database that provides high performance, high availability, and automatic scaling.</p>
-<h1 id="Document-Database"><a href="#Document-Database" class="headerlink" title="Document Database"></a>Document Database</h1><p>A record in MongoDB is a document, which is a data structure composed of field and value pairs. MongoDB documents are similar to JSON objects. The values of fields may include other documents, arrays, and arrays of documents.</p>
-<h2 id="Advantages-of-using-docuemnts-are"><a href="#Advantages-of-using-docuemnts-are" class="headerlink" title="Advantages of using docuemnts are:"></a>Advantages of using docuemnts are:</h2><ol>
-<li>Documents correspond to native data types in many programming languages.</li>
-<li>Embedded documents and arrays reduce need for expensive joins.</li>
-<li>Dynamic schema supports fluent polymorphism.</li>
-</ol>
-<h1 id="Key-Festures-of-MongoDB"><a href="#Key-Festures-of-MongoDB" class="headerlink" title="Key Festures of MongoDB"></a>Key Festures of MongoDB</h1><h2 id="High-Performance"><a href="#High-Performance" class="headerlink" title="High Performance"></a>High Performance</h2><ol>
-<li>provides high performance data persistence. In particular,<br>Support for embedded data models reduces I/O activity on database system.<br>Indexes support faster queries and can include keys from embedded documents and arrays.<h2 id="Rich-Query-Language"><a href="#Rich-Query-Language" class="headerlink" title="Rich Query Language"></a>Rich Query Language</h2>Rich query language to support <strong>CRUD</strong> as well as: Data Aggregation; Text Search and Geospatial Queries.<h2 id="High-Availability"><a href="#High-Availability" class="headerlink" title="High Availability"></a>High Availability</h2>It provides:</li>
-<li>automatic failover</li>
-<li>data redundancy</li>
-</ol>
-<h2 id="Horizontal-Scalability"><a href="#Horizontal-Scalability" class="headerlink" title="Horizontal Scalability"></a>Horizontal Scalability</h2><ol>
-<li>sharding distributes data across a cluster of machines</li>
-<li>Starting in 3.4, MongoDB supports creating zones of data based on the shard key. In a balanced cluster, MongoDB directs reads and writes covered by a zone only to those shards inside the zone. See the Zones manual page for more information.</li>
-</ol>
-<h2 id="Support-for-multiple-storage-engines"><a href="#Support-for-multiple-storage-engines" class="headerlink" title="Support for multiple storage engines"></a>Support for multiple storage engines</h2><ol>
-<li>WiredTiger Storage Engine</li>
-<li>In-Momory Storage Engine</li>
-<li>MMAPv1 Storage Engine</li>
-</ol>
-<h2 id="Expressive-query-language-amp-Secondary-indexes"><a href="#Expressive-query-language-amp-Secondary-indexes" class="headerlink" title="Expressive query language &amp; Secondary indexes"></a>Expressive query language &amp; Secondary indexes</h2><h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://docs.mongodb.com/manual/introduction/" target="_blank" rel="noopener">MongoDB</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/22/AWS-EC2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/22/AWS-EC2/" itemprop="url">
-                  AWS-EC2
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-05-22 15:10:02 / Modified: 15:24:53" itemprop="dateCreated datePublished" datetime="2018-05-22T15:10:02-04:00">2018-05-22</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Amazon EC2, is short of Amazon Elastic Compute Cloud, is a web service that provides resizeable computing capacity that we use to build and host software systems. Using Amazon EC2 eliminates your need to invest in hardware up front, so you can develop and deploy applications faster. You can use Amazon EC2 to launch as mnay or as fewer virtual servers as you need to builder a cluter. </p>
-<h1 id="Features-of-EC2"><a href="#Features-of-EC2" class="headerlink" title="Features of EC2"></a>Features of EC2</h1><ol>
-<li>Virtual computing environments, known as <em>instances</em></li>
-<li>Preconfigured templates for your instances, known as <em>Amazon Machine Images</em></li>
-<li>Various congigurations of CPU, memory, storage, and networking capacity of your instances, known as <em>instance types</em></li>
-<li>Secure login information for your instances using <em>key pairs</em></li>
-<li>Storage volumes for temporary data, known as <em>store volumes</em></li>
-<li>Persistent storage volumes for your data using Amazon Elastic Block Store(Amazon EBS), known as <em>Amazon EBS volumes</em></li>
-<li>Virtual networks you can create that are logically isolated from the rest of the AWS cloud, and that you can optionally connect to your own network, known as <em>Virtual Provide Clouds</em>(VPCs)</li>
-</ol>
-<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html" target="_blank" rel="noopener">AWS EC2</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/22/AWS-S3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/22/AWS-S3/" itemprop="url">
-                  AWS-S3
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-05-22 14:31:14 / Modified: 15:09:09" itemprop="dateCreated datePublished" datetime="2018-05-22T14:31:14-04:00">2018-05-22</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Amazon S3 has a simple web services interface that you can use to store and retrieve any amount of data, at any time, from anywhere on the web.</p>
-<p>We can send requests to create buckets, store and retrieve objects, and manage permissions on our recources. The guide also describe access control and the authentication process. Access control defines who can access objects and buckets within S3, and the type of access. </p>
-<h1 id="Advantages-to-Amazon-S3"><a href="#Advantages-to-Amazon-S3" class="headerlink" title="Advantages to Amazon S3"></a>Advantages to Amazon S3</h1><ol>
-<li>Create Buckets: create and name a bucket that stores data. Buckets are the fundational container in S3 for data storage.</li>
-<li>Store data in Buckets: store an infinite amount of data in a bucket. Upload as many objects as you like into an S3 bucket. Each object can contain up to 5 TB of data. Each object is stored and retrieved using a unique developer-assigned key.</li>
-<li>Download data</li>
-<li>Permissions</li>
-<li>Standard interfaces: Use standards-based REST and SOAP interfaces designed to work with any Internet-development toolkit.</li>
-</ol>
-<h1 id="Concepts-of-S3"><a href="#Concepts-of-S3" class="headerlink" title="Concepts of S3"></a>Concepts of S3</h1><h2 id="1-Buckets"><a href="#1-Buckets" class="headerlink" title="1. Buckets"></a>1. Buckets</h2><p>A bucket is a container for objects stored in S3. Every objects is contained in a bucket. For example, if a object named <em>photes/puppy.jpg</em> is stored in the <em>johnsmith</em> bucket, then it is addressable using the URL: <em><a href="http://johnsmith.s3.amazonaws.com/photos/puppy.jpg" target="_blank" rel="noopener">http://johnsmith.s3.amazonaws.com/photos/puppy.jpg</a></em></p>
-<h3 id="Buckets-serve-several-purposes"><a href="#Buckets-serve-several-purposes" class="headerlink" title="Buckets serve several purposes:"></a>Buckets serve several purposes:</h3><ol>
-<li>They organize the S3 namespace at highest level</li>
-<li>They identify the account reponsible for storage and data transfer charges</li>
-<li>They play a role in access control</li>
-<li>They serve as the unit aggregation for usage reporting</li>
-</ol>
-<h2 id="Objects"><a href="#Objects" class="headerlink" title="Objects"></a>Objects</h2><p>Objects are the fundamental entities stored in S3. Objects consist of <strong>object data</strong> and <strong>metadata</strong>. Metadata is a set of name-value pairs that describe the object. These include some default metadata, such as data last modified, and standard HTTP metadata, such as Content-Type. </p>
-<h2 id="Keys"><a href="#Keys" class="headerlink" title="Keys"></a>Keys</h2><p>A Key is the unique identifier for an object within a bucket. Each object in a bucket has exactly one key. Because the combination of a bucket, key, and version ID uniquely identify each object. S3 can be thought of as a basic data map between “bucket + key + version” and the object itself. Every object in Amazon S3 can be uniquely addressed through the combination of the web service endpoint, bucket name, key, and optionally, a version. For example, in the URL <a href="http://doc.s3.amazonaws.com/2006-03-01/AmazonS3.wsdl" target="_blank" rel="noopener">http://doc.s3.amazonaws.com/2006-03-01/AmazonS3.wsdl</a>, “doc” is the name of the bucket and “2006-03-01/AmazonS3.wsdl” is the key.</p>
-<h2 id="Regions"><a href="#Regions" class="headerlink" title="Regions"></a>Regions</h2><p>We can choose the geographical region where S3 will store the buckets we create. </p>
-<h1 id="Data-consistency-model-of-S3"><a href="#Data-consistency-model-of-S3" class="headerlink" title="Data consistency model of S3"></a>Data consistency model of S3</h1><p>S3 provides eventual consistency for read-after-write.</p>
-<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/Introduction.html" target="_blank" rel="noopener">AWS S3</a> </p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/22/big_data_ELK/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/22/big_data_ELK/" itemprop="url">
-                  ELK
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-05-22 00:04:14 / Modified: 00:44:32" itemprop="dateCreated datePublished" datetime="2018-05-22T00:04:14-04:00">2018-05-22</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>ELK is short of Elasticsearch, Logstash and Kibana.</p>
-<h1 id="Elasticsearch"><a href="#Elasticsearch" class="headerlink" title="Elasticsearch"></a>Elasticsearch</h1><p>a real-time distributed searching and analyzing engine, which can be used to full-text search, structured search and analysis. Full-text search is based on Apache Lucene which is written by Java.</p>
-<h2 id="Features-of-Elasticsearch"><a href="#Features-of-Elasticsearch" class="headerlink" title="Features of Elasticsearch"></a>Features of Elasticsearch</h2><ol>
-<li>Real-time analysis</li>
-<li>Distributed file storing in real-time, taking each field as index</li>
-<li>Document-oriented, all objects are documents</li>
-<li>High availability, easy to scale, support cluster, sharding and replicas</li>
-<li>Friendly APIs, Supports JSON</li>
-<li>Zero-setting, automatically sharding</li>
-<li>RESTful style</li>
-<li>Based on Lucene and provides storage function<br><img src="https://www.ibm.com/developerworks/cn/opensource/os-cn-elk/img002.png" alt=""><br>Clusters<br><img src="https://www.ibm.com/developerworks/cn/opensource/os-cn-elk/img003.png" alt=""><br>Sharding and replicas</li>
-</ol>
-<h1 id="Logstash"><a href="#Logstash" class="headerlink" title="Logstash"></a>Logstash</h1><p>a data collecting, filter and modifying engine in real-time, which is written by JRuby. </p>
-<h2 id="Features-of-Logstash"><a href="#Features-of-Logstash" class="headerlink" title="Features of Logstash"></a>Features of Logstash</h2><ol>
-<li>Almost visit any data</li>
-<li>Binding with various external applications</li>
-<li>Supports resilient scale</li>
-</ol>
-<h2 id="Main-components"><a href="#Main-components" class="headerlink" title="Main components"></a>Main components</h2><ol>
-<li>Shipper: send log data</li>
-<li>Broker: collect data, built-in Redis</li>
-<li>Indexer: data writes<br><img src="https://www.ibm.com/developerworks/cn/opensource/os-cn-elk/img004.png" alt=""></li>
-</ol>
-<h1 id="Kibana"><a href="#Kibana" class="headerlink" title="Kibana"></a>Kibana</h1><p>a open-source Apache protocol, which is written by JavaScript, to provide visualization function for Elasticsearch and Web platform.</p>
-<p>Present data of other two components by HTTP protocols to users.</p>
-<h1 id="When-to-use"><a href="#When-to-use" class="headerlink" title="When to use?"></a>When to use?</h1><p>use <strong>grep, awk</strong> as commands to analyze log directly, but it doesn’t convinent in large scale implement. Because we need to write a script for each machine and combine all results.(Low efficiency) Thus, we use ELK search info in one machine, and access by web application. </p>
-<h1 id="Advantages-of-ELK"><a href="#Advantages-of-ELK" class="headerlink" title="Advantages of ELK"></a>Advantages of ELK</h1><ol>
-<li>Developers can view log from web in detail</li>
-<li>help to collect log from each system, which distributes in a wide range</li>
-</ol>
-<h1 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h1><h2 id="L-E-K"><a href="#L-E-K" class="headerlink" title="L-E-K"></a>L-E-K</h2><p><img src="https://upload-images.jianshu.io/upload_images/7062626-1589c63966efc17c?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""></p>
-<h2 id="Add-Redis-between-L-E-which-reduce-pressure-of-server"><a href="#Add-Redis-between-L-E-which-reduce-pressure-of-server" class="headerlink" title="Add Redis between L-E, which reduce pressure of server."></a>Add Redis between L-E, which reduce pressure of server.</h2><p><img src="https://upload-images.jianshu.io/upload_images/7062626-88049eec60a24d99?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""></p>
-<h2 id="Replace-Redis-with-Kafka-as-transactions-is-continuously-increasing"><a href="#Replace-Redis-with-Kafka-as-transactions-is-continuously-increasing" class="headerlink" title="Replace Redis with Kafka as transactions is continuously increasing."></a>Replace Redis with Kafka as transactions is continuously increasing.</h2><h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-elk/index.html" target="_blank" rel="noopener">ELK</a><br><a href="https://www.jianshu.com/p/09beacb7dbf6" target="_blank" rel="noopener">ELK Log</a><br><a href="http://www.178linux.com/71014" target="_blank" rel="noopener">ELK</a><br><a href="http://blog.oldboyedu.com/elk/" target="_blank" rel="noopener">Best Log analysis tool</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1974,7 +2007,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">52</span>
+                    <span class="site-state-item-count">57</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2071,7 +2104,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">41</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>

@@ -102,25 +102,25 @@
 
 
 
-  <meta name="description" content="NoSQL databasesCategoriesK/V Store: Dynamo, RedisDocument-based Store: Mongodb (Save as document type)Column-based Store: Big Table, HBase, Cassandra (有助于查询与分布式存储) CAP theoremConsistencyAvailabilityPa">
+  <meta name="description" content="NoSQL databasesTwo styles of distributing data:1 Sharding: it distributes different data across multiple servers, so each server acts as the single source for a subset of data.2 Replication: it copies">
 <meta name="keywords" content="Big Data,Database">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Big Data-Databases No-SQL">
-<meta property="og:url" content="https://XinxinTang/xinxintang.github.io/2018/05/27/big_data_database-2/index.html">
+<meta property="og:url" content="https://XinxinTang/xinxintang.github.io/2018/05/27/big_data_databases-2/index.html">
 <meta property="og:site_name" content="Xinxin Tang">
-<meta property="og:description" content="NoSQL databasesCategoriesK/V Store: Dynamo, RedisDocument-based Store: Mongodb (Save as document type)Column-based Store: Big Table, HBase, Cassandra (有助于查询与分布式存储) CAP theoremConsistencyAvailabilityPa">
+<meta property="og:description" content="NoSQL databasesTwo styles of distributing data:1 Sharding: it distributes different data across multiple servers, so each server acts as the single source for a subset of data.2 Replication: it copies">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-28T19:23:21.899Z">
+<meta property="og:updated_time" content="2018-06-01T13:32:11.338Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Big Data-Databases No-SQL">
-<meta name="twitter:description" content="NoSQL databasesCategoriesK/V Store: Dynamo, RedisDocument-based Store: Mongodb (Save as document type)Column-based Store: Big Table, HBase, Cassandra (有助于查询与分布式存储) CAP theoremConsistencyAvailabilityPa">
+<meta name="twitter:description" content="NoSQL databasesTwo styles of distributing data:1 Sharding: it distributes different data across multiple servers, so each server acts as the single source for a subset of data.2 Replication: it copies">
 
 
 
 
 
 
-  <link rel="canonical" href="https://XinxinTang/xinxintang.github.io/2018/05/27/big_data_database-2/"/>
+  <link rel="canonical" href="https://XinxinTang/xinxintang.github.io/2018/05/27/big_data_databases-2/"/>
 
 
 
@@ -278,7 +278,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/27/big_data_database-2/">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/27/big_data_databases-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xinxin Tang">
@@ -337,7 +337,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-05-28 15:23:21" itemprop="dateModified" datetime="2018-05-28T15:23:21-04:00">2018-05-28</time>
+                <time title="Modified: 2018-06-01 09:32:11" itemprop="dateModified" datetime="2018-06-01T09:32:11-04:00">2018-06-01</time>
               
             
           </span>
@@ -370,10 +370,13 @@
       
 
       
-        <h1 id="NoSQL-databases"><a href="#NoSQL-databases" class="headerlink" title="NoSQL databases"></a>NoSQL databases</h1><h2 id="Categories"><a href="#Categories" class="headerlink" title="Categories"></a>Categories</h2><p>K/V Store: Dynamo, Redis<br>Document-based Store: Mongodb (Save as document type)<br>Column-based Store: Big Table, HBase, Cassandra (有助于查询与分布式存储)</p>
-<h2 id="CAP-theorem"><a href="#CAP-theorem" class="headerlink" title="CAP theorem"></a>CAP theorem</h2><p>Consistency<br>Availability<br>Partition</p>
+        <h1 id="NoSQL-databases"><a href="#NoSQL-databases" class="headerlink" title="NoSQL databases"></a>NoSQL databases</h1><h2 id="Two-styles-of-distributing-data"><a href="#Two-styles-of-distributing-data" class="headerlink" title="Two styles of distributing data:"></a>Two styles of distributing data:</h2><p>1 Sharding: it distributes different data across multiple servers, so each server acts as the <strong>single source</strong> for a subset of data.<br>2 Replication: it copies data across multiple servers, so each bit of data can be found in multiple places.<br>  Two forms:<br>    <strong>Master-Slave replication</strong>: it makes one node the authoritative copy that handles writes while slaves synchronize with the master and may handle reads.<br>    <strong>Peer-to-Peer replication</strong>: it allows writes to any node; the nodes coordinate to synchronize their copies of the data.<br><strong>Master-slave replication</strong> reduces the chance of update conflicts but <strong>peer-to-peer replication</strong> avoids loading all writes onto a single server creating a single point of failure.</p>
+<h2 id="CAP-theorem"><a href="#CAP-theorem" class="headerlink" title="CAP theorem"></a>CAP theorem</h2><p>Consistency<br>Availability<br>Partition-toleration</p>
 <p>Distributed database is doing a trade-off between Consistency and Availability.<br>Most distributed database is “eventually consistency” in order to get high availability.</p>
-<h2 id="DB-1-MongoDB"><a href="#DB-1-MongoDB" class="headerlink" title="DB-1 MongoDB"></a>DB-1 MongoDB</h2><h3 id="1-Document-oriented"><a href="#1-Document-oriented" class="headerlink" title="1 Document oriented"></a>1 Document oriented</h3><p><strong>Documents map nicely programming language data types</strong>:直接将PHP array, JAVA Bean, Python Dictionary, JavaScript Object数据导入Document中。<br><strong>Embedded documents reduce the need for joins</strong><br><strong>Dynamic schema makes change easier</strong><br><strong>JSON-style, stored as BSON</strong></p>
+<h2 id="Why-choose-NoSQL-Databases"><a href="#Why-choose-NoSQL-Databases" class="headerlink" title="Why choose NoSQL Databases"></a>Why choose NoSQL Databases</h2><p>Broad reasons:<br>  1 To improve programmer productivity by using a database that better matches an application’s needs<br>  2 To improve data access performance via some combination of handling larger data volumes, reducing latency, and improving throughput</p>
+<p>General guidelines:<br>  1 <strong>K/V databases</strong> are generally useful for storing session information, user profiles, preferences, shopping cart data. We would <strong>avoid</strong> using Key-value databases when we need to query by data, have relationships between the data being stored or we need to operate on multiple keys at the same time.<br>  2 <strong>Document databases</strong> are generally useful for content management systems, blogging platforms, web analytics, real-time analytics, E-commerce applications. We would <strong>avoid</strong> using document databases for systems that need complex transactions spanning multiple operations or queries against varying aggregate structures.<br>  3 <strong>Column family databases</strong> are generally useful for content management systems, blogging platforms, maintaining counters, expiring usage, heavy write volume such as log aggregation. We would <strong>avoid</strong> using column family databases for systems that are in early development, changing query patterns.<br>  4 <strong>Graph databases</strong> are very well suited to problem spaces where we have connected data, such as social networks, spatial data, routing information for goods and money, recommendation engines</p>
+<h2 id="DB-1-MongoDB"><a href="#DB-1-MongoDB" class="headerlink" title="DB-1 MongoDB"></a>DB-1 MongoDB</h2><h3 id="1-Document-oriented"><a href="#1-Document-oriented" class="headerlink" title="1 Document oriented"></a>1 Document oriented</h3><p><strong>The document is the unit of storing data in a MongoDB database</strong><br><strong>Documents map nicely programming language data types</strong>:直接将PHP array, JAVA Bean, Python Dictionary, JavaScript Object数据导入Document中。<br><strong>Embedded documents reduce the need for joins</strong><br><strong>Dynamic schema makes change easier</strong><br><strong>JSON-style, stored as BSON</strong></p>
+<p>RDBMS          MongoDB<br>Table         Collection<br>Column        Key<br>Value         Value<br>Records/Rows  Document/Object</p>
 <h3 id="2-JSON"><a href="#2-JSON" class="headerlink" title="2 JSON"></a>2 JSON</h3><p>JSON-JavaScript Object Notation<br>a syntax for storing and exchanging data<br>an easier-to-use alternative to XML<br>more human friendly<br>less data size<br>easier to read</p>
 <p><strong>BSON</strong><br>Binary JSON used in MongoDB<br>Compared to JSON, BSON is designed to be efficient both in storage space and scan-speed.</p>
 <p>存储时转为BSON,读取数据转化为JSON</p>
@@ -424,8 +427,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/27/big_data_message_queue/" rel="next" title="big data-Message Queue">
-                <i class="fa fa-chevron-left"></i> big data-Message Queue
+              <a href="/2018/05/27/big_data_message_queue/" rel="next" title="Big data-Message Queue">
+                <i class="fa fa-chevron-left"></i> Big data-Message Queue
               </a>
             
           </div>
@@ -510,7 +513,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">52</span>
+                    <span class="site-state-item-count">57</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -607,7 +610,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">41</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
@@ -643,7 +650,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#NoSQL-databases"><span class="nav-number">1.</span> <span class="nav-text">NoSQL databases</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Categories"><span class="nav-number">1.1.</span> <span class="nav-text">Categories</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CAP-theorem"><span class="nav-number">1.2.</span> <span class="nav-text">CAP theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DB-1-MongoDB"><span class="nav-number">1.3.</span> <span class="nav-text">DB-1 MongoDB</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Document-oriented"><span class="nav-number">1.3.1.</span> <span class="nav-text">1 Document oriented</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-JSON"><span class="nav-number">1.3.2.</span> <span class="nav-text">2 JSON</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-High-Performance"><span class="nav-number">1.3.3.</span> <span class="nav-text">3 High Performance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#High-Scalable"><span class="nav-number">1.3.4.</span> <span class="nav-text">High Scalable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Structures"><span class="nav-number">1.3.5.</span> <span class="nav-text">Structures</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pros"><span class="nav-number">1.3.6.</span> <span class="nav-text">Pros</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cons"><span class="nav-number">1.4.</span> <span class="nav-text">Cons</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PyMongo"><span class="nav-number">1.4.1.</span> <span class="nav-text">PyMongo</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#NoSQL-databases"><span class="nav-number">1.</span> <span class="nav-text">NoSQL databases</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Two-styles-of-distributing-data"><span class="nav-number">1.1.</span> <span class="nav-text">Two styles of distributing data:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CAP-theorem"><span class="nav-number">1.2.</span> <span class="nav-text">CAP theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Why-choose-NoSQL-Databases"><span class="nav-number">1.3.</span> <span class="nav-text">Why choose NoSQL Databases</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DB-1-MongoDB"><span class="nav-number">1.4.</span> <span class="nav-text">DB-1 MongoDB</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Document-oriented"><span class="nav-number">1.4.1.</span> <span class="nav-text">1 Document oriented</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-JSON"><span class="nav-number">1.4.2.</span> <span class="nav-text">2 JSON</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-High-Performance"><span class="nav-number">1.4.3.</span> <span class="nav-text">3 High Performance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#High-Scalable"><span class="nav-number">1.4.4.</span> <span class="nav-text">High Scalable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Structures"><span class="nav-number">1.4.5.</span> <span class="nav-text">Structures</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pros"><span class="nav-number">1.4.6.</span> <span class="nav-text">Pros</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cons"><span class="nav-number">1.5.</span> <span class="nav-text">Cons</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PyMongo"><span class="nav-number">1.5.1.</span> <span class="nav-text">PyMongo</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

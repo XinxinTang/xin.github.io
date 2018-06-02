@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.2.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="计算导论与C语言1 导论数学危机与图灵机原理进制十进制：逢十进一二进制：逢二进一十六进制：逢十六进一 进制转换 二进制布尔运算（复习）operators：与：同真异假或：一真为真，全假为假非 逻辑电路：异或门，与门，或门。 计算机历史-从电子管到云计算摩尔定律挑战：电力消耗，更多热能；云计算：绿色，能耗相对较少 计算机未来量子计算机 程序运行基本原理程序运行：二进制+布尔运算+逻辑电路实现运算 通">
+<meta name="keywords" content="Algorithms,C Language">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Coursera 程序设计与算法专题-1 计算导论与C语言基础">
+<meta property="og:url" content="https://XinxinTang/xinxintang.github.io/2018/06/01/Coursera-程序设计与算法专题-1_计算导论与C语言基础/index.html">
+<meta property="og:site_name" content="Xinxin Tang">
+<meta property="og:description" content="计算导论与C语言1 导论数学危机与图灵机原理进制十进制：逢十进一二进制：逢二进一十六进制：逢十六进一 进制转换 二进制布尔运算（复习）operators：与：同真异假或：一真为真，全假为假非 逻辑电路：异或门，与门，或门。 计算机历史-从电子管到云计算摩尔定律挑战：电力消耗，更多热能；云计算：绿色，能耗相对较少 计算机未来量子计算机 程序运行基本原理程序运行：二进制+布尔运算+逻辑电路实现运算 通">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-01T18:19:31.834Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Coursera 程序设计与算法专题-1 计算导论与C语言基础">
+<meta name="twitter:description" content="计算导论与C语言1 导论数学危机与图灵机原理进制十进制：逢十进一二进制：逢二进一十六进制：逢十六进一 进制转换 二进制布尔运算（复习）operators：与：同真异假或：一真为真，全假为假非 逻辑电路：异或门，与门，或门。 计算机历史-从电子管到云计算摩尔定律挑战：电力消耗，更多热能；云计算：绿色，能耗相对较少 计算机未来量子计算机 程序运行基本原理程序运行：二进制+布尔运算+逻辑电路实现运算 通">
+
+
+
+
+
+
+  <link rel="canonical" href="https://XinxinTang/xinxintang.github.io/2018/06/01/Coursera-程序设计与算法专题-1_计算导论与C语言基础/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Coursera 程序设计与算法专题-1 计算导论与C语言基础 | Xinxin Tang</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Xinxin Tang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">A technical blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/06/01/Coursera-程序设计与算法专题-1_计算导论与C语言基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Coursera 程序设计与算法专题-1 计算导论与C语言基础
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-06-01 09:20:35 / Modified: 14:19:31" itemprop="dateCreated datePublished" datetime="2018-06-01T09:20:35-04:00">2018-06-01</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="计算导论与C语言"><a href="#计算导论与C语言" class="headerlink" title="计算导论与C语言"></a>计算导论与C语言</h1><h2 id="1-导论"><a href="#1-导论" class="headerlink" title="1 导论"></a>1 导论</h2><h3 id="数学危机与图灵机原理"><a href="#数学危机与图灵机原理" class="headerlink" title="数学危机与图灵机原理"></a>数学危机与图灵机原理</h3><h3 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h3><p>十进制：逢十进一<br>二进制：逢二进一<br>十六进制：逢十六进一</p>
+<p>进制转换</p>
+<h3 id="二进制布尔运算（复习）"><a href="#二进制布尔运算（复习）" class="headerlink" title="二进制布尔运算（复习）"></a>二进制布尔运算（<strong>复习</strong>）</h3><p>operators：<br>与：同真异假<br>或：一真为真，全假为假<br>非</p>
+<p>逻辑电路：<br>异或门，与门，或门。</p>
+<h3 id="计算机历史-从电子管到云计算"><a href="#计算机历史-从电子管到云计算" class="headerlink" title="计算机历史-从电子管到云计算"></a>计算机历史-从电子管到云计算</h3><p>摩尔定律挑战：电力消耗，更多热能；<br>云计算：绿色，能耗相对较少</p>
+<h3 id="计算机未来"><a href="#计算机未来" class="headerlink" title="计算机未来"></a>计算机未来</h3><p>量子计算机</p>
+<h3 id="程序运行基本原理"><a href="#程序运行基本原理" class="headerlink" title="程序运行基本原理"></a>程序运行基本原理</h3><p>程序运行：二进制+布尔运算+逻辑电路实现运算</p>
+<p>通过某种命令控制计算机（让逻辑电路临时组合实现计算任务），让计算机按照命令来运行。</p>
+<h3 id="冯诺伊曼式计算机结构"><a href="#冯诺伊曼式计算机结构" class="headerlink" title="冯诺伊曼式计算机结构"></a>冯诺伊曼式计算机结构</h3><h3 id="存储器"><a href="#存储器" class="headerlink" title="存储器"></a>存储器</h3><p>1 Byte = 8 bit<br>1 KB = 1024 B<br>1 MB = 1024 KB<br>1 GB = 1024 MB<br>1 TB = 1024 GB<br>1 PB = 1024 TB<br>1 YB = 1024 PB</p>
+<h4 id="存储器分类："><a href="#存储器分类：" class="headerlink" title="存储器分类："></a>存储器分类：</h4><p>1 寄存器与运算器直接连接（极快）<br>2 cache高速缓存<br>3 memory内存</p>
+<h4 id="存储器原理"><a href="#存储器原理" class="headerlink" title="存储器原理"></a>存储器原理</h4><p>RAM: DRAM(动态内存，周期性刷新以保持存储内容), SRAM(不需要周期性刷新)<br>ROM: ROM; PROM; EPROM; EEPROM; Flash EPROM(快速可擦除编程只读存储器)</p>
+<h4 id="CPU指令集"><a href="#CPU指令集" class="headerlink" title="CPU指令集"></a>CPU指令集</h4><h4 id="程序执行"><a href="#程序执行" class="headerlink" title="程序执行"></a>程序执行</h4><h2 id="2-程序设计语言-C"><a href="#2-程序设计语言-C" class="headerlink" title="2 程序设计语言-C++"></a>2 程序设计语言-C++</h2><p><strong>关键字（30来个</strong><br><strong>数据类型（10来种）</strong><br><strong>操作符号（30来个）</strong><br><strong>操作句式statements：顺序，分支，循环</strong></p>
+<h3 id="所有程序语言的基本组成"><a href="#所有程序语言的基本组成" class="headerlink" title="所有程序语言的基本组成"></a>所有程序语言的基本组成</h3><p><strong>数据+运算+控制+传输</strong></p>
+<h4 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h4><p>1 Byte是一个存储单元，8 bit二进制表示；<br>每个Byte有一个地址；</p>
+<p><strong>变量</strong>：可变化的量：x, y…<br><strong>变量格式</strong>：int， double，float…<br>不同变量分配的内存单元大小不一样；</p>
+<p><strong>1</strong> 整型<br>int(最常用): 32 bit = 4 Byte<br>short int: 16 bit = 2 Byte<br>long int: 32 bit = 4 Byte<br><strong>区别</strong>：取值范围不同<br><strong>sizeof</strong>：计算某类型对象占用内存的字节数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sizeof(short int)</span><br></pre></td></tr></table></figure></p>
+<p>默认sign类型；<br>unsigned int:都为正数；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Max &amp; Min</span><br></pre></td></tr></table></figure>
+<p><strong>2</strong> 浮点型<br>float: 32 bit<br>double: 64 bit<br>long double: 64 bit<br><strong>区别</strong>： 精度不同<br>float：前7位有效<br>double： 前15位有效<br>long double： 前15位有效</p>
+<p><strong>3</strong> 字符型<br>char：1 Byte<br>最多256个字符</p>
+<p><strong>4</strong> 布尔型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bool</span><br></pre></td></tr></table></figure></p>
+<h4 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h4><p>运算符：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">求字节数 sizeof</span><br><span class="line">下标运算符 []</span><br><span class="line">赋值运算符 =</span><br><span class="line">算术运算符 +-*/%</span><br><span class="line">关系运算符 &lt; &gt; == &gt;= &lt;=</span><br><span class="line">逻辑运算符 ! &amp;&amp; ||</span><br><span class="line">条件运算符 ? :</span><br><span class="line">逗号运算符 ,</span><br><span class="line">位运算符 &gt;&gt; &lt;&lt; ~取反 |或 ^异或 &amp;与</span><br><span class="line">指针运算符 * &amp;</span><br><span class="line">强制类型转换运算符 ()</span><br><span class="line">分量运算符 . --&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="控制"><a href="#控制" class="headerlink" title="控制"></a>控制</h4><p>程序有单入口、单出口特性。<br>顺序语句；<br>分支语句：if，switch…case…default<br>循环语句：for，while, do…while, goto…if</p>
+<h3 id="传输-输入缓冲区"><a href="#传输-输入缓冲区" class="headerlink" title="传输-输入缓冲区"></a>传输-输入缓冲区</h3><p>输入存入输入缓冲区，然后被程序读取。</p>
+<p>一个字符串输入：<br>1 cin输入：不读取空格与回车<br>2 cin.get()函数：读取空格与回车<br>3 cin.get(char）<br>4 getchar()：不跳过任何字符</p>
+<p>一串字符的输出：<br>cout</p>
+<p>一串字符的输入：<br>1 cin<br>2 cin.get(ch,10, ‘\n’)<br>3 cin.getline()</p>
+<h2 id="3-总结"><a href="#3-总结" class="headerlink" title="3 总结"></a>3 总结</h2><p>计算机基本原理；<br>计算机发展趋势；<br>程序运行基本原理；<br>C程序设计基本认知；</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Algorithms/" rel="tag"># Algorithms</a>
+          
+            <a href="/tags/C-Language/" rel="tag"># C Language</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/30/big_data_time_serialization/" rel="next" title="Big Data Project-News Recommendation System">
+                <i class="fa fa-chevron-left"></i> Big Data Project-News Recommendation System
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/01/Coursera 程序设计与算法专题-2_C程序进阶/" rel="prev" title="Coursera 程序设计与算法专题-2 C程序进阶">
+                Coursera 程序设计与算法专题-2 C程序进阶 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Xinxin Tang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">57</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">43</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#计算导论与C语言"><span class="nav-number">1.</span> <span class="nav-text">计算导论与C语言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-导论"><span class="nav-number">1.1.</span> <span class="nav-text">1 导论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数学危机与图灵机原理"><span class="nav-number">1.1.1.</span> <span class="nav-text">数学危机与图灵机原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进制"><span class="nav-number">1.1.2.</span> <span class="nav-text">进制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二进制布尔运算（复习）"><span class="nav-number">1.1.3.</span> <span class="nav-text">二进制布尔运算（复习）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机历史-从电子管到云计算"><span class="nav-number">1.1.4.</span> <span class="nav-text">计算机历史-从电子管到云计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机未来"><span class="nav-number">1.1.5.</span> <span class="nav-text">计算机未来</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#程序运行基本原理"><span class="nav-number">1.1.6.</span> <span class="nav-text">程序运行基本原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#冯诺伊曼式计算机结构"><span class="nav-number">1.1.7.</span> <span class="nav-text">冯诺伊曼式计算机结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存储器"><span class="nav-number">1.1.8.</span> <span class="nav-text">存储器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#存储器分类："><span class="nav-number">1.1.8.1.</span> <span class="nav-text">存储器分类：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#存储器原理"><span class="nav-number">1.1.8.2.</span> <span class="nav-text">存储器原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CPU指令集"><span class="nav-number">1.1.8.3.</span> <span class="nav-text">CPU指令集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#程序执行"><span class="nav-number">1.1.8.4.</span> <span class="nav-text">程序执行</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-程序设计语言-C"><span class="nav-number">1.2.</span> <span class="nav-text">2 程序设计语言-C++</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#所有程序语言的基本组成"><span class="nav-number">1.2.1.</span> <span class="nav-text">所有程序语言的基本组成</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运算"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#控制"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">控制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传输-输入缓冲区"><span class="nav-number">1.2.2.</span> <span class="nav-text">传输-输入缓冲区</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-总结"><span class="nav-number">1.3.</span> <span class="nav-text">3 总结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xinxin Tang</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.2.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
