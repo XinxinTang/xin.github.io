@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.2.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="1 Java Primer1.1 Base types12345678boolean   char     16-bitbyte     8-bitshort    16-bitint      32-bitlong     64-bitfloat    32-bitdouble   64-bit 1.2 Classes and ObjectsCritical members of a class">
+<meta name="keywords" content="Data Structures">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Data_Structures_in_Java 1-2">
+<meta property="og:url" content="https://XinxinTang/xinxintang.github.io/2018/06/04/Data_Structures_in_Java_1-2/index.html">
+<meta property="og:site_name" content="Xinxin Tang">
+<meta property="og:description" content="1 Java Primer1.1 Base types12345678boolean   char     16-bitbyte     8-bitshort    16-bitint      32-bitlong     64-bitfloat    32-bitdouble   64-bit 1.2 Classes and ObjectsCritical members of a class">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://i.imgur.com/IfZWKFH.png">
+<meta property="og:image" content="https://i.imgur.com/JSRgJDc.png">
+<meta property="og:updated_time" content="2018-06-08T21:53:37.771Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Data_Structures_in_Java 1-2">
+<meta name="twitter:description" content="1 Java Primer1.1 Base types12345678boolean   char     16-bitbyte     8-bitshort    16-bitint      32-bitlong     64-bitfloat    32-bitdouble   64-bit 1.2 Classes and ObjectsCritical members of a class">
+<meta name="twitter:image" content="https://i.imgur.com/IfZWKFH.png">
+
+
+
+
+
+
+  <link rel="canonical" href="https://XinxinTang/xinxintang.github.io/2018/06/04/Data_Structures_in_Java_1-2/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Data_Structures_in_Java 1-2 | Xinxin Tang</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Xinxin Tang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">A technical blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/06/04/Data_Structures_in_Java_1-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Data_Structures_in_Java 1-2
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-06-04 23:20:35" itemprop="dateCreated datePublished" datetime="2018-06-04T23:20:35-04:00">2018-06-04</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-06-08 17:53:37" itemprop="dateModified" datetime="2018-06-08T17:53:37-04:00">2018-06-08</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-Java-Primer"><a href="#1-Java-Primer" class="headerlink" title="1 Java Primer"></a>1 Java Primer</h1><h2 id="1-1-Base-types"><a href="#1-1-Base-types" class="headerlink" title="1.1 Base types"></a>1.1 Base types</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">boolean   </span><br><span class="line">char     16-bit</span><br><span class="line">byte     8-bit</span><br><span class="line">short    16-bit</span><br><span class="line">int      32-bit</span><br><span class="line">long     64-bit</span><br><span class="line">float    32-bit</span><br><span class="line">double   64-bit</span><br></pre></td></tr></table></figure>
+<h2 id="1-2-Classes-and-Objects"><a href="#1-2-Classes-and-Objects" class="headerlink" title="1.2 Classes and Objects"></a>1.2 Classes and Objects</h2><p>Critical members of a class:<br>  Instance variables: must have a type: either a base type or any class type(reference type)<br>  Methods: accept parameters as arguments<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class Counter &#123;</span><br><span class="line">  private int count;  // a simple integer instance variable</span><br><span class="line">  public Counter() &#123; &#125;  // default constructor (count is 0)</span><br><span class="line">  public Counter(int initial) &#123; count = initial; &#125;  // an alternate constructor</span><br><span class="line">  public int getCount() &#123; return count; &#125;  // an accessor method</span><br><span class="line">  public void increment() &#123; count++; &#125;  // an update method</span><br><span class="line">  public void increment(int delta) &#123; count += delta; &#125;   // an update method</span><br><span class="line">  public void reset() &#123; count = 0; &#125;   // an update method</span><br></pre></td></tr></table></figure></p>
+<h3 id="1-2-1-Dot-Operator"><a href="#1-2-1-Dot-Operator" class="headerlink" title="1.2.1 Dot Operator"></a>1.2.1 Dot Operator</h3><h3 id="1-2-2-Defining-a-class"><a href="#1-2-2-Defining-a-class" class="headerlink" title="1.2.2 Defining a class"></a>1.2.2 Defining a class</h3><p>1 <strong>Modifiers</strong><br>Access control modifiers: public, protected, private</p>
+<p>The <strong>static</strong> modifier: for any variable or method of a class.<br>  The value of a static variable is associated with the class as a whole. It is used to store “global” information in a class.<br>  When a method of a class is declared as static, it too is associated with the class as a whole, rather than with each individual instance of that class.</p>
+<p>The <strong>abstract</strong> modifier: an advanced feature of OOP to be combined with inheritance.</p>
+<p>The <strong>final</strong> modifier:<br>  a variable that is declared with the <strong>final</strong> modifier can be initialized as part of that declaration, but can never again be assigned a new value.<br>  a <strong>final</strong> method cannot be overridden by a subclass, and cannot even be subclassed.</p>
+<p>2 <strong>Declaring Instance Variables</strong></p>
+<p>3 <strong>Declaring Methods</strong></p>
+<p>4 <strong>Declaring Constructors</strong><br>  Constructors cannot be <strong>static, abstract,</strong> or <strong>final</strong>.<br>  The name of the constructor must be identical to the name of the class it constructs.<br>  We don’t specify a return type of a constructor.</p>
+<p>5 Keyword <strong>This</strong></p>
+<p>6 <strong>main</strong> Method</p>
+<p>Unit Testing: use framework such as JUnit</p>
+<h2 id="1-3-Strings-Wrappers-Arrays-Enum-types"><a href="#1-3-Strings-Wrappers-Arrays-Enum-types" class="headerlink" title="1.3 Strings, Wrappers, Arrays, Enum types"></a>1.3 Strings, Wrappers, Arrays, Enum types</h2><h3 id="1-3-1-String-class"><a href="#1-3-1-String-class" class="headerlink" title="1.3.1 String class"></a>1.3.1 String class</h3><p>Instances are immutable<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String title = &quot;Data Structures in Java&quot;; // declared a string</span><br><span class="line">char c = title.charAt(0) // c = &apos;D&apos;;</span><br><span class="line">String term = &quot;over&quot; + &quot;load&quot;;  // Concatenation : term = &quot;overload&quot;</span><br></pre></td></tr></table></figure></p>
+<h3 id="1-3-2-StringBuilder-Class"><a href="#1-3-2-StringBuilder-Class" class="headerlink" title="1.3.2 StringBuilder Class"></a>1.3.2 StringBuilder Class</h3><p>Instances are mutable.</p>
+<p><strong>setCharAt(k, c)</strong>: Change the character at index k to character c.<br><strong>insert(k, s)</strong>: Insert a copy of string _s_ starting at index _k_ of the sequence, shifting existing characters further back to make room.<br><strong>append(s)</strong>: Append string _s_ to the end of the sequence.<br><strong>reverse()</strong>: Reverse the current sequence.<br><strong>toString()</strong>: Return a traditional String instance based on the current character sequence.</p>
+<h3 id="1-3-3-Wrapper-Types"><a href="#1-3-3-Wrapper-Types" class="headerlink" title="1.3.3 Wrapper Types"></a>1.3.3 Wrapper Types</h3><h3 id="1-3-4-Arrays"><a href="#1-3-4-Arrays" class="headerlink" title="1.3.4 Arrays"></a>1.3.4 Arrays</h3><h3 id="1-3-5-Enum-Types"><a href="#1-3-5-Enum-Types" class="headerlink" title="1.3.5 Enum Types"></a>1.3.5 Enum Types</h3><h2 id="1-4-Expressions"><a href="#1-4-Expressions" class="headerlink" title="1.4 Expressions"></a>1.4 Expressions</h2><h3 id="1-4-1-Literals"><a href="#1-4-1-Literals" class="headerlink" title="1.4.1 Literals"></a>1.4.1 Literals</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">null;</span><br><span class="line">Boolean: true / false;</span><br><span class="line">Integer: int-32bit, 176L/52l-64bit</span><br><span class="line">Floating Point: default is double.</span><br><span class="line">Character:</span><br><span class="line">  &apos;\n&apos;:newline  &apos;\t&apos;: tab  &apos;\b&apos;: backspace  &apos;\r&apos;: return  &apos;\f&apos;: form feed  &apos;\\&apos;:backslash  &apos;\&apos;&apos;: single quote  &apos;\&quot;&apos;: double quote</span><br></pre></td></tr></table></figure>
+<h3 id="1-4-2-Operators"><a href="#1-4-2-Operators" class="headerlink" title="1.4.2 Operators"></a>1.4.2 Operators</h3><p>Arithmetic: <figure class="highlight plain"><figcaption><span>- * / %```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String Concatenation:```+</span><br></pre></td></tr></table></figure></p>
+<p>Increment and Decrement Operators: <figure class="highlight plain"><figcaption><span>--```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Logical Operators:</span><br><span class="line">  for numbers:```&lt; &lt;= == != &gt;= &gt;</span><br></pre></td></tr></table></figure></p>
+<p>  for boolean:<figure class="highlight plain"><figcaption><span>&& ||```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Bitwise Operators:```~ &amp; | ^异或 &lt;&lt; &gt;&gt; &gt;&gt;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>Assignment Operator:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">![Imgur](https://i.imgur.com/Q10pCkD.png)</span><br><span class="line"></span><br><span class="line">### 1.4.3 Type Conversions</span><br><span class="line">**Mutual conversion between int and double**</span><br></pre></td></tr></table></figure></p>
+<p>double d1 = 3.2;<br>double d2 = 3.9999;<br>int i1 = (int) d1;  // i1 = 3<br>int i2 = (int) d2;  // i2 = 3<br>double d3 = (double) i2;  // d3 =3.0<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**Mutual conversion between int to String**</span><br></pre></td></tr></table></figure></p>
+<p>String s1 = “2014”;<br>int i1 = Integer.parseInt(s1);  // i1 gets value 2014<br>int i2 = −35;<br>String s2 = Integer.toString(i2);  // s2 gets value “-35”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">## 1.5 Control Flow</span><br><span class="line">### if / switch</span><br><span class="line">if...else if... else</span><br><span class="line">switch... case...case...case...default...</span><br><span class="line">### while / for</span><br><span class="line"></span><br><span class="line">### control-flow statements</span><br></pre></td></tr></table></figure></p>
+<p>return<br>break<br>continue<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 1.6 Simple Input and Output</span><br><span class="line">### Simple Output Method</span><br><span class="line">print: String, Object, baseType</span><br></pre></td></tr></table></figure></p>
+<p>import java.io.PrintStream;</p>
+<p>System.out.print();<br>System.out.println();<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### Simple Input Method</span><br><span class="line">Create a Scanner object:</span><br></pre></td></tr></table></figure></p>
+<p>new Scanner(System.in);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">import java.util.Scanner;   // loads Scanner definition for our use</span><br><span class="line"></span><br><span class="line">public class InputExample &#123;</span><br><span class="line">  public static void main(String[ ] args) &#123;</span><br><span class="line">    Scanner input = new Scanner(System.in);</span><br><span class="line">    System.out.print(&quot;Enter your age in years: &quot;);</span><br><span class="line">    double age = input.nextDouble();</span><br><span class="line">    System.out.print(&quot;Enter your maximum heart rate: &quot;);</span><br><span class="line">    double rate = input.nextDouble();</span><br><span class="line">    double fb = (rate − age) ∗ 0.65;</span><br><span class="line">    System.out.println(&quot;Your ideal fat-burning heart rate is &quot; + fb);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>java.util.Scanner</strong> Methods<br>Dealing with tokens:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hasNext(): return true/false</span><br><span class="line">next(): return next token string; raise en error if there are no more tokens left</span><br><span class="line">hasNextType():  </span><br><span class="line">nextType():</span><br></pre></td></tr></table></figure></p>
+<p>Processing line by line:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hasNextLine(): return true/false</span><br><span class="line">nextLine(): return next line</span><br><span class="line">findInLine(String s): attempts to find a string matching the pattern s in the current line.</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Scanner input = new Scanner(System.in);</span><br><span class="line">System.out.print(&quot;Please enter an integer: &quot;);</span><br><span class="line">while (!input.hasNextInt()) &#123;</span><br><span class="line">  input.nextLine( );</span><br><span class="line">  System.out.print(&quot;Invalid integer; please enter an integer: &quot;);</span><br><span class="line">&#125;</span><br><span class="line">int i = input.nextInt();</span><br></pre></td></tr></table></figure>
+<h2 id="1-7-An-Example-Program"><a href="#1-7-An-Example-Program" class="headerlink" title="1.7 An Example Program"></a>1.7 An Example Program</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">public class creditCards &#123;</span><br><span class="line">    public static class CreditCard&#123;</span><br><span class="line"></span><br><span class="line">        private String customer;</span><br><span class="line">        private String bank;</span><br><span class="line">        private String account;</span><br><span class="line">        private int limit;</span><br><span class="line">        private double balance;</span><br><span class="line"></span><br><span class="line">        private CreditCard(String cust, String bk, String acnt, int lim, double initialBal)&#123;</span><br><span class="line">            customer = cust;</span><br><span class="line">            bank = bk;</span><br><span class="line">            account = acnt;</span><br><span class="line">            limit = lim;</span><br><span class="line">            balance = initialBal;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        private CreditCard(String cust, String bk, String acnt, int lim)&#123;</span><br><span class="line">            this(cust, bk, acnt, lim, 0.0);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public String getCustomer()&#123;return customer;&#125;</span><br><span class="line">        public String getBank()&#123;return bank;&#125;</span><br><span class="line">        public String getAccount()&#123;return account;&#125;</span><br><span class="line">        public int getLimit()&#123;return limit;&#125;</span><br><span class="line">        private double getBalance()&#123;return balance;&#125;</span><br><span class="line"></span><br><span class="line">        private boolean charge(double price)&#123;</span><br><span class="line">            if(price + balance &gt; limit) return false;</span><br><span class="line">            balance += price;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        private void makePayment(double amount)&#123;</span><br><span class="line">            balance -= amount;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        private static void printSummary(CreditCard card)&#123;</span><br><span class="line">            System.out.println(&quot;Customer = &quot; + card.customer);</span><br><span class="line">            System.out.println(&quot;Bank = &quot; + card.bank);</span><br><span class="line">            System.out.println(&quot;Account = &quot; + card.account);</span><br><span class="line">            System.out.println(&quot;Balance = &quot; + card.balance);</span><br><span class="line">            System.out.println(&quot;Limit = &quot; + card.limit);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        CreditCard[] wallet = new CreditCard[3];</span><br><span class="line">        wallet[0] = new CreditCard(&quot;John Bowman&quot;, &quot;California Savings&quot;,&quot;5391 0375 9387 5309&quot;, 5000);</span><br><span class="line">        wallet[1] = new CreditCard(&quot;John Bowman&quot;, &quot;California Federal&quot;, &quot;3485 0399 3395 1954&quot;, 3500);</span><br><span class="line">        wallet[2] = new CreditCard(&quot;John Bowman&quot;, &quot;California Finance&quot;, &quot;5391 0375 9387 5309&quot;, 2500, 300);</span><br><span class="line"></span><br><span class="line">        for(int val = 1; val &lt;= 16; val++)&#123;</span><br><span class="line">            wallet[0].charge(3*val);</span><br><span class="line">            wallet[1].charge(2*val);</span><br><span class="line">            wallet[2].charge(val);</span><br><span class="line">        &#125;</span><br><span class="line">        for(CreditCard card : wallet)&#123;</span><br><span class="line">            CreditCard.printSummary(card);  // calling static method</span><br><span class="line">            while (card.getBalance() &gt; 200.0)&#123;</span><br><span class="line">                card.makePayment(200);</span><br><span class="line">                System.out.println(&quot;New balance = &quot; + card.getBalance());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="1-8-Packages-and-Imports"><a href="#1-8-Packages-and-Imports" class="headerlink" title="1.8 Packages and Imports"></a>1.8 Packages and Imports</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">package packageName;</span><br><span class="line">import packageName.className;</span><br><span class="line">import packageName.*;</span><br></pre></td></tr></table></figure>
+<h2 id="1-9-Software-Development"><a href="#1-9-Software-Development" class="headerlink" title="1.9 Software Development"></a>1.9 Software Development</h2><p>Three phases: Design, Coding, Testing and Debugging.</p>
+<h3 id="1-9-1-Design"><a href="#1-9-1-Design" class="headerlink" title="1.9.1 Design"></a>1.9.1 Design</h3><p>For OOP, it is in the design step that we decide how to divide the workings of our program into classes, when we decide how these classes will interact, what data each will store, and what actions each will perform.</p>
+<p>Determining how to define classes: Responsibilities; Independence; Behaviors.</p>
+<p>UML diagrams to express the organization of a program.<br>“+”:public visibility<br>“#”:protected visibility<br>“-“:private visibility<br><img src="https://i.imgur.com/IfZWKFH.png" alt="Imgur"></p>
+<h3 id="1-9-2-Pseudocode"><a href="#1-9-2-Pseudocode" class="headerlink" title="1.9.2 Pseudocode"></a>1.9.2 Pseudocode</h3><h3 id="1-9-3-Coding"><a href="#1-9-3-Coding" class="headerlink" title="1.9.3 Coding"></a>1.9.3 Coding</h3><p>To accelerate the development of this skill, we need to know various <strong>design patterns</strong> for designing OOP. These patterns provide templates for defining classes and the interactions between these classes.</p>
+<h3 id="1-9-4-Documentation-and-Style"><a href="#1-9-4-Documentation-and-Style" class="headerlink" title="1.9.4 Documentation and Style"></a>1.9.4 Documentation and Style</h3><p><strong>Javadoc</strong></p>
+<h3 id="1-9-5-Testing-and-Debugging"><a href="#1-9-5-Testing-and-Debugging" class="headerlink" title="1.9.5 Testing and Debugging"></a>1.9.5 Testing and Debugging</h3><h1 id="2-Object-Oriented-Design"><a href="#2-Object-Oriented-Design" class="headerlink" title="2 Object-Oriented Design"></a>2 Object-Oriented Design</h1><h2 id="2-1-Goals-Principles-and-Patterns"><a href="#2-1-Goals-Principles-and-Patterns" class="headerlink" title="2.1 Goals, Principles, and Patterns"></a>2.1 Goals, Principles, and Patterns</h2><p>Achieving <strong>Robustness, Adaptability, and Reusability</strong>.</p>
+<h2 id="2-1-2-Object-Oriented-Design-Principles"><a href="#2-1-2-Object-Oriented-Design-Principles" class="headerlink" title="2.1.2 Object-Oriented Design Principles"></a>2.1.2 Object-Oriented Design Principles</h2><p>Principles of OO approach:<br>  Abstraction: An abstract data type specifies <strong>what</strong> each operation does, but not <strong>how</strong> it does.<br>  Encapsulation: hide details of different components.<br>  Modularity:</p>
+<h2 id="2-1-3-Design-Patterns"><a href="#2-1-3-Design-Patterns" class="headerlink" title="2.1.3 Design Patterns"></a>2.1.3 Design Patterns</h2><p>Design Patterns fall into two groups:<br>  Patterns for solving algorithm design problems;<br>  Patterns for solving software engineering problems</p>
+<p><strong>Algorithms design patterns</strong><br>  Recursion;<br>  Amortization;<br>  Divide-and-Conquer;<br>  Prune-and-Search, also known as Decrease-and-Conquer;<br>  Brute Force;<br>  The greedy method;<br>  Dynamic Programming;</p>
+<p><strong>Software design patterns</strong><br>  Template method;<br>  Composition;<br>  Adapter;<br>  Position;<br>  Iterator;<br>  Factory Method;<br>  Comparator;<br>  Locator</p>
+<h2 id="2-2-Inheritance"><a href="#2-2-Inheritance" class="headerlink" title="2.2 Inheritance"></a>2.2 Inheritance</h2><p>The correspondence between levels is often referred to as an “<strong>is a</strong>“ relationship, as a house is a building ,and a ranch is a house.<br><img src="https://i.imgur.com/JSRgJDc.png" alt="Imgur"><br>This allows a new class to be defined based upon an existing class as the starting point.</p>
+<p>The existing class is described as <strong>base class, parent class, or superclass</strong>;<br>Newly defined class is called as <strong>subclass, or child class</strong>.</p>
+<h3 id="2-2-1-Extending-the-CreditCard-Class"><a href="#2-2-1-Extending-the-CreditCard-Class" class="headerlink" title="2.2.1 Extending the CreditCard Class"></a>2.2.1 Extending the CreditCard Class</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">import creditCards.CreditCard;</span><br><span class="line"></span><br><span class="line">public class PredatoryCreditCard extends CreditCard &#123;</span><br><span class="line">    // Additional instance variable</span><br><span class="line">    private double apr; // annual percentage rate</span><br><span class="line"></span><br><span class="line">    // Constructor for this class</span><br><span class="line">    public PredatoryCreditCard(String cust, String bk, String acnt, int lim,</span><br><span class="line">                               double initialBal, double rate) &#123;</span><br><span class="line">        super(cust, bk, acnt, lim, initialBal);  // initialize superclass attributes</span><br><span class="line">        apr = rate;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // A new method for assessing monthly interest charges</span><br><span class="line">    public void processMonth() &#123;</span><br><span class="line">        if (balance &gt; 0) &#123; // only charge interest on a positive balance</span><br><span class="line">            double monthlyFactor = Math.pow(1 + apr, 1.0 / 12); // compute monthly rate</span><br><span class="line">            balance *= monthlyFactor;  // assess interest</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // Overriding the charge method defined in the superclass</span><br><span class="line">    public boolean charge(double price) &#123;</span><br><span class="line">        boolean isSuccess = super.charge(price);</span><br><span class="line">        if (!isSuccess)</span><br><span class="line">            balance += 5;</span><br><span class="line">        return isSuccess;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-2-Polymorphism-and-Dynamic-Dispatch"><a href="#2-2-2-Polymorphism-and-Dynamic-Dispatch" class="headerlink" title="2.2.2 Polymorphism and Dynamic Dispatch"></a>2.2.2 Polymorphism and Dynamic Dispatch</h3><h3 id="2-2-3-Inheritance-Hierarchies"><a href="#2-2-3-Inheritance-Hierarchies" class="headerlink" title="2.2.3 Inheritance Hierarchies"></a>2.2.3 Inheritance Hierarchies</h3><h2 id="2-3-Interfaces-and-Abstract-Classes"><a href="#2-3-Interfaces-and-Abstract-Classes" class="headerlink" title="2.3 Interfaces and Abstract Classes"></a>2.3 Interfaces and Abstract Classes</h2><h3 id="2-3-1-Interfaces-in-Java"><a href="#2-3-1-Interfaces-in-Java" class="headerlink" title="2.3.1 Interfaces in Java"></a>2.3.1 Interfaces in Java</h3><h3 id="2-3-2-Multiple-Inheritance-for-Interfaces"><a href="#2-3-2-Multiple-Inheritance-for-Interfaces" class="headerlink" title="2.3.2 Multiple Inheritance for Interfaces"></a>2.3.2 Multiple Inheritance for Interfaces</h3><h3 id="2-3-3-Abstract-Classes"><a href="#2-3-3-Abstract-Classes" class="headerlink" title="2.3.3 Abstract Classes"></a>2.3.3 Abstract Classes</h3><h2 id="2-4-Exceptions"><a href="#2-4-Exceptions" class="headerlink" title="2.4 Exceptions"></a>2.4 Exceptions</h2><h3 id="2-4-1-Catching-Exceptions"><a href="#2-4-1-Catching-Exceptions" class="headerlink" title="2.4.1 Catching Exceptions"></a>2.4.1 Catching Exceptions</h3><p>statements: <code>try...catch...</code></p>
+<h3 id="2-4-2-Throwing-Exceptions"><a href="#2-4-2-Throwing-Exceptions" class="headerlink" title="2.4.2 Throwing Exceptions"></a>2.4.2 Throwing Exceptions</h3><h2 id="2-5-Casting-and-Generics"><a href="#2-5-Casting-and-Generics" class="headerlink" title="2.5 Casting and Generics"></a>2.5 Casting and Generics</h2><h3 id="2-5-1-Casting"><a href="#2-5-1-Casting" class="headerlink" title="2.5.1 Casting"></a>2.5.1 Casting</h3><h3 id="2-5-2-Generics"><a href="#2-5-2-Generics" class="headerlink" title="2.5.2 Generics"></a>2.5.2 Generics</h3><h2 id="2-6-Nested-Classes"><a href="#2-6-Nested-Classes" class="headerlink" title="2.6 Nested Classes"></a>2.6 Nested Classes</h2>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Data-Structures/" rel="tag"># Data Structures</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/01/Coursera_程序设计与算法专题-4_算法基础/" rel="next" title="Coursera 程序设计与算法专题-4&5 算法基础+数据结构基础">
+                <i class="fa fa-chevron-left"></i> Coursera 程序设计与算法专题-4&5 算法基础+数据结构基础
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/05/Data_Structures_in_Java_3/" rel="prev" title="Data_Structures_in_Java 3, 6">
+                Data_Structures_in_Java 3, 6 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Xinxin Tang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">63</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">44</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Java-Primer"><span class="nav-number">1.</span> <span class="nav-text">1 Java Primer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Base-types"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 Base types</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Classes-and-Objects"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 Classes and Objects</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-Dot-Operator"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.2.1 Dot Operator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-Defining-a-class"><span class="nav-number">1.2.2.</span> <span class="nav-text">1.2.2 Defining a class</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Strings-Wrappers-Arrays-Enum-types"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 Strings, Wrappers, Arrays, Enum types</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-String-class"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.3.1 String class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-StringBuilder-Class"><span class="nav-number">1.3.2.</span> <span class="nav-text">1.3.2 StringBuilder Class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-3-Wrapper-Types"><span class="nav-number">1.3.3.</span> <span class="nav-text">1.3.3 Wrapper Types</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-4-Arrays"><span class="nav-number">1.3.4.</span> <span class="nav-text">1.3.4 Arrays</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-5-Enum-Types"><span class="nav-number">1.3.5.</span> <span class="nav-text">1.3.5 Enum Types</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Expressions"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 Expressions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-1-Literals"><span class="nav-number">1.4.1.</span> <span class="nav-text">1.4.1 Literals</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-2-Operators"><span class="nav-number">1.4.2.</span> <span class="nav-text">1.4.2 Operators</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7-An-Example-Program"><span class="nav-number">1.5.</span> <span class="nav-text">1.7 An Example Program</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-8-Packages-and-Imports"><span class="nav-number">1.6.</span> <span class="nav-text">1.8 Packages and Imports</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-9-Software-Development"><span class="nav-number">1.7.</span> <span class="nav-text">1.9 Software Development</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-9-1-Design"><span class="nav-number">1.7.1.</span> <span class="nav-text">1.9.1 Design</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-9-2-Pseudocode"><span class="nav-number">1.7.2.</span> <span class="nav-text">1.9.2 Pseudocode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-9-3-Coding"><span class="nav-number">1.7.3.</span> <span class="nav-text">1.9.3 Coding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-9-4-Documentation-and-Style"><span class="nav-number">1.7.4.</span> <span class="nav-text">1.9.4 Documentation and Style</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-9-5-Testing-and-Debugging"><span class="nav-number">1.7.5.</span> <span class="nav-text">1.9.5 Testing and Debugging</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Object-Oriented-Design"><span class="nav-number">2.</span> <span class="nav-text">2 Object-Oriented Design</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Goals-Principles-and-Patterns"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 Goals, Principles, and Patterns</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-2-Object-Oriented-Design-Principles"><span class="nav-number">2.2.</span> <span class="nav-text">2.1.2 Object-Oriented Design Principles</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-3-Design-Patterns"><span class="nav-number">2.3.</span> <span class="nav-text">2.1.3 Design Patterns</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Inheritance"><span class="nav-number">2.4.</span> <span class="nav-text">2.2 Inheritance</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-Extending-the-CreditCard-Class"><span class="nav-number">2.4.1.</span> <span class="nav-text">2.2.1 Extending the CreditCard Class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-Polymorphism-and-Dynamic-Dispatch"><span class="nav-number">2.4.2.</span> <span class="nav-text">2.2.2 Polymorphism and Dynamic Dispatch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-3-Inheritance-Hierarchies"><span class="nav-number">2.4.3.</span> <span class="nav-text">2.2.3 Inheritance Hierarchies</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Interfaces-and-Abstract-Classes"><span class="nav-number">2.5.</span> <span class="nav-text">2.3 Interfaces and Abstract Classes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-Interfaces-in-Java"><span class="nav-number">2.5.1.</span> <span class="nav-text">2.3.1 Interfaces in Java</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-2-Multiple-Inheritance-for-Interfaces"><span class="nav-number">2.5.2.</span> <span class="nav-text">2.3.2 Multiple Inheritance for Interfaces</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-3-Abstract-Classes"><span class="nav-number">2.5.3.</span> <span class="nav-text">2.3.3 Abstract Classes</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Exceptions"><span class="nav-number">2.6.</span> <span class="nav-text">2.4 Exceptions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-1-Catching-Exceptions"><span class="nav-number">2.6.1.</span> <span class="nav-text">2.4.1 Catching Exceptions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-2-Throwing-Exceptions"><span class="nav-number">2.6.2.</span> <span class="nav-text">2.4.2 Throwing Exceptions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Casting-and-Generics"><span class="nav-number">2.7.</span> <span class="nav-text">2.5 Casting and Generics</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-1-Casting"><span class="nav-number">2.7.1.</span> <span class="nav-text">2.5.1 Casting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-2-Generics"><span class="nav-number">2.7.2.</span> <span class="nav-text">2.5.2 Generics</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-Nested-Classes"><span class="nav-number">2.8.</span> <span class="nav-text">2.6 Nested Classes</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xinxin Tang</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.2.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

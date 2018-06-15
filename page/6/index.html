@@ -274,6 +274,1013 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/03/big_data_NoSQL-database/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/big_data_NoSQL-database/" itemprop="url">
+                  Categories of NoSQL
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-03 18:17:22" itemprop="dateCreated datePublished" datetime="2018-05-03T18:17:22-04:00">2018-05-03</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-08 11:08:09" itemprop="dateModified" datetime="2018-05-08T11:08:09-04:00">2018-05-08</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="NoSQL-database"><a href="#NoSQL-database" class="headerlink" title="NoSQL database"></a>NoSQL database</h2><p>RDBMS features: ACID<br>A: Atomicity<br>C: Consistency<br>I: Isolation<br>D: Durability</p>
+<p>NoSQL is used to store super large scale data. These data doesn’t need a fix pattern, just scale out.</p>
+<p>Distributed system CAP theorem: it cann’t be satisfied three of them at the same time.<br>Consistency: all nodes has same data at the same time<br>Availability: guarantee response no matter success or fail<br>Partition tolerance: system keep operating even part information lost.<br><img src="https://i.imgur.com/6r099ar.png" alt="Imgur"></p>
+<p><strong>Categories</strong><br>Column-based:<br>-HBase, Cassandra;<br>-Easy to compress data; fast-search for a certain column.</p>
+<p>Document-based:<br>-MongoDB, CouchDB<br>-Storage Format is similar to JSON(K/V Pair), Content is document format.</p>
+<p>Key-Value:<br>-Redis, Memcache<br>-Search value through key no matter the type of value</p>
+<h2 id="Column-oriented"><a href="#Column-oriented" class="headerlink" title="Column-oriented"></a>Column-oriented</h2><p><strong>Traditional relational database</strong> is row-oriented. Each row has a row id and every field store in one table. </p>
+<p>When searching in row-oriented database, each row will be traversed, no matter a certain column data is needed or not. If you search a person whose birth month is September. Search row by row to target data.<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G5050Q55.png" alt=""></p>
+<p>Index the target column can promote search speed, but index each column cause extra overload and databse will traverse all columns to search data. </p>
+<p><strong>Column-oriented database</strong> will stores each column seperately. It’s very fast to search when the data amount is small. Search column by column to targetdata.<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G50614146.png" alt=""></p>
+<p>This design looks like adding index for each row. It sacrifices space and writing more index to speed up searching ability. Index maps row ID to data, but column-based database maps data to rowID. Like the picture above, it is easy to search who like archery. This is an inverted index. </p>
+<p>When to use row-oriented and when to use column-oriented? Column-based database is easy to add one new column, but is difficult to add one row.  Therefore, row-oriented database is bettern than column-based on transaction. Because it achieves real-time update. It is commonly used in marketing business.</p>
+<p>Column-oriented database has advantage of data analysis, like sum of values. Batch processing can adopt column-oriented database at night, and it supports quick search and MapReduce aggregation. </p>
+<p><strong>Compared to RDBMS</strong><br>If you want to get all infomation of one user, column-based database costs more;<br>If you want to get one piece of information of one user, row-based database costs more.</p>
+<p>Row-based is faster than Column-based on Updating a target row;<br>Column-based is faster than Row-based on Searching part of information of users;</p>
+<p>Row-based database: OLTP<br>Column-based database: OLAP</p>
+<h2 id="K-V-stores"><a href="#K-V-stores" class="headerlink" title="K/V stores"></a>K/V stores</h2><p>This is the easiest store in NoSQL databases.<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G50Q4156.png" alt=""></p>
+<p>the complex k/v paire is like:<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G50T43T.jpg" alt=""></p>
+<h2 id="Document-oriented-stores"><a href="#Document-oriented-stores" class="headerlink" title="Document-oriented stores"></a>Document-oriented stores</h2><p>Store based on K/V pair, but structure more complex.<br><img src="https://www.onmpw.com/uploads/allimg/160307/1-16030G50951434.png" alt=""></p>
+<h2 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h2><p>Written in C++<br>Remains some friendly properties of SQL.(Query, index)<br>Support secondary index<br>Master-slave replication<br>Queries support javascript expressions<br>Better update-in-place than CouchDB<br>Sharding built-in<br>Uses memory mapped files for data storage<br>After crash, it needs to repair tables<br>Reads faster than wirtes</p>
+<p><strong>Use:</strong> need dynamic search. Dedine indexes first, no need map/reduce. </p>
+<p><strong>Example:</strong> Adapts all situations of MySQL and PostgreSQL</p>
+<h2 id="Cassandra"><a href="#Cassandra" class="headerlink" title="Cassandra"></a>Cassandra</h2><p>Written in Java<br>Querying by column<br>Writes are much faster than reads<br>Column-based databse.<br>Weak consistency; High availability; High scalability</p>
+<p><strong>Use:</strong> adapts to implement in write action more than read action</p>
+<p><strong>Example:</strong> Logging system, Banking system, Finance system.</p>
+<h2 id="HBase"><a href="#HBase" class="headerlink" title="HBase"></a>HBase</h2><p>Written in Java<br>Billion row level and Million column level<br>Map/Reduce with Hadoop<br>Store in HDFS<br>No single point of failure<br>Strong consistency; Low availability; High scalability</p>
+<p><strong>Use:</strong> Big table, random and real-time read/write action</p>
+<p><strong>Example:</strong> Facebook message database</p>
+<h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><p>Written in c/c++<br>Blazing fast<br>Disk-backed in-memory database<br>Master-slave replication<br>Store as key/value format<br>Support set, list, hash<br>Has transactions<br>Value can be set to expire<br>Publish/Subscribe and Watch </p>
+<p><strong>Use:</strong> if data is not huge and changes frequently, store in Redis. Fast read/write data</p>
+<p><strong>Example:</strong> Stock price analysis, Real-time data processing</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/03/big_data_Kafka/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/big_data_Kafka/" itemprop="url">
+                  Kafka
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-03 17:31:59" itemprop="dateCreated datePublished" datetime="2018-05-03T17:31:59-04:00">2018-05-03</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-21 19:43:17" itemprop="dateModified" datetime="2018-05-21T19:43:17-04:00">2018-05-21</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Message-Queue"><a href="#Message-Queue" class="headerlink" title="Message Queue"></a>Message Queue</h1><p>Message Queue is a type of technique to exchange information in distributed system. MQ can stay in memory or disk until it is being read. In distributed computing system, to achieve effective information exchange, developer needs to build a communication way for asychronous network.</p>
+<h2 id="Communication-approaches"><a href="#Communication-approaches" class="headerlink" title="Communication approaches"></a>Communication approaches</h2><ol>
+<li>Point to point: one2one, one2many, many2many<br>One message only can be used once, then remove from the queue. </li>
+<li>Multiple to multiple<br>One message can be used multiple times. </li>
+<li>Publish/Subscribe：</li>
+<li>Cluster</li>
+</ol>
+<h1 id="Kafka"><a href="#Kafka" class="headerlink" title="Kafka"></a>Kafka</h1><p>Kafka is a fast, scalable, persistent and highly fault-tolerant distributed publish-subscribe messaging system. Kafka supports high volumn of data and high response in demand better than JMS, RabbitMQ and AMQP. Compared with them, Kafka has higher throughput, more stable and better replication. </p>
+<p>It can be used to obtain, analyze and stream processing with Flume, Spark Streaming, Storm, HBase and Flink together. It provides streaming data for Hadoop Big Data Lake. Kafka has low latency in Hadoop and Spark. </p>
+<h1 id="Advantages-of-Kafka"><a href="#Advantages-of-Kafka" class="headerlink" title="Advantages of Kafka"></a>Advantages of Kafka</h1><ol>
+<li>Reliability</li>
+<li>Scalability</li>
+<li>High performance</li>
+</ol>
+<h1 id="Terms"><a href="#Terms" class="headerlink" title="Terms"></a>Terms</h1><p>Broker: Server. Kafka cluster contains one or more servers.<br>Topic: Each message that sends to Kafka cluster has a category, which is called <strong>Topic</strong>.<br>Partition: Physical conception; Each topic has one or more partition.<br>  Two strategies: 1. Key Hash algorithm; 2. Round Robin algorithm<br>Producer: Response to send message to Kafka broker<br>Consumer: Response to retrieve message from Kafka broker<br>Consumer Group<br>Zookeeper: Kafka relies on Zookeeper cluster save metadata for load balancing.<br>Offset: Index</p>
+<h1 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h1><p><img src="https://images.cnblogs.com/cnblogs_com/BYRans/761498/o_KafkaTerm.png" alt=""><br>Producers send messages to Brokers;<br>Leader Broker gets and writes message into target topic to achieve persistency, and sets expire time.<br>Leader Broker delivers Follow Broker as replication;<br>Consumers retrieve messages from Brokers</p>
+<h1 id="Compare-to-Flume"><a href="#Compare-to-Flume" class="headerlink" title="Compare to Flume"></a>Compare to Flume</h1><p>1.<br>Flume is designed to send message to HDFS and HBase.<br>Kafka is a general-purpose system.<br>2.<br>Flume has many sources and sinks, but Kafka doesn’t.<br>If data source has been determined, just use Flume; Otherwise, adopt Kafka.</p>
+<ol start="3">
+<li>Flume can process data in real-time by intercepter(Filter data)<br>Kafka needs an external system to help processing.</li>
+<li>If data node failed, Flume cannot visit this node until node has been fixed, but it doesn’t happen in Kafka. Because Flume doesn’t have replicalition.</li>
+</ol>
+<h1 id="Implements"><a href="#Implements" class="headerlink" title="Implements"></a>Implements</h1><ol>
+<li>Message Queue: enough to rival traditional message system like ActiveMR and RabbitMQ</li>
+<li>Behaviors tracking: Track users’ behaviors from browsing websites and searching. Saving into topic by Publish/Subscribe mode. </li>
+<li>Metadata monitoring: Data monitoring</li>
+<li>Log collecting: Other products like Scribe, Apache Flume. </li>
+<li>Streaming processing: Products like Storm, Samza</li>
+<li>Event source: </li>
+</ol>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-kafka/index.html" target="_blank" rel="noopener">Kafka principles</a><br><a href="http://www.cnblogs.com/BYRans/p/6054930.html" target="_blank" rel="noopener">Kafka Introduce</a><br><a href="https://www.jianshu.com/p/1b657ac52f89" target="_blank" rel="noopener">kafka详解</a><br><a href="https://www.jianshu.com/p/aee1688bb882" target="_blank" rel="noopener">Kafka概念</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/02/big_data_SQL-Optimization/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/02/big_data_SQL-Optimization/" itemprop="url">
+                  Big data-SQL join
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-02 16:29:09" itemprop="dateCreated datePublished" datetime="2018-05-02T16:29:09-04:00">2018-05-02</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-30 11:24:19" itemprop="dateModified" datetime="2018-05-30T11:24:19-04:00">2018-05-30</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="SQL-JOIN"><a href="#SQL-JOIN" class="headerlink" title="SQL JOIN"></a>SQL JOIN</h2><p><strong>Join</strong> clause is used to combine records from two or more tables in database.<br><img src="https://www.codeproject.com/KB/database/Visual_SQL_Joins/Visual_SQL_JOINS_V2.png" alt=""></p>
+<h2 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization:"></a>Optimization:</h2><p><strong>on</strong> is better than <strong>where</strong>. <strong>on</strong> clause (A left join B on …) determines how to retrieve rows from table B. <strong>where</strong> will be used after this period. So try to use <strong>where</strong> less and satisfy condition <strong>on</strong>.<br>Pass:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT * FROM product LEFT JOIN product_details</span><br><span class="line">       ON (product.id = product_details.id)</span><br><span class="line">       AND product_details.id=2;</span><br><span class="line">+----+--------+------+--------+-------+</span><br><span class="line">| id | amount | id   | weight | exist |</span><br><span class="line">+----+--------+------+--------+-------+</span><br><span class="line">|  1 |    100 | NULL |   NULL |  NULL |</span><br><span class="line">|  2 |    200 |    2 |     22 |     0 |</span><br><span class="line">|  3 |    300 | NULL |   NULL |  NULL |</span><br><span class="line">|  4 |    400 | NULL |   NULL |  NULL |</span><br><span class="line">+----+--------+------+--------+-------+</span><br><span class="line">4 rows in set (0.00 sec)</span><br></pre></td></tr></table></figure></p>
+<p>Great:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT * FROM product LEFT JOIN product_details</span><br><span class="line">       ON (product.id = product_details.id)</span><br><span class="line">       WHERE product_details.id=2;</span><br><span class="line">+----+--------+----+--------+-------+</span><br><span class="line">| id | amount | id | weight | exist |</span><br><span class="line">+----+--------+----+--------+-------+</span><br><span class="line">|  2 |    200 |  2 |     22 |     0 |</span><br><span class="line">+----+--------+----+--------+-------+</span><br><span class="line">1 row in set (0.01 sec)</span><br></pre></td></tr></table></figure></p>
+<p>Pass:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into t1(a1) select b1 from t2 where not exists(select 1 from t1 where t1.id = t2.r_id);</span><br></pre></td></tr></table></figure></p>
+<p>Great:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">insert into t1(a1)  </span><br><span class="line">select b1 from t2  </span><br><span class="line">left join (select distinct t1.id from t1 ) t1 on t1.id = t2.r_id   </span><br><span class="line">where t1.id is null;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p><a href="https://blog.csdn.net/u012861978/article/details/52203818" target="_blank" rel="noopener">https://blog.csdn.net/u012861978/article/details/52203818</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/02/CS231N_CNN-case-study/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/02/CS231N_CNN-case-study/" itemprop="url">
+                  CS231N-CNN Architectures
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-02 10:42:57" itemprop="dateCreated datePublished" datetime="2018-05-02T10:42:57-04:00">2018-05-02</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-30 00:29:43" itemprop="dateModified" datetime="2018-05-30T00:29:43-04:00">2018-05-30</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Common-used-architectures"><a href="#Common-used-architectures" class="headerlink" title="Common used architectures"></a>Common used architectures</h2><p>AlexNet:<br><img src="https://i.imgur.com/BEHBsBl.png" alt="Imgur"></p>
+<p>VGG16:<br><img src="https://i.imgur.com/I0tMlNI.png" alt="Imgur"></p>
+<p>VGG19:<br><img src="https://i.imgur.com/DGiqaWW.png" alt="Imgur"></p>
+<p>GoogleNet:<br><img src="https://i.imgur.com/SHUBNST.png" alt="Imgur"></p>
+<p>Inception:<br><img src="https://i.imgur.com/sQ6fyHy.png" alt="Imgur"></p>
+<p>Performance of CNN models:<br><img src="https://i.imgur.com/nurB3H6.png" alt="Imgur"><br>The deeper model performs worse, but it’s not caused by overfitting.</p>
+<p>Hypothsis: the problem is an optimization problem, deeper models are harder to optimize.</p>
+<p>Solution: ResNet.</p>
+<p>ResNet:<br><img src="https://i.imgur.com/GBh6q2L.png?1" alt="Imgur"></p>
+<p>Residual block:<br><img src="https://i.imgur.com/HpNBjPj.png" alt="Imgur"></p>
+<h2 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a>Complexity</h2><p><img src="https://i.imgur.com/k5cHOhu.png" alt="Imgur"><br>The best in the left: Inception-v4: ResNet+Inception<br>For the right:</p>
+<ul>
+<li>VGG:Highest memory, most operations</li>
+<li>GoogleNet: Most efficient</li>
+<li>AlexNet: Smaller compute, still momory heavy, lower accuracy</li>
+<li>ResNet: Moderate efficiency depending on model, highest accuracy</li>
+</ul>
+<h2 id="Forward-pass-time-and-power-consumption"><a href="#Forward-pass-time-and-power-consumption" class="headerlink" title="Forward pass time and power consumption"></a>Forward pass time and power consumption</h2><p><img src="https://i.imgur.com/Eb5QbXF.png" alt="Imgur"></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://cs231n.stanford.edu/slides/2018/cs231n_2018_lecture09.pdf" target="_blank" rel="noopener">http://cs231n.stanford.edu/slides/2018/cs231n_2018_lecture09.pdf</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/02/ML_Debug-NN/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/02/ML_Debug-NN/" itemprop="url">
+                  Debug-NN
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-02 10:15:26 / Modified: 10:42:18" itemprop="dateCreated datePublished" datetime="2018-05-02T10:15:26-04:00">2018-05-02</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>When NNs don’t work, we have many choices:</p>
+<ol>
+<li>Fetch more data</li>
+<li>Add more layers to NN</li>
+<li>Try some new approaches in NN</li>
+<li>Train longer(increase the number of iterations)</li>
+<li>Change batch size</li>
+<li>Try regularization</li>
+<li>Chcek Bias Variance trade-off to avoid under and overfitting</li>
+<li>Use more GPUs for faster computation</li>
+</ol>
+<p>Architecture:<br>classification: VGG, ResNet, DenseNet…<br>segmentation: FCN, Dilated Convolution, Mask RCNN<br>detection: Faster-RCNN, YOLO, SSD…<br>image generation: UNet, Dilated Convolution, DCGAN, WGAN</p>
+<p>Loss curve:<br><img src="https://i.imgur.com/YWVKR1T.png" alt="Imgur"><br><img src="https://i.imgur.com/EtN47Wd.png" alt="Imgur"><br><img src="https://i.imgur.com/seUwPPL.png" alt="Imgur"></p>
+<p>Regularization:<br>Dropout, weight decay<br><img src="https://i.imgur.com/POYu0mH.png" alt="Imgur"></p>
+<p><img src="https://i.imgur.com/3rvUmO5.png" alt="Imgur"></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/05/01/ML_l1-vs-l2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/01/ML_l1-vs-l2/" itemprop="url">
+                  Terminology explaination
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-01 23:50:39" itemprop="dateCreated datePublished" datetime="2018-05-01T23:50:39-04:00">2018-05-01</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-02 11:44:18" itemprop="dateModified" datetime="2018-05-02T11:44:18-04:00">2018-05-02</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>l1 distance is Manhattan Distance.<br>l2 distance is Euclidean Distance.</p>
+<p>l1 norm(is also called Lasso Regression) is<br>l2 norm(is also called Ridge Regression) is </p>
+<p><strong>Activation function</strong>: squashes number to a range. Smooth to find best gradient direction.</p>
+<p><strong>Batch normalization</strong>: do it before activation function. zero-centered and range from [0.1] commonly.</p>
+<p>to prevent gradient vanish;<br>to promote learning rate<br>to reduce dependency from initialization. </p>
+<p><strong>Regularization</strong>: </p>
+<ol>
+<li><p>Add term to loss<br>L1 Regularization;<br>L2 Regularization;<br>Elastic net(L1+L2)</p>
+</li>
+<li><p>Dropout</p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/30/CS231N_Optimization/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -943,499 +1950,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/CS231N_How-to-Use-Dataset/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/29/CS231N_How-to-Use-Dataset/" itemprop="url">
-                  CS231N-How to Use Dataset
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-04-29 13:02:26" itemprop="dateCreated datePublished" datetime="2018-04-29T13:02:26-04:00">2018-04-29</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-05-30 00:25:38" itemprop="dateModified" datetime="2018-05-30T00:25:38-04:00">2018-05-30</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>To build a complete machine learning model, we need a dataset which can train and test the model. But the test set cannot be touched at all until one time at the very end. This is to train a good generalization of classifier. Therefore, we must split train set in two: training set and validation set. </p>
-<p>Validation set can help to tune hyperparameters so that classifier has a better generalization. </p>
-<p>Sometimes data is small. To make full use of it, we can use cross-validation. That is, Split training set into 5. 4 parts as training set and 1 part as validation set. So the data has 5 combinations. In practice, however, it doesn’t use often because it is very expensive. </p>
-<p>Data splits like below:<br><img src="http://cs231n.github.io/assets/crossval.jpeg" alt="image_logo"></p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p><a href="http://cs231n.github.io/classification/" target="_blank" rel="noopener">http://cs231n.github.io/classification/</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/ML_NumPy-Tutorial/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/29/ML_NumPy-Tutorial/" itemprop="url">
-                  ML-NumPy Tutorial
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-04-29 12:12:54" itemprop="dateCreated datePublished" datetime="2018-04-29T12:12:54-04:00">2018-04-29</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-05-30 00:28:03" itemprop="dateModified" datetime="2018-05-30T00:28:03-04:00">2018-05-30</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>NumPy is one of most popular data analysis package in Python. I use it a lot and here is a NumPy review. Let’s get started!</p>
-<p>NumPy’s main object is the homogeneous multidimensional array. In NumPy dimensions are called axes.</p>
-<p>For example, [1,2,3] has one axis and length is 3. [[1,2,3],[4,5,6]] has two axes. The first axis length is 2 and the second axis has a length of 3.</p>
-<p>Python has a built-in class array.array which only handles one-dimension array and offers less functionality. NumPy’s array class is called ndarray and more powerful. It has many attributes like:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ndarray.ndim: the number of axes of the array; 3-D, 4D</span><br><span class="line">ndarray.shape: the dimensions of the array; 3-D: (2,3,4)</span><br><span class="line">ndarray.size: the total number of elements of the array. </span><br><span class="line">ndarray.dtype: the type of elements in the array</span><br><span class="line">ndarray.itemsize: the size in byte of each element of the array</span><br><span class="line">ndarray.data: the buffer containing the actual elements of the array</span><br></pre></td></tr></table></figure></p>
-<p>Examples:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">a = np.arange(15).reshape(3,5)  # array([[ 0, 1, 2, 3, 4], [ 5, 6, 7, 8, 9], [10, 11, 12, 13, 14]])</span><br><span class="line">a.shape()  # (3, 5)</span><br><span class="line">a.ndim  # 2</span><br><span class="line">a.dtype.name  # &apos;int64&apos;</span><br><span class="line">a.itemsize  # 8</span><br><span class="line">a.size  # 15</span><br><span class="line">type(a)  # &lt;type &apos;numpy.ndarray&apos;&gt;</span><br><span class="line">b = np.array([6,7,8])  # array([6,7,8])</span><br><span class="line">type(b)  # &lt;type &apos;numpy.ndarray&apos;&gt;</span><br></pre></td></tr></table></figure></p>
-<h2 id="Array-Creation"><a href="#Array-Creation" class="headerlink" title="Array Creation:"></a>Array Creation:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">a = np.array([2,3,4])</span><br><span class="line">b = np.array([(1,2,3,4), (5,6,7,8)])</span><br><span class="line"></span><br><span class="line">c = np.zeros((3,4))  # 2-D with length 3 and 4 for two axis</span><br><span class="line">d = np.zeros((3,4,5), dtype=np.int16)  # specify a data type</span><br><span class="line">e = np.empty((2,3))  # uninitialized, output may vary</span><br><span class="line"></span><br><span class="line">f = np.arrange(10, 30, 5)  # create a sequence of number. Start from 10, end with 30 (not included), each iteration adds 5.</span><br></pre></td></tr></table></figure>
-<p>Others:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zeros_like, ones, ones_like, numpy.random.rand, numpy.random.randn</span><br></pre></td></tr></table></figure></p>
-<h2 id="Basic-operations"><a href="#Basic-operations" class="headerlink" title="Basic operations:"></a>Basic operations:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = np.array([20, 30, 40, 60])</span><br><span class="line">b = np.arange(4)  # array([0,1,2,3])</span><br><span class="line">c = a-b  # array([20, 29, 38, 57])</span><br><span class="line">print(b**2)  # array([0, 1,4,9])</span><br><span class="line">print(10*np.sin(a)) </span><br><span class="line">print(a&lt;35)  array([True, True, False, False])</span><br></pre></td></tr></table></figure>
-<h2 id="Product-operator-usage-in-NumPy-arrays"><a href="#Product-operator-usage-in-NumPy-arrays" class="headerlink" title="Product operator * usage in NumPy arrays."></a>Product operator * usage in NumPy arrays.</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = np.array([[1,1],[0,1]])</span><br><span class="line">b = np.array([[2,0],[3,4]])</span><br><span class="line">print(a*b)  # array([[2,0], [0,4]])</span><br><span class="line">print(a.dot(b))  # array([[5,4],[3,4]])</span><br><span class="line">print(np.dot(a, b))  # array([[5,4],[3,4]])</span><br><span class="line">print(np.arange(12).reshape(3,4).sum(axis=0))  # sum of each column</span><br><span class="line">print(np.arange(12).reshape(3,4).min(axis=1))  # sum of each row</span><br></pre></td></tr></table></figure>
-<h2 id="Universal-Functions"><a href="#Universal-Functions" class="headerlink" title="Universal Functions:"></a>Universal Functions:</h2><p>Popular use:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">all, any, argmax, argmin, argsort, average, bincount, diff, dot, floor, inner, max, mean, mdeian, min, minimum, nonzero, outer, round, re, sort, std, sum, transpose, var, vectorize, where</span><br></pre></td></tr></table></figure></p>
-<p>To summary, these are basic NumPy usage. I’ll continue to write more blogs to introduce NumPy.</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p><a href="https://docs.scipy.org/doc/numpy/user/quickstart.html#further-reading" target="_blank" rel="noopener">https://docs.scipy.org/doc/numpy/user/quickstart.html#further-reading</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/04/29/Java-Lambda-Function/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinxin Tang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xinxin Tang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/29/Java-Lambda-Function/" itemprop="url">
-                  Java-Lambda Function
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-04-29 11:30:40" itemprop="dateCreated datePublished" datetime="2018-04-29T11:30:40-04:00">2018-04-29</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-05-30 00:31:12" itemprop="dateModified" datetime="2018-05-30T00:31:12-04:00">2018-05-30</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Lambda function first appears in Java8. It can be easily used to traverse with forEach function. Moreover, the code will be concise if we use it instead of Runnable function.</p>
-<h2 id="1-Iteration"><a href="#1-Iteration" class="headerlink" title="1. Iteration:"></a>1. Iteration:</h2><p>Here are three ways to print each element. First method is for loop, second and third is Lambda function. Last two functions look more concise.</p>
-<p>Solution 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line"></span><br><span class="line">for (int element : numbers) &#123;    </span><br><span class="line"></span><br><span class="line">    System.out.prinln(element);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Solution 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line"></span><br><span class="line">numbers.forEach(x -&gt; System.out.println(x));</span><br></pre></td></tr></table></figure></p>
-<p>Solution 3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line"></span><br><span class="line">numbers.forEach(System.out::println);</span><br></pre></td></tr></table></figure></p>
-<h2 id="2-Event-listener"><a href="#2-Event-listener" class="headerlink" title="2. Event listener:"></a>2. Event listener:</h2><p> Using  Lambda function has less code line but it has more curly braces.</p>
-<p>Solution 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">button.addActionListener(new ActionListener()&#123;  </span><br><span class="line"></span><br><span class="line">     @Override    </span><br><span class="line"></span><br><span class="line">     public void actionPerformed(ActionEvent e) &#123;</span><br><span class="line"></span><br><span class="line">             //handle the event    </span><br><span class="line"></span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>Solution 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">button.addActionListener(e -&gt; &#123;    </span><br><span class="line"></span><br><span class="line">      //handle the event</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<h2 id="3-Predicate-Interface"><a href="#3-Predicate-Interface" class="headerlink" title="3. Predicate Interface:"></a>3. Predicate Interface:</h2><p>Predicate interface in java.util.function can be used to filter. If you need to process multiple objects and execute the same process logic, these logics can be encapsulated in function filter. Here also has three methods to make a comparison. </p>
-<p>Solution 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line"></span><br><span class="line">List&lt;String&gt; words = Arrays.asList(&quot;a&quot;, &quot;ab&quot;, &quot;abc&quot;);</span><br><span class="line"></span><br><span class="line">numbers.forEach( x -&gt; &#123;</span><br><span class="line"></span><br><span class="line">    if (x % 2 == 0) &#123;  </span><br><span class="line"></span><br><span class="line">        //process logic</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">words.forEach( x -&gt; &#123;</span><br><span class="line"></span><br><span class="line">    if (x.length() &gt; 1) &#123;</span><br><span class="line"></span><br><span class="line">         //process logic</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>Solution 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">   List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line">   List&lt;String&gt; words = Arrays.asList(&quot;a&quot;, &quot;ab&quot;, &quot;abc&quot;);</span><br><span class="line">   filter(numbers, x -&gt; (int)x % 2 == 0);</span><br><span class="line">   filter(words, x -&gt; ((String)x).length() &gt; 1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public static void filter(List list, Predicate condition) &#123;</span><br><span class="line">   list.forEach(x -&gt; &#123;</span><br><span class="line">       if (condition.test(x)) &#123;</span><br><span class="line">           //process logic</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Solution 3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public static void filter(List list, Predicate condition) &#123;</span><br><span class="line">   list.stream().filter(x -&gt; condition.test(x)).forEach(x -&gt; &#123;</span><br><span class="line">       //process logic</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="4-Map"><a href="#4-Map" class="headerlink" title="4. Map:"></a>4. Map:</h2><p>Use function map convert data to another list, then reverse it to list type using Collect.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line">List&lt;Integer&gt; mapped = numbers.stream().map(x -&gt; x * 2).collect(Collectors.toList());</span><br><span class="line">mapped.forEach(System.out::println);</span><br></pre></td></tr></table></figure></p>
-<h2 id="5-Reduce"><a href="#5-Reduce" class="headerlink" title="5. Reduce:"></a>5. Reduce:</h2><p>Reduce action means obtaining an output based on two variables. For example, two variables execute add operation then return a sum.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);</span><br><span class="line"></span><br><span class="line">int sum = numbers.stream().reduce((x, y) -&gt; x + y).get();</span><br><span class="line"></span><br><span class="line">System.out.println(sum);</span><br></pre></td></tr></table></figure></p>
-<h2 id="6-Replace-Runnable"><a href="#6-Replace-Runnable" class="headerlink" title="6. Replace Runnable:"></a>6. Replace Runnable:</h2><p>Makes code more compact. </p>
-<p>Solution 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Runnable r = new Runnable() &#123;    </span><br><span class="line"></span><br><span class="line">    @Override    </span><br><span class="line"></span><br><span class="line">    public void run() &#123;        </span><br><span class="line"></span><br><span class="line">        //to do something    </span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Thread t = new Thread(r);</span><br><span class="line"></span><br><span class="line">t.start();</span><br></pre></td></tr></table></figure></p>
-<p>Solution 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Runnable r = () -&gt; &#123;    </span><br><span class="line"></span><br><span class="line">    //to do something</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Thread t = new Thread(r);</span><br><span class="line"></span><br><span class="line">t.start();</span><br></pre></td></tr></table></figure></p>
-<p>Solution 3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Thread t = new Thread(() -&gt; &#123;    </span><br><span class="line"></span><br><span class="line">    //to do something</span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">t.start;</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1478,7 +1997,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">57</span>
+                    <span class="site-state-item-count">63</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1579,7 +2098,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">43</span>
+                      
+                    
+                    <span class="site-state-item-count">44</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>

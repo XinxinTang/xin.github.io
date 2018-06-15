@@ -111,7 +111,7 @@
 <meta property="og:description" content="Docker is an open source container engine, which is written by Golang. It allows developers to pack app into a lightweight, portable container and deploy on any Linux machine to achieve virtualization">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2016/04/576507-docker1.png">
-<meta property="og:updated_time" content="2018-05-22T00:02:52.288Z">
+<meta property="og:updated_time" content="2018-06-08T05:05:02.048Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker">
 <meta name="twitter:description" content="Docker is an open source container engine, which is written by Golang. It allows developers to pack app into a lightweight, portable container and deploy on any Linux machine to achieve virtualization">
@@ -339,7 +339,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-05-21 20:02:52" itemprop="dateModified" datetime="2018-05-21T20:02:52-04:00">2018-05-21</time>
+                <time title="Modified: 2018-06-08 01:05:02" itemprop="dateModified" datetime="2018-06-08T01:05:02-04:00">2018-06-08</time>
               
             
           </span>
@@ -373,16 +373,21 @@
 
       
         <p>Docker is an open source container engine, which is written by Golang.</p>
-<p>It allows developers to pack app into a lightweight, portable container and deploy on any Linux machine to achieve virtualization. It adopts sandbox mechanism, which has no interface between containers, so that container costs less. </p>
+<p>It allows developers to pack app into a lightweight, portable container and deploy on any Linux machine to achieve virtualization. It adopts sandbox mechanism, which has no interface between containers, so that container costs less.</p>
 <h2 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h2><p>Docker uses Cli-Server mode to manage and build container by remote APIs.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Docker        Object-oriented</span><br><span class="line">Container     Object</span><br><span class="line">Image         Class</span><br></pre></td></tr></table></figure></p>
 <p><img src="http://www.runoob.com/wp-content/uploads/2016/04/576507-docker1.png" alt=""></p>
 <p>Docker Images: The template to build Docker Container.<br>Docker Container: One or more apps run in container independently.<br>Docker Client: keep in touch with daemon by command lines and Docker APIs.<br>Docker Host: a physical or virtual machine to execute Docker daemon and containers.<br>Docker Registry: a Docker warehouse to store images.<br>Docker Machine: a command line tool to install Docker in target platform, like VirtualBox, Digital Ocean.</p>
 <h2 id="Implements"><a href="#Implements" class="headerlink" title="Implements"></a>Implements</h2><p>Web app, Back-end app auto-pack and deployment</p>
 <h2 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h2><ol>
-<li>Install docker: <figure class="highlight plain"><figcaption><span>install docker```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2. Search commands: </span><br><span class="line">```docker</span><br></pre></td></tr></table></figure>
+<li>Install docker:<figure class="highlight plain"><figcaption><span>install docker</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">2. Search commands:</span><br><span class="line">```docker</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>You will see all commands.</p>
+<h2 id="Dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h2><p><strong>docker build</strong> install all setting environments.<br>commands:<br>  FROM; RUN; ADD; COPY; CMD; EXPOSE; WORKDIR;<br>  MAINTAINER; ENV; ENTRYPOINT; USER; VOLUME<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">FROM ubuntu</span><br><span class="line">MAINTAINER xinxin tang</span><br><span class="line">RUN sed -i &apos;s/archive.ubuntu.com/mirrrors.ustc.edu.cn/g&apos; /etc/apt/sources.list</span><br><span class="line">RUN apt-get update</span><br><span class="line">RUN apt-get install -y nginx</span><br><span class="line">COPY index.html /var/www/html</span><br><span class="line">ENTRYPOINT [&quot;/usr/sbin/nginx&quot;, &quot;daemon off;&quot;]</span><br><span class="line">EXPOSE 80</span><br></pre></td></tr></table></figure></p>
+<p>Set commands in dockerfile;</p>
+<h2 id="Storage-Volume"><a href="#Storage-Volume" class="headerlink" title="Storage - Volume"></a>Storage - Volume</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run -v /usr/xinxin/html nginx</span><br><span class="line">-v: persist storage</span><br></pre></td></tr></table></figure>
+<h2 id="Multi-App-docker-compose"><a href="#Multi-App-docker-compose" class="headerlink" title="Multi-App - docker-compose"></a>Multi-App - docker-compose</h2><p>set all configurations for packing applications together.<br>dockerfile;<br>yaml</p>
+<p>commands:<br>  build; command; depends_on; ports; volumes; image;<br>  up; stop; rm; logs; ps</p>
 
       
     </div>
@@ -504,7 +509,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">57</span>
+                    <span class="site-state-item-count">63</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -605,7 +610,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">43</span>
+                      
+                    
+                    <span class="site-state-item-count">44</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
@@ -641,7 +648,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Architecture"><span class="nav-number">1.</span> <span class="nav-text">Architecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Implements"><span class="nav-number">2.</span> <span class="nav-text">Implements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Commands"><span class="nav-number">3.</span> <span class="nav-text">Commands</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Architecture"><span class="nav-number">1.</span> <span class="nav-text">Architecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Implements"><span class="nav-number">2.</span> <span class="nav-text">Implements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Commands"><span class="nav-number">3.</span> <span class="nav-text">Commands</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dockerfile"><span class="nav-number">4.</span> <span class="nav-text">Dockerfile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Storage-Volume"><span class="nav-number">5.</span> <span class="nav-text">Storage - Volume</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multi-App-docker-compose"><span class="nav-number">6.</span> <span class="nav-text">Multi-App - docker-compose</span></a></li></ol></div>
             
 
           </div>

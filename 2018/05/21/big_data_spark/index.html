@@ -102,19 +102,19 @@
 
 
 
-  <meta name="description" content="Spark is a large-scale data computing engine, which is written by Scala.  Features of Apache Spark Faster speed: In memory,theoretically, the speed of Spark is 100 times faster than Speed of Hadoop In">
+  <meta name="description" content="Spark is a large-scale data computing engine, which is written by Scala. Features of Apache Spark Faster speed: In memory,theoretically, the speed of Spark is 100 times faster than Speed of Hadoop In-">
 <meta name="keywords" content="Big Data,Spark">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spark">
 <meta property="og:url" content="https://XinxinTang/xinxintang.github.io/2018/05/21/big_data_spark/index.html">
 <meta property="og:site_name" content="Xinxin Tang">
-<meta property="og:description" content="Spark is a large-scale data computing engine, which is written by Scala.  Features of Apache Spark Faster speed: In memory,theoretically, the speed of Spark is 100 times faster than Speed of Hadoop In">
+<meta property="og:description" content="Spark is a large-scale data computing engine, which is written by Scala. Features of Apache Spark Faster speed: In memory,theoretically, the speed of Spark is 100 times faster than Speed of Hadoop In-">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://www.uml.org.cn/bigdata/images/201803131.png">
-<meta property="og:updated_time" content="2018-05-21T23:59:03.473Z">
+<meta property="og:updated_time" content="2018-06-12T21:50:59.395Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spark">
-<meta name="twitter:description" content="Spark is a large-scale data computing engine, which is written by Scala.  Features of Apache Spark Faster speed: In memory,theoretically, the speed of Spark is 100 times faster than Speed of Hadoop In">
+<meta name="twitter:description" content="Spark is a large-scale data computing engine, which is written by Scala. Features of Apache Spark Faster speed: In memory,theoretically, the speed of Spark is 100 times faster than Speed of Hadoop In-">
 <meta name="twitter:image" content="http://www.uml.org.cn/bigdata/images/201803131.png">
 
 
@@ -322,12 +322,24 @@
                 
               
 
-              <time title="Created: 2018-05-21 14:01:20 / Modified: 19:59:03" itemprop="dateCreated datePublished" datetime="2018-05-21T14:01:20-04:00">2018-05-21</time>
+              <time title="Created: 2018-05-21 14:01:20" itemprop="dateCreated datePublished" datetime="2018-05-21T14:01:20-04:00">2018-05-21</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-06-12 17:50:59" itemprop="dateModified" datetime="2018-06-12T17:50:59-04:00">2018-06-12</time>
               
             
           </span>
@@ -360,27 +372,27 @@
       
 
       
-        <p>Spark is a large-scale data computing engine, which is written by Scala. </p>
+        <p>Spark is a large-scale data computing engine, which is written by Scala.</p>
 <h1 id="Features-of-Apache-Spark"><a href="#Features-of-Apache-Spark" class="headerlink" title="Features of Apache Spark"></a>Features of Apache Spark</h1><ol>
 <li>Faster speed: In memory,theoretically, the speed of Spark is 100 times faster than Speed of Hadoop</li>
 <li>In-memory computing engine: provides Cache mechanism to support continuous iterations or retrieve shared data, reduce cost of I/O of data.</li>
-<li>DAG engine: reduce cost of HDFS Read/Write during computing </li>
+<li>DAG engine: reduce cost of HDFS Read/Write during computing</li>
 <li>Use multi-threaded pool to reduce cost of task startup.</li>
 <li>Easy to use:<br>over 80 high-level operators.<br>supports Java, Python, Scala, R<br>the amount of code is 2 to 5 times less than MapReduce’s</li>
 <li>Generalization: provides many libraries like Spark SQL, Spark MLlib, Spark GraphX, Spark Streaming.</li>
 <li>Supports multiple resource schedulers: Hadoop Yarn, Apache Mesos, and Standalone cluster scheduler.</li>
 </ol>
-<h1 id="Resilient-Distributed-Datasets-RDD"><a href="#Resilient-Distributed-Datasets-RDD" class="headerlink" title="Resilient Distributed Datasets(RDD)"></a>Resilient Distributed Datasets(RDD)</h1><ol>
+<h1 id="Resilient-Distributed-Datasets-RDD-Key-Point"><a href="#Resilient-Distributed-Datasets-RDD-Key-Point" class="headerlink" title="Resilient Distributed Datasets(RDD) : Key Point"></a>Resilient Distributed Datasets(RDD) : Key Point</h1><ol>
 <li>Collections in cluster, which is read only and consists of Partitions.</li>
 <li>Stores in disk or memory.</li>
-<li>Operations is composed by <strong>transformation</strong> and <strong>action</strong> </li>
+<li>Operations is composed by <strong>transformation</strong> and <strong>action</strong></li>
 <li>Automatically reorganization if it fails.</li>
 </ol>
 <h2 id="Features-of-Transformation-and-Action"><a href="#Features-of-Transformation-and-Action" class="headerlink" title="Features of Transformation and Action"></a>Features of Transformation and Action</h2><ol>
 <li>Different APIs: T: RDD[X]-&gt;RDD[Y]; A:RDD[X]-&gt;Z(Z is probably a basic data type like array)</li>
 <li>Lazy actions:<br>Transformation only record RDD transform relation<br>Action triggers executions of program</li>
 </ol>
-<h1 id="Spark-Streaming"><a href="#Spark-Streaming" class="headerlink" title="Spark Streaming"></a>Spark Streaming</h1><p>Splits streaming data into small pieces and processes batch data. It will reduce latency. </p>
+<h1 id="Spark-Streaming"><a href="#Spark-Streaming" class="headerlink" title="Spark Streaming"></a>Spark Streaming</h1><p>Splits streaming data into small pieces and processes batch data. It will reduce latency.</p>
 <h2 id="Difference-between-MR-and-Spark"><a href="#Difference-between-MR-and-Spark" class="headerlink" title="Difference between MR and Spark"></a>Difference between MR and Spark</h2><p><img src="http://www.uml.org.cn/bigdata/images/201803131.png" alt=""><br>MR:</p>
 <ol>
 <li>Only privides <strong>Map</strong> and <strong>Reduce</strong> operations</li>
@@ -388,7 +400,7 @@
 <li>The middle result of <strong>Map</strong> needs to write into disk and <strong>Reduce</strong> needs to write into HDFS.</li>
 <li>High cost of Task Scheduling and Startups.</li>
 <li>Cannot fully use of memory</li>
-<li>Map and Reduce need to sort data. </li>
+<li>Map and Reduce need to sort data.</li>
 </ol>
 <h1 id="Implements-of-Spark"><a href="#Implements-of-Spark" class="headerlink" title="Implements of Spark"></a>Implements of Spark</h1><ol>
 <li>Log collecting and searching</li>
@@ -518,7 +530,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">57</span>
+                    <span class="site-state-item-count">63</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -619,7 +631,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">43</span>
+                      
+                    
+                    <span class="site-state-item-count">44</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
@@ -655,7 +669,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Features-of-Apache-Spark"><span class="nav-number">1.</span> <span class="nav-text">Features of Apache Spark</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Resilient-Distributed-Datasets-RDD"><span class="nav-number">2.</span> <span class="nav-text">Resilient Distributed Datasets(RDD)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Features-of-Transformation-and-Action"><span class="nav-number">2.1.</span> <span class="nav-text">Features of Transformation and Action</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spark-Streaming"><span class="nav-number">3.</span> <span class="nav-text">Spark Streaming</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Difference-between-MR-and-Spark"><span class="nav-number">3.1.</span> <span class="nav-text">Difference between MR and Spark</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Implements-of-Spark"><span class="nav-number">4.</span> <span class="nav-text">Implements of Spark</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Features-of-Apache-Spark"><span class="nav-number">1.</span> <span class="nav-text">Features of Apache Spark</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Resilient-Distributed-Datasets-RDD-Key-Point"><span class="nav-number">2.</span> <span class="nav-text">Resilient Distributed Datasets(RDD) : Key Point</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Features-of-Transformation-and-Action"><span class="nav-number">2.1.</span> <span class="nav-text">Features of Transformation and Action</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spark-Streaming"><span class="nav-number">3.</span> <span class="nav-text">Spark Streaming</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Difference-between-MR-and-Spark"><span class="nav-number">3.1.</span> <span class="nav-text">Difference between MR and Spark</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Implements-of-Spark"><span class="nav-number">4.</span> <span class="nav-text">Implements of Spark</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>

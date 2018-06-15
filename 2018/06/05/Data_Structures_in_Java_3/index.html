@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.2.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="3 Fundamental Data Structures3.1 Using Arrays3.1.1 Storing in an Arrayadd:插入指定index，index数据与index之后数据整体右移remove:移除指定index，index之后所有数据整体左移 3.1.2 Sorting an ArrayInsert-Sort 3.1.3 java.util Methods for">
+<meta name="keywords" content="Data Structures">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Data_Structures_in_Java 3, 6">
+<meta property="og:url" content="https://XinxinTang/xinxintang.github.io/2018/06/05/Data_Structures_in_Java_3/index.html">
+<meta property="og:site_name" content="Xinxin Tang">
+<meta property="og:description" content="3 Fundamental Data Structures3.1 Using Arrays3.1.1 Storing in an Arrayadd:插入指定index，index数据与index之后数据整体右移remove:移除指定index，index之后所有数据整体左移 3.1.2 Sorting an ArrayInsert-Sort 3.1.3 java.util Methods for">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://i.imgur.com/CM88qNl.png">
+<meta property="og:updated_time" content="2018-06-08T20:36:59.621Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Data_Structures_in_Java 3, 6">
+<meta name="twitter:description" content="3 Fundamental Data Structures3.1 Using Arrays3.1.1 Storing in an Arrayadd:插入指定index，index数据与index之后数据整体右移remove:移除指定index，index之后所有数据整体左移 3.1.2 Sorting an ArrayInsert-Sort 3.1.3 java.util Methods for">
+<meta name="twitter:image" content="https://i.imgur.com/CM88qNl.png">
+
+
+
+
+
+
+  <link rel="canonical" href="https://XinxinTang/xinxintang.github.io/2018/06/05/Data_Structures_in_Java_3/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Data_Structures_in_Java 3, 6 | Xinxin Tang</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Xinxin Tang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">A technical blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://XinxinTang/xinxintang.github.io/2018/06/05/Data_Structures_in_Java_3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinxin Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xinxin Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Data_Structures_in_Java 3, 6
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-06-05 15:20:35" itemprop="dateCreated datePublished" datetime="2018-06-05T15:20:35-04:00">2018-06-05</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-06-08 16:36:59" itemprop="dateModified" datetime="2018-06-08T16:36:59-04:00">2018-06-08</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="3-Fundamental-Data-Structures"><a href="#3-Fundamental-Data-Structures" class="headerlink" title="3 Fundamental Data Structures"></a>3 Fundamental Data Structures</h1><h2 id="3-1-Using-Arrays"><a href="#3-1-Using-Arrays" class="headerlink" title="3.1 Using Arrays"></a>3.1 Using Arrays</h2><h3 id="3-1-1-Storing-in-an-Array"><a href="#3-1-1-Storing-in-an-Array" class="headerlink" title="3.1.1 Storing in an Array"></a>3.1.1 Storing in an Array</h3><p>add:插入指定index，index数据与index之后数据整体右移<br>remove:移除指定index，index之后所有数据整体左移</p>
+<h3 id="3-1-2-Sorting-an-Array"><a href="#3-1-2-Sorting-an-Array" class="headerlink" title="3.1.2 Sorting an Array"></a>3.1.2 Sorting an Array</h3><p>Insert-Sort</p>
+<h3 id="3-1-3-java-util-Methods-for-Arrays-and-Random-Numbers"><a href="#3-1-3-java-util-Methods-for-Arrays-and-Random-Numbers" class="headerlink" title="3.1.3 java.util Methods for Arrays and Random Numbers"></a>3.1.3 java.util Methods for Arrays and Random Numbers</h3><p>1 Most commonly used methods:<br>built-in class: <strong>java.util.Arrays</strong>.<br><strong>equals(A, B)</strong>: return true if and only if array A and array B are equal. A and B have the same element values in the same order.<br><strong>fill(A, x)</strong>: Stores value x in every cell of array A.<br><strong>copyOf(A, n)</strong>: return an array of size n<br><strong>copyOfRange(A, s, t)</strong>: returns an array of size t-s. copy array from index s to t-1.<br><strong>toString(A)</strong>: returns a String representation of the array A<br><strong>sort(A)</strong>: sorts the array A<br><strong>binarySearch(A, x)</strong>: searches the Sorted array A for value x, returning the index where it is found.</p>
+<p>2 PseudoRandom Number Generation<br>built-in class: <strong>java.util.Random</strong>.<br>Methods of the java.util.Random class:<br><strong>nextBoolean()</strong>: returns the next pseudorandom boolean value<br><strong>nextDouble()</strong>: returns the next pseudorandom double value, between 0.0 to 1.0<br><strong>nextInt()</strong>: returns the next pseudorandom int value<br><strong>nextInt(n)</strong>: returns the next pseudorandom int value n the range from 0 up to but not including n<br><strong>setSeed(s)</strong>: sets the seed of this pseudorandom number generator to the long s</p>
+<h3 id="3-1-4-Simple-Cryptography-with-Character-Arrays"><a href="#3-1-4-Simple-Cryptography-with-Character-Arrays" class="headerlink" title="3.1.4 Simple Cryptography with Character Arrays"></a>3.1.4 Simple Cryptography with Character Arrays</h3><p>1 Converting Between Strings and Character Arrays<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s = &quot;bird&quot;;</span><br><span class="line">A = s.toCharArray();  // A = &#123;&apos;b&apos;,&apos;i&apos;,&apos;r&apos;,&apos;d&apos;&#125;</span><br><span class="line">B = new String(A);  // B = &quot;bird&quot;</span><br></pre></td></tr></table></figure></p>
+<p>2 Using Character Arrays as Replacement Codes</p>
+<h3 id="3-1-5-2-D-Arrays-and-Positional-Games"><a href="#3-1-5-2-D-Arrays-and-Positional-Games" class="headerlink" title="3.1.5 2-D Arrays and Positional Games"></a>3.1.5 2-D Arrays and Positional Games</h3><p>first index refers as a row number;<br>second index refers as a column number.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int[][] data = new int[8][10];</span><br></pre></td></tr></table></figure></p>
+<p>TicTacToe Game:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">public class TicTacToe &#123;</span><br><span class="line">    private static final int X = 1, O = -1;</span><br><span class="line">    private static final int EMPTY = 0;</span><br><span class="line">    private int board[ ][ ] = new int[3][3];</span><br><span class="line">    private int player;</span><br><span class="line"></span><br><span class="line">    public TicTacToe( ) &#123; clearBoard( ); &#125;</span><br><span class="line"></span><br><span class="line">    public void clearBoard( ) &#123;</span><br><span class="line">        for (int i = 0; i &lt; 3; i++)</span><br><span class="line">            for (int j = 0; j &lt; 3; j++)</span><br><span class="line">                board[i][j] = EMPTY;</span><br><span class="line">        player = X;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void putMark(int i, int j) throws IllegalArgumentException &#123;</span><br><span class="line">        if ((i &lt; 0) || (i &gt; 2) || (j &lt; 0) || (j &gt; 2))</span><br><span class="line">            throw new IllegalArgumentException(&quot;Invalid board position&quot;);</span><br><span class="line">        if (board[i][j] != EMPTY)</span><br><span class="line">            throw new IllegalArgumentException(&quot;Board position occupied&quot;);</span><br><span class="line">        board[i][j] = player;</span><br><span class="line">        player = -player;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public boolean isWin(int mark) &#123;</span><br><span class="line">            return ((board[0][0] + board[0][1] + board[0][2] == mark*3)</span><br><span class="line">                    || (board[1][0] + board[1][1] + board[1][2] == mark*3)</span><br><span class="line">                    || (board[2][0] + board[2][1] + board[2][2] == mark*3)</span><br><span class="line">                    || (board[0][0] + board[1][0] + board[2][0] == mark*3)</span><br><span class="line">                    || (board[0][1] + board[1][1] + board[2][1] == mark*3)</span><br><span class="line">                    || (board[0][2] + board[1][2] + board[2][2] == mark*3)</span><br><span class="line">                    || (board[0][0] + board[1][1] + board[2][2] == mark*3)</span><br><span class="line">                    || (board[2][0] + board[1][1] + board[0][2] == mark*3));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public int winner( ) &#123;</span><br><span class="line">        if (isWin(X)) return(X);</span><br><span class="line">        else if (isWin(O)) return(O);</span><br><span class="line">        else return(0);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String toString() &#123;</span><br><span class="line">        StringBuilder sb = new StringBuilder();</span><br><span class="line">        for (int i=0; i&lt;3; i++) &#123;</span><br><span class="line">            for (int j=0; j&lt;3; j++) &#123;</span><br><span class="line">                switch (board[i][j]) &#123;</span><br><span class="line">                    case X: sb.append(&quot;X&quot;); break;</span><br><span class="line">                        case O: sb.append(&quot;O&quot;); break;</span><br><span class="line">                        case EMPTY: sb.append(&quot; &quot;); break;</span><br><span class="line">                &#125;</span><br><span class="line">                if (j &lt; 2) sb.append(&quot;|&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">            if (i &lt; 2) sb.append(&quot;\n-----\n&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        return sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[ ] args) &#123;</span><br><span class="line">        TicTacToe game = new TicTacToe();</span><br><span class="line">        game.putMark(1,1);  game.putMark(0,2);</span><br><span class="line">        game.putMark(2,2);  game.putMark(0,0);</span><br><span class="line">        game.putMark(0,1);  game.putMark(2,1);</span><br><span class="line">        game.putMark(1,2);  game.putMark(1,0);</span><br><span class="line">        game.putMark(2,0);</span><br><span class="line"></span><br><span class="line">        System.out.println(game);</span><br><span class="line">        int winningPlayer = game.winner();</span><br><span class="line">        String[]outcome=&#123;&quot;Owins&quot;,&quot;Tie&quot;,&quot;Xwins&quot;&#125;;</span><br><span class="line">        System.out.println(outcome[1 + winningPlayer]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-2-Singly-Linked-Lists"><a href="#3-2-Singly-Linked-Lists" class="headerlink" title="3.2 Singly Linked Lists"></a>3.2 Singly Linked Lists</h2><p>Array:<br>  Cons:fixed capacity;<br>       time-consuming for insertions and deletions<br>head<br>tail</p>
+<p>Inserting an element<br>Removing an element</p>
+<p>Commonly used methods:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">size();</span><br><span class="line">isEmpty();</span><br><span class="line">first();</span><br><span class="line">last();</span><br><span class="line">addFirst(e);</span><br><span class="line">addLast(e);</span><br><span class="line">removeFirst();</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-3-Circularly-Linked-Lists"><a href="#3-3-Circularly-Linked-Lists" class="headerlink" title="3.3 Circularly Linked Lists"></a>3.3 Circularly Linked Lists</h2><p>Linked lists are traditionally viewed as storing a sequence of items in a linear order, from first to last.</p>
+<h3 id="3-3-1-Round-Robin-Scheduling"><a href="#3-3-1-Round-Robin-Scheduling" class="headerlink" title="3.3.1 Round-Robin Scheduling"></a>3.3.1 Round-Robin Scheduling</h3><p>To support the responsiveness of an arbitrary number of concurrent processes, most operating systems allow processes to effectively share use of the CPUs, using some form of an algorithm known as <strong>Round-Robin Scheduling</strong>. A process is given a short turn to execute, known as a <strong>time slice</strong>, but it is interrupted when the slice ends, even if its job is not yet complete. New Processes can be added to the system, and processes that complete their work can be removed.</p>
+<h3 id="3-3-2-Designing-and-Implementing-a-Circularly-Linked-List"><a href="#3-3-2-Designing-and-Implementing-a-Circularly-Linked-List" class="headerlink" title="3.3.2 Designing and Implementing a Circularly Linked List"></a>3.3.2 Designing and Implementing a Circularly Linked List</h3><h2 id="3-4-Doubly-Linked-Lists"><a href="#3-4-Doubly-Linked-Lists" class="headerlink" title="3.4 Doubly Linked Lists"></a>3.4 Doubly Linked Lists</h2><p>Singly Linked List:<br>  Cons:<br>    efficiently add/delete first node but not for last node<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">size();</span><br><span class="line">isEmpty();</span><br><span class="line">first();</span><br><span class="line">last();</span><br><span class="line">addFirst(e);</span><br><span class="line">addLast(e);</span><br><span class="line">removeFirst();</span><br><span class="line">removeLast();</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-5-Equivalence-Testing"><a href="#3-5-Equivalence-Testing" class="headerlink" title="3.5 Equivalence Testing"></a>3.5 Equivalence Testing</h2><h3 id="3-5-1-Equivalence-Testing-with-Arrays"><a href="#3-5-1-Equivalence-Testing-with-Arrays" class="headerlink" title="3.5.1 Equivalence Testing with Arrays"></a>3.5.1 Equivalence Testing with Arrays</h3><p><strong>a==b</strong>: tests if a and b refer to the same underlying array instance<br><strong>a.equals(b)</strong>: this is identical to a==b.<br><strong>Arrays.equals(a, b)</strong>: return <strong>True</strong> if the arrays have the same length and all pairs of corresponding elements are “equal” to each other.<br><strong>Arrays.deepEquals(a, b)</strong>: for multidimensional arrays</p>
+<h3 id="3-5-2-Equivalence-Testing-with-Linked-Lists"><a href="#3-5-2-Equivalence-Testing-with-Linked-Lists" class="headerlink" title="3.5.2 Equivalence Testing with Linked Lists"></a>3.5.2 Equivalence Testing with Linked Lists</h3><h2 id="3-6-Cloning-Data-Structures"><a href="#3-6-Cloning-Data-Structures" class="headerlink" title="3.6 Cloning Data Structures"></a>3.6 Cloning Data Structures</h2><h3 id="3-6-1-Cloning-Arrays"><a href="#3-6-1-Cloning-Arrays" class="headerlink" title="3.6.1 Cloning Arrays"></a>3.6.1 Cloning Arrays</h3><p><img src="https://i.imgur.com/CM88qNl.png" alt="Imgur"><br>This is not copy. Just have different referred name.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int[] data = &#123;2,3,4,5,6&#125;;</span><br><span class="line">int[] backup;</span><br><span class="line">backup = data.clone();</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-6-2-Cloning-Linked-Lists"><a href="#3-6-2-Cloning-Linked-Lists" class="headerlink" title="3.6.2 Cloning Linked Lists"></a>3.6.2 Cloning Linked Lists</h3><h1 id="5-Recursion"><a href="#5-Recursion" class="headerlink" title="5 Recursion"></a>5 Recursion</h1><h2 id="5-1-Illustrative-Examples"><a href="#5-1-Illustrative-Examples" class="headerlink" title="5.1 Illustrative Examples"></a>5.1 Illustrative Examples</h2><h3 id="5-1-1-The-Factorial-Function"><a href="#5-1-1-The-Factorial-Function" class="headerlink" title="5.1.1 The Factorial Function"></a>5.1.1 The Factorial Function</h3><p>edge case;<br>base case;<br>recursive case;</p>
+<h3 id="5-1-2-Drawing-an-English-Ruler"><a href="#5-1-2-Drawing-an-English-Ruler" class="headerlink" title="5.1.2 Drawing an English Ruler"></a>5.1.2 Drawing an English Ruler</h3><h3 id="5-1-3-Binary-Search"><a href="#5-1-3-Binary-Search" class="headerlink" title="5.1.3 Binary Search"></a>5.1.3 Binary Search</h3><h3 id="5-1-4-File-Systems"><a href="#5-1-4-File-Systems" class="headerlink" title="5.1.4 File Systems"></a>5.1.4 File Systems</h3><p>report disk usage of a file system<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public static long diskUsage(File root) &#123;</span><br><span class="line">  long total = root.length();</span><br><span class="line">  if (root.isDirectory()) &#123;</span><br><span class="line">    for (String childname : root.list()) &#123;</span><br><span class="line">        File child = new File(root, childname);</span><br><span class="line">        total += diskUsage(child);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  System.out.println(total + &quot;\t&quot; + root);</span><br><span class="line">  return total;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-3-Further-Examples-of-Recursion"><a href="#5-3-Further-Examples-of-Recursion" class="headerlink" title="5.3 Further Examples of Recursion"></a>5.3 Further Examples of Recursion</h2><h3 id="5-3-1-Linear-Recursion"><a href="#5-3-1-Linear-Recursion" class="headerlink" title="5.3.1 Linear Recursion"></a>5.3.1 Linear Recursion</h3><h3 id="5-3-2-Binary-Recursion"><a href="#5-3-2-Binary-Recursion" class="headerlink" title="5.3.2 Binary Recursion"></a>5.3.2 Binary Recursion</h3><h3 id="5-3-3-Multiple-Recursion"><a href="#5-3-3-Multiple-Recursion" class="headerlink" title="5.3.3 Multiple Recursion"></a>5.3.3 Multiple Recursion</h3><h2 id="5-4-Designing-Recursive-Algorithms"><a href="#5-4-Designing-Recursive-Algorithms" class="headerlink" title="5.4 Designing Recursive Algorithms"></a>5.4 Designing Recursive Algorithms</h2><h1 id="6-Stacks-Queues-and-Deques"><a href="#6-Stacks-Queues-and-Deques" class="headerlink" title="6 Stacks, Queues, and Deques"></a>6 Stacks, Queues, and Deques</h1><h2 id="6-1-Stacks"><a href="#6-1-Stacks" class="headerlink" title="6.1 Stacks"></a>6.1 Stacks</h2><p>LIFO</p>
+<h3 id="6-1-1-The-Stack-Abstract-Data-Type"><a href="#6-1-1-The-Stack-Abstract-Data-Type" class="headerlink" title="6.1.1 The Stack Abstract Data Type"></a>6.1.1 The Stack Abstract Data Type</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Stack;</span><br><span class="line"></span><br><span class="line">push();</span><br><span class="line">pop();</span><br><span class="line">top();</span><br><span class="line">size();</span><br><span class="line">isEmpty();</span><br></pre></td></tr></table></figure>
+<h3 id="6-1-2-A-Simple-Array-Based-Stack-Implementation"><a href="#6-1-2-A-Simple-Array-Based-Stack-Implementation" class="headerlink" title="6.1.2 A Simple Array-Based Stack Implementation"></a>6.1.2 A Simple Array-Based Stack Implementation</h3><h3 id="6-1-3-Implementing-a-Stack-with-a-Singly-Linked-List"><a href="#6-1-3-Implementing-a-Stack-with-a-Singly-Linked-List" class="headerlink" title="6.1.3 Implementing a Stack with a Singly Linked List"></a>6.1.3 Implementing a Stack with a Singly Linked List</h3><p>Adapter Pattern</p>
+<h3 id="6-1-4-Reversing-an-Array-Using-a-Stack"><a href="#6-1-4-Reversing-an-Array-Using-a-Stack" class="headerlink" title="6.1.4 Reversing an Array Using a Stack"></a>6.1.4 Reversing an Array Using a Stack</h3><h3 id="6-1-5-Matching-Parentheses-and-HTML-Tags"><a href="#6-1-5-Matching-Parentheses-and-HTML-Tags" class="headerlink" title="6.1.5 Matching Parentheses and HTML Tags"></a>6.1.5 Matching Parentheses and HTML Tags</h3><p>An algorithm for Matching Delimiters;<br>Matching Tags in a Markup Language;</p>
+<h2 id="6-2-Queues"><a href="#6-2-Queues" class="headerlink" title="6.2 Queues"></a>6.2 Queues</h2><p>FIFO</p>
+<h2 id="6-2-1-The-Queue-Abstract-Data-Type"><a href="#6-2-1-The-Queue-Abstract-Data-Type" class="headerlink" title="6.2.1 The Queue Abstract Data Type"></a>6.2.1 The Queue Abstract Data Type</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Queue</span><br><span class="line"></span><br><span class="line">enqueue(e);</span><br><span class="line">dequeue();</span><br><span class="line">first();</span><br><span class="line">size();</span><br><span class="line">isEmpty();</span><br></pre></td></tr></table></figure>
+<h3 id="6-2-2-Array-Based-Queue-Implementation"><a href="#6-2-2-Array-Based-Queue-Implementation" class="headerlink" title="6.2.2 Array-Based Queue Implementation"></a>6.2.2 Array-Based Queue Implementation</h3><h3 id="6-2-3-Implementing-a-Queue-with-a-Singly-Linked-List"><a href="#6-2-3-Implementing-a-Queue-with-a-Singly-Linked-List" class="headerlink" title="6.2.3 Implementing a Queue with a Singly Linked List"></a>6.2.3 Implementing a Queue with a Singly Linked List</h3><h3 id="6-2-4-A-Circular-Queue"><a href="#6-2-4-A-Circular-Queue" class="headerlink" title="6.2.4 A Circular Queue"></a>6.2.4 A Circular Queue</h3><h2 id="6-3-Double-Ended-Queues"><a href="#6-3-Double-Ended-Queues" class="headerlink" title="6.3 Double-Ended Queues"></a>6.3 Double-Ended Queues</h2><h3 id="6-3-1-The-Deque-Abstract-Data-Type"><a href="#6-3-1-The-Deque-Abstract-Data-Type" class="headerlink" title="6.3.1 The Deque Abstract Data Type"></a>6.3.1 The Deque Abstract Data Type</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Queue;</span><br><span class="line"></span><br><span class="line">addFirst();</span><br><span class="line">addLast();</span><br><span class="line">removeFirst();</span><br><span class="line">removeLast();</span><br><span class="line"></span><br><span class="line">first();</span><br><span class="line">last();</span><br><span class="line">size();</span><br><span class="line">isEmpty();</span><br></pre></td></tr></table></figure>
+<h3 id="6-3-2-Implementing-a-Deque"><a href="#6-3-2-Implementing-a-Deque" class="headerlink" title="6.3.2 Implementing a Deque"></a>6.3.2 Implementing a Deque</h3>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Data-Structures/" rel="tag"># Data Structures</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/04/Data_Structures_in_Java_1-2/" rel="next" title="Data_Structures_in_Java 1-2">
+                <i class="fa fa-chevron-left"></i> Data_Structures_in_Java 1-2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/07/Data_Structures_in_Java_7-8/" rel="prev" title="Data_Structures_in_Java 7,">
+                Data_Structures_in_Java 7, <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Xinxin Tang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">63</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">44</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Fundamental-Data-Structures"><span class="nav-number">1.</span> <span class="nav-text">3 Fundamental Data Structures</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Using-Arrays"><span class="nav-number">1.1.</span> <span class="nav-text">3.1 Using Arrays</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-1-Storing-in-an-Array"><span class="nav-number">1.1.1.</span> <span class="nav-text">3.1.1 Storing in an Array</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-2-Sorting-an-Array"><span class="nav-number">1.1.2.</span> <span class="nav-text">3.1.2 Sorting an Array</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-3-java-util-Methods-for-Arrays-and-Random-Numbers"><span class="nav-number">1.1.3.</span> <span class="nav-text">3.1.3 java.util Methods for Arrays and Random Numbers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-4-Simple-Cryptography-with-Character-Arrays"><span class="nav-number">1.1.4.</span> <span class="nav-text">3.1.4 Simple Cryptography with Character Arrays</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-5-2-D-Arrays-and-Positional-Games"><span class="nav-number">1.1.5.</span> <span class="nav-text">3.1.5 2-D Arrays and Positional Games</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Singly-Linked-Lists"><span class="nav-number">1.2.</span> <span class="nav-text">3.2 Singly Linked Lists</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Circularly-Linked-Lists"><span class="nav-number">1.3.</span> <span class="nav-text">3.3 Circularly Linked Lists</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-1-Round-Robin-Scheduling"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.3.1 Round-Robin Scheduling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-2-Designing-and-Implementing-a-Circularly-Linked-List"><span class="nav-number">1.3.2.</span> <span class="nav-text">3.3.2 Designing and Implementing a Circularly Linked List</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Doubly-Linked-Lists"><span class="nav-number">1.4.</span> <span class="nav-text">3.4 Doubly Linked Lists</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-Equivalence-Testing"><span class="nav-number">1.5.</span> <span class="nav-text">3.5 Equivalence Testing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-1-Equivalence-Testing-with-Arrays"><span class="nav-number">1.5.1.</span> <span class="nav-text">3.5.1 Equivalence Testing with Arrays</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-2-Equivalence-Testing-with-Linked-Lists"><span class="nav-number">1.5.2.</span> <span class="nav-text">3.5.2 Equivalence Testing with Linked Lists</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-Cloning-Data-Structures"><span class="nav-number">1.6.</span> <span class="nav-text">3.6 Cloning Data Structures</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6-1-Cloning-Arrays"><span class="nav-number">1.6.1.</span> <span class="nav-text">3.6.1 Cloning Arrays</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6-2-Cloning-Linked-Lists"><span class="nav-number">1.6.2.</span> <span class="nav-text">3.6.2 Cloning Linked Lists</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-Recursion"><span class="nav-number">2.</span> <span class="nav-text">5 Recursion</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-Illustrative-Examples"><span class="nav-number">2.1.</span> <span class="nav-text">5.1 Illustrative Examples</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-1-The-Factorial-Function"><span class="nav-number">2.1.1.</span> <span class="nav-text">5.1.1 The Factorial Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-2-Drawing-an-English-Ruler"><span class="nav-number">2.1.2.</span> <span class="nav-text">5.1.2 Drawing an English Ruler</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-3-Binary-Search"><span class="nav-number">2.1.3.</span> <span class="nav-text">5.1.3 Binary Search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-4-File-Systems"><span class="nav-number">2.1.4.</span> <span class="nav-text">5.1.4 File Systems</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-Further-Examples-of-Recursion"><span class="nav-number">2.2.</span> <span class="nav-text">5.3 Further Examples of Recursion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-1-Linear-Recursion"><span class="nav-number">2.2.1.</span> <span class="nav-text">5.3.1 Linear Recursion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-2-Binary-Recursion"><span class="nav-number">2.2.2.</span> <span class="nav-text">5.3.2 Binary Recursion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-3-Multiple-Recursion"><span class="nav-number">2.2.3.</span> <span class="nav-text">5.3.3 Multiple Recursion</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-Designing-Recursive-Algorithms"><span class="nav-number">2.3.</span> <span class="nav-text">5.4 Designing Recursive Algorithms</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-Stacks-Queues-and-Deques"><span class="nav-number">3.</span> <span class="nav-text">6 Stacks, Queues, and Deques</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-Stacks"><span class="nav-number">3.1.</span> <span class="nav-text">6.1 Stacks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-1-The-Stack-Abstract-Data-Type"><span class="nav-number">3.1.1.</span> <span class="nav-text">6.1.1 The Stack Abstract Data Type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-2-A-Simple-Array-Based-Stack-Implementation"><span class="nav-number">3.1.2.</span> <span class="nav-text">6.1.2 A Simple Array-Based Stack Implementation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-3-Implementing-a-Stack-with-a-Singly-Linked-List"><span class="nav-number">3.1.3.</span> <span class="nav-text">6.1.3 Implementing a Stack with a Singly Linked List</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-4-Reversing-an-Array-Using-a-Stack"><span class="nav-number">3.1.4.</span> <span class="nav-text">6.1.4 Reversing an Array Using a Stack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-5-Matching-Parentheses-and-HTML-Tags"><span class="nav-number">3.1.5.</span> <span class="nav-text">6.1.5 Matching Parentheses and HTML Tags</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-Queues"><span class="nav-number">3.2.</span> <span class="nav-text">6.2 Queues</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-1-The-Queue-Abstract-Data-Type"><span class="nav-number">3.3.</span> <span class="nav-text">6.2.1 The Queue Abstract Data Type</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-2-Array-Based-Queue-Implementation"><span class="nav-number">3.3.1.</span> <span class="nav-text">6.2.2 Array-Based Queue Implementation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-3-Implementing-a-Queue-with-a-Singly-Linked-List"><span class="nav-number">3.3.2.</span> <span class="nav-text">6.2.3 Implementing a Queue with a Singly Linked List</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-4-A-Circular-Queue"><span class="nav-number">3.3.3.</span> <span class="nav-text">6.2.4 A Circular Queue</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-Double-Ended-Queues"><span class="nav-number">3.4.</span> <span class="nav-text">6.3 Double-Ended Queues</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-1-The-Deque-Abstract-Data-Type"><span class="nav-number">3.4.1.</span> <span class="nav-text">6.3.1 The Deque Abstract Data Type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-2-Implementing-a-Deque"><span class="nav-number">3.4.2.</span> <span class="nav-text">6.3.2 Implementing a Deque</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xinxin Tang</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.2.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="Xinxin Tang">
 <meta property="og:description" content="HDFS is short of Hadoop Distributed File System, which is a distributed file system to run on commodity hardware. HDFS is highly fault-tolerance and is designed to be deployed on low-cost hardware. HD">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-23T04:28:10.887Z">
+<meta property="og:updated_time" content="2018-06-04T05:19:19.422Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HDFS">
 <meta name="twitter:description" content="HDFS is short of Hadoop Distributed File System, which is a distributed file system to run on commodity hardware. HDFS is highly fault-tolerance and is designed to be deployed on low-cost hardware. HD">
@@ -320,12 +320,24 @@
                 
               
 
-              <time title="Created: 2018-05-23 00:15:04 / Modified: 00:28:10" itemprop="dateCreated datePublished" datetime="2018-05-23T00:15:04-04:00">2018-05-23</time>
+              <time title="Created: 2018-05-23 00:15:04" itemprop="dateCreated datePublished" datetime="2018-05-23T00:15:04-04:00">2018-05-23</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-06-04 01:19:19" itemprop="dateModified" datetime="2018-06-04T01:19:19-04:00">2018-06-04</time>
               
             
           </span>
@@ -358,25 +370,24 @@
       
 
       
-        <p>HDFS is short of Hadoop Distributed File System, which is a distributed file system to run on commodity hardware. HDFS is highly fault-tolerance and is designed to be deployed on low-cost hardware. HDFS provides high throughput access to application data and is suitable for applications that have large data sets. </p>
-<p>HDFS relaxes a few POSIX requirements to enable streaming access to file system data. </p>
+        <p>HDFS is short of Hadoop Distributed File System, which is a distributed file system to run on commodity hardware. HDFS is highly fault-tolerance and is designed to be deployed on low-cost hardware. HDFS provides high throughput access to application data and is suitable for applications that have large data sets.</p>
+<p>HDFS relaxes a few POSIX requirements to enable streaming access to file system data.</p>
 <p>HDFS is part of Apache Hadoop Core project.</p>
-<h1 id="Assumptions-and-goals"><a href="#Assumptions-and-goals" class="headerlink" title="Assumptions and goals"></a>Assumptions and goals</h1><ol>
+<h2 id="Assumptions-and-goals"><a href="#Assumptions-and-goals" class="headerlink" title="Assumptions and goals"></a>Assumptions and goals</h2><ol>
 <li><p>Hardware failure<br>Hardware failure is the norm rather than the exception. Therefore, detection of faults and quick, automatic recovery from them is a core architectural goal of HDFS.</p>
 </li>
-<li><p>Streaming data access<br>Applications that run on HDFS need streaming access to their datasets. They are not general purpose applications that typically run on general purpose file systems. HDFS is designed for batch processing rather than interactive use by users. The emphasis is on high throughput of data access rather than low latency of data access. </p>
+<li><p>Streaming data access<br>Applications that run on HDFS need streaming access to their datasets. They are not general purpose applications that typically run on general purpose file systems. HDFS is designed for batch processing rather than interactive use by users. The emphasis is on high throughput of data access rather than low latency of data access.</p>
 </li>
 <li><p>Large data sets</p>
 </li>
-<li><p>Simple coherency model<br>HDFS applications need a write-once-write-many access model for files. A file once created, written, and closed need not be changed except for appends and truncates. Appending the content to the end of files is supported but cannot be updated at arbirary point. </p>
+<li><p>Simple coherency model<br>HDFS applications need a write-once-write-many access model for files. A file once created, written, and closed need not be changed except for appends and truncates. Appending the content to the end of files is supported but cannot be updated at arbrirary point.</p>
 </li>
 <li><p>Moving computation is cheaper than moving data</p>
 </li>
 <li><p>Portability across heterogeneous hardware and software platforms</p>
 </li>
 </ol>
-<p>More details viewing in references</p>
-<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html" target="_blank" rel="noopener">HDFS</a></p>
+<h2 id="NameNodes-and-DataNodes"><a href="#NameNodes-and-DataNodes" class="headerlink" title="NameNodes and DataNodes"></a>NameNodes and DataNodes</h2><h2 id="The-File-System-Namespace"><a href="#The-File-System-Namespace" class="headerlink" title="The File System Namespace"></a>The File System Namespace</h2><h2 id="Data-Replication"><a href="#Data-Replication" class="headerlink" title="Data Replication"></a>Data Replication</h2><h2 id="The-persistence-of-File-System-Metadata"><a href="#The-persistence-of-File-System-Metadata" class="headerlink" title="The persistence of File System Metadata"></a>The persistence of File System Metadata</h2><h2 id="The-Communication-Protocols"><a href="#The-Communication-Protocols" class="headerlink" title="The Communication Protocols"></a>The Communication Protocols</h2><h2 id="Robustness"><a href="#Robustness" class="headerlink" title="Robustness"></a>Robustness</h2><h2 id="Data-Organization"><a href="#Data-Organization" class="headerlink" title="Data Organization"></a>Data Organization</h2><h2 id="Accessibility"><a href="#Accessibility" class="headerlink" title="Accessibility"></a>Accessibility</h2><h2 id="Space-Reclamation"><a href="#Space-Reclamation" class="headerlink" title="Space Reclamation"></a>Space Reclamation</h2><h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html" target="_blank" rel="noopener">HDFS</a></p>
 
       
     </div>
@@ -498,7 +509,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">57</span>
+                    <span class="site-state-item-count">63</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -599,7 +610,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">43</span>
+                      
+                    
+                    <span class="site-state-item-count">44</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
@@ -635,7 +648,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Assumptions-and-goals"><span class="nav-number">1.</span> <span class="nav-text">Assumptions and goals</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">2.</span> <span class="nav-text">References</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Assumptions-and-goals"><span class="nav-number">1.</span> <span class="nav-text">Assumptions and goals</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NameNodes-and-DataNodes"><span class="nav-number">2.</span> <span class="nav-text">NameNodes and DataNodes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-File-System-Namespace"><span class="nav-number">3.</span> <span class="nav-text">The File System Namespace</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Replication"><span class="nav-number">4.</span> <span class="nav-text">Data Replication</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-persistence-of-File-System-Metadata"><span class="nav-number">5.</span> <span class="nav-text">The persistence of File System Metadata</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Communication-Protocols"><span class="nav-number">6.</span> <span class="nav-text">The Communication Protocols</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Robustness"><span class="nav-number">7.</span> <span class="nav-text">Robustness</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Organization"><span class="nav-number">8.</span> <span class="nav-text">Data Organization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Accessibility"><span class="nav-number">9.</span> <span class="nav-text">Accessibility</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Space-Reclamation"><span class="nav-number">10.</span> <span class="nav-text">Space Reclamation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number"></span> <span class="nav-text">References</span></a></div>
             
 
           </div>

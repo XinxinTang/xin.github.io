@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="Xinxin Tang">
 <meta property="og:description" content="What is MySQL? MySQL is a databse system, used for developing web-based software applications MySQL used for both small and large applications It is a relational databse management system It is fast r">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-21T17:20:18.713Z">
+<meta property="og:updated_time" content="2018-06-08T04:10:54.465Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL">
 <meta name="twitter:description" content="What is MySQL? MySQL is a databse system, used for developing web-based software applications MySQL used for both small and large applications It is a relational databse management system It is fast r">
@@ -320,12 +320,24 @@
                 
               
 
-              <time title="Created: 2018-05-21 11:12:40 / Modified: 13:20:18" itemprop="dateCreated datePublished" datetime="2018-05-21T11:12:40-04:00">2018-05-21</time>
+              <time title="Created: 2018-05-21 11:12:40" itemprop="dateCreated datePublished" datetime="2018-05-21T11:12:40-04:00">2018-05-21</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-06-08 00:10:54" itemprop="dateModified" datetime="2018-06-08T00:10:54-04:00">2018-06-08</time>
               
             
           </span>
@@ -378,10 +390,14 @@
 <li>MySQL server works in client/server or embedded systems</li>
 <li>it works on many different platforms</li>
 </ol>
-<h1 id="SQL-Commands"><a href="#SQL-Commands" class="headerlink" title="SQL Commands"></a>SQL Commands</h1><h2 id="DDL"><a href="#DDL" class="headerlink" title="DDL"></a>DDL</h2><p>DDL is short name of <strong>Data Definition Language</strong>, which deals with database schemas and descriptions<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CREATE: create database and its objects like table, index, views, store procedure, function, and triggers</span><br><span class="line">ALTER: alters the sturcture of the existing database</span><br><span class="line">DROP: delete objects from the database</span><br><span class="line">TRUNCATE: remove all records from a table, including all spaces allocated for the records are removed</span><br><span class="line">COMMENT: add comments to the data dictionary</span><br><span class="line">RENAME: rename an object</span><br><span class="line">``` </span><br><span class="line">## DML</span><br><span class="line">DML is short name of **Data Manipulation Language**, which deals with data manipulation and includes most common SQL statements such as SELECT, INSERT, UPDATA, and DELETE.</span><br></pre></td></tr></table></figure></p>
-<p>SELECT: retrieve data from a database<br>INSERT: insert data into a table<br>UPDATE: updates existing data with a table<br>MERGE: UPSERT operation(insert or update)<br>CALL: call a PL/SQL or Java subprogram<br>DELETE: delete all records from a database table<br>EXPLAIN PLAN: interpretation of the data access path<br>LOCK TABLE: concurrency control<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## DCL</span><br><span class="line">DCL is short name of **Data Control Language**, which includes commands such as GRANT and mostly concerned with rights, permissions and other controls of the database system.</span><br></pre></td></tr></table></figure></p>
-<p>GRANT: allow users access privileges to database<br>REVOKE: withdraw users access privileges given by using the GRANT command<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## TCL</span><br><span class="line">TCL is short name of **Transaction Control Language**, which deals with a transaction within a database.</span><br></pre></td></tr></table></figure></p>
-<p>COMMIT: commits a transaction<br>ROLLBACK: rollback a transaction in case of any error occurs<br>SAVEPOINT: to rollback the transaction making points within groups<br>SET TRANSACTION: specify characteristics of the transaction<br><code>`</code></p>
+<h1 id="SQL-Commands"><a href="#SQL-Commands" class="headerlink" title="SQL Commands"></a>SQL Commands</h1><h2 id="DDL"><a href="#DDL" class="headerlink" title="DDL"></a>DDL</h2><p>DDL is short name of <strong>Data Definition Language</strong>, which deals with database schemas and descriptions<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CREATE: create database and its objects like table, index, views, store procedure, function, and triggers</span><br><span class="line">ALTER: alters the sturcture of the existing database</span><br><span class="line">DROP: delete objects from the database</span><br><span class="line">TRUNCATE: remove all records from a table, including all spaces allocated for the records are removed</span><br><span class="line">COMMENT: add comments to the data dictionary</span><br><span class="line">RENAME: rename an object</span><br></pre></td></tr></table></figure></p>
+<h2 id="DML"><a href="#DML" class="headerlink" title="DML"></a>DML</h2><p>DML is short name of <strong>Data Manipulation Language</strong>, which deals with data manipulation and includes most common SQL statements such as SELECT, INSERT, UPDATA, and DELETE.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT: retrieve data from a database</span><br><span class="line">INSERT: insert data into a table</span><br><span class="line">UPDATE: updates existing data with a table</span><br><span class="line">MERGE: UPSERT operation(insert or update)</span><br><span class="line">CALL: call a PL/SQL or Java subprogram</span><br><span class="line">DELETE: delete all records from a database table</span><br><span class="line">EXPLAIN PLAN: interpretation of the data access path</span><br><span class="line">LOCK TABLE: concurrency control</span><br></pre></td></tr></table></figure></p>
+<h2 id="DCL"><a href="#DCL" class="headerlink" title="DCL"></a>DCL</h2><p>DCL is short name of <strong>Data Control Language</strong>, which includes commands such as GRANT and mostly concerned with rights, permissions and other controls of the database system.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GRANT: allow users access privileges to database</span><br><span class="line">REVOKE: withdraw users access privileges given by using the GRANT command</span><br></pre></td></tr></table></figure></p>
+<h2 id="TCL"><a href="#TCL" class="headerlink" title="TCL"></a>TCL</h2><p>TCL is short name of <strong>Transaction Control Language</strong>, which deals with a transaction within a database.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">COMMIT: commits a transaction</span><br><span class="line">ROLLBACK: rollback a transaction in case of any error occurs</span><br><span class="line">SAVEPOINT: to rollback the transaction making points within groups</span><br><span class="line">SET TRANSACTION: specify characteristics of the transaction</span><br></pre></td></tr></table></figure></p>
+<h1 id="Replication"><a href="#Replication" class="headerlink" title="Replication"></a>Replication</h1><p>Asynchronous replicas based on a Binary LoG;<br>Log Format:<br>  Statement:SQL statements, smallest size<br>  Row: event data, biggest size, cannot read directly<br>  Mixed: save unsure data between statement and row</p>
+<p>Master: replicate database<br>Slave: replicate database, table</p>
+<p>Copy Format:<br>  Coping based on Binary Log<br>  Coping based on event using GTID</p>
+<p>Semi-synchronized replication: </p>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.w3schools.in/mysql/" target="_blank" rel="noopener">MySQL</a></p>
 
       
@@ -502,7 +518,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">57</span>
+                    <span class="site-state-item-count">63</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -603,7 +619,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">43</span>
+                      
+                    
+                    <span class="site-state-item-count">44</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
@@ -639,7 +657,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-MySQL"><span class="nav-number">1.</span> <span class="nav-text">What is MySQL?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Main-features-of-MySQL"><span class="nav-number">2.</span> <span class="nav-text">Main features of MySQL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL-Commands"><span class="nav-number">3.</span> <span class="nav-text">SQL Commands</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DDL"><span class="nav-number">3.1.</span> <span class="nav-text">DDL</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-MySQL"><span class="nav-number">1.</span> <span class="nav-text">What is MySQL?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Main-features-of-MySQL"><span class="nav-number">2.</span> <span class="nav-text">Main features of MySQL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL-Commands"><span class="nav-number">3.</span> <span class="nav-text">SQL Commands</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DDL"><span class="nav-number">3.1.</span> <span class="nav-text">DDL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DML"><span class="nav-number">3.2.</span> <span class="nav-text">DML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DCL"><span class="nav-number">3.3.</span> <span class="nav-text">DCL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCL"><span class="nav-number">3.4.</span> <span class="nav-text">TCL</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Replication"><span class="nav-number">4.</span> <span class="nav-text">Replication</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>
